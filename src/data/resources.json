@@ -1,0 +1,204 @@
+[
+  {
+    "id": "gcc-local-seo-checklist",
+    "slug": "gcc-local-seo-checklist",
+    "category": "seo",
+    "title": "GCC B2B Local SEO Checklist",
+    "description": "The ultimate technical checklist to optimize your business profiles, map localized keyword silos, and dominate organic search visibility in Dubai, Doha, and Riyadh.",
+    "downloadType": "PDF",
+    "downloadUrl": "/files/gcc-local-seo-checklist.pdf",
+    "seoTitle": "GCC B2B Local SEO Checklist & Audit Template | Digipeak",
+    "seoDescription": "Download our free GCC B2B Local SEO audit checklist. Optimize your search architecture, local citations, and RTL schemas to rank in Dubai, Doha, and Riyadh.",
+    "highIntent": false,
+    "faqs": [
+      {
+        "question": "What search parameters are covered in the GCC Local SEO Checklist?",
+        "answer": "It covers Arabic schema structures, RTL layout crawl settings, local citation listings for UAE/Qatar/KSA, and regional domain hierarchy recommendations."
+      },
+      {
+        "question": "Does this checklist support multi-lingual sites?",
+        "answer": "Yes, it includes explicit guidelines for implementing hreflang attributes and setting up dual-language SEO maps."
+      }
+    ]
+  },
+  {
+    "id": "website-launch-checklist",
+    "slug": "website-launch-checklist",
+    "category": "web-design",
+    "title": "Ultimate B2B Website Launch Checklist",
+    "description": "Avoid broken redirect loops, missing schemas, or layout shifts. Ensure a zero-error website deployment with this performance-oriented launch checker.",
+    "downloadType": "Google Sheets",
+    "downloadUrl": "https://docs.google.com/spreadsheets/d/mock-launch-checklist",
+    "seoTitle": "B2B Website Launch Checklist: Complete Pre-Launch Audit | Digipeak",
+    "seoDescription": "Download our comprehensive pre-launch checklist to ensure zero-error migrations, optimal page load speed, canonical parameters setup, and mobile responsiveness.",
+    "highIntent": true,
+    "faqs": [
+      {
+        "question": "What checks are critical before pushing a site live?",
+        "answer": "Key items include checking image dimensions to prevent Cumulative Layout Shifts, validating robots.txt files, testing contact form endpoints, and checking analytics tags."
+      }
+    ]
+  },
+  {
+    "id": "brand-identity-guidelines-template",
+    "slug": "brand-identity-guidelines-template",
+    "category": "branding",
+    "title": "Corporate Brand Identity Guidelines Template",
+    "description": "Establish a consistent, premium corporate presence. A customizable playbook mapping typography grids, HSL palettes, logo layouts, and visual rules.",
+    "downloadType": "Figma",
+    "downloadUrl": "https://figma.com/file/mock-brand-guidelines",
+    "seoTitle": "Corporate Brand Identity Guidelines Template (Figma) | Digipeak",
+    "seoDescription": "Get our free corporate brand guidelines template in Figma. Establish rules for typography hierarchies, corporate color palettes, and digital layout assets.",
+    "highIntent": false,
+    "faqs": [
+      {
+        "question": "How do I customize the brand guidelines template?",
+        "answer": "The Figma file is fully componentized. Simply swap the brand variables, font styling systems, and logo SVGs to update the entire playbook."
+      }
+    ]
+  },
+  {
+    "id": "b2b-marketing-strategy-planner",
+    "slug": "b2b-marketing-strategy-planner",
+    "category": "marketing",
+    "title": "B2B Performance Marketing Strategy Planner",
+    "description": "Plan budgets, forecast cost-per-lead (CPL) benchmarks, and coordinate multi-channel PPC campaigns across LinkedIn, Google Ads, and Meta.",
+    "downloadType": "Excel",
+    "downloadUrl": "/files/b2b-marketing-strategy-planner.xlsx",
+    "seoTitle": "B2B Performance Marketing Strategy & Budget Planner | Digipeak",
+    "seoDescription": "Download our B2B performance marketing strategy planner to model customer acquisition costs, allocate budgets, and forecast paid ads ROI.",
+    "highIntent": true,
+    "faqs": [
+      {
+        "question": "Does this planner help calculate Customer Acquisition Cost?",
+        "answer": "Yes, it contains built-in formulas to model CAC, LTV:CAC ratios, and target cost-per-lead allocations across paid channels."
+      }
+    ]
+  },
+  {
+    "id": "b2b-content-editorial-calendar",
+    "slug": "b2b-content-editorial-calendar",
+    "category": "content-planning",
+    "title": "B2B SEO Content Editorial Calendar",
+    "description": "Coordinate your search engine content machine. Track SEO keywords, cluster topics, outline headings structures, and manage author queues in one place.",
+    "downloadType": "Notion",
+    "downloadUrl": "https://notion.so/mock-content-calendar",
+    "seoTitle": "B2B SEO Content Editorial Calendar Notion Template | Digipeak",
+    "seoDescription": "Streamline your SEO content engine. Download our free Notion editorial calendar template to organize topic clusters and track content pipelines.",
+    "highIntent": false,
+    "faqs": [
+      {
+        "question": "How does the editorial calendar optimize for search visibility?",
+        "answer": "It structures content production into topic clusters, ensuring that individual articles map to target search phrases and link internally to main pillar pages."
+      }
+    ]
+  },
+  {
+    "id": "social-media-content-branding-kit",
+    "slug": "social-media-content-branding-kit",
+    "category": "social-media",
+    "title": "Social Media Content Branding Kit",
+    "description": "Premium layout templates for LinkedIn carousels, Instagram infographics, and corporate slides to elevate your social media engagement.",
+    "downloadType": "Canva",
+    "downloadUrl": "https://canva.com/design/mock-social-kit",
+    "seoTitle": "Social Media Content Branding Kit: Free Templates | Digipeak",
+    "seoDescription": "Elevate your corporate brand on social. Download free Canva templates for LinkedIn slides, Instagram graphics, and B2B graphics.",
+    "highIntent": false,
+    "faqs": [
+      {
+        "question": "What platforms are supported in the social branding kit?",
+        "answer": "It includes templates optimized for LinkedIn PDF carousels, Instagram stories/posts, and presentation decks."
+      }
+    ]
+  },
+  {
+    "id": "chatgpt-b2b-marketing-prompt-library",
+    "slug": "chatgpt-b2b-marketing-prompt-library",
+    "category": "ai-prompt-libraries",
+    "title": "ChatGPT B2B Marketing Prompt Library",
+    "description": "Stop receiving generic AI responses. Optimize your copywriting, customer avatars, and ad headlines using engineered system prompts.",
+    "downloadType": "PDF",
+    "downloadUrl": "/files/chatgpt-b2b-marketing-prompts.pdf",
+    "seoTitle": "ChatGPT B2B Marketing Prompt Library & System Guides | Digipeak",
+    "seoDescription": "Download our free ChatGPT prompt library designed for B2B marketers. Access system templates for cold emails, ad copy, and SEO outlines.",
+    "highIntent": false,
+    "faqs": [
+      {
+        "question": "Are these prompts optimized for specific AI tools?",
+        "answer": "Yes, they are engineered for ChatGPT (GPT-4o), Claude 3.5 Sonnet, and Google Gemini to generate professional copy without generic fluff."
+      }
+    ]
+  },
+  {
+    "id": "b2b-sales-proposal-template",
+    "slug": "b2b-sales-proposal-template",
+    "category": "proposal-templates",
+    "title": "High-Converting B2B Sales Proposal Template",
+    "description": "The exact proposal structure Digipeak uses to close five-figure retainers. Features service definitions, pricing cards, and legal terms.",
+    "downloadType": "PowerPoint",
+    "downloadUrl": "/files/b2b-sales-proposal-template.pptx",
+    "seoTitle": "High-Converting B2B Sales Proposal Presentation Deck | Digipeak",
+    "seoDescription": "Download our free B2B sales proposal presentation template (PowerPoint). Adapt our proven service scope cards, pricing tables, and legal contracts.",
+    "highIntent": true,
+    "faqs": [
+      {
+        "question": "What slides are included in the proposal template?",
+        "answer": "It includes Problem Statement, Proposed Solution roadmap, Detailed Pricing structure, Case Studies/Proof, and SLA terms."
+      }
+    ]
+  },
+  {
+    "id": "gcc-market-entry-growth-guide",
+    "slug": "gcc-market-entry-growth-guide",
+    "category": "business-growth",
+    "title": "GCC B2B Market Entry & Growth Guide",
+    "description": "Unlock scaling opportunities across Dubai, Doha, and Riyadh. Essential business guide analyzing localization criteria and marketing channels.",
+    "downloadType": "PDF",
+    "downloadUrl": "/files/gcc-market-entry-growth-guide.pdf",
+    "seoTitle": "GCC B2B Market Entry, Scaling & Local Growth Guide | Digipeak",
+    "seoDescription": "Download our comprehensive business entry guide analyzing digital growth tactics, Arabic search silos, and PPC lead gen in the GCC.",
+    "highIntent": true,
+    "faqs": [
+      {
+        "question": "What geographic markets does the entry guide analyze?",
+        "answer": "It provides deep vertical insights for Qatar, United Arab Emirates, Saudi Arabia, Bahrain, Kuwait, and Oman."
+      }
+    ]
+  },
+  {
+    "id": "sales-pipeline-automation-crm-blueprint",
+    "slug": "sales-pipeline-automation-crm-blueprint",
+    "category": "crm-templates",
+    "title": "Sales Pipeline CRM Automation Blueprint",
+    "description": "A step-by-step mapping of sales qualification stages, automated trigger conditions, and email/WhatsApp sync parameters.",
+    "downloadType": "Notion",
+    "downloadUrl": "https://notion.so/mock-crm-blueprint",
+    "seoTitle": "Sales Pipeline & CRM Automation Pipeline Blueprint | Digipeak",
+    "seoDescription": "Download our free Notion CRM pipeline blueprint. Map lead statuses, configure automated notification workflows, and sync WhatsApp endpoints.",
+    "highIntent": true,
+    "faqs": [
+      {
+        "question": "What CRM systems are compatible with this blueprint?",
+        "answer": "It works natively with HubSpot, Salesforce, Zoho CRM, Pipedrive, and custom systems built on Make.com/Zapier."
+      }
+    ]
+  },
+  {
+    "id": "cold-email-outreach-sequences",
+    "slug": "cold-email-outreach-sequences",
+    "category": "email-outreach",
+    "title": "B2B Cold Email Outreach Sequences",
+    "description": "Increase your booking conversion rates. 10 copy-paste email templates engineered to secure discovery calls with busy B2B managers.",
+    "downloadType": "Word",
+    "downloadUrl": "/files/cold-email-outreach-sequences.docx",
+    "seoTitle": "B2B Cold Email Outreach Scripts & Sequence Templates | Digipeak",
+    "seoDescription": "Download our free B2B cold email outreach sequences in Word. Elevate response rates with copy-paste outreach templates and follow-up sequences.",
+    "highIntent": true,
+    "faqs": [
+      {
+        "question": "Do these outreach templates include customization guidelines?",
+        "answer": "Yes, each template highlights exactly where to insert personalization variables, pain points, and calendar scheduling URLs."
+      }
+    ]
+  }
+]
