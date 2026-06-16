@@ -8,6 +8,8 @@ import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { DigiAiWidget } from "@/components/layout/DigiAiWidget";
 import { CookieConsent } from "@/components/shared/CookieConsent";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import MicrosoftClarity from "@/components/analytics/MicrosoftClarity";
+
 
 
 
@@ -124,6 +126,7 @@ export default function RootLayout({
         <Footer />
         <CookieConsent />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-V9H8BCW23Y"} />
+        <MicrosoftClarity clarityId={process.env.NEXT_PUBLIC_CLARITY_ID || ""} />
       </body>
     </html>
   );
