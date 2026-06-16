@@ -7,6 +7,8 @@ import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import { DigiAiWidget } from "@/components/layout/DigiAiWidget";
 import { CookieConsent } from "@/components/shared/CookieConsent";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+
 
 
 const inter = Inter({
@@ -121,6 +123,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieConsent />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-V9H8BCW23Y"} />
       </body>
     </html>
   );
