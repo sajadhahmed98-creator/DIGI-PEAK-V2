@@ -75,7 +75,7 @@ export function PersonalContact() {
   };
 
   return (
-    <section id="contact" className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-black relative overflow-hidden">
+    <section id="contact" className="py-20 md:py-24 lg:py-32 px-6 bg-black relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent-primary/10 rounded-full blur-[150px]" />
@@ -93,7 +93,7 @@ export function PersonalContact() {
             <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
               Connect
             </div>
-            <h2 className="font-heading text-3xl md:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-4">
               Let&apos;s Build Something{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-secondary">
                 Exceptional.
@@ -117,7 +117,7 @@ export function PersonalContact() {
           <div className="absolute top-0 right-0 w-48 h-48 bg-accent-primary/5 rounded-full blur-3xl pointer-events-none" />
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Name */}
               <div className="flex flex-col">
                 <label htmlFor="name" className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">

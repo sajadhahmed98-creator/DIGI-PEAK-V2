@@ -113,7 +113,7 @@ const presenceData = [
 
 export function DigitalPresence() {
   return (
-    <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-black/50 border-t border-white/5 relative">
+    <section className="py-20 md:py-24 lg:py-32 px-6 bg-black/50 border-t border-white/5 relative">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent-secondary/5 rounded-full blur-[140px]" />
       </div>
@@ -123,7 +123,7 @@ export function DigitalPresence() {
           <span className="text-accent-secondary font-mono text-xs font-bold uppercase tracking-widest mb-4 block">
             E-E-A-T Networks
           </span>
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
             Digital <span className="text-gradient-primary">Presence.</span>
           </h2>
           <p className="text-muted text-lg max-w-2xl">
@@ -141,7 +141,7 @@ export function DigitalPresence() {
                 </h3>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                 {group.profiles.map((profile, i) => {
                   const Icon = profile.icon;
                   return (

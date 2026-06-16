@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export function PersonalIntro() {
   return (
-    <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-black/50 border-t border-white/5 relative overflow-hidden">
+    <section className="py-20 md:py-24 lg:py-32 px-6 bg-black/50 border-t border-white/5 relative overflow-hidden">
       {/* Subtle ambient blur */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 right-1/4 w-[300px] h-[300px] bg-accent-secondary/5 rounded-full blur-[100px]" />
@@ -25,7 +25,7 @@ export function PersonalIntro() {
               <div className="text-accent-primary font-mono text-xs font-bold uppercase tracking-widest mb-4">
                 Introduction
               </div>
-              <h2 className="font-heading text-4xl md:text-5xl lg:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+              <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
                 Meet <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-secondary">
                   Sajadh Ahmed.

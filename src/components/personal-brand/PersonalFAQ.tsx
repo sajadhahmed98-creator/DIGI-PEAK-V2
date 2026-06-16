@@ -40,7 +40,7 @@ export function PersonalFAQ() {
   };
 
   return (
-    <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 border-t border-white/5 bg-white/[0.01] relative overflow-hidden">
+    <section className="py-20 md:py-24 lg:py-32 px-6 border-t border-white/5 bg-white/[0.01] relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-accent-primary/5 rounded-full blur-[120px]" />
@@ -59,7 +59,7 @@ export function PersonalFAQ() {
               <HelpCircle className="w-3.5 h-3.5" />
               FAQ
             </div>
-            <h2 className="font-heading text-3xl md:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
               Frequently Asked{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-secondary">
                 Questions.

@@ -55,14 +55,14 @@ const education = [
 
 export function ExperienceEducation() {
   return (
-    <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 border-y border-white/5 bg-white/[0.01] relative overflow-hidden">
+    <section className="py-20 md:py-24 lg:py-32 px-6 border-y border-white/5 bg-white/[0.01] relative overflow-hidden">
       {/* Background ambient light */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/4 w-[500px] h-[300px] bg-accent-primary/5 rounded-full blur-[120px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 lg:grid-cols-1 sm:grid-cols-2 gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
           {/* Left Column — Professional Experience */}
           <motion.div
@@ -77,7 +77,7 @@ export function ExperienceEducation() {
                 <Briefcase className="w-4 h-4" />
                 Experience
               </div>
-              <h2 className="font-heading text-3xl md:text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-white tracking-tight">
                 Professional Journey
               </h2>
             </div>
@@ -133,7 +133,7 @@ export function ExperienceEducation() {
                 <GraduationCap className="w-4 h-4" />
                 Background
               </div>
-              <h2 className="font-heading text-3xl md:text-2xl md:text-3xl lg:text-4xl font-bold text-white tracking-tight">
+              <h2 className="font-heading text-3xl lg:text-4xl font-bold text-white tracking-tight">
                 Education &amp; Credentials
               </h2>
             </div>

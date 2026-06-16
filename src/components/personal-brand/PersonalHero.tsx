@@ -1,10 +1,40 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { MapPin, Mail, Globe, ArrowRight, Share2 } from "lucide-react";
 
+
 export function PersonalHero() {
+  const [shareStatus, setShareStatus] = useState<"idle" | "sharing" | "copied">("idle");
+
+  const handleShare = async () => {
+    const shareData = {
+      title: "Sajadh Ahmed — Founder of Digipeak",
+      text: "Check out Sajadh Ahmed's profile page, Founder of Digipeak Agency.",
+      url: "https://www.digipeak.agency/author/sajadh-ahmed",
+    };
+
+    if (typeof navigator !== "undefined" && navigator.share) {
+      try {
+        setShareStatus("sharing");
+        await navigator.share(shareData);
+        setShareStatus("idle");
+      } catch (e) {
+        setShareStatus("idle");
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(shareData.url);
+        setShareStatus("copied");
+        setTimeout(() => setShareStatus("idle"), 2500);
+      } catch (err) {
+        setShareStatus("idle");
+      }
+    }
+  };
+
   return (
     <section className="relative min-h-screen pt-32 pb-20 px-6 flex items-center justify-center overflow-hidden bg-black">
       {/* Decorative ambient glows */}
@@ -108,14 +138,15 @@ export function PersonalHero() {
 
                 <div className="flex items-center gap-2.5">
                   <button
-                    onClick={() => {
-                      const event = new CustomEvent("toggle-profile-share");
-                      window.dispatchEvent(event);
-                    }}
+                    onClick={handleShare}
                     className="inline-flex items-center gap-2 text-xs font-mono font-bold text-muted hover:text-white transition-colors cursor-pointer"
                   >
                     <Share2 className="w-3.5 h-3.5 text-accent-primary" />
-                    Share Profile
+                    {shareStatus === "copied" ? (
+                      <span className="text-accent-secondary animate-pulse">Link Copied!</span>
+                    ) : (
+                      "Share Profile"
+                    )}
                   </button>
                 </div>
               </div>

@@ -10,7 +10,7 @@ import { LatestArticles } from "@/components/personal-brand/LatestArticles";
 import { ServiceAreas } from "@/components/personal-brand/ServiceAreas";
 import { PersonalFAQ } from "@/components/personal-brand/PersonalFAQ";
 import { PersonalContact } from "@/components/personal-brand/PersonalContact";
-import { ProfileShareSystem } from "@/components/personal-brand/ProfileShareSystem";
+
 
 export const metadata: Metadata = {
   title: "Sajadh Ahmed | Founder, Digipeak | Graphic Designer & Digital Marketer",
@@ -217,7 +217,6 @@ export default function SajadhAhmedAuthorPage() {
       <ServiceAreas />
       <PersonalFAQ />
       <PersonalContact />
-      <ProfileShareSystem />
     </>
   );
 }

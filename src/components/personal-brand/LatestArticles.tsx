@@ -36,7 +36,7 @@ export function LatestArticles() {
   if (articles.length === 0) return null;
 
   return (
-    <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-black/50 border-t border-white/5 relative">
+    <section className="py-20 md:py-24 lg:py-32 px-6 bg-black/50 border-t border-white/5 relative">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 right-1/4 w-[300px] h-[300px] bg-accent-primary/5 rounded-full blur-[120px]" />
       </div>
@@ -47,7 +47,7 @@ export function LatestArticles() {
             <span className="text-accent-secondary font-mono text-xs font-bold uppercase tracking-widest mb-4 block">
               Publications
             </span>
-            <h2 className="font-heading text-4xl md:text-5xl lg:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
               Latest <span className="text-gradient-primary">Articles.</span>
             </h2>
             <p className="text-muted text-lg max-w-xl">
@@ -63,7 +63,7 @@ export function LatestArticles() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {articles.map((article, i) => (
             <motion.article
               key={article.slug}

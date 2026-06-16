@@ -67,7 +67,7 @@ const services = [
 
 export function CreativeServices() {
   return (
-    <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-black relative">
+    <section className="py-20 md:py-24 lg:py-32 px-6 bg-black relative">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-accent-primary/5 rounded-full blur-[120px]" />
@@ -78,7 +78,7 @@ export function CreativeServices() {
           <span className="text-accent-primary font-mono text-xs font-bold uppercase tracking-widest mb-4 block">
             Capabilities
           </span>
-          <h2 className="font-heading text-4xl md:text-5xl lg:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">
+          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-6">
             Creative &amp; Digital <span className="text-gradient-secondary">Services.</span>
           </h2>
           <p className="text-muted text-lg max-w-2xl">
@@ -86,7 +86,7 @@ export function CreativeServices() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
           {services.map((svc, i) => {
             const Icon = svc.icon;
             return (

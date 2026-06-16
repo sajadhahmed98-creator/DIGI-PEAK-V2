@@ -36,7 +36,7 @@ export function WhatsAppButton() {
     return () => { clearTimeout(t); clearTimeout(t2); };
   }, [hasMounted]);
 
-  if (!hasMounted) return null;
+  if (!hasMounted || !isVisible) return null;
 
   return (
     <div
