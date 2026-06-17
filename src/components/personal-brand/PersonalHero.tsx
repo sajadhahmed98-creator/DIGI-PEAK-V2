@@ -36,7 +36,7 @@ export function PersonalHero() {
   };
 
   return (
-    <section className="relative min-h-screen pt-32 pb-20 px-6 flex items-center justify-center overflow-hidden bg-black">
+    <section className="relative min-h-screen pt-24 pb-12 lg:pt-32 lg:pb-20 px-6 flex items-center justify-center overflow-hidden bg-black">
       {/* Decorative ambient glows */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent-primary/10 rounded-full blur-[140px]" />
@@ -47,7 +47,7 @@ export function PersonalHero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* Left Column — Editorial Profile Info */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
+          <div className="lg:col-span-7 flex flex-col justify-center order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -100,8 +100,8 @@ export function PersonalHero() {
               </div>
 
               {/* Connect CTAs */}
-              <div className="flex flex-col gap-5 mb-6">
-                <div className="flex flex-wrap gap-3">
+              <div className="flex flex-col gap-5 mb-6 w-full">
+                <div className="grid grid-cols-2 gap-3 w-full sm:flex sm:flex-wrap">
                   <a
                     href="https://www.linkedin.com/in/sajadh-ahmed-6a62641a9/"
                     target="_blank"
@@ -154,7 +154,7 @@ export function PersonalHero() {
           </div>
 
           {/* Right Column — Black & White Editorial Portrait Image */}
-          <div className="lg:col-span-5 flex justify-center">
+          <div className="lg:col-span-5 flex justify-center order-1 lg:order-2">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}

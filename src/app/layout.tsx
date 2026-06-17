@@ -4,9 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
-import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
-import { DigiAiWidget } from "@/components/layout/DigiAiWidget";
-import { CookieConsent } from "@/components/shared/CookieConsent";
+import { ClientWidgets } from "@/components/layout/ClientWidgets";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import MicrosoftClarity from "@/components/analytics/MicrosoftClarity";
 
@@ -116,15 +114,13 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen flex flex-col font-sans bg-background text-foreground selection:bg-accent-violet/30 selection:text-white">
         <ScrollToTop />
-        <WhatsAppButton />
-        <DigiAiWidget />
+        <ClientWidgets />
         <div className="bg-noise absolute inset-0 z-[-1] pointer-events-none opacity-[0.02]"></div>
         <Navbar />
         <main className="flex-1 flex flex-col pt-24">
           {children}
         </main>
         <Footer />
-        <CookieConsent />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-V9H8BCW23Y"} />
         <MicrosoftClarity clarityId={process.env.NEXT_PUBLIC_CLARITY_ID || ""} />
       </body>
