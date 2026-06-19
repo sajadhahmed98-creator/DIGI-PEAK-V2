@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from 'resend';
-
 import { z } from "zod";
+import fs from 'fs';
+import path from 'path';
 
 const subscribeSchema = z.object({
   name: z.string().max(100, "Name is too long").optional().nullable(),
@@ -52,24 +53,46 @@ export async function POST(req: NextRequest) {
     }
 
     const emailSubject = `[NEWSLETTER SUBSCRIBE] New Growth Insights Subscriber`;
-    const adminEmailHtml = `
-      <h2>New Newsletter Subscription - Grow Insights</h2>
-      <p><strong>Name:</strong> ${name || "Anonymous Reader"}</p>
-      <p><strong>Email:</strong> ${email}</p>
-      <p><em>IP Address: ${ip}</em></p>
-    `;
+    let adminEmailHtml = "";
+    let userEmailHtml = "";
 
-    const userEmailHtml = `
-      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2>Hi ${name || "there"},</h2>
-        <p>Thank you for subscribing to Digipeak's Growth Insights!</p>
-        <p>You'll receive our latest strategies, case studies, and resources straight to your inbox.</p>
-        <br/>
-        <p>Best regards,</p>
-        <p><strong>The Digipeak Team</strong><br/>
-        <a href="https://www.digipeak.agency">digipeak.agency</a></p>
-      </div>
-    `;
+    try {
+      const adminTemplatePath = path.join(process.cwd(), 'emails/templates/newsletter-alert.html');
+      const adminTemplate = fs.readFileSync(adminTemplatePath, 'utf8');
+      adminEmailHtml = adminTemplate
+        .replace("subscriber@company.com", email)
+        .replace("June 18, 2026", new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }))
+        .replace("Footer Signup Form", "Blog Newsletter Widget")
+        .replace("Organic Search / Resources Hub", `Subscriber Name: ${name || "Anonymous Reader"}. IP Address: ${ip}`);
+    } catch (err) {
+      console.error("Failed to load newsletter-alert template, using fallback:", err);
+      adminEmailHtml = `
+        <h2>New Newsletter Subscription - Grow Insights</h2>
+        <p><strong>Name:</strong> ${name || "Anonymous Reader"}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><em>IP Address: ${ip}</em></p>
+      `;
+    }
+
+    try {
+      const userTemplatePath = path.join(process.cwd(), 'emails/templates/newsletter-welcome.html');
+      const userTemplate = fs.readFileSync(userTemplatePath, 'utf8');
+      userEmailHtml = userTemplate
+        .replace("Hello,", `Hello ${name || 'there'},`);
+    } catch (err) {
+      console.error("Failed to load newsletter-welcome template, using fallback:", err);
+      userEmailHtml = `
+        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2>Hi ${name || "there"},</h2>
+          <p>Thank you for subscribing to Digipeak's Growth Insights!</p>
+          <p>You'll receive our latest strategies, case studies, and resources straight to your inbox.</p>
+          <br/>
+          <p>Best regards,</p>
+          <p><strong>The Digipeak Team</strong><br/>
+          <a href="https://www.digipeak.agency">digipeak.agency</a></p>
+        </div>
+      `;
+    }
 
     if (process.env.RESEND_API_KEY) {
       // Send Admin Notification

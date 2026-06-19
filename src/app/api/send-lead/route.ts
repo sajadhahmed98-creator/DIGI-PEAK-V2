@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from 'resend';
-
 import { z } from "zod";
+import fs from 'fs';
+import path from 'path';
 
 const leadSchema = z.object({
   name: z.string().min(1, "Name is required").max(100, "Name is too long"),
@@ -100,6 +101,17 @@ export async function POST(req: NextRequest) {
     let emailSubject = `[NEW LEAD QUALIFIED] ${service || "General Inquiry"} - ${name}`;
     let adminEmailHtml = "";
 
+    // Helper to read template safely with fallback
+    const getTemplateHtml = (filename: string): string => {
+      try {
+        const filePath = path.join(process.cwd(), 'emails/templates', filename);
+        return fs.readFileSync(filePath, 'utf8');
+      } catch (err) {
+        console.error(`Failed to read template ${filename}:`, err);
+        return "";
+      }
+    };
+
     const metadataBlockHtml = `
       <hr />
       <h3>Submission Metadata</h3>
@@ -110,69 +122,118 @@ export async function POST(req: NextRequest) {
 
     if (service === "Resource Download") {
       emailSubject = `[NEW LEAD QUALIFIED] Resource Download - ${resourceName} [Score: ${leadScore || "Warm"}]: ${name}`;
-      adminEmailHtml = `
-        <h2>New Inbound Lead - Resource Download</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Company:</strong> ${company || "Not provided"}</p>
-        <p><strong>Country:</strong> ${country || "Not provided"}</p>
-        <p><strong>Industry:</strong> ${industry || "Not provided"}</p>
-        <p><strong>Lead Score:</strong> ${leadScore || "Warm"}</p>
-        <hr />
-        <h3>Resource Details</h3>
-        <p><strong>Downloaded Resource:</strong> ${resourceName}</p>
-        <p><strong>Category:</strong> ${resourceCategory || "General"}</p>
-        <p><em>IP Address: ${ip}</em></p>
-        ${metadataBlockHtml}
-      `;
+      
+      const template = getTemplateHtml('lead-notification.html');
+      if (template) {
+        adminEmailHtml = template
+          .replace("New Website Lead Received", `New Lead: Resource Download`)
+          .replace("High Priority &bull; Lead Score: 92/100", `Score: ${leadScore || "Warm"}`)
+          .replace("Alexander Mercer", name)
+          .replace("Mercer Creative Group", company || "Not provided")
+          .replace("alex@mercercreative.com", email)
+          .replace("+1 (555) 019-2834", country || "Not provided")
+          .replace("Technical SEO &amp; Speed Optimization", `Resource: ${resourceName}`)
+          .replace("$10,000 - $15,000 / mo", `Category: ${resourceCategory || "General"}`)
+          .replace("We are relaunching our Next.js corporate platform and need expert B2B SEO schema setups, RTL localization, and PageSpeed optimizations to secure GCC organic search visibility.", `Downloaded resource: ${resourceName}. Industry: ${industry || "Not specified"}. IP Address: ${ip}. Source: ${leadSource || "Direct"}`);
+      } else {
+        adminEmailHtml = `
+          <h2>New Inbound Lead - Resource Download</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Company:</strong> ${company || "Not provided"}</p>
+          <p><strong>Country:</strong> ${country || "Not provided"}</p>
+          <p><strong>Industry:</strong> ${industry || "Not provided"}</p>
+          <p><strong>Lead Score:</strong> ${leadScore || "Warm"}</p>
+          <hr />
+          <h3>Resource Details</h3>
+          <p><strong>Downloaded Resource:</strong> ${resourceName}</p>
+          <p><strong>Category:</strong> ${resourceCategory || "General"}</p>
+          <p><em>IP Address: ${ip}</em></p>
+          ${metadataBlockHtml}
+        `;
+      }
     } else if (isPartnerLead) {
       emailSubject = `[NEW B2B PARTNER LEAD] ${service} - ${name} [${company || "No Company"}]`;
-      adminEmailHtml = `
-        <h2>New B2B Partner Inbound Lead</h2>
-        <p><strong>Partner Type:</strong> ${service}</p>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Company:</strong> ${company || "Not provided"}</p>
-        <p><strong>Country:</strong> ${country || "Not provided"}</p>
-        <p><strong>Website:</strong> ${website || "Not provided"}</p>
-        <p><strong>Industry:</strong> ${industry || "Not provided"}</p>
-        <p><strong>Monthly Vol:</strong> ${monthlyVolume || referralPotential || "Not specified"}</p>
-        <hr />
-        <h3>Pitch & Experience</h3>
-        <p>${details || "No extra pitch or details provided."}</p>
-        <p><em>IP Address: ${ip}</em></p>
-        ${metadataBlockHtml}
-      `;
+      
+      const template = getTemplateHtml('contact-form-notification.html');
+      if (template) {
+        adminEmailHtml = template
+          .replace("Contact Form Submission", "New Partner Application")
+          .replace("General Inquiry &bull; Status: Open", `Source: ${leadSource || "Partnership Page"}`)
+          .replace("Sarah Jenkins", name)
+          .replace("Partnership / Subcontracting", service || "Partnership Inquiry")
+          .replace("sarah.j@techventures.io", email)
+          .replace("+971 (50) 123-4567", website || "Not provided")
+          .replace("Hello Digipeak Team, I am the lead marketing director at Techventures KSA. We are looking for an authorized digital agency partner in Dubai to manage local speed optimization and technical SEO schema generation for our portfolio of SaaS platforms. Let's schedule a call.", `Country: ${country || "Not specified"}. Monthly Volume/Referral: ${monthlyVolume || referralPotential || "Not specified"}. Details: ${details || "No details provided."}`);
+      } else {
+        adminEmailHtml = `
+          <h2>New B2B Partner Inbound Lead</h2>
+          <p><strong>Partner Type:</strong> ${service}</p>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Company:</strong> ${company || "Not provided"}</p>
+          <p><strong>Country:</strong> ${country || "Not provided"}</p>
+          <p><strong>Website:</strong> ${website || "Not provided"}</p>
+          <p><strong>Industry:</strong> ${industry || "Not provided"}</p>
+          <p><strong>Monthly Vol:</strong> ${monthlyVolume || referralPotential || "Not specified"}</p>
+          <hr />
+          <h3>Pitch & Experience</h3>
+          <p>${details || "No extra pitch or details provided."}</p>
+          <p><em>IP Address: ${ip}</em></p>
+          ${metadataBlockHtml}
+        `;
+      }
     } else {
-      adminEmailHtml = `
-        <h2>New Inbound Client Lead</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>WhatsApp:</strong> ${whatsapp || "Not provided"}</p>
-        <p><strong>Company:</strong> ${company || "Not provided"}</p>
-        <p><strong>Country:</strong> ${country || "Not provided"}</p>
-        <p><strong>Budget:</strong> ${budget || "Not specified"}</p>
-        <p><strong>Service:</strong> ${service || "General Inquiry"}</p>
-        <hr />
-        <h3>Project Details</h3>
-        <p>${details || "No extra details provided."}</p>
-        <p><em>IP Address: ${ip}</em></p>
-        ${metadataBlockHtml}
-      `;
+      const template = getTemplateHtml('lead-notification.html');
+      if (template) {
+        adminEmailHtml = template
+          .replace("Alexander Mercer", name)
+          .replace("Mercer Creative Group", company || "Not provided")
+          .replace("alex@mercercreative.com", email)
+          .replace("+1 (555) 019-2834", whatsapp || "Not provided")
+          .replace("Technical SEO &amp; Speed Optimization", service || "General Client Inquiry")
+          .replace("$10,000 - $15,000 / mo", budget || "Not specified")
+          .replace("We are relaunching our Next.js corporate platform and need expert B2B SEO schema setups, RTL localization, and PageSpeed optimizations to secure GCC organic search visibility.", `Country: ${country || "Not specified"}. Project details: ${details || "No details provided."}`)
+          .replace("High Priority &bull; Lead Score: 92/100", `Score: ${leadScore || "Warm"}`);
+      } else {
+        adminEmailHtml = `
+          <h2>New Inbound Client Lead</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>WhatsApp:</strong> ${whatsapp || "Not provided"}</p>
+          <p><strong>Company:</strong> ${company || "Not provided"}</p>
+          <p><strong>Country:</strong> ${country || "Not provided"}</p>
+          <p><strong>Budget:</strong> ${budget || "Not specified"}</p>
+          <p><strong>Service:</strong> ${service || "General Inquiry"}</p>
+          <hr />
+          <h3>Project Details</h3>
+          <p>${details || "No extra details provided."}</p>
+          <p><em>IP Address: ${ip}</em></p>
+          ${metadataBlockHtml}
+        `;
+      }
     }
 
     // Create User Confirmation HTML
-    const userEmailHtml = `
-      <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2>Hi ${name},</h2>
-        <p>Thank you for reaching out to Digipeak Agency. We have received your inquiry regarding <strong>${service || 'our services'}</strong>.</p>
-        <p>One of our growth specialists will review your details and get back to you within 24 hours.</p>
-        <br/>
-        <p>Best regards,</p>
-        <p><strong>The Digipeak Team</strong><br/>
-        <a href="https://www.digipeak.agency">digipeak.agency</a></p>
-      </div>
-    `;
+    let userEmailHtml = "";
+    const userTemplate = getTemplateHtml('client-auto-reply.html');
+    if (userTemplate) {
+      userEmailHtml = userTemplate
+        .replace("Hello,", `Hello ${name || 'there'},`)
+        .replace("View Our Services", "View Our Services");
+    } else {
+      userEmailHtml = `
+        <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
+          <h2>Hi ${name},</h2>
+          <p>Thank you for reaching out to Digipeak Agency. We have received your inquiry regarding <strong>${service || 'our services'}</strong>.</p>
+          <p>One of our growth specialists will review your details and get back to you within 24 hours.</p>
+          <br/>
+          <p>Best regards,</p>
+          <p><strong>The Digipeak Team</strong><br/>
+          <a href="https://www.digipeak.agency">digipeak.agency</a></p>
+        </div>
+      `;
+    }
 
     // Only send if API key exists (otherwise just log to prevent crashing in dev)
     if (process.env.RESEND_API_KEY) {
