@@ -88,6 +88,9 @@ export default function RootLayout({
       className={`${inter.variable} antialiased dark`}
     >
       <head>
+        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
+        <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" />
         <Script
           id="gtm-consent-init"
           strategy="beforeInteractive"

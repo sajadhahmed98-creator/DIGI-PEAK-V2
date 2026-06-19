@@ -36,7 +36,7 @@ export function LatestArticles() {
   if (articles.length === 0) return null;
 
   return (
-    <section className="py-20 md:py-24 lg:py-32 px-6 bg-black/50 border-t border-white/5 relative">
+    <section className="py-12 md:py-20 lg:py-32 px-6 bg-black/50 border-t border-white/5 relative">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 right-1/4 w-[300px] h-[300px] bg-accent-primary/5 rounded-full blur-[120px]" />
       </div>

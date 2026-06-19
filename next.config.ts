@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  compress: true,
+  experimental: {
+    optimizePackageImports: ["framer-motion", "lucide-react"],
+  },
   async redirects() {
     return [
       // Clean up legacy .html extensions
@@ -35,6 +39,12 @@ const nextConfig: NextConfig = {
         source: "/sajadh-ahmed",
         destination: "/author/sajadh-ahmed",
         permanent: true,
+      },
+      // SEO Guides redirect to prevent legacy 404
+      {
+        source: "/resources/seo-guides",
+        destination: "/resources/gcc-local-seo-checklist",
+        permanent: true,
       }
     ];
   },
@@ -45,7 +55,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://www.googletagmanager.com https://*.clarity.ms; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.clarity.ms; frame-src 'self'; object-src 'none'; upgrade-insecure-requests;",
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.fontshare.com; font-src 'self' https://fonts.gstatic.com https://cdn.fontshare.com; img-src 'self' data: https://images.unsplash.com https://www.googletagmanager.com https://*.clarity.ms; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.clarity.ms; frame-src 'self'; object-src 'none'; upgrade-insecure-requests;",
           },
           {
             key: "Strict-Transport-Security",
@@ -68,6 +78,7 @@ const nextConfig: NextConfig = {
     ];
   },
   images: {
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: 'https',

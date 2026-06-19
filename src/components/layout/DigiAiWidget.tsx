@@ -229,6 +229,13 @@ export function DigiAiWidget() {
     return () => window.removeEventListener("openDigiAI", handleOpen);
   }, []);
 
+  // Sync isOpen state with custom event
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(new CustomEvent("digiai-state", { detail: { isOpen } }));
+    }
+  }, [isOpen]);
+
   // Welcome tooltip
   useEffect(() => {
     if (!hasMounted) return;

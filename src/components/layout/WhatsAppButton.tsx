@@ -15,6 +15,9 @@ export function WhatsAppButton() {
   const [isVisible, setIsVisible] = useState(false);
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
   const [hasMounted, setHasMounted] = useState(false);
+  const [isDigiAiOpen, setIsDigiAiOpen] = useState(false);
+  const [isOverlappingForm, setIsOverlappingForm] = useState(false);
+  const [isInputFocused, setIsInputFocused] = useState(false);
   const pathname = usePathname();
 
   // Hide on specific pages if needed
@@ -36,7 +39,68 @@ export function WhatsAppButton() {
     return () => { clearTimeout(t); clearTimeout(t2); };
   }, [hasMounted]);
 
-  if (!hasMounted || !isVisible) return null;
+  // Listen for DigiAI open/close state
+  useEffect(() => {
+    const handleDigiAiState = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      setIsDigiAiOpen(customEvent.detail?.isOpen || false);
+    };
+    window.addEventListener("digiai-state", handleDigiAiState);
+    return () => window.removeEventListener("digiai-state", handleDigiAiState);
+  }, []);
+
+  // Check if any form on the page is visible in the viewport
+  useEffect(() => {
+    if (typeof window === "undefined" || !("IntersectionObserver" in window)) return;
+
+    const timer = setTimeout(() => {
+      const forms = document.querySelectorAll("form");
+      if (forms.length === 0) {
+        setIsOverlappingForm(false);
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const anyIntersecting = entries.some((entry) => entry.isIntersecting);
+          setIsOverlappingForm(anyIntersecting);
+        },
+        {
+          rootMargin: "0px 0px -100px 0px", // Trigger when the form is within 100px of bottom
+          threshold: 0,
+        }
+      );
+
+      forms.forEach((form) => observer.observe(form));
+
+      return () => {
+        observer.disconnect();
+      };
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [pathname]);
+
+  // Hide when keyboard is active / input is focused
+  useEffect(() => {
+    const handleFocus = (e: FocusEvent) => {
+      const target = e.target as HTMLElement;
+      if (target && ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName)) {
+        setIsInputFocused(true);
+      }
+    };
+    const handleBlur = (e: FocusEvent) => {
+      setIsInputFocused(false);
+    };
+    document.addEventListener("focusin", handleFocus);
+    document.addEventListener("focusout", handleBlur);
+    return () => {
+      document.removeEventListener("focusin", handleFocus);
+      document.removeEventListener("focusout", handleBlur);
+    };
+  }, []);
+
+  if (!hasMounted || !isVisible || isDigiAiOpen || isOverlappingForm || isInputFocused) return null;
 
   return (
     <div

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { MagneticButton } from "@/components/ui/MagneticButton";
@@ -20,6 +20,18 @@ export function Navbar() {
   const navBorder = useTransform(scrollY, [0, 100], ["rgba(255,255,255,0.05)", "rgba(255,255,255,0.1)"]);
   const navShadow = useTransform(scrollY, [0, 100], ["0 4px 30px rgba(0, 0, 0, 0.1)", "0 10px 30px rgba(0, 0, 0, 0.3)"]);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
+
   if (pathname === '/digiai') return null;
 
   const links = [
@@ -35,8 +47,21 @@ export function Navbar() {
   return (
     <motion.header 
       style={{ paddingTop: headerPy, paddingBottom: headerPy }}
-      className="fixed top-0 left-0 right-0 z-50 px-6"
+      className={`fixed top-0 left-0 right-0 z-50 px-6 ${isMobileMenuOpen ? "h-screen" : "h-auto"}`}
     >
+      {/* Mobile Menu Backdrop Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-30 md:hidden"
+          />
+        )}
+      </AnimatePresence>
+
       <motion.nav 
         style={{ 
           paddingLeft: navPx, 
@@ -46,7 +71,7 @@ export function Navbar() {
           borderColor: navBorder,
           boxShadow: navShadow
         }}
-        className="mx-auto flex max-w-7xl items-center justify-between rounded-full py-2.5 border transition-colors duration-500"
+        className="mx-auto flex max-w-7xl items-center justify-between rounded-full py-2.5 border transition-colors duration-500 relative z-40"
       >
         <Link href="/" className="flex items-center gap-2.5 font-heading text-lg font-bold tracking-tight text-foreground transition-opacity hover:opacity-90 pl-2">
           <img src="/logo.png" alt="Digipeak Logo" className="w-6 h-6 object-contain" />
@@ -68,7 +93,7 @@ export function Navbar() {
                 {isActive && (
                   <motion.div
                     layoutId="navbar-indicator"
-                    className="absolute inset-0 rounded-full bg-white/[0.08] shadow-[0_2px_10px_rgba(168,85,247,0.1)]"
+                    className="absolute inset-0 rounded-full bg-white/[0.08] shadow-[0_2px_10px_rgba(168,85,247,0.15)]"
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
@@ -117,7 +142,7 @@ export function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden nav-glass absolute top-22 left-6 right-6 rounded-3xl p-6 flex flex-col gap-3.5 z-40"
+            className="md:hidden nav-glass absolute top-[84px] left-6 right-6 rounded-3xl p-6 flex flex-col gap-3.5 z-40 pointer-events-auto"
           >
             {links.map(link => {
               const isActive = pathname === link.path || (link.path !== "/" && pathname?.startsWith(link.path));

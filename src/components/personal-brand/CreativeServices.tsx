@@ -67,7 +67,7 @@ const services = [
 
 export function CreativeServices() {
   return (
-    <section className="py-20 md:py-24 lg:py-32 px-6 bg-black relative">
+    <section className="py-12 md:py-20 lg:py-32 px-6 bg-black relative">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-accent-primary/5 rounded-full blur-[120px]" />

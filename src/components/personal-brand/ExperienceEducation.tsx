@@ -55,7 +55,7 @@ const education = [
 
 export function ExperienceEducation() {
   return (
-    <section className="py-20 md:py-24 lg:py-32 px-6 border-y border-white/5 bg-white/[0.01] relative overflow-hidden">
+    <section className="py-12 md:py-20 lg:py-32 px-6 border-y border-white/5 bg-white/[0.01] relative overflow-hidden">
       {/* Background ambient light */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/4 w-[500px] h-[300px] bg-accent-primary/5 rounded-full blur-[120px]" />

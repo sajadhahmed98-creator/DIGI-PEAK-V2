@@ -75,7 +75,7 @@ export function PersonalContact() {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-24 lg:py-32 px-6 bg-black relative overflow-hidden">
+    <section id="contact" className="py-12 md:py-20 lg:py-32 px-6 bg-black relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent-primary/10 rounded-full blur-[150px]" />

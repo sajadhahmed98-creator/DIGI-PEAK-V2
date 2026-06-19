@@ -119,6 +119,7 @@ export default function CaseStudiesPage() {
                     src="/images/case-studies/elevate/website.png" 
                     alt="Elevate Marketing Group Transformation"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-[#050816] to-transparent opacity-50 hidden lg:block" />

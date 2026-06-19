@@ -174,7 +174,7 @@ export default function ElevateCaseStudyPage() {
           
           <Reveal delay={0.2}>
             <div className="relative w-full aspect-video md:aspect-[21/9] rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_50px_rgba(168,85,247,0.15)] mb-16">
-              <Image src="/images/case-studies/elevate/brand.png" alt="Elevate Brand Guidelines" fill className="object-cover" />
+              <Image src="/images/case-studies/elevate/brand.png" alt="Elevate Brand Guidelines" fill sizes="(max-width: 1024px) 100vw, 80vw" className="object-cover" />
             </div>
           </Reveal>
         </div>
@@ -201,7 +201,7 @@ export default function ElevateCaseStudyPage() {
             
             <Reveal delay={0.2}>
               <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                <Image src="/images/case-studies/elevate/website.png" alt="Elevate Website Design" fill className="object-cover" />
+                <Image src="/images/case-studies/elevate/website.png" alt="Elevate Website Design" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
               </div>
             </Reveal>
           </div>
@@ -209,7 +209,7 @@ export default function ElevateCaseStudyPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center flex-col-reverse lg:flex-row-reverse">
             <Reveal delay={0.2}>
               <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                <Image src="/images/case-studies/elevate/app.png" alt="Elevate Dashboard and AI Tools" fill className="object-cover" />
+                <Image src="/images/case-studies/elevate/app.png" alt="Elevate Dashboard and AI Tools" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
               </div>
             </Reveal>
             
@@ -240,7 +240,7 @@ export default function ElevateCaseStudyPage() {
           
           <Reveal delay={0.2}>
             <div className="relative w-full aspect-video md:aspect-[21/9] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-              <Image src="/images/case-studies/elevate/social.png" alt="Elevate Social Media Strategy" fill className="object-cover" />
+              <Image src="/images/case-studies/elevate/social.png" alt="Elevate Social Media Strategy" fill sizes="(max-width: 1024px) 100vw, 80vw" className="object-cover" />
             </div>
           </Reveal>
         </div>
