@@ -47,7 +47,7 @@ export function PersonalHero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           
           {/* Left Column — Editorial Profile Info */}
-          <div className="lg:col-span-7 flex flex-col justify-center order-1 lg:order-1">
+          <div className="lg:col-span-7 flex flex-col justify-center order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ export function PersonalHero() {
               </div>
 
               {/* Sajadh Ahmed name */}
-              <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-8xl font-black tracking-tight text-white mb-4">
+              <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight text-white mb-4">
                 Sajadh{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-secondary">
                   Ahmed
@@ -101,38 +101,40 @@ export function PersonalHero() {
 
               {/* Connect CTAs */}
               <div className="flex flex-col gap-4 mb-6 w-full">
-                <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-2.5 w-full">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 w-full">
+                  <a
+                    href="https://wa.me/94773624413?text=Hello%20Sajadh%2C%0A%0AI%20would%20like%20to%20discuss%20a%20project%20and%20receive%20a%20proposal."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary flex items-center justify-center gap-2 px-5 py-3.5 text-xs font-bold hover:-translate-y-0.5 transition-transform"
+                  >
+                    Contact via WhatsApp
+                  </a>
                   <a
                     href="https://www.linkedin.com/in/sajadh-ahmed-6a62641a9/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-primary flex items-center justify-center gap-2 px-5 py-3 text-xs font-semibold hover:-translate-y-0.5 transition-transform"
+                    className="glass border border-accent-primary/30 hover:bg-accent-primary/10 flex items-center justify-center gap-2 px-5 py-3.5 text-xs font-bold rounded-full hover:-translate-y-0.5 transition-transform text-white"
                   >
-                    Visit LinkedIn
+                    Connect on LinkedIn
                   </a>
+                </div>
+                <div className="grid grid-cols-2 gap-3 w-full">
                   <a
                     href="https://www.behance.net/sajathahm"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="glass border border-white/10 hover:border-accent-secondary/30 flex items-center justify-center gap-2 px-5 py-3 text-xs font-semibold rounded-full hover:-translate-y-0.5 transition-transform text-white"
+                    className="glass border border-white/10 hover:border-accent-secondary/30 flex items-center justify-center gap-2 px-4 py-3 text-xs font-medium rounded-2xl hover:-translate-y-0.5 transition-transform text-slate-300 hover:text-white"
                   >
-                    View Behance Portfolio
+                    Behance Portfolio
                   </a>
                   <a
                     href="https://www.instagram.com/aham3dsm"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="glass border border-white/10 hover:border-accent-primary/30 flex items-center justify-center gap-2 px-5 py-3 text-xs font-semibold rounded-full hover:-translate-y-0.5 transition-transform text-white"
+                    className="glass border border-white/10 hover:border-accent-primary/30 flex items-center justify-center gap-2 px-4 py-3 text-xs font-medium rounded-2xl hover:-translate-y-0.5 transition-transform text-slate-300 hover:text-white"
                   >
-                    Follow on Instagram
-                  </a>
-                  <a
-                    href="https://wa.me/94773624413?text=Hello%20Sajadh%2C%0A%0AI%20would%20like%20to%20discuss%20a%20project%20and%20receive%20a%20proposal."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="glass border border-white/10 hover:border-emerald-500/30 flex items-center justify-center gap-2 px-5 py-3 text-xs font-semibold rounded-full hover:-translate-y-0.5 transition-transform text-white"
-                  >
-                    Contact via WhatsApp
+                    Instagram
                   </a>
                 </div>
 
@@ -154,7 +156,7 @@ export function PersonalHero() {
           </div>
 
           {/* Right Column — Black & White Editorial Portrait Image */}
-          <div className="lg:col-span-5 flex justify-center order-2 lg:order-2">
+          <div className="lg:col-span-5 flex justify-center order-1 lg:order-2 mb-8 lg:mb-0">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}

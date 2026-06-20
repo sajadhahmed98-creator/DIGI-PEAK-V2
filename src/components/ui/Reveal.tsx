@@ -25,7 +25,7 @@ export function Reveal({ children, width = "100%", delay = 0, className = "" }: 
     <div ref={ref} style={{ position: "relative", width }} className={className}>
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: 30 },
+          hidden: { opacity: 0, y: 15 },
           visible: { opacity: 1, y: 0 },
         }}
         initial="hidden"
@@ -63,7 +63,7 @@ export const StaggerItem = ({ children, className = "" }: { children: React.Reac
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 30 },
+        hidden: { opacity: 0, y: 15 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.25, 0.25, 0, 1] } },
       }}
       className={className}

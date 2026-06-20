@@ -54,7 +54,7 @@ export function WhatsAppButton() {
     if (typeof window === "undefined" || !("IntersectionObserver" in window)) return;
 
     const timer = setTimeout(() => {
-      const forms = document.querySelectorAll("form");
+      const forms = document.querySelectorAll("form, [role='form'], #lead-form, .lead-capture-container");
       if (forms.length === 0) {
         setIsOverlappingForm(false);
         return;

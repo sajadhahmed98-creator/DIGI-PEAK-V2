@@ -34,6 +34,7 @@ const AI_MODES = [
 
 export default function ClientDigiAI() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
   const [activeMode, setActiveMode] = useState("General Assistant");
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputVal, setInputVal] = useState("");
@@ -92,9 +93,16 @@ export default function ClientDigiAI() {
 
   useEffect(() => {
     setHasMounted(true);
-    if (window.innerWidth > 1024) {
-      setIsSidebarOpen(true);
-    }
+    const checkScreenSize = () => {
+      const large = window.innerWidth > 1024;
+      setIsLargeScreen(large);
+      if (large) {
+        setIsSidebarOpen(true);
+      }
+    };
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+    return () => window.removeEventListener("resize", checkScreenSize);
   }, []);
 
   useEffect(() => {
@@ -405,8 +413,8 @@ export default function ClientDigiAI() {
 
       {/* Sidebar */}
       <AnimatePresence>
-        {(isSidebarOpen || window.innerWidth > 1024) && (
-          <motion.aside
+      {(isSidebarOpen || isLargeScreen) && (
+        <motion.aside
             initial={{ x: -300 }}
             animate={{ x: 0 }}
             exit={{ x: -300 }}
