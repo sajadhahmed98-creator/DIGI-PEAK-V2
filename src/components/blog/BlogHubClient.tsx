@@ -4,6 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import { Search, Calendar, Clock, ArrowRight, Send, CheckCircle2, Sparkles } from "lucide-react";
 
+import { trackClarityEvent } from "@/components/analytics/MicrosoftClarity";
+
 interface Post {
   id: string;
   slug: string;
@@ -73,6 +75,7 @@ export function BlogHubClient({ initialPosts }: { initialPosts: Post[] }) {
         body: JSON.stringify({ name, email, _gotcha: gotcha }),
       });
       if (res.ok) {
+        trackClarityEvent("Newsletter Signup");
         if (typeof window !== "undefined" && (window as any).dataLayer) {
           (window as any).dataLayer.push({ event: 'blog_subscribe', lead_source: 'blog_hub' });
         }

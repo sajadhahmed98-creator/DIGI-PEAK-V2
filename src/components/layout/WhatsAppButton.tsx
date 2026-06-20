@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { X, MessageCircle } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { trackClarityEvent } from "@/components/analytics/MicrosoftClarity";
 
 const WHATSAPP_NUMBER = "94773624413";
 const PRE_FILLED_MESSAGE = encodeURIComponent(
@@ -156,6 +157,7 @@ export function WhatsAppButton() {
         whileHover={{ scale: 1.15 }}
         whileTap={{ scale: 0.9 }}
         onHoverStart={() => setIsTooltipVisible(true)}
+        onClick={() => trackClarityEvent("WhatsApp Chat Click")}
         className="relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 rounded-full cursor-pointer group"
         style={{
           background: "linear-gradient(135deg, #4ade80 0%, #22c55e 50%, #16a34a 100%)",

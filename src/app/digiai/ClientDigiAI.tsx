@@ -12,6 +12,7 @@ import {
   Download, History
 } from "lucide-react";
 import { MagneticButton } from "@/components/ui/MagneticButton";
+import { trackClarityEvent } from "@/components/analytics/MicrosoftClarity";
 
 interface Message {
   id: string;
@@ -286,6 +287,11 @@ export default function ClientDigiAI() {
               leadSource: "DigiAI Chat (Portal)",
               pageUrl: typeof window !== "undefined" ? window.location.href : ""
             }),
+          }).then(res => {
+            if (res.ok) {
+              trackClarityEvent("Contact Form Submission");
+              trackClarityEvent("Proposal Request");
+            }
           }).catch(console.error);
         } catch (e) {}
       } else {

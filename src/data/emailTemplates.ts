@@ -68,12 +68,24 @@ export const leadNotificationHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.
         <!-- Main Email Container -->
         <table class="container" width="600" border="0" cellpadding="0" cellspacing="0" style="width: 600px; max-width: 600px; margin: 0 auto;">
           
-          <!-- Header (Logo) -->
+          <!-- Header (Branded Logo Area) -->
           <tr>
-            <td align="center" style="padding-bottom: 32px;">
-              <a href="https://digipeak.agency" target="_blank" style="text-decoration: none;">
-                <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto;" />
-              </a>
+            <td align="center" style="padding-bottom: 24px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #050816; background-image: linear-gradient(135deg, #050816 0%, #0A1028 100%); border-radius: 16px; border: 1px solid rgba(124, 92, 255, 0.15); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); overflow: hidden; width: 100%;">
+                <tr>
+                  <td align="center" style="padding: 32px 20px; background: radial-gradient(circle at top left, rgba(124, 92, 255, 0.08) 0%, transparent 60%), radial-gradient(circle at bottom right, rgba(77, 163, 255, 0.05) 0%, transparent 60%);">
+                    <a href="https://digipeak.agency" target="_blank" style="text-decoration: none; display: inline-block;">
+                      <table border="0" cellpadding="0" cellspacing="0" style="background-color: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);">
+                        <tr>
+                          <td style="padding: 12px 32px;">
+                            <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto; outline: none; border: none; filter: drop-shadow(0 0 8px rgba(124, 92, 255, 0.3));" />
+                          </td>
+                        </tr>
+                      </table>
+                    </a>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
           
@@ -92,10 +104,10 @@ export const leadNotificationHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.
                 <tr>
                   <td style="padding-bottom: 24px;">
                     <!-- Lead Score Badge Table -->
-                    <table border="0" cellpadding="0" cellspacing="0" style="background-color: rgba(217, 70, 239, 0.1); border: 1px solid rgba(217, 70, 239, 0.3); border-radius: 9999px;">
+                    <table border="0" cellpadding="0" cellspacing="0" style="background-color: rgba(124, 92, 255, 0.15); border: 1px solid #7C5CFF; border-radius: 9999px;">
                       <tr>
-                        <td style="padding: 6px 14px; font-size: 12px; font-weight: 700; color: #D946EF; text-transform: uppercase; letter-spacing: 0.05em;">
-                          High Priority &bull; Lead Score: 92/100
+                        <td style="padding: 6px 14px; font-size: 12px; font-weight: 700; color: #7C5CFF; text-transform: uppercase; letter-spacing: 0.05em;">
+                          🔥 High Priority &bull; Lead Score: 92/100
                         </td>
                       </tr>
                     </table>
@@ -263,12 +275,24 @@ export const clientAutoReplyHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
         <!-- Main Email Container -->
         <table class="container" width="600" border="0" cellpadding="0" cellspacing="0" style="width: 600px; max-width: 600px; margin: 0 auto;">
           
-          <!-- Header (Logo) -->
+          <!-- Header (Branded Logo Area) -->
           <tr>
-            <td align="center" style="padding-bottom: 32px;">
-              <a href="https://digipeak.agency" target="_blank" style="text-decoration: none;">
-                <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto;" />
-              </a>
+            <td align="center" style="padding-bottom: 24px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #050816; background-image: linear-gradient(135deg, #050816 0%, #0A1028 100%); border-radius: 16px; border: 1px solid rgba(124, 92, 255, 0.15); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); overflow: hidden; width: 100%;">
+                <tr>
+                  <td align="center" style="padding: 32px 20px; background: radial-gradient(circle at top left, rgba(124, 92, 255, 0.08) 0%, transparent 60%), radial-gradient(circle at bottom right, rgba(77, 163, 255, 0.05) 0%, transparent 60%);">
+                    <a href="https://digipeak.agency" target="_blank" style="text-decoration: none; display: inline-block;">
+                      <table border="0" cellpadding="0" cellspacing="0" style="background-color: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);">
+                        <tr>
+                          <td style="padding: 12px 32px;">
+                            <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto; outline: none; border: none; filter: drop-shadow(0 0 8px rgba(124, 92, 255, 0.3));" />
+                          </td>
+                        </tr>
+                      </table>
+                    </a>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
           
@@ -428,12 +452,24 @@ export const newsletterAlertHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
         <!-- Main Email Container -->
         <table class="container" width="600" border="0" cellpadding="0" cellspacing="0" style="width: 600px; max-width: 600px; margin: 0 auto;">
           
-          <!-- Header (Logo) -->
+          <!-- Header (Branded Logo Area) -->
           <tr>
-            <td align="center" style="padding-bottom: 32px;">
-              <a href="https://digipeak.agency" target="_blank" style="text-decoration: none;">
-                <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto;" />
-              </a>
+            <td align="center" style="padding-bottom: 24px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #050816; background-image: linear-gradient(135deg, #050816 0%, #0A1028 100%); border-radius: 16px; border: 1px solid rgba(124, 92, 255, 0.15); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); overflow: hidden; width: 100%;">
+                <tr>
+                  <td align="center" style="padding: 32px 20px; background: radial-gradient(circle at top left, rgba(124, 92, 255, 0.08) 0%, transparent 60%), radial-gradient(circle at bottom right, rgba(77, 163, 255, 0.05) 0%, transparent 60%);">
+                    <a href="https://digipeak.agency" target="_blank" style="text-decoration: none; display: inline-block;">
+                      <table border="0" cellpadding="0" cellspacing="0" style="background-color: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);">
+                        <tr>
+                          <td style="padding: 12px 32px;">
+                            <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto; outline: none; border: none; filter: drop-shadow(0 0 8px rgba(124, 92, 255, 0.3));" />
+                          </td>
+                        </tr>
+                      </table>
+                    </a>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
           
@@ -606,12 +642,24 @@ export const newsletterWelcomeHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1
         <!-- Main Email Container -->
         <table class="container" width="600" border="0" cellpadding="0" cellspacing="0" style="width: 600px; max-width: 600px; margin: 0 auto;">
           
-          <!-- Header (Logo) -->
+          <!-- Header (Branded Logo Area) -->
           <tr>
-            <td align="center" style="padding-bottom: 32px;">
-              <a href="https://digipeak.agency" target="_blank" style="text-decoration: none;">
-                <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto;" />
-              </a>
+            <td align="center" style="padding-bottom: 24px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #050816; background-image: linear-gradient(135deg, #050816 0%, #0A1028 100%); border-radius: 16px; border: 1px solid rgba(124, 92, 255, 0.15); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); overflow: hidden; width: 100%;">
+                <tr>
+                  <td align="center" style="padding: 32px 20px; background: radial-gradient(circle at top left, rgba(124, 92, 255, 0.08) 0%, transparent 60%), radial-gradient(circle at bottom right, rgba(77, 163, 255, 0.05) 0%, transparent 60%);">
+                    <a href="https://digipeak.agency" target="_blank" style="text-decoration: none; display: inline-block;">
+                      <table border="0" cellpadding="0" cellspacing="0" style="background-color: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);">
+                        <tr>
+                          <td style="padding: 12px 32px;">
+                            <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto; outline: none; border: none; filter: drop-shadow(0 0 8px rgba(124, 92, 255, 0.3));" />
+                          </td>
+                        </tr>
+                      </table>
+                    </a>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
           
@@ -804,12 +852,24 @@ export const proposalSentHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Tr
         <!-- Main Email Container -->
         <table class="container" width="600" border="0" cellpadding="0" cellspacing="0" style="width: 600px; max-width: 600px; margin: 0 auto;">
           
-          <!-- Header (Logo) -->
+          <!-- Header (Branded Logo Area) -->
           <tr>
-            <td align="center" style="padding-bottom: 32px;">
-              <a href="https://digipeak.agency" target="_blank" style="text-decoration: none;">
-                <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto;" />
-              </a>
+            <td align="center" style="padding-bottom: 24px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #050816; background-image: linear-gradient(135deg, #050816 0%, #0A1028 100%); border-radius: 16px; border: 1px solid rgba(124, 92, 255, 0.15); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); overflow: hidden; width: 100%;">
+                <tr>
+                  <td align="center" style="padding: 32px 20px; background: radial-gradient(circle at top left, rgba(124, 92, 255, 0.08) 0%, transparent 60%), radial-gradient(circle at bottom right, rgba(77, 163, 255, 0.05) 0%, transparent 60%);">
+                    <a href="https://digipeak.agency" target="_blank" style="text-decoration: none; display: inline-block;">
+                      <table border="0" cellpadding="0" cellspacing="0" style="background-color: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);">
+                        <tr>
+                          <td style="padding: 12px 32px;">
+                            <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto; outline: none; border: none; filter: drop-shadow(0 0 8px rgba(124, 92, 255, 0.3));" />
+                          </td>
+                        </tr>
+                      </table>
+                    </a>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
           
@@ -996,12 +1056,24 @@ export const meetingConfirmationHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML
         <!-- Main Email Container -->
         <table class="container" width="600" border="0" cellpadding="0" cellspacing="0" style="width: 600px; max-width: 600px; margin: 0 auto;">
           
-          <!-- Header (Logo) -->
+          <!-- Header (Branded Logo Area) -->
           <tr>
-            <td align="center" style="padding-bottom: 32px;">
-              <a href="https://digipeak.agency" target="_blank" style="text-decoration: none;">
-                <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto;" />
-              </a>
+            <td align="center" style="padding-bottom: 24px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #050816; background-image: linear-gradient(135deg, #050816 0%, #0A1028 100%); border-radius: 16px; border: 1px solid rgba(124, 92, 255, 0.15); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); overflow: hidden; width: 100%;">
+                <tr>
+                  <td align="center" style="padding: 32px 20px; background: radial-gradient(circle at top left, rgba(124, 92, 255, 0.08) 0%, transparent 60%), radial-gradient(circle at bottom right, rgba(77, 163, 255, 0.05) 0%, transparent 60%);">
+                    <a href="https://digipeak.agency" target="_blank" style="text-decoration: none; display: inline-block;">
+                      <table border="0" cellpadding="0" cellspacing="0" style="background-color: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);">
+                        <tr>
+                          <td style="padding: 12px 32px;">
+                            <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto; outline: none; border: none; filter: drop-shadow(0 0 8px rgba(124, 92, 255, 0.3));" />
+                          </td>
+                        </tr>
+                      </table>
+                    </a>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
           
@@ -1198,12 +1270,24 @@ export const contactFormNotificationHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD X
         <!-- Main Email Container -->
         <table class="container" width="600" border="0" cellpadding="0" cellspacing="0" style="width: 600px; max-width: 600px; margin: 0 auto;">
           
-          <!-- Header (Logo) -->
+          <!-- Header (Branded Logo Area) -->
           <tr>
-            <td align="center" style="padding-bottom: 32px;">
-              <a href="https://digipeak.agency" target="_blank" style="text-decoration: none;">
-                <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto;" />
-              </a>
+            <td align="center" style="padding-bottom: 24px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #050816; background-image: linear-gradient(135deg, #050816 0%, #0A1028 100%); border-radius: 16px; border: 1px solid rgba(124, 92, 255, 0.15); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); overflow: hidden; width: 100%;">
+                <tr>
+                  <td align="center" style="padding: 32px 20px; background: radial-gradient(circle at top left, rgba(124, 92, 255, 0.08) 0%, transparent 60%), radial-gradient(circle at bottom right, rgba(77, 163, 255, 0.05) 0%, transparent 60%);">
+                    <a href="https://digipeak.agency" target="_blank" style="text-decoration: none; display: inline-block;">
+                      <table border="0" cellpadding="0" cellspacing="0" style="background-color: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);">
+                        <tr>
+                          <td style="padding: 12px 32px;">
+                            <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto; outline: none; border: none; filter: drop-shadow(0 0 8px rgba(124, 92, 255, 0.3));" />
+                          </td>
+                        </tr>
+                      </table>
+                    </a>
+                  </td>
+                </tr>
+              </table>
             </td>
           </tr>
           

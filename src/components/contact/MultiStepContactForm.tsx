@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, ChevronRight, ChevronLeft, Upload, Paperclip, X, Globe, AlertTriangle, DollarSign, Calendar, User, Briefcase } from "lucide-react";
+import { trackClarityEvent } from "@/components/analytics/MicrosoftClarity";
 
 export function MultiStepContactForm() {
   const [step, setStep] = useState(1);
@@ -26,6 +27,7 @@ export function MultiStepContactForm() {
   const [fileName, setFileName] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [submittedUser, setSubmittedUser] = useState({ name: "", email: "" });
 
   // Pre-selection listener for Trust Section clicks
   useEffect(() => {
@@ -40,6 +42,19 @@ export function MultiStepContactForm() {
     return () => {
       window.removeEventListener("select-contact-service", handlePreSelect);
     };
+  }, []);
+
+  // Calendly Event tracking integration
+  useEffect(() => {
+    const handleCalendlyMessage = (e: MessageEvent) => {
+      if (e.origin === "https://calendly.com" || (e.data && e.data.event && e.data.event.indexOf("calendly") === 0)) {
+        if (e.data.event === "calendly.event_scheduled") {
+          trackClarityEvent("Calendly Booking");
+        }
+      }
+    };
+    window.addEventListener("message", handleCalendlyMessage);
+    return () => window.removeEventListener("message", handleCalendlyMessage);
   }, []);
 
   const countries = [
@@ -166,6 +181,11 @@ ${formData.details || "None provided."}`,
         throw new Error(errorData.error || "Failed to submit lead.");
       }
 
+      // Track successful submission events in Microsoft Clarity
+      trackClarityEvent("Contact Form Submission");
+      trackClarityEvent("Proposal Request");
+
+      setSubmittedUser({ name: formData.name, email: formData.email });
       setLoading(false);
       setShowModal(true);
       
@@ -609,38 +629,99 @@ ${formData.details || "None provided."}`,
       {/* Success Modal */}
       <AnimatePresence>
         {showModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/85 backdrop-blur-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 bg-black/90 backdrop-blur-md overflow-y-auto">
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className="glass p-8 md:p-10 rounded-3xl border border-accent-primary/20 max-w-md w-full text-center relative overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.2)]"
+              className="glass rounded-3xl border border-white/10 max-w-4xl w-full text-left relative overflow-hidden shadow-[0_0_50px_rgba(124,92,255,0.25)] flex flex-col md:flex-row my-8"
             >
+              {/* Close Button */}
               <button
-                onClick={() => setShowModal(false)}
-                className="absolute top-4 right-4 text-muted hover:text-white transition-colors cursor-pointer"
+                onClick={() => {
+                  setShowModal(false);
+                  setSubmittedUser({ name: "", email: "" });
+                }}
+                className="absolute top-4 right-4 z-20 text-slate-400 hover:text-white transition-colors cursor-pointer bg-slate-900/50 p-2 rounded-full border border-white/5"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full bg-accent-primary/10 border border-accent-primary/20 flex items-center justify-center text-accent-primary mb-6 animate-bounce">
-                  <CheckCircle2 className="w-8 h-8" />
-                </div>
-                
-                <h3 className="font-heading text-2xl font-bold text-white mb-2">
-                  Blueprint Requested!
-                </h3>
-                <p className="text-muted text-xs leading-relaxed mb-6">
-                  Thank you, your B2B Organic Growth Roadmap has been staged. Our strategy team is running a Lighthouse speed audit and keyword gap analysis on your domain. We will email your blueprint report within <span className="text-white font-bold">12–24 hours</span>.
-                </p>
+              {/* Left Panel: Pitch/Value Prop */}
+              <div className="md:w-[38%] p-8 md:p-10 bg-slate-950/80 border-b md:border-b-0 md:border-r border-white/5 flex flex-col justify-between">
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-accent-primary to-accent-secondary flex items-center justify-center text-white mb-6 shadow-[0_4px_16px_rgba(168,85,247,0.3)]">
+                    <CheckCircle2 className="w-6 h-6 animate-pulse" />
+                  </div>
+                  
+                  <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-primary bg-accent-primary/10 px-2.5 py-1 rounded-full">
+                    Step 1 Complete
+                  </span>
+                  
+                  <h3 className="font-heading text-2.5xl md:text-3xl font-black text-white mt-4 tracking-tight leading-tight">
+                    Blueprint Confirmed!
+                  </h3>
+                  
+                  <p className="text-slate-400 text-xs leading-relaxed mt-3">
+                    Your B2B Organic Growth Roadmap has been queued. Our analytics team is currently running a search footprint assessment on your domain.
+                  </p>
 
-                <button
-                  onClick={() => setShowModal(false)}
-                  className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-6 py-2.5 text-xs font-semibold text-white hover:bg-white/10 transition-all cursor-pointer"
-                >
-                  Return to Page
-                </button>
+                  <div className="mt-8 space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-accent-primary/10 flex items-center justify-center text-accent-primary mt-0.5 flex-shrink-0 animate-bounce">
+                        <span className="text-[10px] font-bold">1</span>
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-bold text-white">Select a Strategy Session</h4>
+                        <p className="text-[11px] text-slate-400 mt-0.5">Pick a convenient time on the calendar to discuss your objectives live.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-accent-primary/10 flex items-center justify-center text-accent-primary mt-0.5 flex-shrink-0">
+                        <span className="text-[10px] font-bold">2</span>
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-bold text-white">Live Walkthrough & Audit</h4>
+                        <p className="text-[11px] text-slate-400 mt-0.5">We will walk you through your Lighthouse report and direct competitor gap analysis.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-accent-primary/10 flex items-center justify-center text-accent-primary mt-0.5 flex-shrink-0">
+                        <span className="text-[10px] font-bold">3</span>
+                      </div>
+                      <div>
+                        <h4 className="text-xs font-bold text-white">Tailored Growth Plan</h4>
+                        <p className="text-[11px] text-slate-400 mt-0.5">Walk away with a concrete, execution-ready search roadmap for the next quarter.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-white/5">
+                  <p className="text-[10px] text-slate-500 italic">
+                    Prefer email? We'll deliver the standard blueprint to your inbox within 12–24 hours.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Panel: Calendly Embed */}
+              <div className="md:w-[62%] bg-slate-900/40 relative min-h-[550px] md:min-h-[650px] flex flex-col">
+                <div className="absolute inset-0 z-0 flex items-center justify-center bg-slate-950/20">
+                  <div className="flex flex-col items-center gap-3">
+                    <div className="w-10 h-10 border-4 border-accent-primary border-t-transparent rounded-full animate-spin" />
+                    <p className="text-xs text-slate-400 font-mono">Loading Scheduler...</p>
+                  </div>
+                </div>
+
+                <iframe
+                  src={`https://calendly.com/digipeak-agency/strategy-session?background_color=0f172a&text_color=ffffff&primary_color=7c5cff&name=${encodeURIComponent(submittedUser.name)}&email=${encodeURIComponent(submittedUser.email)}`}
+                  width="100%"
+                  height="100%"
+                  className="relative z-10 border-0 w-full flex-grow min-h-[550px] md:min-h-[650px]"
+                  title="Schedule a Diagnostic Call with Digipeak"
+                />
               </div>
             </motion.div>
           </div>
