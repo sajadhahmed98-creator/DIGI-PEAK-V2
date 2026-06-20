@@ -2,39 +2,41 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, CheckCircle2, ChevronRight, ChevronLeft, Upload, Paperclip, X, Globe, AlertTriangle, DollarSign, Calendar, User, Briefcase } from "lucide-react";
+import { Send, CheckCircle2, Globe, User, Briefcase, Mail, Phone, X, Loader2, Calendar, AlertTriangle, ChevronRight } from "lucide-react";
 import { trackClarityEvent } from "@/components/analytics/MicrosoftClarity";
 
 export function MultiStepContactForm() {
-  const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
+    website: "",
     name: "",
     email: "",
-    phone: "",
     whatsapp: "",
     company: "",
-    website: "",
-    country: "Qatar", // Default
-    city: "",
-    service: "",
-    monthlyBudget: "",
-    projectBudget: "",
-    timeline: "",
-    details: "",
-    bottleneck: "", // Added diagnostic field
   });
 
-  const [fileName, setFileName] = useState<string | null>(null);
+  const [preselectedService, setPreselectedService] = useState("");
   const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [submittedUser, setSubmittedUser] = useState({ name: "", email: "" });
+  const [formStarted, setFormStarted] = useState(false);
+
+  // Post-submission qualification wizard state
+  const [qualifierStep, setQualifierStep] = useState(1);
+  const [qualifierLoading, setQualifierLoading] = useState(false);
+  const [qualifierSubmitted, setQualifierSubmitted] = useState(false);
+  const [qualifierData, setQualifierData] = useState({
+    service: "",
+    budget: "",
+    timeline: "",
+  });
 
   // Pre-selection listener for Trust Section clicks
   useEffect(() => {
     const handlePreSelect = (e: Event) => {
       const customEvent = e as CustomEvent;
       if (customEvent.detail && customEvent.detail.service) {
-        setFormData((prev) => ({ ...prev, service: customEvent.detail.service }));
+        setPreselectedService(customEvent.detail.service);
+        setQualifierData((prev) => ({ ...prev, service: customEvent.detail.service }));
       }
     };
 
@@ -44,30 +46,26 @@ export function MultiStepContactForm() {
     };
   }, []);
 
-  // Calendly Event tracking integration
+  // Track when the user starts typing/interacting with the form
+  const handleInteraction = () => {
+    if (!formStarted) {
+      setFormStarted(true);
+      trackClarityEvent("form_started");
+    }
+  };
+
+  // Calendly booking listener
   useEffect(() => {
     const handleCalendlyMessage = (e: MessageEvent) => {
       if (e.origin === "https://calendly.com" || (e.data && e.data.event && e.data.event.indexOf("calendly") === 0)) {
         if (e.data.event === "calendly.event_scheduled") {
-          trackClarityEvent("Calendly Booking");
+          trackClarityEvent("calendly_booked");
         }
       }
     };
     window.addEventListener("message", handleCalendlyMessage);
     return () => window.removeEventListener("message", handleCalendlyMessage);
   }, []);
-
-  const countries = [
-    "Qatar",
-    "UAE",
-    "Saudi Arabia",
-    "United Kingdom",
-    "Singapore",
-    "Australia",
-    "New Zealand",
-    "Sri Lanka",
-    "Other",
-  ];
 
   const serviceOptions = [
     { label: "SEO & Search Traffic", val: "SEO Services", desc: "Rank higher on Google search results" },
@@ -76,14 +74,6 @@ export function MultiStepContactForm() {
     { label: "E-Commerce Systems", val: "E-Commerce Development", desc: "Sleek stores with fast checkout" },
     { label: "Branding & UI/UX Design", val: "Branding & Creative", desc: "Premium visual assets & design" },
     { label: "General Marketing Scale", val: "Digital Marketing", desc: "Social, email, and ad campaigns" }
-  ];
-
-  const bottleneckOptions = [
-    { label: "Slow page load speed / poor Web Vitals", val: "Slow Page Speed" },
-    { label: "Low search visibility & keyword rankings", val: "Low SEO Search Traffic" },
-    { label: "High drop-off rates on contact forms", val: "High Form Drop-off" },
-    { label: "Outdated brand visuals / digital layout", val: "Outdated Visuals" },
-    { label: "Not sure / need a complete system audit", val: "Need Complete Audit" }
   ];
 
   const budgetOptions = [
@@ -101,52 +91,15 @@ export function MultiStepContactForm() {
     { label: "General planning / sync", val: "6+ Months" }
   ];
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      setFileName(e.target.files[0].name);
-    }
-  };
-
-  const removeFile = () => {
-    setFileName(null);
-  };
-
-  const validateStep = () => {
-    if (step === 1) {
-      return formData.website && formData.service;
-    }
-    if (step === 2) {
-      return formData.company && formData.country && formData.city && formData.bottleneck;
-    }
-    if (step === 3) {
-      return formData.projectBudget && formData.timeline;
-    }
-    return true;
-  };
-
-  const nextStep = () => {
-    if (validateStep()) {
-      setStep((prev) => prev + 1);
-    } else {
-      alert("Please select the required options to continue.");
-    }
-  };
-
-  const prevStep = () => {
-    setStep((prev) => prev - 1);
-  };
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email) {
-      alert("Please provide your name and email to receive the blueprint.");
+    if (!formData.website || !formData.name || !formData.email || !formData.whatsapp) {
+      alert("Please fill in all required fields.");
       return;
     }
 
@@ -159,20 +112,12 @@ export function MultiStepContactForm() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          whatsapp: formData.phone || formData.whatsapp || "",
+          whatsapp: formData.whatsapp,
           company: formData.company || "",
-          country: formData.country || "",
-          budget: formData.projectBudget,
-          service: formData.service,
-          details: `Timeline: ${formData.timeline || "Not selected"}
-Website URL: ${formData.website || "Not provided"}
-City: ${formData.city || "Not provided"}
-Current Traffic Bottleneck: ${formData.bottleneck || "Not selected"}
-
-Project Details/Notes:
-${formData.details || "None provided."}`,
-          leadSource: "B2B Growth Quiz Form",
+          website: formData.website,
+          leadSource: "B2B Growth Audit Form",
           pageUrl: typeof window !== "undefined" ? window.location.href : "",
+          details: `Requested a Free Growth Audit for domain: ${formData.website}`,
         }),
       });
 
@@ -182,40 +127,78 @@ ${formData.details || "None provided."}`,
       }
 
       // Track successful submission events in Microsoft Clarity
-      trackClarityEvent("Contact Form Submission");
-      trackClarityEvent("Proposal Request");
+      trackClarityEvent("form_submitted");
+      trackClarityEvent("calendly_opened");
 
+      // Save user details for Calendly pre-filling
       setSubmittedUser({ name: formData.name, email: formData.email });
       setLoading(false);
       setShowModal(true);
-      
-      // Reset form states
+
+      // Reset contact form
       setFormData({
+        website: "",
         name: "",
         email: "",
-        phone: "",
         whatsapp: "",
         company: "",
-        website: "",
-        country: "Qatar",
-        city: "",
-        service: "",
-        monthlyBudget: "",
-        projectBudget: "",
-        timeline: "",
-        details: "",
-        bottleneck: "",
       });
-      setFileName(null);
-      setStep(1);
+      setFormStarted(false);
+      // Reset qualifier widget state
+      setQualifierStep(1);
+      setQualifierSubmitted(false);
     } catch (err: any) {
       setLoading(false);
       alert(err.message || "An error occurred during submission. Please try again or email hello@digipeak.agency.");
     }
   };
 
+  // Submit additional qualification options to /api/update-lead
+  const handleQualifierSubmit = async (finalData: typeof qualifierData) => {
+    setQualifierLoading(true);
+    try {
+      const res = await fetch("/api/update-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: submittedUser.name,
+          email: submittedUser.email,
+          service: finalData.service,
+          budget: finalData.budget,
+          timeline: finalData.timeline,
+        }),
+      });
+
+      if (res.ok) {
+        setQualifierSubmitted(true);
+      }
+    } catch (err) {
+      console.error("Failed to submit qualification updates", err);
+    } finally {
+      setQualifierLoading(false);
+    }
+  };
+
+  const handleSelectService = (val: string) => {
+    const updated = { ...qualifierData, service: val };
+    setQualifierData(updated);
+    setQualifierStep(2);
+  };
+
+  const handleSelectBudget = (val: string) => {
+    const updated = { ...qualifierData, budget: val };
+    setQualifierData(updated);
+    setQualifierStep(3);
+  };
+
+  const handleSelectTimeline = (val: string) => {
+    const updated = { ...qualifierData, timeline: val };
+    setQualifierData(updated);
+    handleQualifierSubmit(updated);
+  };
+
   return (
-    <section id="lead-form" className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-black relative overflow-hidden scroll-mt-24">
+    <section id="lead-form" className="py-24 md:py-16 lg:py-24 px-6 bg-black relative overflow-hidden scroll-mt-24">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-accent-secondary/5 rounded-full blur-[140px]" />
@@ -224,403 +207,132 @@ ${formData.details || "None provided."}`,
       <div className="relative z-10 mx-auto max-w-3xl">
         {/* Title */}
         <div className="text-center mb-12">
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-primary bg-accent-primary/10 px-3 py-1.5 rounded-full">Interactive Diagnostic</span>
-          <h2 className="text-3xl md:text-4xl font-heading font-black text-white mt-4 tracking-tight">Get Your B2B Organic Growth Blueprint</h2>
-          <p className="text-sm text-slate-400 mt-2 max-w-xl mx-auto">Answer 4 quick questions to receive a tailored speed and search performance roadmap for your platform.</p>
-        </div>
-
-        {/* Step indicators */}
-        <div className="mb-12 flex justify-between items-center relative max-w-md mx-auto">
-          <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-0.5 bg-white/5 z-0" />
-          
-          {/* Progress bar fill */}
-          <div 
-            className="absolute left-0 top-1/2 -translate-y-1/2 h-0.5 bg-gradient-to-r from-accent-primary to-accent-secondary z-0 transition-all duration-500" 
-            style={{ width: `${((step - 1) / 3) * 100}%` }}
-          />
-
-          {[1, 2, 3, 4].map((num) => (
-            <div key={num} className="relative z-10 flex flex-col items-center">
-              <div 
-                className={`w-9 h-9 rounded-full flex items-center justify-center font-mono text-xs font-bold border transition-all duration-300 ${
-                  step === num 
-                    ? "bg-[#050816] border-accent-primary text-white shadow-[0_0_16px_rgba(168,85,247,0.4)]" 
-                    : step > num 
-                    ? "bg-gradient-to-r from-accent-primary to-accent-secondary border-transparent text-white" 
-                    : "bg-[#050816] border-white/10 text-muted"
-                }`}
-              >
-                {step > num ? "✓" : num}
-              </div>
-              <span className={`text-[9px] font-mono font-bold uppercase tracking-wider mt-2 transition-colors duration-300 ${
-                step === num ? "text-accent-primary" : "text-muted"
-              }`}>
-                {num === 1 ? "Goal" : num === 2 ? "Audit" : num === 3 ? "Scope" : "Contact"}
-              </span>
-            </div>
-          ))}
+          <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-primary bg-accent-primary/10 px-3 py-1.5 rounded-full">
+            Accelerate Growth
+          </span>
+          <h2 className="text-3xl md:text-4xl font-heading font-black text-white mt-4 tracking-tight">
+            Get Your B2B Organic Growth Blueprint
+          </h2>
+          <p className="text-sm text-slate-400 mt-2 max-w-xl mx-auto">
+            Ready to scale? Fill in the simple form below to audit your site's SEO, speed, and conversion gaps in under 30 seconds.
+          </p>
         </div>
 
         {/* Lead Capture Form Container */}
-        <div className="glass p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden min-h-[460px] flex flex-col justify-between">
+        <div className="glass p-6 md:p-10 rounded-3xl border border-white/10 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-accent-primary/5 rounded-full blur-3xl pointer-events-none" />
 
-          {/* Form Step Contents */}
-          <form onSubmit={handleSubmit} className="flex-1 flex flex-col justify-between">
-            <div>
-              <AnimatePresence mode="wait">
-                {step === 1 && (
-                  <motion.div
-                    key="step-1"
-                    initial={{ x: 15, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: -15, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="space-y-6"
-                  >
-                    <div>
-                      <h3 className="font-heading font-bold text-xl text-white mb-2 flex items-center gap-2">
-                        <Globe className="w-5 h-5 text-accent-primary" />
-                        Step 1: Select Growth Target & Domain
-                      </h3>
-                      <p className="text-xs text-muted">We will evaluate your platform address and compile a preliminary organic crawl report.</p>
-                    </div>
+          <form onSubmit={handleSubmit} onFocus={handleInteraction} className="space-y-6">
+            <div className="grid grid-cols-1 gap-6">
+              {/* Row 1: Website URL */}
+              <div className="flex flex-col">
+                <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono flex items-center gap-1.5">
+                  <Globe className="w-3.5 h-3.5 text-accent-primary" />
+                  Website / Platform URL <span className="text-accent-primary">*</span>
+                </label>
+                <input
+                  type="url"
+                  name="website"
+                  required
+                  value={formData.website}
+                  onChange={handleInputChange}
+                  placeholder="https://yourcompany.com"
+                  className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
+                />
+              </div>
 
-                    <div className="space-y-4">
-                      {/* Web URL input */}
-                      <div className="flex flex-col">
-                        <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                          Platform Domain / Website URL <span className="text-accent-primary">*</span>
-                        </label>
-                        <input
-                          type="url"
-                          name="website"
-                          required
-                          value={formData.website}
-                          onChange={handleInputChange}
-                          placeholder="https://yourcompany.com"
-                          className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
-                        />
-                      </div>
+              {/* Row 2: Name & Email */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex flex-col">
+                  <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono flex items-center gap-1.5">
+                    <User className="w-3.5 h-3.5 text-accent-primary" />
+                    Full Name <span className="text-accent-primary">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="John Doe"
+                    className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
+                  />
+                </div>
 
-                      {/* Clickable service cards */}
-                      <div className="flex flex-col">
-                        <label className="text-xs font-bold text-white uppercase tracking-wider mb-3 font-mono">
-                          What is your primary growth goal? <span className="text-accent-primary">*</span>
-                        </label>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                          {serviceOptions.map((s) => (
-                            <button
-                              key={s.val}
-                              type="button"
-                              onClick={() => setFormData((prev) => ({ ...prev, service: s.val }))}
-                              className={`text-left p-3 rounded-xl border transition-all text-sm group ${
-                                formData.service === s.val
-                                  ? "bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10 border-accent-primary shadow-[0_0_12px_rgba(168,85,247,0.1)]"
-                                  : "bg-white/[0.02] border-white/5 hover:border-white/15 hover:bg-white/[0.04]"
-                              }`}
-                            >
-                              <div className="font-bold text-white group-hover:text-accent-primary transition-colors">{s.label}</div>
-                              <div className="text-[11px] text-muted mt-0.5">{s.desc}</div>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
+                <div className="flex flex-col">
+                  <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono flex items-center gap-1.5">
+                    <Mail className="w-3.5 h-3.5 text-accent-primary" />
+                    Email Address <span className="text-accent-primary">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="john@company.com"
+                    className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
+                  />
+                </div>
+              </div>
 
-                {step === 2 && (
-                  <motion.div
-                    key="step-2"
-                    initial={{ x: 15, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: -15, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="space-y-6"
-                  >
-                    <div>
-                      <h3 className="font-heading font-bold text-xl text-white mb-2 flex items-center gap-2">
-                        <AlertTriangle className="w-5 h-5 text-accent-primary" />
-                        Step 2: Diagnosis & Company Info
-                      </h3>
-                      <p className="text-xs text-muted">Identify current search and layout roadblocks restricting client acquisition.</p>
-                    </div>
+              {/* Row 3: Phone/WhatsApp & Business Name */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="flex flex-col">
+                  <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono flex items-center gap-1.5">
+                    <Phone className="w-3.5 h-3.5 text-accent-primary" />
+                    Phone / WhatsApp <span className="text-accent-primary">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    name="whatsapp"
+                    required
+                    value={formData.whatsapp}
+                    onChange={handleInputChange}
+                    placeholder="+971 (50) 123-4567"
+                    className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
+                  />
+                </div>
 
-                    <div className="space-y-4">
-                      {/* Bottleneck selectors */}
-                      <div className="flex flex-col">
-                        <label className="text-xs font-bold text-white uppercase tracking-wider mb-3 font-mono">
-                          What is holding back your platform's conversion? <span className="text-accent-primary">*</span>
-                        </label>
-                        <div className="grid grid-cols-1 gap-2">
-                          {bottleneckOptions.map((b) => (
-                            <button
-                              key={b.val}
-                              type="button"
-                              onClick={() => setFormData((prev) => ({ ...prev, bottleneck: b.val }))}
-                              className={`text-left px-4 py-3 rounded-xl border transition-all text-xs font-semibold flex justify-between items-center ${
-                                formData.bottleneck === b.val
-                                  ? "bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10 border-accent-primary text-white"
-                                  : "bg-white/[0.02] border-white/5 hover:border-white/15 hover:bg-white/[0.04] text-slate-300"
-                              }`}
-                            >
-                              <span>{b.label}</span>
-                              {formData.bottleneck === b.val && <span className="text-accent-primary font-mono font-black">&bull; SELECTED</span>}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Company & Location grid */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="flex flex-col">
-                          <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                            Company Name <span className="text-accent-primary">*</span>
-                          </label>
-                          <input
-                            type="text"
-                            name="company"
-                            required
-                            value={formData.company}
-                            onChange={handleInputChange}
-                            placeholder="e.g. Acme Corp"
-                            className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
-                          />
-                        </div>
-
-                        <div className="grid grid-cols-2 gap-2">
-                          <div className="flex flex-col">
-                            <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                              Country <span className="text-accent-primary">*</span>
-                            </label>
-                            <select
-                              name="country"
-                              required
-                              value={formData.country}
-                              onChange={handleInputChange}
-                              className="w-full bg-black border border-white/10 rounded-xl px-3 py-3 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
-                            >
-                              {countries.map((c) => (
-                                <option key={c} value={c} className="bg-[#050816] text-white">{c}</option>
-                              ))}
-                            </select>
-                          </div>
-                          
-                          <div className="flex flex-col">
-                            <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                              City <span className="text-accent-primary">*</span>
-                            </label>
-                            <input
-                              type="text"
-                              name="city"
-                              required
-                              value={formData.city}
-                              onChange={handleInputChange}
-                              placeholder="e.g. Doha"
-                              className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-3 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-
-                {step === 3 && (
-                  <motion.div
-                    key="step-3"
-                    initial={{ x: 15, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: -15, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="space-y-6"
-                  >
-                    <div>
-                      <h3 className="font-heading font-bold text-xl text-white mb-2 flex items-center gap-2">
-                        <DollarSign className="w-5 h-5 text-accent-primary" />
-                        Step 3: Budget & Timeline
-                      </h3>
-                      <p className="text-xs text-muted">Determine project investment parameters and launch schedule thresholds.</p>
-                    </div>
-
-                    <div className="space-y-6">
-                      {/* Budget options */}
-                      <div className="flex flex-col">
-                        <label className="text-xs font-bold text-white uppercase tracking-wider mb-3 font-mono">
-                          What is your monthly budget allocation? <span className="text-accent-primary">*</span>
-                        </label>
-                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
-                          {budgetOptions.map((b) => (
-                            <button
-                              key={b.val}
-                              type="button"
-                              onClick={() => setFormData((prev) => ({ ...prev, projectBudget: b.val }))}
-                              className={`text-center p-3 rounded-xl border transition-all text-xs font-bold ${
-                                formData.projectBudget === b.val
-                                  ? "bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10 border-accent-primary text-white"
-                                  : "bg-white/[0.02] border-white/5 hover:border-white/15 text-slate-300"
-                              }`}
-                            >
-                              {b.label}
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Timelines */}
-                      <div className="flex flex-col">
-                        <label className="text-xs font-bold text-white uppercase tracking-wider mb-3 font-mono">
-                          Target project timeline <span className="text-accent-primary">*</span>
-                        </label>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                          {timelines.map((t) => (
-                            <button
-                              key={t.val}
-                              type="button"
-                              onClick={() => setFormData((prev) => ({ ...prev, timeline: t.val }))}
-                              className={`text-left px-4 py-3 rounded-xl border transition-all text-xs font-semibold flex items-center gap-2 ${
-                                formData.timeline === t.val
-                                  ? "bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10 border-accent-primary text-white"
-                                  : "bg-white/[0.02] border-white/5 hover:border-white/15 text-slate-300"
-                              }`}
-                            >
-                              <Calendar className={`w-4 h-4 ${formData.timeline === t.val ? 'text-accent-primary' : 'text-slate-400'}`} />
-                              <span>{t.label}</span>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-
-                {step === 4 && (
-                  <motion.div
-                    key="step-4"
-                    initial={{ x: 15, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    exit={{ x: -15, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="space-y-6"
-                  >
-                    <div>
-                      <h3 className="font-heading font-bold text-xl text-white mb-2 flex items-center gap-2">
-                        <User className="w-5 h-5 text-accent-primary" />
-                        Step 4: Unlock Your Growth Blueprint
-                      </h3>
-                      <p className="text-xs text-muted">Who should we compile and send the technical audit report to?</p>
-                    </div>
-
-                    <div className="grid grid-cols-1 gap-4">
-                      {/* Name & Email */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="flex flex-col">
-                          <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                            Your Name <span className="text-accent-primary">*</span>
-                          </label>
-                          <input
-                            type="text"
-                            name="name"
-                            required
-                            value={formData.name}
-                            onChange={handleInputChange}
-                            placeholder="John Doe"
-                            className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
-                          />
-                        </div>
-
-                        <div className="flex flex-col">
-                          <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                            Email Address <span className="text-accent-primary">*</span>
-                          </label>
-                          <input
-                            type="email"
-                            name="email"
-                            required
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            placeholder="john@company.com"
-                            className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
-                          />
-                        </div>
-                      </div>
-
-                      {/* Phone / Whatsapp */}
-                      <div className="flex flex-col">
-                        <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                          Phone / WhatsApp Number
-                        </label>
-                        <input
-                          type="tel"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          placeholder="+971 (50) 123-4567"
-                          className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
-                        />
-                      </div>
-
-                      {/* Optional details */}
-                      <div className="flex flex-col">
-                        <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                          Add optional project details or focus areas
-                        </label>
-                        <textarea
-                          name="details"
-                          rows={3}
-                          value={formData.details}
-                          onChange={handleInputChange}
-                          placeholder="Tell us about specific target keywords, competitors, or CMS bottlenecks you want analyzed..."
-                          className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm resize-none text-xs"
-                        />
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                <div className="flex flex-col">
+                  <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono flex items-center gap-1.5">
+                    <Briefcase className="w-3.5 h-3.5 text-accent-primary" />
+                    Business Name <span className="text-slate-500 font-normal lowercase">(optional)</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleInputChange}
+                    placeholder="Acme Corp"
+                    className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
+                  />
+                </div>
+              </div>
             </div>
 
-            {/* Stepper Buttons */}
-            <div className="flex items-center justify-between gap-4 mt-12 pt-6 border-t border-white/5">
-              {step > 1 ? (
-                <button
-                  type="button"
-                  onClick={prevStep}
-                  className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-white/10 active:scale-[0.98] transition-all cursor-pointer text-xs"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                  Back
-                </button>
-              ) : (
-                <div />
-              )}
-
-              {step < 4 ? (
-                <button
-                  type="button"
-                  onClick={nextStep}
-                  className="inline-flex items-center gap-2 bg-white/5 border border-accent-primary/35 text-accent-primary font-semibold px-5 py-2.5 rounded-xl hover:bg-accent-primary/10 active:scale-[0.98] transition-all cursor-pointer text-xs"
-                >
-                  Continue
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              ) : (
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-accent-primary to-accent-secondary text-white font-bold px-7 py-3 rounded-xl shadow-[0_4px_16px_rgba(168,85,247,0.2)] hover:opacity-95 active:scale-[0.98] disabled:opacity-50 transition-all cursor-pointer text-xs"
-                >
-                  {loading ? (
-                    <span>Compiling Blueprint...</span>
-                  ) : (
-                    <>
-                      <span>Generate My Blueprint</span>
-                      <Send className="w-4 h-4" />
-                    </>
-                  )}
-                </button>
-              )}
+            {/* Submit Button */}
+            <div className="pt-4">
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full btn-primary py-4 flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-wider cursor-pointer"
+              >
+                {loading ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    <span>Compiling Audit Parameters...</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Get My Free Growth Audit</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </>
+                )}
+              </button>
+              <div className="text-center mt-3 text-[10px] text-slate-500 tracking-wide uppercase font-mono">
+                ✓ Includes Free Strategy Review Session
+              </div>
             </div>
           </form>
         </div>
@@ -647,7 +359,7 @@ ${formData.details || "None provided."}`,
                 <X className="w-5 h-5" />
               </button>
 
-              {/* Left Panel: Pitch/Value Prop */}
+              {/* Left Panel: DigiAI Smart Lead Qualification */}
               <div className="md:w-[38%] p-8 md:p-10 bg-slate-950/80 border-b md:border-b-0 md:border-r border-white/5 flex flex-col justify-between">
                 <div>
                   <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-accent-primary to-accent-secondary flex items-center justify-center text-white mb-6 shadow-[0_4px_16px_rgba(168,85,247,0.3)]">
@@ -655,47 +367,142 @@ ${formData.details || "None provided."}`,
                   </div>
                   
                   <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-primary bg-accent-primary/10 px-2.5 py-1 rounded-full">
-                    Step 1 Complete
+                    Lead Captured
                   </span>
-                  
-                  <h3 className="font-heading text-2.5xl md:text-3xl font-black text-white mt-4 tracking-tight leading-tight">
-                    Blueprint Confirmed!
+
+                  <h3 className="font-heading text-2xl font-black text-white mt-4 tracking-tight leading-tight">
+                    Audit Blueprint Confirmed!
                   </h3>
-                  
-                  <p className="text-slate-400 text-xs leading-relaxed mt-3">
-                    Your B2B Organic Growth Roadmap has been queued. Our analytics team is currently running a search footprint assessment on your domain.
-                  </p>
 
-                  <div className="mt-8 space-y-4">
-                    <div className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-accent-primary/10 flex items-center justify-center text-accent-primary mt-0.5 flex-shrink-0 animate-bounce">
-                        <span className="text-[10px] font-bold">1</span>
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-bold text-white">Select a Strategy Session</h4>
-                        <p className="text-[11px] text-slate-400 mt-0.5">Pick a convenient time on the calendar to discuss your objectives live.</p>
-                      </div>
-                    </div>
+                  {/* Qualification Wizard */}
+                  <div className="mt-8">
+                    <AnimatePresence mode="wait">
+                      {qualifierLoading ? (
+                        <motion.div
+                          key="qualifier-loader"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          className="py-12 flex flex-col items-center justify-center gap-3"
+                        >
+                          <Loader2 className="w-8 h-8 text-accent-primary animate-spin" />
+                          <p className="text-xs text-slate-400 font-mono text-center">Syncing audit preferences...</p>
+                        </motion.div>
+                      ) : qualifierSubmitted ? (
+                        <motion.div
+                          key="qualifier-success"
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="space-y-4"
+                        >
+                          <div className="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-4 flex gap-3">
+                            <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                            <div>
+                              <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-wider font-mono">Parameters Configured</h4>
+                              <p className="text-[11px] text-slate-300 mt-1 leading-relaxed">
+                                Our AI system has logged your specific goals, budget, and timeline to tailormake your organic blueprint.
+                              </p>
+                            </div>
+                          </div>
+                          <p className="text-[11px] text-slate-400 leading-relaxed font-mono">
+                            → Next: Select a slot on the calendar to secure your walkthrough session with our strategist.
+                          </p>
+                        </motion.div>
+                      ) : (
+                        <>
+                          {qualifierStep === 1 && (
+                            <motion.div
+                              key="q-step-1"
+                              initial={{ opacity: 0, x: 15 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              exit={{ opacity: 0, x: -15 }}
+                              className="space-y-4"
+                            >
+                              <div className="space-y-1">
+                                <h4 className="text-xs font-mono font-bold text-accent-primary uppercase tracking-wider">
+                                  DigiAI Customizer (Step 1/3)
+                                </h4>
+                                <p className="text-xs text-white font-bold">What is your primary interest area?</p>
+                              </div>
+                              <div className="space-y-2 max-h-[220px] overflow-y-auto pr-1 digiai-scrollbar">
+                                {serviceOptions.map((opt) => (
+                                  <button
+                                    key={opt.val}
+                                    type="button"
+                                    onClick={() => handleSelectService(opt.val)}
+                                    className="w-full text-left p-2.5 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.04] hover:border-accent-primary/30 transition-all text-xs group"
+                                  >
+                                    <span className="font-bold text-white group-hover:text-accent-primary transition-colors block">
+                                      {opt.label}
+                                    </span>
+                                    <span className="text-[10px] text-slate-500 block mt-0.5">{opt.desc}</span>
+                                  </button>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
 
-                    <div className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-accent-primary/10 flex items-center justify-center text-accent-primary mt-0.5 flex-shrink-0">
-                        <span className="text-[10px] font-bold">2</span>
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-bold text-white">Live Walkthrough & Audit</h4>
-                        <p className="text-[11px] text-slate-400 mt-0.5">We will walk you through your Lighthouse report and direct competitor gap analysis.</p>
-                      </div>
-                    </div>
+                          {qualifierStep === 2 && (
+                            <motion.div
+                              key="q-step-2"
+                              initial={{ opacity: 0, x: 15 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              exit={{ opacity: 0, x: -15 }}
+                              className="space-y-4"
+                            >
+                              <div className="space-y-1">
+                                <h4 className="text-xs font-mono font-bold text-accent-primary uppercase tracking-wider">
+                                  DigiAI Customizer (Step 2/3)
+                                </h4>
+                                <p className="text-xs text-white font-bold">Estimated monthly budget?</p>
+                              </div>
+                              <div className="space-y-2">
+                                {budgetOptions.map((opt) => (
+                                  <button
+                                    key={opt.val}
+                                    type="button"
+                                    onClick={() => handleSelectBudget(opt.val)}
+                                    className="w-full text-left px-4 py-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.04] hover:border-accent-primary/30 text-xs font-bold text-white transition-all"
+                                  >
+                                    {opt.label}
+                                  </button>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
 
-                    <div className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-accent-primary/10 flex items-center justify-center text-accent-primary mt-0.5 flex-shrink-0">
-                        <span className="text-[10px] font-bold">3</span>
-                      </div>
-                      <div>
-                        <h4 className="text-xs font-bold text-white">Tailored Growth Plan</h4>
-                        <p className="text-[11px] text-slate-400 mt-0.5">Walk away with a concrete, execution-ready search roadmap for the next quarter.</p>
-                      </div>
-                    </div>
+                          {qualifierStep === 3 && (
+                            <motion.div
+                              key="q-step-3"
+                              initial={{ opacity: 0, x: 15 }}
+                              animate={{ opacity: 1, x: 0 }}
+                              exit={{ opacity: 0, x: -15 }}
+                              className="space-y-4"
+                            >
+                              <div className="space-y-1">
+                                <h4 className="text-xs font-mono font-bold text-accent-primary uppercase tracking-wider">
+                                  DigiAI Customizer (Step 3/3)
+                                </h4>
+                                <p className="text-xs text-white font-bold">Target project timeline?</p>
+                              </div>
+                              <div className="space-y-2">
+                                {timelines.map((opt) => (
+                                  <button
+                                    key={opt.val}
+                                    type="button"
+                                    onClick={() => handleSelectTimeline(opt.val)}
+                                    className="w-full text-left px-4 py-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.04] hover:border-accent-primary/30 text-xs font-bold text-white transition-all flex items-center gap-2"
+                                  >
+                                    <Calendar className="w-3.5 h-3.5 text-accent-secondary" />
+                                    <span>{opt.label}</span>
+                                  </button>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </>
+                      )}
+                    </AnimatePresence>
                   </div>
                 </div>
 
