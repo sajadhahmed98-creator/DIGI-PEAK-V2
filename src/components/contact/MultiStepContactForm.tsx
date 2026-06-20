@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Send, CheckCircle2, ChevronRight, ChevronLeft, Upload, Paperclip, X } from "lucide-react";
+import { Send, CheckCircle2, ChevronRight, ChevronLeft, Upload, Paperclip, X, Globe, AlertTriangle, DollarSign, Calendar, User, Briefcase } from "lucide-react";
 
 export function MultiStepContactForm() {
   const [step, setStep] = useState(1);
@@ -13,13 +13,14 @@ export function MultiStepContactForm() {
     whatsapp: "",
     company: "",
     website: "",
-    country: "",
+    country: "Qatar", // Default
     city: "",
     service: "",
     monthlyBudget: "",
     projectBudget: "",
     timeline: "",
     details: "",
+    bottleneck: "", // Added diagnostic field
   });
 
   const [fileName, setFileName] = useState<string | null>(null);
@@ -32,8 +33,6 @@ export function MultiStepContactForm() {
       const customEvent = e as CustomEvent;
       if (customEvent.detail && customEvent.detail.service) {
         setFormData((prev) => ({ ...prev, service: customEvent.detail.service }));
-        // Automatically skip to project specifics step if they click a service card
-        // or just let them fill Step 1 first (safer to let them fill Step 1 first so they enter name/email)
       }
     };
 
@@ -55,39 +54,36 @@ export function MultiStepContactForm() {
     "Other",
   ];
 
-  const services = [
-    "SEO Services",
-    "Web Design & Development",
-    "E-Commerce Development",
-    "Digital Marketing",
-    "Social Media Management",
-    "Branding & Creative",
-    "AI Solutions",
-    "UI/UX Design",
-    "Mobile App Development",
-    "CRM & Automation",
-    "Content Marketing",
-    "Video Production",
-    "Email Marketing",
-    "Reputation Management",
-    "Hosting & Maintenance",
-    "General Inquiry",
+  const serviceOptions = [
+    { label: "SEO & Search Traffic", val: "SEO Services", desc: "Rank higher on Google search results" },
+    { label: "Web Speed & Next.js Dev", val: "Web Design & Development", desc: "Build blazing-fast optimized sites" },
+    { label: "AI & Workflow Automation", val: "AI Solutions", desc: "Automate leads and internal tasks" },
+    { label: "E-Commerce Systems", val: "E-Commerce Development", desc: "Sleek stores with fast checkout" },
+    { label: "Branding & UI/UX Design", val: "Branding & Creative", desc: "Premium visual assets & design" },
+    { label: "General Marketing Scale", val: "Digital Marketing", desc: "Social, email, and ad campaigns" }
+  ];
+
+  const bottleneckOptions = [
+    { label: "Slow page load speed / poor Web Vitals", val: "Slow Page Speed" },
+    { label: "Low search visibility & keyword rankings", val: "Low SEO Search Traffic" },
+    { label: "High drop-off rates on contact forms", val: "High Form Drop-off" },
+    { label: "Outdated brand visuals / digital layout", val: "Outdated Visuals" },
+    { label: "Not sure / need a complete system audit", val: "Need Complete Audit" }
   ];
 
   const budgetOptions = [
-    "Under $500",
-    "$500 – $1,000",
-    "$1,000 – $3,000",
-    "$3,000 – $5,000",
-    "$5,000 – $10,000",
-    "$10,000+",
+    { label: "Under $1,000 / mo", val: "$500 – $1,000" },
+    { label: "$1,000 – $3,000 / mo", val: "$1,000 – $3,000" },
+    { label: "$3,000 – $5,000 / mo", val: "$3,000 – $5,000" },
+    { label: "$5,000 – $10,000 / mo", val: "$5,000 – $10,000" },
+    { label: "$10,000+ / mo", val: "$10,000+" }
   ];
 
   const timelines = [
-    "Immediate (As soon as possible)",
-    "1 — 3 Months",
-    "3 — 6 Months",
-    "6+ Months",
+    { label: "Immediate (As soon as possible)", val: "Immediate (As soon as possible)" },
+    { label: "Within 1 — 3 Months", val: "1 — 3 Months" },
+    { label: "Within 3 — 6 Months", val: "3 — 6 Months" },
+    { label: "General planning / sync", val: "6+ Months" }
   ];
 
   const handleInputChange = (
@@ -109,10 +105,13 @@ export function MultiStepContactForm() {
 
   const validateStep = () => {
     if (step === 1) {
-      return formData.name && formData.email && formData.phone;
+      return formData.website && formData.service;
     }
     if (step === 2) {
-      return formData.company && formData.country && formData.city;
+      return formData.company && formData.country && formData.city && formData.bottleneck;
+    }
+    if (step === 3) {
+      return formData.projectBudget && formData.timeline;
     }
     return true;
   };
@@ -121,7 +120,7 @@ export function MultiStepContactForm() {
     if (validateStep()) {
       setStep((prev) => prev + 1);
     } else {
-      alert("Please fill out all required fields for this step.");
+      alert("Please select the required options to continue.");
     }
   };
 
@@ -131,8 +130,8 @@ export function MultiStepContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.service || !formData.projectBudget || !formData.details) {
-      alert("Please fill out the project specifications.");
+    if (!formData.name || !formData.email) {
+      alert("Please provide your name and email to receive the blueprint.");
       return;
     }
 
@@ -145,13 +144,19 @@ export function MultiStepContactForm() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          whatsapp: formData.whatsapp || "",
+          whatsapp: formData.phone || formData.whatsapp || "",
           company: formData.company || "",
           country: formData.country || "",
           budget: formData.projectBudget,
           service: formData.service,
-          details: `Timeline: ${formData.timeline || "Not selected"}\nWebsite: ${formData.website || "Not provided"}\nCity: ${formData.city || "Not provided"}\nMonthly Budget: ${formData.monthlyBudget || "Not requested"}\n\nProject Details:\n${formData.details}`,
-          leadSource: "Client Contact Form",
+          details: `Timeline: ${formData.timeline || "Not selected"}
+Website URL: ${formData.website || "Not provided"}
+City: ${formData.city || "Not provided"}
+Current Traffic Bottleneck: ${formData.bottleneck || "Not selected"}
+
+Project Details/Notes:
+${formData.details || "None provided."}`,
+          leadSource: "B2B Growth Quiz Form",
           pageUrl: typeof window !== "undefined" ? window.location.href : "",
         }),
       });
@@ -172,13 +177,14 @@ export function MultiStepContactForm() {
         whatsapp: "",
         company: "",
         website: "",
-        country: "",
+        country: "Qatar",
         city: "",
         service: "",
         monthlyBudget: "",
         projectBudget: "",
         timeline: "",
         details: "",
+        bottleneck: "",
       });
       setFileName(null);
       setStep(1);
@@ -196,20 +202,27 @@ export function MultiStepContactForm() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-3xl">
+        {/* Title */}
+        <div className="text-center mb-12">
+          <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-primary bg-accent-primary/10 px-3 py-1.5 rounded-full">Interactive Diagnostic</span>
+          <h2 className="text-3xl md:text-4xl font-heading font-black text-white mt-4 tracking-tight">Get Your B2B Organic Growth Blueprint</h2>
+          <p className="text-sm text-slate-400 mt-2 max-w-xl mx-auto">Answer 4 quick questions to receive a tailored speed and search performance roadmap for your platform.</p>
+        </div>
+
         {/* Step indicators */}
-        <div className="mb-12 flex justify-between items-center relative">
+        <div className="mb-12 flex justify-between items-center relative max-w-md mx-auto">
           <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-0.5 bg-white/5 z-0" />
           
           {/* Progress bar fill */}
           <div 
             className="absolute left-0 top-1/2 -translate-y-1/2 h-0.5 bg-gradient-to-r from-accent-primary to-accent-secondary z-0 transition-all duration-500" 
-            style={{ width: `${((step - 1) / 2) * 100}%` }}
+            style={{ width: `${((step - 1) / 3) * 100}%` }}
           />
 
-          {[1, 2, 3].map((num) => (
+          {[1, 2, 3, 4].map((num) => (
             <div key={num} className="relative z-10 flex flex-col items-center">
               <div 
-                className={`w-10 h-10 rounded-full flex items-center justify-center font-mono text-sm font-bold border transition-all duration-300 ${
+                className={`w-9 h-9 rounded-full flex items-center justify-center font-mono text-xs font-bold border transition-all duration-300 ${
                   step === num 
                     ? "bg-[#050816] border-accent-primary text-white shadow-[0_0_16px_rgba(168,85,247,0.4)]" 
                     : step > num 
@@ -219,307 +232,333 @@ export function MultiStepContactForm() {
               >
                 {step > num ? "✓" : num}
               </div>
-              <span className={`text-[10px] font-mono font-bold uppercase tracking-wider mt-2 transition-colors duration-300 ${
+              <span className={`text-[9px] font-mono font-bold uppercase tracking-wider mt-2 transition-colors duration-300 ${
                 step === num ? "text-accent-primary" : "text-muted"
               }`}>
-                {num === 1 ? "Contact" : num === 2 ? "Company" : "Project"}
+                {num === 1 ? "Goal" : num === 2 ? "Audit" : num === 3 ? "Scope" : "Contact"}
               </span>
             </div>
           ))}
         </div>
 
         {/* Lead Capture Form Container */}
-        <div className="glass p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden min-h-[480px] flex flex-col justify-between">
+        <div className="glass p-8 md:p-12 rounded-3xl border border-white/10 relative overflow-hidden min-h-[460px] flex flex-col justify-between">
           <div className="absolute top-0 right-0 w-32 h-32 bg-accent-primary/5 rounded-full blur-3xl pointer-events-none" />
 
           {/* Form Step Contents */}
           <form onSubmit={handleSubmit} className="flex-1 flex flex-col justify-between">
             <div>
-              {step === 1 && (
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="font-heading font-bold text-xl text-white mb-2">Step 1: Contact Details</h3>
-                    <p className="text-xs text-muted">Please provide your primary contact information.</p>
-                  </div>
-                  
-                  <div className="grid grid-cols-1 sm:grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Full Name */}
-                    <div className="flex flex-col">
-                      <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                        Full Name <span className="text-accent-primary">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="John Doe"
-                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
-                      />
+              <AnimatePresence mode="wait">
+                {step === 1 && (
+                  <motion.div
+                    key="step-1"
+                    initial={{ x: 15, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -15, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="space-y-6"
+                  >
+                    <div>
+                      <h3 className="font-heading font-bold text-xl text-white mb-2 flex items-center gap-2">
+                        <Globe className="w-5 h-5 text-accent-primary" />
+                        Step 1: Select Growth Target & Domain
+                      </h3>
+                      <p className="text-xs text-muted">We will evaluate your platform address and compile a preliminary organic crawl report.</p>
                     </div>
 
-                    {/* Email */}
-                    <div className="flex flex-col">
-                      <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                        Email Address <span className="text-accent-primary">*</span>
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="john@example.com"
-                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
-                      />
-                    </div>
-
-                    {/* Phone Number */}
-                    <div className="flex flex-col">
-                      <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                        Phone Number <span className="text-accent-primary">*</span>
-                      </label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        required
-                        value={formData.phone}
-                        onChange={handleInputChange}
-                        placeholder="+94 77 362 4413"
-                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
-                      />
-                    </div>
-
-                    {/* WhatsApp */}
-                    <div className="flex flex-col">
-                      <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                        WhatsApp Number
-                      </label>
-                      <input
-                        type="tel"
-                        name="whatsapp"
-                        value={formData.whatsapp}
-                        onChange={handleInputChange}
-                        placeholder="+94 77 362 4413"
-                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
-                      />
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {step === 2 && (
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="font-heading font-bold text-xl text-white mb-2">Step 2: Company &amp; Location</h3>
-                    <p className="text-xs text-muted">Tell us about your organization and region.</p>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Company */}
-                    <div className="flex flex-col">
-                      <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                        Company Name <span className="text-accent-primary">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        name="company"
-                        required
-                        value={formData.company}
-                        onChange={handleInputChange}
-                        placeholder="e.g. Acme Corp"
-                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
-                      />
-                    </div>
-
-                    {/* Website */}
-                    <div className="flex flex-col">
-                      <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                        Website URL
-                      </label>
-                      <input
-                        type="url"
-                        name="website"
-                        value={formData.website}
-                        onChange={handleInputChange}
-                        placeholder="https://example.com"
-                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
-                      />
-                    </div>
-
-                    {/* Country Dropdown */}
-                    <div className="flex flex-col">
-                      <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                        Country <span className="text-accent-primary">*</span>
-                      </label>
-                      <select
-                        name="country"
-                        required
-                        value={formData.country}
-                        onChange={handleInputChange}
-                        className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
-                      >
-                        <option value="" disabled className="bg-[#050816] text-muted">Select Country</option>
-                        {countries.map((c) => (
-                          <option key={c} value={c} className="bg-[#050816] text-white">{c}</option>
-                        ))}
-                      </select>
-                    </div>
-
-                    {/* City */}
-                    <div className="flex flex-col">
-                      <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                        City <span className="text-accent-primary">*</span>
-                      </label>
-                      <input
-                        type="text"
-                        name="city"
-                        required
-                        value={formData.city}
-                        onChange={handleInputChange}
-                        placeholder="e.g. Doha"
-                        className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
-                      />
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {step === 3 && (
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="font-heading font-bold text-xl text-white mb-2">Step 3: Project Specifications</h3>
-                    <p className="text-xs text-muted">Define the scope, timelines, and budget for your request.</p>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-1 sm:grid-cols-2 gap-6">
-                    {/* Service Dropdown */}
-                    <div className="flex flex-col">
-                      <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                        Service Required <span className="text-accent-primary">*</span>
-                      </label>
-                      <select
-                        name="service"
-                        required
-                        value={formData.service}
-                        onChange={handleInputChange}
-                        className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
-                      >
-                        <option value="" disabled className="bg-[#050816] text-muted">Select Service</option>
-                        {services.map((s) => (
-                          <option key={s} value={s} className="bg-[#050816] text-white">{s}</option>
-                        ))}
-                      </select>
-                    </div>
-
-                    {/* Monthly Budget Dropdown */}
-                    <div className="flex flex-col">
-                      <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                        Monthly Marketing Budget
-                      </label>
-                      <select
-                        name="monthlyBudget"
-                        value={formData.monthlyBudget}
-                        onChange={handleInputChange}
-                        className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
-                      >
-                        <option value="" className="bg-[#050816] text-muted">No monthly budget required</option>
-                        {budgetOptions.map((b) => (
-                          <option key={`m-${b}`} value={b} className="bg-[#050816] text-white">{b}</option>
-                        ))}
-                      </select>
-                    </div>
-
-                    {/* Project Budget Dropdown */}
-                    <div className="flex flex-col">
-                      <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                        Project Budget <span className="text-accent-primary">*</span>
-                      </label>
-                      <select
-                        name="projectBudget"
-                        required
-                        value={formData.projectBudget}
-                        onChange={handleInputChange}
-                        className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
-                      >
-                        <option value="" disabled className="bg-[#050816] text-muted">Select Project Budget</option>
-                        {budgetOptions.map((b) => (
-                          <option key={`p-${b}`} value={b} className="bg-[#050816] text-white">{b}</option>
-                        ))}
-                      </select>
-                    </div>
-
-                    {/* Timeline Dropdown */}
-                    <div className="flex flex-col">
-                      <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                        Project Timeline
-                      </label>
-                      <select
-                        name="timeline"
-                        value={formData.timeline}
-                        onChange={handleInputChange}
-                        className="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
-                      >
-                        <option value="" disabled className="bg-[#050816] text-muted">Select Timeline</option>
-                        {timelines.map((t) => (
-                          <option key={t} value={t} className="bg-[#050816] text-white">{t}</option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-
-                  {/* Project Details */}
-                  <div className="flex flex-col mt-6">
-                    <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
-                      Project Details <span className="text-accent-primary">*</span>
-                    </label>
-                    <textarea
-                      id="details"
-                      name="details"
-                      required
-                      rows={4}
-                      value={formData.details}
-                      onChange={handleInputChange}
-                      placeholder="Briefly describe what you'd like to achieve, target deliverables, or other business details..."
-                      className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm resize-none"
-                    />
-                  </div>
-
-                  {/* File Upload mock */}
-                  <div className="mt-6">
-                    <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono block">
-                      Project Brief or Attachments
-                    </label>
-                    
-                    {!fileName ? (
-                      <div className="relative border border-dashed border-white/15 hover:border-accent-primary/30 rounded-xl p-4 flex flex-col items-center justify-center cursor-pointer bg-white/[0.01] hover:bg-white/[0.03] transition-all group">
+                    <div className="space-y-4">
+                      {/* Web URL input */}
+                      <div className="flex flex-col">
+                        <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
+                          Platform Domain / Website URL <span className="text-accent-primary">*</span>
+                        </label>
                         <input
-                          type="file"
-                          onChange={handleFileUpload}
-                          className="absolute inset-0 opacity-0 cursor-pointer"
+                          type="url"
+                          name="website"
+                          required
+                          value={formData.website}
+                          onChange={handleInputChange}
+                          placeholder="https://yourcompany.com"
+                          className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
                         />
-                        <Upload className="w-6 h-6 text-muted group-hover:text-accent-primary mb-2 transition-colors" />
-                        <span className="text-xs text-muted font-medium">Click to select files (PDF, JPG, PNG, DOCX)</span>
                       </div>
-                    ) : (
-                      <div className="flex items-center justify-between glass border border-accent-primary/20 rounded-xl p-3 bg-white/[0.02]">
-                        <div className="flex items-center gap-2 text-sm text-white">
-                          <Paperclip className="w-4 h-4 text-accent-primary" />
-                          <span className="truncate max-w-[200px] text-xs font-mono">{fileName}</span>
+
+                      {/* Clickable service cards */}
+                      <div className="flex flex-col">
+                        <label className="text-xs font-bold text-white uppercase tracking-wider mb-3 font-mono">
+                          What is your primary growth goal? <span className="text-accent-primary">*</span>
+                        </label>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                          {serviceOptions.map((s) => (
+                            <button
+                              key={s.val}
+                              type="button"
+                              onClick={() => setFormData((prev) => ({ ...prev, service: s.val }))}
+                              className={`text-left p-3 rounded-xl border transition-all text-sm group ${
+                                formData.service === s.val
+                                  ? "bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10 border-accent-primary shadow-[0_0_12px_rgba(168,85,247,0.1)]"
+                                  : "bg-white/[0.02] border-white/5 hover:border-white/15 hover:bg-white/[0.04]"
+                              }`}
+                            >
+                              <div className="font-bold text-white group-hover:text-accent-primary transition-colors">{s.label}</div>
+                              <div className="text-[11px] text-muted mt-0.5">{s.desc}</div>
+                            </button>
+                          ))}
                         </div>
-                        <button
-                          type="button"
-                          onClick={removeFile}
-                          className="text-muted hover:text-white transition-colors cursor-pointer"
-                        >
-                          <X className="w-4 h-4" />
-                        </button>
                       </div>
-                    )}
-                  </div>
-                </div>
-              )}
+                    </div>
+                  </motion.div>
+                )}
+
+                {step === 2 && (
+                  <motion.div
+                    key="step-2"
+                    initial={{ x: 15, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -15, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="space-y-6"
+                  >
+                    <div>
+                      <h3 className="font-heading font-bold text-xl text-white mb-2 flex items-center gap-2">
+                        <AlertTriangle className="w-5 h-5 text-accent-primary" />
+                        Step 2: Diagnosis & Company Info
+                      </h3>
+                      <p className="text-xs text-muted">Identify current search and layout roadblocks restricting client acquisition.</p>
+                    </div>
+
+                    <div className="space-y-4">
+                      {/* Bottleneck selectors */}
+                      <div className="flex flex-col">
+                        <label className="text-xs font-bold text-white uppercase tracking-wider mb-3 font-mono">
+                          What is holding back your platform's conversion? <span className="text-accent-primary">*</span>
+                        </label>
+                        <div className="grid grid-cols-1 gap-2">
+                          {bottleneckOptions.map((b) => (
+                            <button
+                              key={b.val}
+                              type="button"
+                              onClick={() => setFormData((prev) => ({ ...prev, bottleneck: b.val }))}
+                              className={`text-left px-4 py-3 rounded-xl border transition-all text-xs font-semibold flex justify-between items-center ${
+                                formData.bottleneck === b.val
+                                  ? "bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10 border-accent-primary text-white"
+                                  : "bg-white/[0.02] border-white/5 hover:border-white/15 hover:bg-white/[0.04] text-slate-300"
+                              }`}
+                            >
+                              <span>{b.label}</span>
+                              {formData.bottleneck === b.val && <span className="text-accent-primary font-mono font-black">&bull; SELECTED</span>}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Company & Location grid */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="flex flex-col">
+                          <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
+                            Company Name <span className="text-accent-primary">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            name="company"
+                            required
+                            value={formData.company}
+                            onChange={handleInputChange}
+                            placeholder="e.g. Acme Corp"
+                            className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
+                          />
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-2">
+                          <div className="flex flex-col">
+                            <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
+                              Country <span className="text-accent-primary">*</span>
+                            </label>
+                            <select
+                              name="country"
+                              required
+                              value={formData.country}
+                              onChange={handleInputChange}
+                              className="w-full bg-black border border-white/10 rounded-xl px-3 py-3 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
+                            >
+                              {countries.map((c) => (
+                                <option key={c} value={c} className="bg-[#050816] text-white">{c}</option>
+                              ))}
+                            </select>
+                          </div>
+                          
+                          <div className="flex flex-col">
+                            <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
+                              City <span className="text-accent-primary">*</span>
+                            </label>
+                            <input
+                              type="text"
+                              name="city"
+                              required
+                              value={formData.city}
+                              onChange={handleInputChange}
+                              placeholder="e.g. Doha"
+                              className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-3 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+
+                {step === 3 && (
+                  <motion.div
+                    key="step-3"
+                    initial={{ x: 15, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -15, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="space-y-6"
+                  >
+                    <div>
+                      <h3 className="font-heading font-bold text-xl text-white mb-2 flex items-center gap-2">
+                        <DollarSign className="w-5 h-5 text-accent-primary" />
+                        Step 3: Budget & Timeline
+                      </h3>
+                      <p className="text-xs text-muted">Determine project investment parameters and launch schedule thresholds.</p>
+                    </div>
+
+                    <div className="space-y-6">
+                      {/* Budget options */}
+                      <div className="flex flex-col">
+                        <label className="text-xs font-bold text-white uppercase tracking-wider mb-3 font-mono">
+                          What is your monthly budget allocation? <span className="text-accent-primary">*</span>
+                        </label>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                          {budgetOptions.map((b) => (
+                            <button
+                              key={b.val}
+                              type="button"
+                              onClick={() => setFormData((prev) => ({ ...prev, projectBudget: b.val }))}
+                              className={`text-center p-3 rounded-xl border transition-all text-xs font-bold ${
+                                formData.projectBudget === b.val
+                                  ? "bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10 border-accent-primary text-white"
+                                  : "bg-white/[0.02] border-white/5 hover:border-white/15 text-slate-300"
+                              }`}
+                            >
+                              {b.label}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Timelines */}
+                      <div className="flex flex-col">
+                        <label className="text-xs font-bold text-white uppercase tracking-wider mb-3 font-mono">
+                          Target project timeline <span className="text-accent-primary">*</span>
+                        </label>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                          {timelines.map((t) => (
+                            <button
+                              key={t.val}
+                              type="button"
+                              onClick={() => setFormData((prev) => ({ ...prev, timeline: t.val }))}
+                              className={`text-left px-4 py-3 rounded-xl border transition-all text-xs font-semibold flex items-center gap-2 ${
+                                formData.timeline === t.val
+                                  ? "bg-gradient-to-r from-accent-primary/10 to-accent-secondary/10 border-accent-primary text-white"
+                                  : "bg-white/[0.02] border-white/5 hover:border-white/15 text-slate-300"
+                              }`}
+                            >
+                              <Calendar className={`w-4 h-4 ${formData.timeline === t.val ? 'text-accent-primary' : 'text-slate-400'}`} />
+                              <span>{t.label}</span>
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+
+                {step === 4 && (
+                  <motion.div
+                    key="step-4"
+                    initial={{ x: 15, opacity: 0 }}
+                    animate={{ x: 0, opacity: 1 }}
+                    exit={{ x: -15, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="space-y-6"
+                  >
+                    <div>
+                      <h3 className="font-heading font-bold text-xl text-white mb-2 flex items-center gap-2">
+                        <User className="w-5 h-5 text-accent-primary" />
+                        Step 4: Unlock Your Growth Blueprint
+                      </h3>
+                      <p className="text-xs text-muted">Who should we compile and send the technical audit report to?</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 gap-4">
+                      {/* Name & Email */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="flex flex-col">
+                          <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
+                            Your Name <span className="text-accent-primary">*</span>
+                          </label>
+                          <input
+                            type="text"
+                            name="name"
+                            required
+                            value={formData.name}
+                            onChange={handleInputChange}
+                            placeholder="John Doe"
+                            className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
+                          />
+                        </div>
+
+                        <div className="flex flex-col">
+                          <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
+                            Email Address <span className="text-accent-primary">*</span>
+                          </label>
+                          <input
+                            type="email"
+                            name="email"
+                            required
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            placeholder="john@company.com"
+                            className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Phone / Whatsapp */}
+                      <div className="flex flex-col">
+                        <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
+                          Phone / WhatsApp Number
+                        </label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleInputChange}
+                          placeholder="+971 (50) 123-4567"
+                          className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm"
+                        />
+                      </div>
+
+                      {/* Optional details */}
+                      <div className="flex flex-col">
+                        <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono">
+                          Add optional project details or focus areas
+                        </label>
+                        <textarea
+                          name="details"
+                          rows={3}
+                          value={formData.details}
+                          onChange={handleInputChange}
+                          placeholder="Tell us about specific target keywords, competitors, or CMS bottlenecks you want analyzed..."
+                          className="w-full bg-white/[0.03] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-muted focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm resize-none text-xs"
+                        />
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             {/* Stepper Buttons */}
@@ -528,7 +567,7 @@ export function MultiStepContactForm() {
                 <button
                   type="button"
                   onClick={prevStep}
-                  className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white font-semibold px-6 py-3 rounded-xl hover:bg-white/10 active:scale-[0.98] transition-all cursor-pointer text-sm"
+                  className="inline-flex items-center gap-2 bg-white/5 border border-white/10 text-white font-semibold px-5 py-2.5 rounded-xl hover:bg-white/10 active:scale-[0.98] transition-all cursor-pointer text-xs"
                 >
                   <ChevronLeft className="w-4 h-4" />
                   Back
@@ -537,11 +576,11 @@ export function MultiStepContactForm() {
                 <div />
               )}
 
-              {step < 3 ? (
+              {step < 4 ? (
                 <button
                   type="button"
                   onClick={nextStep}
-                  className="inline-flex items-center gap-2 bg-white/5 border border-accent-primary/35 text-accent-primary font-semibold px-6 py-3 rounded-xl hover:bg-accent-primary/10 active:scale-[0.98] transition-all cursor-pointer text-sm"
+                  className="inline-flex items-center gap-2 bg-white/5 border border-accent-primary/35 text-accent-primary font-semibold px-5 py-2.5 rounded-xl hover:bg-accent-primary/10 active:scale-[0.98] transition-all cursor-pointer text-xs"
                 >
                   Continue
                   <ChevronRight className="w-4 h-4" />
@@ -550,13 +589,13 @@ export function MultiStepContactForm() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-accent-primary to-accent-secondary text-white font-bold px-8 py-3.5 rounded-xl shadow-[0_4px_16px_rgba(168,85,247,0.2)] hover:opacity-95 active:scale-[0.98] disabled:opacity-50 transition-all cursor-pointer text-sm"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-accent-primary to-accent-secondary text-white font-bold px-7 py-3 rounded-xl shadow-[0_4px_16px_rgba(168,85,247,0.2)] hover:opacity-95 active:scale-[0.98] disabled:opacity-50 transition-all cursor-pointer text-xs"
                 >
                   {loading ? (
-                    <span>Submitting Project...</span>
+                    <span>Compiling Blueprint...</span>
                   ) : (
                     <>
-                      <span>Submit Inquiry</span>
+                      <span>Generate My Blueprint</span>
                       <Send className="w-4 h-4" />
                     </>
                   )}
@@ -590,10 +629,10 @@ export function MultiStepContactForm() {
                 </div>
                 
                 <h3 className="font-heading text-2xl font-bold text-white mb-2">
-                  Proposal Request Staged
+                  Blueprint Requested!
                 </h3>
-                <p className="text-muted text-sm leading-relaxed mb-6">
-                  Thank you for contacting Digipeak. Our team will review your inquiry and respond as soon as possible (usually within 24–48 hours). A simulation copy of the SMTP payload has been outputted to your browser console routing to <span className="text-white font-bold font-mono">hello@digipeak.agency</span>.
+                <p className="text-muted text-xs leading-relaxed mb-6">
+                  Thank you, your B2B Organic Growth Roadmap has been staged. Our strategy team is running a Lighthouse speed audit and keyword gap analysis on your domain. We will email your blueprint report within <span className="text-white font-bold">12–24 hours</span>.
                 </p>
 
                 <button
