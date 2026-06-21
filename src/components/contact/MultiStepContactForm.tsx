@@ -201,13 +201,13 @@ export function MultiStepContactForm() {
     <section id="lead-form" className="py-24 md:py-16 lg:py-24 px-6 bg-black relative overflow-hidden scroll-mt-24">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-accent-secondary/5 rounded-full blur-[140px]" />
+        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-accent-secondary/[0.015] rounded-full blur-[140px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-3xl">
         {/* Title */}
         <div className="text-center mb-12">
-          <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-primary bg-accent-primary/10 px-3 py-1.5 rounded-full">
+          <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-primary bg-accent-primary/[0.03] px-3 py-1.5 rounded-full">
             Accelerate Growth
           </span>
           <h2 className="text-3xl md:text-4xl font-heading font-black text-white mt-4 tracking-tight">
@@ -220,7 +220,7 @@ export function MultiStepContactForm() {
 
         {/* Lead Capture Form Container */}
         <div className="glass p-6 md:p-10 rounded-3xl border border-white/10 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-accent-primary/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-accent-primary/[0.015] rounded-full blur-3xl pointer-events-none" />
 
           <form onSubmit={handleSubmit} onFocus={handleInteraction} className="space-y-6">
             <div className="grid grid-cols-1 gap-6">
@@ -366,7 +366,7 @@ export function MultiStepContactForm() {
                     <CheckCircle2 className="w-6 h-6 animate-pulse" />
                   </div>
                   
-                  <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-primary bg-accent-primary/10 px-2.5 py-1 rounded-full">
+                  <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-primary bg-accent-primary/[0.03] px-2.5 py-1 rounded-full">
                     Lead Captured
                   </span>
 

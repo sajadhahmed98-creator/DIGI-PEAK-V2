@@ -179,11 +179,11 @@ PageSpeed Auditor Lead Report:
   };
 
   return (
-    <div className="relative min-h-screen bg-[#050816] text-white pt-32 pb-24 px-6 overflow-hidden">
+    <div className="relative min-h-screen bg-[#020203] text-white pt-32 pb-24 px-6 overflow-hidden">
       {/* Background Orbs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[20%] right-[-10%] w-[600px] h-[600px] bg-accent-secondary/5 rounded-full blur-[150px]" />
-        <div className="absolute bottom-[20%] left-[-10%] w-[500px] h-[500px] bg-accent-primary/5 rounded-full blur-[130px]" />
+        <div className="absolute top-[20%] right-[-10%] w-[600px] h-[600px] bg-accent-secondary/[0.015] rounded-full blur-[150px]" />
+        <div className="absolute bottom-[20%] left-[-10%] w-[500px] h-[500px] bg-accent-primary/[0.015] rounded-full blur-[130px]" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto space-y-10">
@@ -324,7 +324,7 @@ PageSpeed Auditor Lead Report:
             </div>
 
             {/* Core Web Vitals Cards */}
-            <div className="glass border border-white/5 rounded-3xl p-8 bg-gradient-to-br from-[#0c0d21] to-[#050816] space-y-6">
+            <div className="glass border border-white/5 rounded-3xl p-8 bg-gradient-to-br from-[#0c0d21] to-[#020203] space-y-6">
               <div>
                 <h3 className="font-heading text-lg font-bold text-white">Core Web Vitals Field Metrics</h3>
                 <p className="text-xs text-muted">Audited mobile viewport metrics corresponding to Google search ranking algorithms.</p>
@@ -412,7 +412,7 @@ PageSpeed Auditor Lead Report:
             </div>
 
             {/* LEAD GENERATION CONTAINER */}
-            <div className="glass border border-accent-secondary/30 rounded-3xl p-8 bg-gradient-to-br from-[#0c142b] via-[#050816] to-[#050816] relative overflow-hidden">
+            <div className="glass border border-accent-secondary/30 rounded-3xl p-8 bg-gradient-to-br from-[#0c142b] via-[#050816] to-[#020203] relative overflow-hidden">
               <div className="absolute inset-0 bg-radial-gradient from-accent-secondary/10 to-transparent pointer-events-none" />
               
               <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">

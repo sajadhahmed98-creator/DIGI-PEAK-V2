@@ -729,12 +729,12 @@ Our strategy team will analyze your requirements and get back to you with a cust
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 15, scale: 0.95 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="w-[90vw] sm:w-[400px] h-[550px] rounded-3xl glass border border-white/10 bg-[#050816]/95 shadow-[0_12px_48px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden"
+            className="w-[90vw] sm:w-[400px] h-[550px] rounded-3xl glass border border-white/10 bg-[#08080c]/95 shadow-[0_12px_48px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden"
           >
             {/* Main Header */}
             <div className="px-5 py-3.5 border-b border-white/10 bg-white/[0.02] flex items-center justify-between">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-2xl bg-[#050816] border border-white/10 flex items-center justify-center shadow-lg overflow-hidden">
+                <div className="w-10 h-10 rounded-2xl bg-[#08080c] border border-white/10 flex items-center justify-center shadow-lg overflow-hidden">
                   <img src="/logo.png" alt="Digi AI Logo" className="w-6 h-6 object-contain" />
                 </div>
                 <div>
@@ -832,7 +832,7 @@ Our strategy team will analyze your requirements and get back to you with a cust
                       initial={{ opacity: 0, y: 5 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 5 }}
-                      className="absolute right-0 mt-1 w-32 rounded-xl glass border border-white/10 bg-[#050816] shadow-2xl p-1 z-[10000] max-h-[150px] overflow-y-auto"
+                      className="absolute right-0 mt-1 w-32 rounded-xl glass border border-white/10 bg-[#08080c] shadow-2xl p-1 z-[10000] max-h-[150px] overflow-y-auto"
                     >
                       {Object.keys(currencyConfig).map((code) => (
                         <button
@@ -840,7 +840,7 @@ Our strategy team will analyze your requirements and get back to you with a cust
                           onClick={() => handleCurrencyChange(code)}
                           className={`flex items-center justify-between w-full text-left px-2 py-1.5 rounded-lg text-[10px] font-semibold cursor-pointer transition-colors ${
                             activeCurrency === code
-                              ? "bg-accent-primary/10 text-accent-primary"
+                              ? "bg-accent-primary/[0.03] text-accent-primary"
                               : "text-muted hover:text-white hover:bg-white/5"
                           }`}
                         >
@@ -858,7 +858,7 @@ Our strategy team will analyze your requirements and get back to you with a cust
 
             {/* Chat Content or History Overlay */}
             {isHistoryOpen ? (
-              <div className="flex-1 flex flex-col bg-[#050816] p-5">
+              <div className="flex-1 flex flex-col bg-[#08080c] p-5">
                 <div className="flex items-center justify-between mb-4 pb-2 border-b border-white/5">
                   <h4 className="text-white text-xs font-bold font-heading flex items-center gap-1.5">
                     <History className="w-4 h-4 text-accent-primary" />
@@ -1103,15 +1103,15 @@ Our strategy team will analyze your requirements and get back to you with a cust
                                       required
                                       value={leadData.service}
                                       onChange={(e) => setLeadData({ ...leadData, service: e.target.value })}
-                                      className="w-full bg-[#050816] border border-white/10 rounded-xl pl-9 pr-4 py-2 text-xs text-white focus:border-accent-primary focus:outline-none appearance-none"
+                                      className="w-full bg-[#08080c] border border-white/10 rounded-xl pl-9 pr-4 py-2 text-xs text-white focus:border-accent-primary focus:outline-none appearance-none"
                                     >
-                                      <option value="" className="bg-[#050816]">{activeLanguage === "ar" ? "اختر الخدمة" : "Select Service"}</option>
-                                      <option value="SEO Services" className="bg-[#050816]">SEO Services</option>
-                                      <option value="Website Design" className="bg-[#050816]">Website Design & Dev</option>
-                                      <option value="Digital Marketing" className="bg-[#050816]">Digital Marketing</option>
-                                      <option value="E-Commerce Store" className="bg-[#050816]">E-Commerce Development</option>
-                                      <option value="Branding" className="bg-[#050816]">Branding & Creative</option>
-                                      <option value="AI Solutions" className="bg-[#050816]">AI Solutions</option>
+                                      <option value="" className="bg-[#08080c]">{activeLanguage === "ar" ? "اختر الخدمة" : "Select Service"}</option>
+                                      <option value="SEO Services" className="bg-[#08080c]">SEO Services</option>
+                                      <option value="Website Design" className="bg-[#08080c]">Website Design & Dev</option>
+                                      <option value="Digital Marketing" className="bg-[#08080c]">Digital Marketing</option>
+                                      <option value="E-Commerce Store" className="bg-[#08080c]">E-Commerce Development</option>
+                                      <option value="Branding" className="bg-[#08080c]">Branding & Creative</option>
+                                      <option value="AI Solutions" className="bg-[#08080c]">AI Solutions</option>
                                     </select>
                                     <ChevronDown className="absolute right-3 top-3 w-3 h-3 text-muted pointer-events-none" />
                                   </div>
@@ -1123,13 +1123,13 @@ Our strategy team will analyze your requirements and get back to you with a cust
                                     <select
                                       value={leadData.budget}
                                       onChange={(e) => setLeadData({ ...leadData, budget: e.target.value })}
-                                      className="w-full bg-[#050816] border border-white/10 rounded-xl pl-9 pr-4 py-2 text-xs text-white focus:border-accent-primary focus:outline-none appearance-none"
+                                      className="w-full bg-[#08080c] border border-white/10 rounded-xl pl-9 pr-4 py-2 text-xs text-white focus:border-accent-primary focus:outline-none appearance-none"
                                     >
-                                      <option value="" className="bg-[#050816]">{activeLanguage === "ar" ? "اختر نطاق الميزانية" : "Select Budget"}</option>
-                                      <option value="Under 2,000 AED" className="bg-[#050816]">Under 2,000 AED</option>
-                                      <option value="2,000 - 5,000 AED" className="bg-[#050816]">2,000 - 5,000 AED</option>
-                                      <option value="5,000 - 15,000 AED" className="bg-[#050816]">5,000 - 15,000 AED</option>
-                                      <option value="15,000+ AED" className="bg-[#050816]">15,000+ AED (Enterprise)</option>
+                                      <option value="" className="bg-[#08080c]">{activeLanguage === "ar" ? "اختر نطاق الميزانية" : "Select Budget"}</option>
+                                      <option value="Under 2,000 AED" className="bg-[#08080c]">Under 2,000 AED</option>
+                                      <option value="2,000 - 5,000 AED" className="bg-[#08080c]">2,000 - 5,000 AED</option>
+                                      <option value="5,000 - 15,000 AED" className="bg-[#08080c]">5,000 - 15,000 AED</option>
+                                      <option value="15,000+ AED" className="bg-[#08080c]">15,000+ AED (Enterprise)</option>
                                     </select>
                                     <ChevronDown className="absolute right-3 top-3 w-3.5 h-3.5 text-muted pointer-events-none" />
                                   </div>
@@ -1202,7 +1202,7 @@ Our strategy team will analyze your requirements and get back to you with a cust
                     className={`flex items-start gap-2.5 ${isUser ? "justify-end" : "justify-start"}`}
                   >
                     {!isUser && (
-                      <div className="w-7 h-7 rounded-lg bg-[#050816] border border-white/10 flex items-center justify-center flex-shrink-0 text-white shadow-sm mt-0.5 overflow-hidden">
+                      <div className="w-7 h-7 rounded-lg bg-[#08080c] border border-white/10 flex items-center justify-center flex-shrink-0 text-white shadow-sm mt-0.5 overflow-hidden">
                         <img src="/logo.png" alt="Digi AI Logo" className="w-4.5 h-4.5 object-contain" />
                       </div>
                     )}
@@ -1222,7 +1222,7 @@ Our strategy team will analyze your requirements and get back to you with a cust
 
               {isTyping && (
                 <div className="flex items-start gap-2.5">
-                  <div className="w-7 h-7 rounded-lg bg-[#050816] border border-white/10 flex items-center justify-center flex-shrink-0 text-white shadow-sm overflow-hidden">
+                  <div className="w-7 h-7 rounded-lg bg-[#08080c] border border-white/10 flex items-center justify-center flex-shrink-0 text-white shadow-sm overflow-hidden">
                     <img src="/logo.png" alt="Digi AI Logo" className="w-4.5 h-4.5 object-contain" />
                   </div>
                   <div className="glass border border-white/10 text-white rounded-2xl rounded-tl-none px-4 py-3 flex items-center gap-1">
@@ -1252,7 +1252,7 @@ Our strategy team will analyze your requirements and get back to you with a cust
             </div>
 
             {/* Input Bar */}
-            <div className="p-4 border-t border-white/10 bg-[#050816] flex gap-2 items-center">
+            <div className="p-4 border-t border-white/10 bg-[#08080c] flex gap-2 items-center">
               <input
                 type="text"
                 value={inputVal}
@@ -1293,7 +1293,7 @@ Our strategy team will analyze your requirements and get back to you with a cust
               <X className="w-3 h-3" />
             </button>
 
-            <div className="w-8 h-8 rounded-full bg-[#050816] border border-white/10 flex items-center justify-center flex-shrink-0 mt-0.5 overflow-hidden">
+            <div className="w-8 h-8 rounded-full bg-[#08080c] border border-white/10 flex items-center justify-center flex-shrink-0 mt-0.5 overflow-hidden">
               <img src="/logo.png" alt="Digi AI Logo" className="w-5 h-5 object-contain" />
             </div>
             <div>
@@ -1331,7 +1331,7 @@ Our strategy team will analyze your requirements and get back to you with a cust
         }}
       >
         <span className="absolute inset-0 rounded-full animate-ping opacity-20 bg-accent-primary" />
-        <span className="absolute inset-0 rounded-full bg-accent-primary/10" />
+        <span className="absolute inset-0 rounded-full bg-accent-primary/[0.03]" />
 
         {isOpen ? (
           <ChevronDown className="relative z-10 w-7 h-7 text-white" />

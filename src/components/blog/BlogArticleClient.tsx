@@ -134,8 +134,8 @@ export function BlogArticleClient({ post, relatedPosts }: { post: Post; relatedP
 
       {/* Decorative Orbs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[20%] left-10 w-[500px] h-[500px] bg-accent-primary/5 rounded-full blur-[140px]" />
-        <div className="absolute top-[60%] right-10 w-[400px] h-[400px] bg-accent-secondary/5 rounded-full blur-[120px]" />
+        <div className="absolute top-[20%] left-10 w-[500px] h-[500px] bg-accent-primary/[0.015] rounded-full blur-[140px]" />
+        <div className="absolute top-[60%] right-10 w-[400px] h-[400px] bg-accent-secondary/[0.015] rounded-full blur-[120px]" />
       </div>
 
       <main className="max-w-7xl mx-auto px-6 py-16 md:py-24 lg:py-32 relative z-10">
@@ -150,7 +150,7 @@ export function BlogArticleClient({ post, relatedPosts }: { post: Post; relatedP
 
         {/* Hero Meta Section */}
         <section className="max-w-4xl mb-16">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent-secondary/30 bg-accent-secondary/10 px-4 py-1.5 text-xs font-semibold text-accent-secondary mb-6 capitalize">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent-secondary/30 bg-accent-secondary/[0.03] px-4 py-1.5 text-xs font-semibold text-accent-secondary mb-6 capitalize">
             {post.category.replace("-", " ")}
           </div>
           <h1 className="font-heading text-3xl md:text-3xl md:text-4xl lg:text-5xl font-black tracking-tight text-white mb-6 leading-tight">
@@ -264,7 +264,7 @@ export function BlogArticleClient({ post, relatedPosts }: { post: Post; relatedP
             {/* In-content Gated Lead Magnet Card (Smart Category Matching) */}
             {leadMagnet && (
               <div className="glass border border-accent-primary/20 rounded-2xl p-6 relative overflow-hidden bg-gradient-to-r from-[#0d0e25] to-[#050816] mb-6">
-                <div className="absolute top-0 right-0 w-24 h-24 bg-accent-primary/5 rounded-full blur-[30px] pointer-events-none" />
+                <div className="absolute top-0 right-0 w-24 h-24 bg-accent-primary/[0.015] rounded-full blur-[30px] pointer-events-none" />
                 <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
                   <div className="space-y-1">
                     <span className="text-[10px] uppercase font-bold text-accent-primary tracking-widest block">Free Resource Asset ({leadMagnet.downloadType})</span>

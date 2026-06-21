@@ -9,7 +9,7 @@ export function SaudiCTA() {
     <section className="py-20 md:py-28 px-6 bg-black relative overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-accent-primary/10 rounded-full blur-[130px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-accent-primary/[0.03] rounded-full blur-[130px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-4xl text-center glass p-8 md:p-16 rounded-[2.5rem] border border-white/10 shadow-2xl">

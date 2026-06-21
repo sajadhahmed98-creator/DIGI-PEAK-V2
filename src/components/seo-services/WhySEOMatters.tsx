@@ -48,7 +48,7 @@ export function WhySEOMatters() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="flex gap-4 group"
                 >
-                  <div className="mt-1 h-12 w-12 shrink-0 rounded-full bg-accent-primary/10 border border-accent-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="mt-1 h-12 w-12 shrink-0 rounded-full bg-accent-primary/[0.03] border border-accent-primary/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <item.icon className="h-6 w-6 text-accent-primary" />
                   </div>
                   <div>

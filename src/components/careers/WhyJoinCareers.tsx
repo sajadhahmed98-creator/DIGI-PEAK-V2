@@ -59,7 +59,7 @@ const valueProps = [
 export function WhyJoinCareers() {
   return (
     <section className="py-12 md:py-20 lg:py-24 px-6 relative overflow-hidden bg-black/40 border-t border-white/5">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-accent-primary/5 blur-[120px] pointer-events-none rounded-full" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-accent-primary/[0.015] blur-[120px] pointer-events-none rounded-full" />
 
       <div className="mx-auto max-w-7xl relative z-10">
         <div className="text-center mb-16">
@@ -88,7 +88,7 @@ export function WhyJoinCareers() {
               transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
               className="glass p-8 rounded-3xl border border-white/10 hover:border-accent-primary/40 hover:shadow-[0_0_30px_rgba(168,85,247,0.1)] transition-all group flex flex-col items-start"
             >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 border border-white/10 group-hover:border-accent-primary/50 group-hover:bg-accent-primary/10 transition-all duration-300">
+              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 border border-white/10 group-hover:border-accent-primary/50 group-hover:bg-accent-primary/[0.03] transition-all duration-300">
                 <prop.icon className="h-5 w-5 text-foreground group-hover:text-accent-primary transition-colors" />
               </div>
               <h3 className="font-heading text-xl font-bold text-white mb-2 group-hover:translate-x-1 transition-transform duration-300">

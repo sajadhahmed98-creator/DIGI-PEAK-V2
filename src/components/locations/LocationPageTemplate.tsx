@@ -209,8 +209,8 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
         
         {/* Background Ambient Glows */}
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-purple-900/10 rounded-full blur-[140px] pointer-events-none z-0" />
-        <div className="absolute top-[25vh] right-1/4 w-[500px] h-[500px] bg-accent-primary/5 rounded-full blur-[120px] pointer-events-none z-0" />
-        <div className="absolute bottom-[30vh] left-10 w-[700px] h-[700px] bg-accent-secondary/5 rounded-full blur-[160px] pointer-events-none z-0" />
+        <div className="absolute top-[25vh] right-1/4 w-[500px] h-[500px] bg-accent-primary/[0.015] rounded-full blur-[120px] pointer-events-none z-0" />
+        <div className="absolute bottom-[30vh] left-10 w-[700px] h-[700px] bg-accent-secondary/[0.015] rounded-full blur-[160px] pointer-events-none z-0" />
 
         {/* Hero Section */}
         <section id="hero" className="relative overflow-hidden pt-40 pb-20 md:pt-56 md:pb-28 px-6 min-h-[90vh] flex flex-col items-center justify-center text-center border-b border-white/5 bg-[radial-gradient(ellipse_80%_60%_at_50%_25%,rgba(131,21,113,0.07)_0%,transparent_70%)]">
@@ -222,7 +222,7 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 rounded-full border border-accent-primary/20 bg-accent-primary/5 px-4.5 py-1.5 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-8 shadow-[0_0_15px_rgba(168,85,247,0.1)]"
+              className="inline-flex items-center gap-2 rounded-full border border-accent-primary/20 bg-accent-primary/[0.015] px-4.5 py-1.5 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-8 shadow-[0_0_15px_rgba(168,85,247,0.1)]"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-accent-primary animate-pulse" />
               {city.badge}
@@ -293,7 +293,7 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
                   <MapPin className="w-3 h-3 text-accent-primary" /> Districts:
                 </span>
                 {city.suburbs.map(sub => (
-                  <span key={sub} className="bg-white/[0.02] border border-white/5 px-3 py-1 rounded-full text-xs text-slate-400 hover:text-white hover:border-accent-primary/40 hover:bg-accent-primary/5 transition-all cursor-default font-mono">
+                  <span key={sub} className="bg-white/[0.02] border border-white/5 px-3 py-1 rounded-full text-xs text-slate-400 hover:text-white hover:border-accent-primary/40 hover:bg-accent-primary/[0.015] transition-all cursor-default font-mono">
                     {sub}
                   </span>
                 ))}
@@ -352,7 +352,7 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
             {/* Right visual card column */}
             <div className="lg:col-span-5">
               <div className="glass p-8 md:p-10 rounded-3xl border border-white/10 relative overflow-hidden shadow-2xl">
-                <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-accent-primary/5 blur-[50px] pointer-events-none rounded-full" />
+                <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-accent-primary/[0.015] blur-[50px] pointer-events-none rounded-full" />
                 
                 <h3 className="font-heading text-lg font-bold mb-6 text-white relative z-10 flex items-center gap-2.5">
                   <Building2 className="w-5 h-5 text-accent-primary" />
@@ -368,7 +368,7 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
                         className="bg-white/[0.02] border border-white/5 hover:border-accent-primary/20 hover:bg-white/[0.05] rounded-xl p-4 flex items-center justify-between transition-all duration-300 group"
                       >
                         <div className="flex items-center gap-3.5">
-                          <div className="h-9 w-9 shrink-0 rounded-lg bg-accent-primary/10 flex items-center justify-center text-accent-primary border border-accent-primary/20 group-hover:bg-accent-primary/25 transition-all">
+                          <div className="h-9 w-9 shrink-0 rounded-lg bg-accent-primary/[0.03] flex items-center justify-center text-accent-primary border border-accent-primary/20 group-hover:bg-accent-primary/25 transition-all">
                             <IconComp className="w-4.5 h-4.5" />
                           </div>
                           <div>
@@ -389,7 +389,7 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
         <section id="market-analysis" className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-black border-b border-white/5">
           <div className="mx-auto max-w-7xl">
             <div className="text-center mb-16 md:mb-24">
-              <span className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
+              <span className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
                 Market Analysis
               </span>
               <h2 className="font-heading text-3xl md:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-white">
@@ -476,7 +476,7 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
         <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-white/[0.003] border-b border-white/5">
           <div className="mx-auto max-w-7xl">
             <div className="text-center mb-16 md:mb-24">
-              <span className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
+              <span className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
                 Service Focus
               </span>
               <h2 className="font-heading text-3xl md:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-white">
@@ -494,7 +494,7 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
                   key={svc.title}
                   className="glass p-8 md:p-10 rounded-3xl border border-white/5 flex gap-6 hover:border-accent-primary/40 hover:bg-white/[0.01] transition-all duration-300 relative group shadow-lg"
                 >
-                  <div className="h-12 w-12 shrink-0 rounded-xl bg-accent-primary/10 flex items-center justify-center text-accent-primary border border-accent-primary/20 group-hover:scale-105 transition-transform duration-300">
+                  <div className="h-12 w-12 shrink-0 rounded-xl bg-accent-primary/[0.03] flex items-center justify-center text-accent-primary border border-accent-primary/20 group-hover:scale-105 transition-transform duration-300">
                     <span className="font-mono font-bold text-sm">0{i+1}</span>
                   </div>
                   <div>
@@ -552,7 +552,7 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
                   >
                     {/* Header */}
                     <div className="flex items-center gap-3 mb-6">
-                      <span className="w-5 h-5 rounded-full bg-accent-primary/10 border border-accent-primary/20 flex items-center justify-center text-[9px] font-mono text-accent-primary font-bold">
+                      <span className="w-5 h-5 rounded-full bg-accent-primary/[0.03] border border-accent-primary/20 flex items-center justify-center text-[9px] font-mono text-accent-primary font-bold">
                         ★
                       </span>
                       <h3 className="font-heading font-bold text-lg text-white">{block.title}</h3>
@@ -609,7 +609,7 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
         <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-black border-b border-white/5 relative">
           <div className="mx-auto max-w-4xl">
             <div className="text-center mb-16 md:mb-24">
-              <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
+              <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
                 <HelpIcon className="w-3.5 h-3.5" />
                 Frequently Asked Questions
               </div>
@@ -674,10 +674,10 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
 
         {/* Upgraded SaaS Dashboard CTA Conversion Widget */}
         <section className="py-16 md:py-24 lg:py-32 px-6 bg-[radial-gradient(circle_at_bottom,rgba(131,21,113,0.08)_0%,transparent_60%)] border-b border-white/5 relative overflow-hidden">
-          <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent-primary/5 rounded-full blur-[90px] pointer-events-none z-0" />
+          <div className="absolute top-[40%] left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent-primary/[0.015] rounded-full blur-[90px] pointer-events-none z-0" />
           
           <div className="mx-auto max-w-5xl glass p-12 md:p-20 rounded-3.5xl border border-white/10 relative z-10 text-center shadow-2xl">
-            <span className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
+            <span className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
               Free Growth Strategy Session
             </span>
             <h2 className="font-heading text-3xl md:text-5.5xl font-bold tracking-tight text-white mb-6 leading-tight">

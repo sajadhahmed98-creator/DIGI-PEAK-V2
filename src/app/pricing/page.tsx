@@ -192,7 +192,7 @@ export default function PricingPage() {
       
       {/* 1. HERO SECTION */}
       <section className="relative pt-36 pb-20 px-6 bg-background">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-accent-primary/10 blur-[140px] pointer-events-none rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-accent-primary/[0.03] blur-[140px] pointer-events-none rounded-full" />
         
         <div className="mx-auto max-w-5xl text-center relative z-10">
           <motion.div
@@ -274,7 +274,7 @@ export default function PricingPage() {
                       onClick={() => changeCurrency(code)}
                       className={`flex items-center justify-between w-full text-left px-4 py-2.5 rounded-xl text-xs font-semibold cursor-pointer transition-colors ${
                         selectedCurrency === code 
-                          ? "bg-accent-primary/10 text-accent-primary" 
+                          ? "bg-accent-primary/[0.03] text-accent-primary" 
                           : "text-muted hover:text-white hover:bg-white/[0.02]"
                       }`}
                     >
@@ -338,7 +338,7 @@ export default function PricingPage() {
 
                   {/* Popular Tag */}
                   {pkg.popular && (
-                    <div className="absolute top-4 right-4 rounded-full border border-accent-primary/20 bg-accent-primary/10 px-3 py-1 text-[9px] font-bold uppercase tracking-wider font-mono text-accent-primary flex items-center gap-1 shadow-sm shadow-accent-primary/10">
+                    <div className="absolute top-4 right-4 rounded-full border border-accent-primary/20 bg-accent-primary/[0.03] px-3 py-1 text-[9px] font-bold uppercase tracking-wider font-mono text-accent-primary flex items-center gap-1 shadow-sm shadow-accent-primary/10">
                       <Sparkles className="w-2.5 h-2.5" /> Popular
                     </div>
                   )}
@@ -398,7 +398,7 @@ export default function PricingPage() {
 
       {/* 3. CUSTOM SOLUTIONS ADDONS SECTION */}
       <section className="py-12 md:py-20 lg:py-24 border-t border-white/5 bg-white/[0.005] px-6 relative overflow-hidden">
-        <div className="absolute top-1/2 right-0 w-[500px] h-[300px] bg-accent-secondary/5 blur-[120px] pointer-events-none rounded-full" />
+        <div className="absolute top-1/2 right-0 w-[500px] h-[300px] bg-accent-secondary/[0.015] blur-[120px] pointer-events-none rounded-full" />
         
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-20">
@@ -580,7 +580,7 @@ export default function PricingPage() {
 
       {/* 8. FINAL CTA SECTION */}
       <section className="py-12 md:py-20 lg:py-24 border-t border-white/5 relative overflow-hidden bg-background px-6">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-accent-primary/10 blur-[130px] pointer-events-none rounded-full" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-accent-primary/[0.03] blur-[130px] pointer-events-none rounded-full" />
         
         <div className="mx-auto max-w-4xl text-center relative z-10">
           <h2 className="font-heading text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight text-white mb-4">

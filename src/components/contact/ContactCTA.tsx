@@ -58,7 +58,7 @@ export function ContactCTA() {
               </button>
               <Link
                 href="/digiai"
-                className="inline-flex items-center gap-2 bg-accent-primary/10 border border-accent-primary/30 text-white font-bold px-8 py-4 rounded-full hover:scale-105 hover:bg-accent-primary/20 transition-all duration-300 cursor-pointer text-sm"
+                className="inline-flex items-center gap-2 bg-accent-primary/[0.03] border border-accent-primary/30 text-white font-bold px-8 py-4 rounded-full hover:scale-105 hover:bg-accent-primary/20 transition-all duration-300 cursor-pointer text-sm"
               >
                 Try DigiAI
                 <span className="relative flex h-2 w-2">

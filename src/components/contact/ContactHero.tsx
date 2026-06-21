@@ -15,8 +15,8 @@ export function ContactHero() {
     <section className="relative min-h-[70vh] pt-32 pb-16 px-6 flex items-center justify-center overflow-hidden bg-black">
       {/* Background ambient glowing spheres */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent-primary/10 rounded-full blur-[140px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent-secondary/5 rounded-full blur-[120px]" />
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent-primary/[0.03] rounded-full blur-[140px] animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent-secondary/[0.015] rounded-full blur-[120px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-5xl text-center w-full">
@@ -25,7 +25,7 @@ export function ContactHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/5 px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6 select-none animate-pulse">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.015] px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6 select-none animate-pulse">
             Digipeak Partner Hub
           </div>
 

@@ -99,7 +99,7 @@ export function QatarServices() {
     <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-black relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-accent-primary/5 rounded-full blur-[140px]" />
+        <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-accent-primary/[0.015] rounded-full blur-[140px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">
@@ -111,7 +111,7 @@ export function QatarServices() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent-secondary/35 bg-accent-secondary/5 px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-secondary uppercase mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent-secondary/35 bg-accent-secondary/[0.015] px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-secondary uppercase mb-6">
               Solutions
             </div>
             <h2 className="font-heading text-3xl md:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">

@@ -219,18 +219,18 @@ B2B Compounding ROI Forecaster Report:
   ];
 
   return (
-    <div className="relative min-h-screen bg-[#050816] text-white pt-32 pb-24 px-6 overflow-hidden">
+    <div className="relative min-h-screen bg-[#020203] text-white pt-32 pb-24 px-6 overflow-hidden">
       {/* Background Orbs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[25%] left-10 w-[500px] h-[500px] bg-accent-primary/5 rounded-full blur-[140px]" />
-        <div className="absolute bottom-[20%] right-10 w-[450px] h-[450px] bg-accent-secondary/5 rounded-full blur-[120px]" />
+        <div className="absolute top-[25%] left-10 w-[500px] h-[500px] bg-accent-primary/[0.015] rounded-full blur-[140px]" />
+        <div className="absolute bottom-[20%] right-10 w-[450px] h-[450px] bg-accent-secondary/[0.015] rounded-full blur-[120px]" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto space-y-16">
         
         {/* Header Block */}
         <div className="text-center max-w-3xl mx-auto space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 px-4 py-1.5 text-xs font-semibold text-accent-primary">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] px-4 py-1.5 text-xs font-semibold text-accent-primary">
             <TrendingUp className="w-3.5 h-3.5" />
             ROI &amp; Revenue Projection Engine
           </div>
@@ -439,7 +439,7 @@ B2B Compounding ROI Forecaster Report:
             </div>
 
             {/* Growth Curve Chart */}
-            <div className="glass border border-white/5 rounded-3xl p-6 bg-gradient-to-b from-[#0a0d24] to-[#050816] space-y-4">
+            <div className="glass border border-white/5 rounded-3xl p-6 bg-gradient-to-b from-[#0a0d24] to-[#020203] space-y-4">
               <div className="flex justify-between items-center text-xs">
                 <h4 className="font-heading font-bold uppercase tracking-wider text-white">Monthly Compounding Revenue Growth Curve</h4>
                 <div className="flex items-center gap-1.5 text-accent-primary font-bold text-[10px]">
@@ -523,7 +523,7 @@ B2B Compounding ROI Forecaster Report:
         {showModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-background/80 backdrop-blur-md animate-in fade-in duration-200">
             <div 
-              className="relative w-full max-w-lg glass border border-accent-primary/20 rounded-3xl p-8 bg-gradient-to-b from-[#0c0d21] to-[#050816] space-y-6 shadow-2xl animate-in zoom-in-95 duration-200"
+              className="relative w-full max-w-lg glass border border-accent-primary/20 rounded-3xl p-8 bg-gradient-to-b from-[#0c0d21] to-[#020203] space-y-6 shadow-2xl animate-in zoom-in-95 duration-200"
               role="dialog"
               aria-modal="true"
             >

@@ -7,7 +7,7 @@ const services = [
   {
     title: "Graphic Design",
     icon: Palette,
-    accent: "text-accent-primary bg-accent-primary/10 border-accent-primary/20",
+    accent: "text-accent-primary bg-accent-primary/[0.03] border-accent-primary/20",
     href: "/branding-creative",
     offerings: [
       "Logo Design",
@@ -19,7 +19,7 @@ const services = [
   {
     title: "Digital Marketing",
     icon: TrendingUp,
-    accent: "text-accent-secondary bg-accent-secondary/10 border-accent-secondary/20",
+    accent: "text-accent-secondary bg-accent-secondary/[0.03] border-accent-secondary/20",
     href: "/digital-marketing",
     offerings: [
       "SEO & Local SEO",
@@ -70,7 +70,7 @@ export function CreativeServices() {
     <section className="py-12 md:py-20 lg:py-32 px-6 bg-black relative">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-accent-primary/5 rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-accent-primary/[0.015] rounded-full blur-[120px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">

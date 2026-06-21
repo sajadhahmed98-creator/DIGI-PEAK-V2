@@ -11,7 +11,7 @@ const reasons = [
     icon: Users,
     title: "Client-Focused Approach",
     desc: "Every strategy is built around your specific goals, audience, and market — not a generic template.",
-    color: "text-accent-primary border-accent-primary/20 bg-accent-primary/10",
+    color: "text-accent-primary border-accent-primary/20 bg-accent-primary/[0.03]",
   },
   {
     icon: Cpu,
@@ -23,7 +23,7 @@ const reasons = [
     icon: BarChart2,
     title: "Data-Driven Strategies",
     desc: "Decisions backed by analytics, search intent data, and performance tracking — not intuition alone.",
-    color: "text-accent-secondary border-accent-secondary/20 bg-accent-secondary/10",
+    color: "text-accent-secondary border-accent-secondary/20 bg-accent-secondary/[0.03]",
   },
   {
     icon: Layers,
@@ -67,8 +67,8 @@ export function WhyChooseDigipeak() {
   return (
     <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-black relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-primary/5 rounded-full blur-[120px]" />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-secondary/5 rounded-full blur-[120px]" />
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent-primary/[0.015] rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-secondary/[0.015] rounded-full blur-[120px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">

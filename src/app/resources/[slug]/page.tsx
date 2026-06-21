@@ -134,11 +134,11 @@ export default async function ResourceLandingPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="relative min-h-screen bg-[#050816] text-white">
+      <div className="relative min-h-screen bg-[#020203] text-white">
         {/* Gradients */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-[15%] left-[-5%] w-[500px] h-[500px] bg-accent-primary/5 rounded-full blur-[130px]" />
-          <div className="absolute top-[50%] right-[-5%] w-[500px] h-[500px] bg-accent-secondary/5 rounded-full blur-[130px]" />
+          <div className="absolute top-[15%] left-[-5%] w-[500px] h-[500px] bg-accent-primary/[0.015] rounded-full blur-[130px]" />
+          <div className="absolute top-[50%] right-[-5%] w-[500px] h-[500px] bg-accent-secondary/[0.015] rounded-full blur-[130px]" />
         </div>
 
         <main className="max-w-7xl mx-auto px-6 py-16 md:py-24 lg:py-32 relative z-10">
@@ -158,7 +158,7 @@ export default async function ResourceLandingPage({ params }: PageProps) {
             <section className="lg:col-span-7 space-y-8">
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
-                  <span className="text-xs uppercase font-bold text-accent-secondary tracking-widest bg-accent-secondary/10 px-3 py-1 rounded">
+                  <span className="text-xs uppercase font-bold text-accent-secondary tracking-widest bg-accent-secondary/[0.03] px-3 py-1 rounded">
                     {resource.category.replace("-", " ")}
                   </span>
                   <span className="text-xs font-semibold text-white/50 border border-white/10 px-3 py-0.5 rounded">
@@ -227,7 +227,7 @@ export default async function ResourceLandingPage({ params }: PageProps) {
 
             {/* Sidebar Gated Download Trigger Form */}
             <aside className="lg:col-span-5">
-              <div className="glass border border-accent-primary/20 rounded-3xl p-6 relative overflow-hidden bg-gradient-to-b from-[#0c0d21] to-[#050816]">
+              <div className="glass border border-accent-primary/20 rounded-3xl p-6 relative overflow-hidden bg-gradient-to-b from-[#0c0d21] to-[#020203]">
                 <ResourceHubClient resources={[resource]} initialSlug={resource.slug} />
               </div>
             </aside>

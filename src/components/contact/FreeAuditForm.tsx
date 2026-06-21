@@ -200,7 +200,7 @@ export function FreeAuditForm() {
     <div id="lead-form" className="relative z-10 mx-auto max-w-3xl scroll-mt-28">
       {/* Lead Capture Form Container */}
       <div className="glass p-6 md:p-10 rounded-3xl border border-white/10 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-32 h-32 bg-accent-primary/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 w-32 h-32 bg-accent-primary/[0.015] rounded-full blur-3xl pointer-events-none" />
 
         <form onSubmit={handleSubmit} onFocus={handleInteraction} className="space-y-6">
           <div className="grid grid-cols-1 gap-6">
@@ -345,7 +345,7 @@ export function FreeAuditForm() {
                     <CheckCircle2 className="w-6 h-6 animate-pulse" />
                   </div>
                   
-                  <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-primary bg-accent-primary/10 px-2.5 py-1 rounded-full">
+                  <span className="text-xs font-mono font-bold tracking-widest uppercase text-accent-primary bg-accent-primary/[0.03] px-2.5 py-1 rounded-full">
                     Lead Captured
                   </span>
 

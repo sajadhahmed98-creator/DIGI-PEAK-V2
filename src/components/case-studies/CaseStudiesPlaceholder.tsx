@@ -36,7 +36,7 @@ export function CaseStudiesPlaceholder() {
       {/* Background glows */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 left-0 h-[600px] w-[600px] -translate-y-1/3 -translate-x-1/3 rounded-full bg-indigo-600/5 blur-[160px]" />
-        <div className="absolute bottom-0 right-0 h-[400px] w-[400px] translate-y-1/3 translate-x-1/3 rounded-full bg-accent-secondary/5 blur-[160px]" />
+        <div className="absolute bottom-0 right-0 h-[400px] w-[400px] translate-y-1/3 translate-x-1/3 rounded-full bg-accent-secondary/[0.015] blur-[160px]" />
 
         {/* Grid overlay */}
         <div className="absolute inset-0 opacity-5">

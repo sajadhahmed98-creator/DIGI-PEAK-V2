@@ -34,7 +34,7 @@ export function PerformanceDashboard() {
   return (
     <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 border-y border-white/5 bg-white/[0.01] relative overflow-hidden">
       {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent-primary/10 blur-[100px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-accent-primary/[0.03] blur-[100px] rounded-full pointer-events-none" />
       
       <div className="mx-auto max-w-7xl relative z-10">
         <div className="text-center mb-16">

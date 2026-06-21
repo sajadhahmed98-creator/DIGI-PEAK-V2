@@ -54,11 +54,11 @@ export function LocationHero({
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <motion.div
           animate={{ x: mousePosition.x * -2, y: mousePosition.y * -2 }}
-          className="absolute top-0 right-0 h-[800px] w-[800px] -translate-y-1/2 translate-x-1/3 rounded-full bg-accent-primary/10 blur-[160px]"
+          className="absolute top-0 right-0 h-[800px] w-[800px] -translate-y-1/2 translate-x-1/3 rounded-full bg-accent-primary/[0.03] blur-[160px]"
         />
         <motion.div
           animate={{ x: mousePosition.x * 2, y: mousePosition.y * 2 }}
-          className="absolute bottom-0 left-0 h-[600px] w-[600px] translate-y-1/3 -translate-x-1/3 rounded-full bg-accent-secondary/10 blur-[160px]"
+          className="absolute bottom-0 left-0 h-[600px] w-[600px] translate-y-1/3 -translate-x-1/3 rounded-full bg-accent-secondary/[0.03] blur-[160px]"
         />
         {/* Grid overlay */}
         <div className="absolute inset-0 opacity-10">

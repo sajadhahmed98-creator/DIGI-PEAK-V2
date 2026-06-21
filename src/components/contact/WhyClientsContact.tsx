@@ -59,7 +59,7 @@ export function WhyClientsContact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
               Solutions
             </div>
             <h2 className="font-heading text-3xl md:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-white">
@@ -85,7 +85,7 @@ export function WhyClientsContact() {
               transition={{ duration: 0.4, delay: (index % 3) * 0.05 }}
               className="glass p-6 md:p-8 rounded-2xl border border-white/10 hover:border-accent-primary/20 transition-all duration-300 group flex items-start gap-4"
             >
-              <div className="w-6 h-6 rounded-full bg-accent-primary/10 border border-accent-primary/25 flex items-center justify-center flex-shrink-0 text-accent-primary group-hover:bg-accent-primary group-hover:text-white transition-all duration-300">
+              <div className="w-6 h-6 rounded-full bg-accent-primary/[0.03] border border-accent-primary/25 flex items-center justify-center flex-shrink-0 text-accent-primary group-hover:bg-accent-primary group-hover:text-white transition-all duration-300">
                 <Check className="w-3.5 h-3.5" />
               </div>
               <div>

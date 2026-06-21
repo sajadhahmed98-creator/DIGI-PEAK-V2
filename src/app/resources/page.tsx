@@ -96,17 +96,17 @@ export default function ResourcesPage() {
         }}
       />
 
-      <div className="relative min-h-screen bg-[#050816] text-white">
+      <div className="relative min-h-screen bg-[#020203] text-white">
         {/* Decorative ambient gradients */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute top-[10%] left-[-10%] w-[600px] h-[600px] bg-accent-primary/5 rounded-full blur-[150px]" />
-          <div className="absolute top-[40%] right-[-10%] w-[500px] h-[500px] bg-accent-secondary/5 rounded-full blur-[130px]" />
+          <div className="absolute top-[10%] left-[-10%] w-[600px] h-[600px] bg-accent-primary/[0.015] rounded-full blur-[150px]" />
+          <div className="absolute top-[40%] right-[-10%] w-[500px] h-[500px] bg-accent-secondary/[0.015] rounded-full blur-[130px]" />
         </div>
 
         <main className="max-w-7xl mx-auto px-6 py-16 md:py-24 lg:py-32 relative z-10 space-y-16">
           {/* Hero Intro Header */}
           <section className="text-center max-w-3xl mx-auto space-y-6">
-            <span className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 px-4 py-1.5 text-xs font-semibold text-accent-primary">
+            <span className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] px-4 py-1.5 text-xs font-semibold text-accent-primary">
               <span className="w-2 h-2 rounded-full bg-accent-primary animate-pulse" />
               B2B Growth Toolkit
             </span>

@@ -9,7 +9,7 @@ const steps = [
     icon: Search,
     title: "Discovery",
     desc: "Deep-dive into your business, audience, competitors and current digital presence to fully understand your context and opportunities.",
-    color: "text-accent-primary border-accent-primary/30 bg-accent-primary/10",
+    color: "text-accent-primary border-accent-primary/30 bg-accent-primary/[0.03]",
     highlight: "from-accent-primary/20 to-transparent",
   },
   {
@@ -17,7 +17,7 @@ const steps = [
     icon: Target,
     title: "Strategy",
     desc: "Build a tailored digital growth roadmap with clear goals, timelines, channel priorities, and measurable success metrics.",
-    color: "text-accent-secondary border-accent-secondary/30 bg-accent-secondary/10",
+    color: "text-accent-secondary border-accent-secondary/30 bg-accent-secondary/[0.03]",
     highlight: "from-accent-secondary/20 to-transparent",
   },
   {

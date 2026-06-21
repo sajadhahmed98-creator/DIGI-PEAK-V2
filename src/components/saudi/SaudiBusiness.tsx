@@ -102,7 +102,7 @@ export function SaudiBusiness() {
                 <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-primary group-hover:bg-accent-primary/10 group-hover:border-accent-primary/30 transition-all duration-300 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-primary group-hover:bg-accent-primary/[0.03] group-hover:border-accent-primary/30 transition-all duration-300 mb-6">
                     <Icon className="w-5 h-5" />
                   </div>
                   <h3 className="font-heading font-bold text-white text-lg mb-3">

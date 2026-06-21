@@ -58,7 +58,7 @@ export function ExperienceEducation() {
     <section className="py-12 md:py-20 lg:py-32 px-6 border-y border-white/5 bg-white/[0.01] relative overflow-hidden">
       {/* Background ambient light */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-1/4 w-[500px] h-[300px] bg-accent-primary/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 left-1/4 w-[500px] h-[300px] bg-accent-primary/[0.015] rounded-full blur-[120px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">
@@ -90,7 +90,7 @@ export function ExperienceEducation() {
                   <h3 className="font-heading text-xl md:text-2xl font-bold text-white">
                     {experience.title}
                   </h3>
-                  <span className="font-mono text-xs font-semibold px-3 py-1 rounded-full bg-accent-primary/10 border border-accent-primary/20 text-accent-primary">
+                  <span className="font-mono text-xs font-semibold px-3 py-1 rounded-full bg-accent-primary/[0.03] border border-accent-primary/20 text-accent-primary">
                     {experience.period}
                   </span>
                 </div>
@@ -150,7 +150,7 @@ export function ExperienceEducation() {
                     
                     <div className="relative z-10">
                       <div className="flex items-start gap-4">
-                        <div className="w-10 h-10 rounded-xl bg-accent-secondary/10 border border-accent-secondary/20 flex items-center justify-center flex-shrink-0 text-accent-secondary">
+                        <div className="w-10 h-10 rounded-xl bg-accent-secondary/[0.03] border border-accent-secondary/20 flex items-center justify-center flex-shrink-0 text-accent-secondary">
                           <IconComponent className="w-5 h-5" />
                         </div>
                         <div className="flex-1">

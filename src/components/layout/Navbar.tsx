@@ -101,7 +101,7 @@ export function Navbar() {
                 <span className="relative z-10 flex items-center gap-1.5">
                   {link.name}
                   {link.isAI && (
-                    <span className="flex items-center gap-1 px-1.5 py-[1px] rounded text-[9px] font-bold uppercase tracking-wider text-accent-primary bg-accent-primary/10 border border-accent-primary/20 shadow-[0_0_10px_rgba(168,85,247,0.15)] group-hover:bg-accent-primary/20 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] transition-all">
+                    <span className="flex items-center gap-1 px-1.5 py-[1px] rounded text-[9px] font-bold uppercase tracking-wider text-accent-primary bg-accent-primary/[0.03] border border-accent-primary/20 shadow-[0_0_10px_rgba(168,85,247,0.15)] group-hover:bg-accent-primary/20 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.3)] transition-all">
                       <span className="w-1 h-1 rounded-full bg-green-400 animate-pulse"></span>
                       AI
                     </span>
@@ -157,7 +157,7 @@ export function Navbar() {
                 >
                   {link.name}
                   {link.isAI && (
-                    <span className="ml-1.5 flex items-center gap-1 px-1.5 py-[1px] rounded text-[9px] font-bold uppercase tracking-wider text-accent-primary bg-accent-primary/10 border border-accent-primary/20 shadow-[0_0_10px_rgba(168,85,247,0.15)] group-hover:bg-accent-primary/20 transition-all">
+                    <span className="ml-1.5 flex items-center gap-1 px-1.5 py-[1px] rounded text-[9px] font-bold uppercase tracking-wider text-accent-primary bg-accent-primary/[0.03] border border-accent-primary/20 shadow-[0_0_10px_rgba(168,85,247,0.15)] group-hover:bg-accent-primary/20 transition-all">
                       <span className="w-1 h-1 rounded-full bg-green-400 animate-pulse"></span>
                       AI
                     </span>

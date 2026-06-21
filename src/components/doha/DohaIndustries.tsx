@@ -31,7 +31,7 @@ export function DohaIndustries() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
               <Landmark className="w-3.5 h-3.5" />
               Sectors Served
             </div>
@@ -61,7 +61,7 @@ export function DohaIndustries() {
                 className="glass p-6 rounded-2xl border border-white/5 hover:border-accent-primary/20 transition-all duration-300 group flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary group-hover:bg-accent-secondary/10 group-hover:border-accent-secondary/30 transition-all duration-300 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-accent-secondary group-hover:bg-accent-secondary/[0.03] group-hover:border-accent-secondary/30 transition-all duration-300 mb-6">
                     <Icon className="w-5 h-5" />
                   </div>
                   <h3 className="font-heading font-bold text-white text-base mb-2 group-hover:text-accent-primary transition-colors">

@@ -122,14 +122,14 @@ export function BlogHubClient({ initialPosts }: { initialPosts: Post[] }) {
     <div className="relative min-h-screen bg-[#050816] text-white">
       {/* Decorative Blur Orbs */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[10%] left-1/4 w-[600px] h-[600px] bg-accent-primary/5 rounded-full blur-[150px]" />
-        <div className="absolute top-[40%] right-1/4 w-[500px] h-[500px] bg-accent-secondary/5 rounded-full blur-[140px]" />
+        <div className="absolute top-[10%] left-1/4 w-[600px] h-[600px] bg-accent-primary/[0.015] rounded-full blur-[150px]" />
+        <div className="absolute top-[40%] right-1/4 w-[500px] h-[500px] bg-accent-secondary/[0.015] rounded-full blur-[140px]" />
       </div>
 
       {/* Hero Header */}
       <section className="relative pt-32 pb-16 px-6 text-center border-b border-white/5 bg-gradient-to-b from-[#080b1e] to-transparent">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 px-4 py-1.5 text-xs font-semibold text-accent-primary mb-6">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] px-4 py-1.5 text-xs font-semibold text-accent-primary mb-6">
             <Sparkles className="w-3.5 h-3.5" />
             Topical Authority Hub
           </div>
@@ -178,7 +178,7 @@ export function BlogHubClient({ initialPosts }: { initialPosts: Post[] }) {
 
       {/* DigiAI Callout Banner */}
       <section className="max-w-7xl mx-auto px-6 pt-8 relative z-10">
-        <div className="glass border border-accent-primary/20 bg-accent-primary/5 rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="glass border border-accent-primary/20 bg-accent-primary/[0.015] rounded-2xl p-4 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-accent-primary/20 flex items-center justify-center flex-shrink-0">
               <Sparkles className="w-5 h-5 text-accent-primary" />

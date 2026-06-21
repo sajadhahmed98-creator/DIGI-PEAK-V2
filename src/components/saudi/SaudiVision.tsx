@@ -8,7 +8,7 @@ export function SaudiVision() {
     <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-white/[0.01] border-t border-white/5 relative overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-accent-secondary/5 rounded-full blur-[140px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[300px] bg-accent-secondary/[0.015] rounded-full blur-[140px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-5xl">
@@ -18,7 +18,7 @@ export function SaudiVision() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/5 px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.015] px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
               <Sparkles className="w-3.5 h-3.5" />
               Strategic Growth
             </div>
@@ -40,7 +40,7 @@ export function SaudiVision() {
             className="glass p-8 rounded-3xl border border-white/10 relative overflow-hidden group hover:border-accent-primary/30 transition-all duration-300"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            <div className="w-12 h-12 rounded-2xl bg-accent-primary/10 border border-accent-primary/20 flex items-center justify-center text-accent-primary mb-6">
+            <div className="w-12 h-12 rounded-2xl bg-accent-primary/[0.03] border border-accent-primary/20 flex items-center justify-center text-accent-primary mb-6">
               <ShieldAlert className="w-6 h-6" />
             </div>
             <h3 className="font-heading text-xl font-bold text-white mb-4">
@@ -59,7 +59,7 @@ export function SaudiVision() {
             className="glass p-8 rounded-3xl border border-white/10 relative overflow-hidden group hover:border-accent-secondary/30 transition-all duration-300"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-accent-secondary/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            <div className="w-12 h-12 rounded-2xl bg-accent-secondary/10 border border-accent-secondary/20 flex items-center justify-center text-accent-secondary mb-6">
+            <div className="w-12 h-12 rounded-2xl bg-accent-secondary/[0.03] border border-accent-secondary/20 flex items-center justify-center text-accent-secondary mb-6">
               <Compass className="w-6 h-6" />
             </div>
             <h3 className="font-heading text-xl font-bold text-white mb-4">
@@ -78,7 +78,7 @@ export function SaudiVision() {
             className="glass p-8 rounded-3xl border border-white/10 relative overflow-hidden group hover:border-accent-secondary/30 transition-all duration-300"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-accent-secondary/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            <div className="w-12 h-12 rounded-2xl bg-accent-secondary/10 border border-accent-secondary/20 flex items-center justify-center text-accent-secondary mb-6">
+            <div className="w-12 h-12 rounded-2xl bg-accent-secondary/[0.03] border border-accent-secondary/20 flex items-center justify-center text-accent-secondary mb-6">
               <Cpu className="w-6 h-6" />
             </div>
             <h3 className="font-heading text-xl font-bold text-white mb-4">
@@ -97,7 +97,7 @@ export function SaudiVision() {
             className="glass p-8 rounded-3xl border border-white/10 relative overflow-hidden group hover:border-accent-primary/30 transition-all duration-300"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/3 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-            <div className="w-12 h-12 rounded-2xl bg-accent-primary/10 border border-accent-primary/20 flex items-center justify-center text-accent-primary mb-6">
+            <div className="w-12 h-12 rounded-2xl bg-accent-primary/[0.03] border border-accent-primary/20 flex items-center justify-center text-accent-primary mb-6">
               <Sparkles className="w-6 h-6" />
             </div>
             <h3 className="font-heading text-xl font-bold text-white mb-4">

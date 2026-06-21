@@ -521,7 +521,7 @@ export default function SchemaGeneratorPage() {
           <div className="flex items-center gap-1.5 text-accent-primary font-bold">
             <span className="w-1.5 h-1.5 rounded-full bg-accent-primary" />
             <span>{key}:</span>
-            {value["@type"] && <span className="text-[10px] bg-accent-primary/10 border border-accent-primary/20 text-accent-primary px-1.5 py-0.5 rounded-full font-mono font-medium">{value["@type"]}</span>}
+            {value["@type"] && <span className="text-[10px] bg-accent-primary/[0.03] border border-accent-primary/20 text-accent-primary px-1.5 py-0.5 rounded-full font-mono font-medium">{value["@type"]}</span>}
           </div>
           <div className="space-y-1">
             {Object.keys(value).map(k => {
@@ -576,11 +576,11 @@ export default function SchemaGeneratorPage() {
   const parsedObj = getParsedSchemaObj();
 
   return (
-    <div className="relative min-h-screen bg-[#050816] text-white pt-32 pb-24 px-6 overflow-hidden">
+    <div className="relative min-h-screen bg-[#020203] text-white pt-32 pb-24 px-6 overflow-hidden">
       {/* Background Orbs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[15%] right-[-5%] w-[500px] h-[500px] bg-accent-primary/5 rounded-full blur-[140px]" />
-        <div className="absolute bottom-[15%] left-[-5%] w-[450px] h-[450px] bg-accent-secondary/5 rounded-full blur-[125px]" />
+        <div className="absolute top-[15%] right-[-5%] w-[500px] h-[500px] bg-accent-primary/[0.015] rounded-full blur-[140px]" />
+        <div className="absolute bottom-[15%] left-[-5%] w-[450px] h-[450px] bg-accent-secondary/[0.015] rounded-full blur-[125px]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto space-y-8">
@@ -1090,7 +1090,7 @@ export default function SchemaGeneratorPage() {
             )}
 
             {/* Need Help Implementing Schema CTA Card */}
-            <div className="glass border border-accent-secondary/30 rounded-3xl p-6 bg-gradient-to-r from-[#0c142b] to-[#050816] flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div className="glass border border-accent-secondary/30 rounded-3xl p-6 bg-gradient-to-r from-[#0c142b] to-[#020203] flex flex-col sm:flex-row items-center justify-between gap-6">
               <div className="space-y-1.5 text-center sm:text-left">
                 <h4 className="font-heading font-black text-sm uppercase text-white">Need help implementing schema?</h4>
                 <p className="text-xs text-muted leading-relaxed max-w-md">

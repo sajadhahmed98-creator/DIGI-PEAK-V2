@@ -10,14 +10,14 @@ const milestones = [
     icon: Calendar,
     title: "Digipeak Founded",
     desc: "Digipeak Agency was established in Sri Lanka with a clear mission: to help businesses build stronger digital foundations through innovation, creativity, and technology.",
-    color: "text-accent-primary border-accent-primary/30 bg-accent-primary/10",
+    color: "text-accent-primary border-accent-primary/30 bg-accent-primary/[0.03]",
   },
   {
     year: "2023",
     icon: Globe,
     title: "International Expansion",
     desc: "Digipeak began serving clients internationally, extending expertise to the Middle East, Southeast Asia, and beyond — combining cross-market digital knowledge with local business understanding.",
-    color: "text-accent-secondary border-accent-secondary/30 bg-accent-secondary/10",
+    color: "text-accent-secondary border-accent-secondary/30 bg-accent-secondary/[0.03]",
   },
   {
     year: "2024",
@@ -47,7 +47,7 @@ export function OurStory() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 px-4 py-2 text-sm font-semibold text-accent-primary mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] px-4 py-2 text-sm font-semibold text-accent-primary mb-6">
               <MapPin className="w-4 h-4" />
               Headquartered in Sri Lanka
             </div>

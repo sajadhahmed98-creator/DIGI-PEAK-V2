@@ -35,8 +35,8 @@ export function PortfolioPlaceholder() {
     <section className="relative overflow-hidden pt-36 pb-24 md:pt-52 md:pb-36 px-6 min-h-screen flex items-center">
       {/* Background glows */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 right-0 h-[700px] w-[700px] -translate-y-1/3 translate-x-1/3 rounded-full bg-accent-primary/10 blur-[160px]" />
-        <div className="absolute bottom-0 left-0 h-[500px] w-[500px] translate-y-1/3 -translate-x-1/3 rounded-full bg-accent-secondary/10 blur-[160px]" />
+        <div className="absolute top-0 right-0 h-[700px] w-[700px] -translate-y-1/3 translate-x-1/3 rounded-full bg-accent-primary/[0.03] blur-[160px]" />
+        <div className="absolute bottom-0 left-0 h-[500px] w-[500px] translate-y-1/3 -translate-x-1/3 rounded-full bg-accent-secondary/[0.03] blur-[160px]" />
 
         {/* Grid overlay */}
         <div className="absolute inset-0 opacity-10">
@@ -146,8 +146,8 @@ export function PortfolioPlaceholder() {
                   <div className="h-2.5 w-full rounded-full bg-white/5 mb-2" />
                   <div className="h-2.5 w-4/5 rounded-full bg-white/5 mb-4" />
                   <div className="flex gap-2">
-                    <div className="h-6 w-16 rounded-full bg-accent-primary/10 border border-accent-primary/20" />
-                    <div className="h-6 w-12 rounded-full bg-accent-secondary/10 border border-accent-secondary/20" />
+                    <div className="h-6 w-16 rounded-full bg-accent-primary/[0.03] border border-accent-primary/20" />
+                    <div className="h-6 w-12 rounded-full bg-accent-secondary/[0.03] border border-accent-secondary/20" />
                   </div>
                 </div>
               </motion.div>

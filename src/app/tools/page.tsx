@@ -43,18 +43,18 @@ export default function ToolsHubPage() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-[#050816] text-white pt-32 pb-24 px-6 overflow-hidden">
+    <div className="relative min-h-screen bg-[#020203] text-white pt-32 pb-24 px-6 overflow-hidden">
       {/* Background orbs */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-[20%] left-1/4 w-[600px] h-[600px] bg-accent-primary/5 rounded-full blur-[140px]" />
-        <div className="absolute bottom-[20%] right-1/4 w-[500px] h-[500px] bg-accent-secondary/5 rounded-full blur-[120px]" />
+        <div className="absolute top-[20%] left-1/4 w-[600px] h-[600px] bg-accent-primary/[0.015] rounded-full blur-[140px]" />
+        <div className="absolute bottom-[20%] right-1/4 w-[500px] h-[500px] bg-accent-secondary/[0.015] rounded-full blur-[120px]" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto space-y-16">
         
         {/* Header section */}
         <div className="text-center max-w-3xl mx-auto space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 px-4 py-1.5 text-xs font-semibold text-accent-primary">
+          <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] px-4 py-1.5 text-xs font-semibold text-accent-primary">
             <Sparkles className="w-3.5 h-3.5" />
             Performance &amp; SEO Tools
           </div>

@@ -48,7 +48,7 @@ export default function ProposalPage() {
           </div>
 
           <div className="relative z-10 mx-auto max-w-4xl text-center w-full">
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/5 px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6 select-none">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.015] px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6 select-none">
               High Intent Scoping
             </div>
 

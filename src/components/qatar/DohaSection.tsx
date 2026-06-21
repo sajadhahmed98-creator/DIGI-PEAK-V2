@@ -9,7 +9,7 @@ export function DohaSection() {
     <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-black relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-accent-primary/5 rounded-full blur-[140px]" />
+        <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-accent-primary/[0.015] rounded-full blur-[140px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">
@@ -24,7 +24,7 @@ export function DohaSection() {
               transition={{ duration: 0.6 }}
               className="space-y-6 animate-pulse"
             >
-              <div className="inline-flex items-center gap-2 rounded-full border border-accent-secondary/35 bg-accent-secondary/5 px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-secondary uppercase">
+              <div className="inline-flex items-center gap-2 rounded-full border border-accent-secondary/35 bg-accent-secondary/[0.015] px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-secondary uppercase">
                 <Sparkles className="w-3.5 h-3.5" />
                 Capital Focus
               </div>

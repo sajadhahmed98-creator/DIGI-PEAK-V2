@@ -425,13 +425,13 @@ export default function ClientDigiAI() {
             animate={{ x: 0 }}
             exit={{ x: -300 }}
             transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-            className={`fixed lg:static top-0 left-0 h-full w-[280px] bg-[#050816] border-r border-white/5 z-50 flex flex-col shrink-0`}
+            className={`fixed lg:static top-0 left-0 h-full w-[280px] bg-[#08080c] border-r border-white/5 z-50 flex flex-col shrink-0`}
           >
             <div className="p-4 flex items-center justify-between border-b border-white/5">
               <Link href="/" className="flex items-center gap-3 group">
-                <div className="w-8 h-8 rounded-xl bg-accent-primary/10 flex items-center justify-center border border-accent-primary/20 relative">
+                <div className="w-8 h-8 rounded-xl bg-accent-primary/[0.03] flex items-center justify-center border border-accent-primary/20 relative">
                   <img src="/logo.png" alt="Digipeak" className="w-4 h-4 object-contain" />
-                  <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-[#050816]" />
+                  <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-[#08080c]" />
                 </div>
                 <span className="font-heading font-bold text-lg group-hover:text-accent-primary transition-colors">DigiAI</span>
               </Link>
@@ -568,7 +568,7 @@ export default function ClientDigiAI() {
                 <div className="relative w-24 h-24 mb-8">
                   <div className="absolute inset-0 bg-accent-primary/20 rounded-full animate-ping opacity-20"></div>
                   <div className="absolute inset-0 bg-gradient-to-tr from-accent-primary to-accent-secondary rounded-full opacity-10 blur-xl"></div>
-                  <div className="relative w-full h-full rounded-full bg-[#050816] border border-white/10 flex items-center justify-center shadow-[0_0_50px_rgba(168,85,247,0.15)] overflow-hidden">
+                  <div className="relative w-full h-full rounded-full bg-[#08080c] border border-white/10 flex items-center justify-center shadow-[0_0_50px_rgba(168,85,247,0.15)] overflow-hidden">
                     <img src="/logo.png" alt="DigiAI" className="w-10 h-10 object-contain z-10" />
                   </div>
                 </div>
@@ -593,7 +593,7 @@ export default function ClientDigiAI() {
                     <button
                       key={i}
                       onClick={() => handleSendMessage(card.q)}
-                      className="p-5 rounded-2xl border border-white/5 bg-[#050816]/50 backdrop-blur-md hover:bg-white/5 hover:border-white/10 text-left transition-all group flex flex-col gap-3"
+                      className="p-5 rounded-2xl border border-white/5 bg-[#08080c]/50 backdrop-blur-md hover:bg-white/5 hover:border-white/10 text-left transition-all group flex flex-col gap-3"
                     >
                       <card.icon className="w-6 h-6 text-accent-primary group-hover:scale-110 transition-transform" />
                       <span className="text-sm font-bold text-white/90 group-hover:text-white">{card.title}</span>
@@ -620,7 +620,7 @@ export default function ClientDigiAI() {
                           <User className="w-5 h-5" />
                         </div>
                       ) : (
-                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#050816] border border-white/10 flex items-center justify-center relative shadow-[0_0_15px_rgba(168,85,247,0.15)]">
+                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#08080c] border border-white/10 flex items-center justify-center relative shadow-[0_0_15px_rgba(168,85,247,0.15)]">
                           <img src="/logo.png" alt="DigiAI" className="w-4 h-4 md:w-5 md:h-5 object-contain" />
                         </div>
                       )}
@@ -650,7 +650,7 @@ export default function ClientDigiAI() {
                         </a>
                       </div>
                     ) : msg.sender === "system" && msg.isLeadForm && msg.leadDetails ? (
-                      <div className="w-full max-w-lg glass border border-emerald-500/30 rounded-2xl p-6 bg-[#050816]/80 backdrop-blur-md shadow-[0_10px_40px_rgba(16,185,129,0.1)] my-4">
+                      <div className="w-full max-w-lg glass border border-emerald-500/30 rounded-2xl p-6 bg-[#08080c]/80 backdrop-blur-md shadow-[0_10px_40px_rgba(16,185,129,0.1)] my-4">
                         <div className="flex flex-col items-center text-center gap-3 border-b border-white/5 pb-5 mb-5">
                           <div className="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
                             <CheckCircle2 className="w-6 h-6" />
@@ -672,13 +672,13 @@ export default function ClientDigiAI() {
                         <Link 
                           href="/proposal" 
                           onClick={() => sessionStorage.setItem("active_funnel", "proposal")}
-                          className="mt-6 inline-flex items-center justify-center w-full py-3 bg-white text-[#050816] font-bold rounded-xl hover:bg-white/90 transition-all gap-2"
+                          className="mt-6 inline-flex items-center justify-center w-full py-3 bg-white text-[#08080c] font-bold rounded-xl hover:bg-white/90 transition-all gap-2"
                         >
                           Get Custom Proposal
                         </Link>
                       </div>
                     ) : (
-                      <div className={`prose prose-invert max-w-none prose-p:leading-relaxed prose-pre:bg-[#050816] prose-pre:border prose-pre:border-white/10 prose-a:text-accent-primary rounded-3xl px-6 py-4 text-sm md:text-base shadow-lg ${
+                      <div className={`prose prose-invert max-w-none prose-p:leading-relaxed prose-pre:bg-[#08080c] prose-pre:border prose-pre:border-white/10 prose-a:text-accent-primary rounded-3xl px-6 py-4 text-sm md:text-base shadow-lg ${
                         msg.sender === "user" 
                           ? "bg-gradient-to-br from-accent-primary/80 to-accent-secondary/80 text-white rounded-tr-sm border border-white/10" 
                           : "bg-[#0a0d1e]/80 backdrop-blur-md text-white/90 rounded-tl-sm border border-white/5"
@@ -744,7 +744,7 @@ export default function ClientDigiAI() {
                 initial={{ opacity: 0 }} animate={{ opacity: 1 }}
                 className="flex gap-4 md:gap-6"
               >
-                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#050816] border border-white/10 flex items-center justify-center flex-shrink-0 mt-1 shadow-[0_0_15px_rgba(168,85,247,0.15)]">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#08080c] border border-white/10 flex items-center justify-center flex-shrink-0 mt-1 shadow-[0_0_15px_rgba(168,85,247,0.15)]">
                   <img src="/logo.png" alt="DigiAI" className="w-4 h-4 md:w-5 md:h-5 object-contain" />
                 </div>
                 <div className="flex items-center gap-1.5 bg-[#0a0d1e]/80 backdrop-blur-md border border-white/5 rounded-2xl rounded-tl-sm px-5 py-4 h-[44px]">

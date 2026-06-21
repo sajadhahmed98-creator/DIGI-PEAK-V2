@@ -7,7 +7,7 @@ export function FeaturedWork() {
   return (
     <section className="py-12 md:py-20 lg:py-32 px-6 bg-black relative">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-accent-primary/5 rounded-full blur-[120px]" />
+        <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-accent-primary/[0.015] rounded-full blur-[120px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">

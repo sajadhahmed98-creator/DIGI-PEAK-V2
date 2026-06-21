@@ -121,7 +121,7 @@ export default function AustraliaHubPage() {
         <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-black border-b border-white/5">
           <div className="mx-auto max-w-7xl">
             <div className="text-center mb-16 md:mb-20">
-              <span className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
+              <span className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
                 Australian City Portals
               </span>
               <h2 className="font-heading text-3xl md:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-white">
@@ -140,7 +140,7 @@ export default function AustraliaHubPage() {
                   className="glass p-8 rounded-3xl border border-white/10 flex flex-col justify-between hover:border-accent-primary/40 hover:bg-white/5 hover:translate-y-[-2px] transition-all group"
                 >
                   <div>
-                    <div className="h-12 w-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:bg-accent-primary/10 group-hover:border-accent-primary/25 transition-colors">
+                    <div className="h-12 w-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:bg-accent-primary/[0.03] group-hover:border-accent-primary/25 transition-colors">
                       <MapPin className="w-5 h-5 text-muted group-hover:text-accent-primary transition-colors" />
                     </div>
                     <h3 className="font-heading text-2xl font-bold text-white mb-3 tracking-tight">

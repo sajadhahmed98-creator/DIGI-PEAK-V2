@@ -264,7 +264,7 @@ export function LegalPageLayout({
 
       <div className="min-h-screen bg-background relative overflow-hidden py-12 px-6">
         {/* Subtle Ambient Background Gradients */}
-        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent-primary/5 blur-[120px] pointer-events-none rounded-full" />
+        <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent-primary/[0.015] blur-[120px] pointer-events-none rounded-full" />
 
         <div className="mx-auto max-w-7xl relative z-10 pt-8 md:pt-16">
           {/* Breadcrumbs */}

@@ -120,12 +120,12 @@ export function CookieConsent() {
       <div className="fixed bottom-6 left-6 z-40 max-w-sm w-[calc(100%-3rem)] transition-all duration-500 animate-in fade-in slide-in-from-bottom-5">
         <div className="glass border border-white/10 rounded-2xl p-5 bg-gradient-to-b from-[#0c0d21]/95 to-[#050816]/95 shadow-2xl relative overflow-hidden backdrop-blur-xl">
           {/* Subtle accent glow */}
-          <div className="absolute top-0 right-0 w-24 h-24 bg-accent-primary/5 rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-24 h-24 bg-accent-primary/[0.015] rounded-full blur-2xl pointer-events-none" />
 
           <div className="space-y-4">
             {/* Title / Eyebrow */}
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full border border-accent-primary/20 flex items-center justify-center bg-accent-primary/5">
+              <div className="w-8 h-8 rounded-full border border-accent-primary/20 flex items-center justify-center bg-accent-primary/[0.015]">
                 <Cookie className="h-4.5 w-4.5 text-accent-primary" />
               </div>
               <h3 className="font-heading text-sm font-bold text-white tracking-tight">

@@ -92,7 +92,7 @@ export default function CaseStudiesPage() {
           <Reveal delay={0.2}>
             <Link 
               href="/case-studies/elevate-marketing-group"
-              className="group block relative rounded-3xl bg-[#050816] border border-white/10 overflow-hidden transition-all duration-500 hover:border-accent-primary/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.1)]"
+              className="group block relative rounded-3xl bg-[#0b0b0f] border border-white/10 overflow-hidden transition-all duration-500 hover:border-accent-primary/50 hover:shadow-[0_0_30px_rgba(168,85,247,0.1)]"
             >
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="p-10 md:p-16 flex flex-col justify-center">
@@ -122,7 +122,7 @@ export default function CaseStudiesPage() {
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#050816] to-transparent opacity-50 hidden lg:block" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#0b0b0f] to-transparent opacity-50 hidden lg:block" />
                 </div>
               </div>
             </Link>

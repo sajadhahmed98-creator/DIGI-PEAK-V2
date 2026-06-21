@@ -43,7 +43,7 @@ export function QatarBusiness() {
     <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 border-t border-white/5 bg-white/[0.01] relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-accent-secondary/5 rounded-full blur-[110px]" />
+        <div className="absolute top-1/2 right-1/4 w-[400px] h-[400px] bg-accent-secondary/[0.015] rounded-full blur-[110px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">

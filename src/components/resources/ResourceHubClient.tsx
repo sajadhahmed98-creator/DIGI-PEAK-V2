@@ -264,7 +264,7 @@ export function ResourceHubClient({ resources, initialSlug }: ResourceHubClientP
             >
               <div>
                 <div className="flex justify-between items-start mb-4">
-                  <span className="text-[10px] uppercase font-bold text-accent-secondary tracking-wider bg-accent-secondary/10 px-2.5 py-1 rounded">
+                  <span className="text-[10px] uppercase font-bold text-accent-secondary tracking-wider bg-accent-secondary/[0.03] px-2.5 py-1 rounded">
                     {res.category.replace("-", " ")}
                   </span>
                   <span className="text-[10px] font-bold text-white/50 border border-white/10 px-2 py-0.5 rounded">
@@ -309,7 +309,7 @@ export function ResourceHubClient({ resources, initialSlug }: ResourceHubClientP
         <div className="fixed inset-0 bg-[#020308]/80 backdrop-blur-md z-50 flex items-center justify-center p-6">
           <div className="glass border border-accent-primary/20 w-full max-w-lg rounded-3xl p-8 relative overflow-hidden bg-gradient-to-b from-[#0c0d21] to-[#050816]">
             {/* Ambient orb */}
-            <div className="absolute -top-24 -left-24 w-48 h-48 bg-accent-primary/10 rounded-full blur-[50px] pointer-events-none" />
+            <div className="absolute -top-24 -left-24 w-48 h-48 bg-accent-primary/[0.03] rounded-full blur-[50px] pointer-events-none" />
             
             {/* Close Button */}
             <button 
@@ -429,7 +429,7 @@ export function ResourceHubClient({ resources, initialSlug }: ResourceHubClientP
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-accent-primary hover:bg-accent-glow disabled:bg-accent-primary/50 text-white font-bold text-xs uppercase tracking-wider py-3.5 rounded-full flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-[0_0_20px_rgba(168,85,247,0.2)] mt-6"
+                    className="w-full bg-accent-primary hover:bg-accent-glow disabled:bg-accent-primary/[0.015]0 text-white font-bold text-xs uppercase tracking-wider py-3.5 rounded-full flex items-center justify-center gap-2 cursor-pointer transition-colors shadow-[0_0_20px_rgba(168,85,247,0.2)] mt-6"
                   >
                     {isSubmitting ? (
                       <>

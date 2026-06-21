@@ -43,7 +43,7 @@ export default function ElevateCaseStudyPage() {
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden px-6">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent-primary/10 blur-[150px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent-primary/[0.03] blur-[150px] rounded-full pointer-events-none" />
         
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <Reveal delay={0.1}>
@@ -82,7 +82,7 @@ export default function ElevateCaseStudyPage() {
       </section>
 
       {/* Executive Summary & Challenges */}
-      <section className="py-20 md:py-32 px-6 border-t border-white/5 bg-[#050816]">
+      <section className="py-20 md:py-32 px-6 border-t border-white/5 bg-[#020203]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           <div>
             <Reveal>
@@ -140,7 +140,7 @@ export default function ElevateCaseStudyPage() {
                 We conducted a full digital audit, reviewing leading agencies in Dubai, analyzing search demand, buyer behavior, and mapping out core customer personas.
               </p>
               
-              <div className="p-6 rounded-2xl bg-accent-primary/10 border border-accent-primary/30 relative overflow-hidden">
+              <div className="p-6 rounded-2xl bg-accent-primary/[0.03] border border-accent-primary/30 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent-primary/20 blur-2xl rounded-full" />
                 <h4 className="text-xs uppercase tracking-widest text-accent-secondary font-bold mb-3">Brand Positioning Statement</h4>
                 <p className="text-xl font-heading italic text-white/90 relative z-10">
@@ -152,7 +152,7 @@ export default function ElevateCaseStudyPage() {
             <Reveal>
               <div className="grid grid-cols-2 gap-4">
                 {["Premium", "Professional", "Strategic", "Innovative", "Trustworthy", "Modern"].map(trait => (
-                  <div key={trait} className="p-4 rounded-xl border border-white/10 bg-[#050816] text-center font-medium text-white/80">
+                  <div key={trait} className="p-4 rounded-xl border border-white/10 bg-[#020203] text-center font-medium text-white/80">
                     {trait}
                   </div>
                 ))}
@@ -163,7 +163,7 @@ export default function ElevateCaseStudyPage() {
       </section>
 
       {/* Visual Identity Showcase */}
-      <section className="py-20 md:py-32 px-6 bg-[#050816] border-y border-white/5">
+      <section className="py-20 md:py-32 px-6 bg-[#020203] border-y border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Reveal>
@@ -229,7 +229,7 @@ export default function ElevateCaseStudyPage() {
       </section>
 
       {/* Social & Content Strategy */}
-      <section className="py-20 md:py-32 px-6 bg-[#050816] border-y border-white/5">
+      <section className="py-20 md:py-32 px-6 bg-[#020203] border-y border-white/5">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <Reveal>
@@ -318,8 +318,8 @@ export default function ElevateCaseStudyPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 md:py-32 px-6 bg-[#050816] border-t border-white/5 text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-[300px] bg-accent-primary/10 blur-[120px] rounded-full pointer-events-none" />
+      <section className="py-24 md:py-32 px-6 bg-[#020203] border-t border-white/5 text-center relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-[300px] bg-accent-primary/[0.03] blur-[120px] rounded-full pointer-events-none" />
         
         <Reveal>
           <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 relative z-10">Ready for your transformation?</h2>

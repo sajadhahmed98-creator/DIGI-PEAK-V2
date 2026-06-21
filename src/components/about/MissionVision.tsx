@@ -38,7 +38,7 @@ export function MissionVision() {
             className="glass border border-accent-primary/20 rounded-3xl p-8 md:p-10 relative overflow-hidden group"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="absolute top-0 right-0 w-32 h-32 bg-accent-primary/5 rounded-full blur-2xl" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-accent-primary/[0.015] rounded-full blur-2xl" />
 
             <div className="relative z-10">
               <div className="w-14 h-14 rounded-2xl bg-accent-primary/15 border border-accent-primary/30 flex items-center justify-center mb-6">
@@ -65,7 +65,7 @@ export function MissionVision() {
             className="glass border border-accent-secondary/20 rounded-3xl p-8 md:p-10 relative overflow-hidden group"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-accent-secondary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            <div className="absolute top-0 right-0 w-32 h-32 bg-accent-secondary/5 rounded-full blur-2xl" />
+            <div className="absolute top-0 right-0 w-32 h-32 bg-accent-secondary/[0.015] rounded-full blur-2xl" />
 
             <div className="relative z-10">
               <div className="w-14 h-14 rounded-2xl bg-accent-secondary/15 border border-accent-secondary/30 flex items-center justify-center mb-6">

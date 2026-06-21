@@ -63,7 +63,7 @@ export function FeaturedWork() {
           {projects.map((project, i) => (
             <StaggerItem key={project.title}>
               <Link href={project.slug} className="group block h-full">
-                <div className="h-full flex flex-col bg-[#050816] rounded-2xl border border-white/5 overflow-hidden transition-all duration-500 group-hover:border-accent-primary/50 group-hover:-translate-y-2 group-hover:shadow-[0_15px_40px_rgba(168,85,247,0.15)] relative">
+                <div className="h-full flex flex-col bg-[#0b0b0f] rounded-2xl border border-white/5 overflow-hidden transition-all duration-500 group-hover:border-accent-primary/50 group-hover:-translate-y-2 group-hover:shadow-[0_15px_40px_rgba(168,85,247,0.15)] relative">
                   
                   {/* Thumbnail Image */}
                   <div className="relative w-full h-[220px] overflow-hidden bg-white/5">
@@ -75,7 +75,7 @@ export function FeaturedWork() {
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05] opacity-80 group-hover:opacity-100"
                     />
                     {/* Dark gradient overlay at bottom of image */}
-                    <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#050816] to-transparent z-10" />
+                    <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0b0b0f] to-transparent z-10" />
                   </div>
                   
                   {/* Card Content */}

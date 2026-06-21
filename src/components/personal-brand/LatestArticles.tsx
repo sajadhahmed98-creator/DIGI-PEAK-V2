@@ -38,7 +38,7 @@ export function LatestArticles() {
   return (
     <section className="py-12 md:py-20 lg:py-32 px-6 bg-black/50 border-t border-white/5 relative">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 right-1/4 w-[300px] h-[300px] bg-accent-primary/5 rounded-full blur-[120px]" />
+        <div className="absolute top-1/2 right-1/4 w-[300px] h-[300px] bg-accent-primary/[0.015] rounded-full blur-[120px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">

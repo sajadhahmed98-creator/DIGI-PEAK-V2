@@ -29,7 +29,7 @@ export function SEOHero() {
         />
         <motion.div 
           animate={{ x: mousePosition.x * 2, y: mousePosition.y * 2 }}
-          className="absolute bottom-0 left-0 h-[600px] w-[600px] translate-y-1/3 -translate-x-1/3 rounded-full bg-accent-secondary/10 blur-[120px]" 
+          className="absolute bottom-0 left-0 h-[600px] w-[600px] translate-y-1/3 -translate-x-1/3 rounded-full bg-accent-secondary/[0.03] blur-[120px]" 
         />
         
         {/* Abstract SEO Nodes */}

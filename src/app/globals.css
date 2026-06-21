@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #050816;
+  --color-background: #020203;
   --color-foreground: #ffffff;
   --color-muted: #cbd5e1; /* Upgraded for WCAG AA Contrast */
   

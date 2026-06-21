@@ -19,7 +19,7 @@ export function LeadGeneration() {
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-secondary/15 blur-[80px] rounded-full pointer-events-none translate-y-1/2 -translate-x-1/4" />
 
           {/* Actual Card Body with Backdrop Blur */}
-          <div className="relative z-10 rounded-[2.4rem] bg-[#050816]/90 px-8 py-20 md:py-16 md:py-24 lg:py-32 text-center backdrop-blur-2xl">
+          <div className="relative z-10 rounded-[2.4rem] bg-[#0b0b0f]/90 px-8 py-20 md:py-16 md:py-24 lg:py-32 text-center backdrop-blur-2xl">
             {/* Tech grid overlay */}
             <div
               className="absolute inset-0 pointer-events-none opacity-[0.04] z-0"
@@ -32,9 +32,9 @@ export function LeadGeneration() {
             <div className="relative z-10 max-w-4xl mx-auto">
               {/* Eyebrow Label */}
               <p className="text-xs md:text-sm font-bold text-accent-primary uppercase tracking-[0.25em] mb-6 flex items-center justify-center gap-2">
-                <span className="w-2 h-[2px] bg-accent-primary/50" />
+                <span className="w-2 h-[2px] bg-accent-primary/[0.015]0" />
                 LET'S BUILD SOMETHING EXCEPTIONAL
-                <span className="w-2 h-[2px] bg-accent-primary/50" />
+                <span className="w-2 h-[2px] bg-accent-primary/[0.015]0" />
               </p>
 
               {/* Compact & Sleek Headline */}

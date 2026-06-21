@@ -18,7 +18,7 @@ export function Hero() {
       />
 
       {/* Single refined centre glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-accent-primary/10 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-accent-primary/[0.03] blur-[140px] rounded-full pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-5xl text-center">
         {/* Eyebrow label */}
@@ -76,7 +76,7 @@ export function Hero() {
           </Link>
           <Link
             href="/digiai"
-            className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 hover:bg-accent-primary/20 px-8 py-3.5 text-sm font-medium transition-all duration-300 hover:border-accent-primary/50 text-white"
+            className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] hover:bg-accent-primary/20 px-8 py-3.5 text-sm font-medium transition-all duration-300 hover:border-accent-primary/50 text-white"
           >
             Try DigiAI
             <span className="relative flex h-2 w-2 ml-1">

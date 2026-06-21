@@ -19,8 +19,8 @@ export function CareersHero() {
         <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-25" />
         
         {/* Glowing Orbs representing Digipeak global regions */}
-        <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent-primary/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] bg-accent-secondary/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent-primary/[0.03] rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2 w-[500px] h-[500px] bg-accent-secondary/[0.03] rounded-full blur-[120px] pointer-events-none" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-5xl text-center">

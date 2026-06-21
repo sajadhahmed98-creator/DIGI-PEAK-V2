@@ -16,8 +16,8 @@ export function FounderSection() {
   return (
     <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-black relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-accent-primary/5 rounded-full blur-[140px]" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent-secondary/5 rounded-full blur-[120px]" />
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-accent-primary/[0.015] rounded-full blur-[140px]" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent-secondary/[0.015] rounded-full blur-[120px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">
@@ -28,7 +28,7 @@ export function FounderSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/10 px-4 py-2 text-sm font-semibold text-accent-primary mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] px-4 py-2 text-sm font-semibold text-accent-primary mb-6">
               <Sparkles className="w-4 h-4" />
               Meet The Founder
             </div>
@@ -51,7 +51,7 @@ export function FounderSection() {
           >
             <div className="glass border border-accent-primary/20 rounded-3xl p-8 md:p-10 relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/5 via-transparent to-accent-secondary/5 pointer-events-none" />
-              <div className="absolute top-0 right-0 w-48 h-48 bg-accent-primary/5 rounded-full blur-3xl" />
+              <div className="absolute top-0 right-0 w-48 h-48 bg-accent-primary/[0.015] rounded-full blur-3xl" />
 
               <div className="relative z-10">
                 {/* Avatar placeholder — premium monogram */}
@@ -106,7 +106,7 @@ export function FounderSection() {
                 <div className="mt-8">
                   <Link
                     href="/author/sajadh-ahmed"
-                    className="inline-flex items-center gap-2 glass border border-accent-primary/30 rounded-full px-6 py-3 text-sm font-semibold text-accent-primary hover:bg-accent-primary/10 hover:border-accent-primary/50 transition-all group"
+                    className="inline-flex items-center gap-2 glass border border-accent-primary/30 rounded-full px-6 py-3 text-sm font-semibold text-accent-primary hover:bg-accent-primary/[0.03] hover:border-accent-primary/50 transition-all group"
                   >
                     Learn More About Sajadh Ahmed
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

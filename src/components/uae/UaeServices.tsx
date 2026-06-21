@@ -134,7 +134,7 @@ export function UaeServices() {
                   {/* Hover Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/20 via-transparent to-accent-secondary/20 opacity-0 transition-opacity duration-500 group-hover:opacity-100 pointer-events-none" />
 
-                  <div className="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 border border-white/10 group-hover:border-accent-primary/50 group-hover:bg-accent-primary/10 transition-all duration-300 transform group-hover:-translate-y-1">
+                  <div className="mb-8 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-white/5 border border-white/10 group-hover:border-accent-primary/50 group-hover:bg-accent-primary/[0.03] transition-all duration-300 transform group-hover:-translate-y-1">
                     <Icon className="h-6 w-6 text-foreground group-hover:text-accent-primary transition-colors" />
                   </div>
 

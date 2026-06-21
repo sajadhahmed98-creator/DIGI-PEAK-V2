@@ -25,7 +25,7 @@ export function WhiteLabelHero() {
       {/* Background glows */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 left-0 h-[600px] w-[600px] -translate-y-1/3 -translate-x-1/3 rounded-full bg-indigo-600/10 blur-[140px]" />
-        <div className="absolute bottom-0 right-0 h-[500px] w-[500px] translate-y-1/3 translate-x-1/3 rounded-full bg-accent-secondary/5 blur-[140px]" />
+        <div className="absolute bottom-0 right-0 h-[500px] w-[500px] translate-y-1/3 translate-x-1/3 rounded-full bg-accent-secondary/[0.015] blur-[140px]" />
 
         {/* Grid overlay */}
         <div className="absolute inset-0 opacity-5">

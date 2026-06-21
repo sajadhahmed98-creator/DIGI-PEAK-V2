@@ -73,7 +73,7 @@ const FreelancerIcon = () => (
 const presenceData = [
   {
     category: "Social Media",
-    accent: "border-accent-primary/20 bg-accent-primary/5 text-accent-primary",
+    accent: "border-accent-primary/20 bg-accent-primary/[0.015] text-accent-primary",
     profiles: [
       { name: "LinkedIn", url: "https://www.linkedin.com/in/sajadh-ahmed-6a62641a9/", desc: "Professional background & business network.", icon: LinkedinIcon },
       { name: "Instagram", url: "https://www.instagram.com/aham3dsm", desc: "Design inspiration & daily photography updates.", icon: InstagramIcon },
@@ -85,7 +85,7 @@ const presenceData = [
   },
   {
     category: "Creative Platforms",
-    accent: "border-accent-secondary/20 bg-accent-secondary/5 text-accent-secondary",
+    accent: "border-accent-secondary/20 bg-accent-secondary/[0.015] text-accent-secondary",
     profiles: [
       { name: "Behance", url: "https://www.behance.net/sajathahm", desc: "Full case studies & visual branding portfolios.", icon: BehanceIcon },
       { name: "Dribbble", url: "https://dribbble.com/sajadh98", desc: "Design mockups, UI concepts & graphic shots.", icon: DribbbleIcon },
@@ -115,7 +115,7 @@ export function DigitalPresence() {
   return (
     <section className="py-12 md:py-20 lg:py-32 px-6 bg-black/50 border-t border-white/5 relative">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent-secondary/5 rounded-full blur-[140px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent-secondary/[0.015] rounded-full blur-[140px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">

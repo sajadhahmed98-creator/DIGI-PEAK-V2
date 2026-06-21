@@ -101,7 +101,7 @@ export function CookieSettingsModal({
     >
       <div className="glass border border-white/10 rounded-3xl overflow-hidden bg-gradient-to-b from-[#0c0d21] to-[#050816] shadow-2xl relative flex flex-col max-h-[90vh]">
         {/* Top ambient glow */}
-        <div className="absolute top-0 left-1/4 -translate-x-1/2 w-48 h-48 bg-accent-primary/10 rounded-full blur-[80px] pointer-events-none" />
+        <div className="absolute top-0 left-1/4 -translate-x-1/2 w-48 h-48 bg-accent-primary/[0.03] rounded-full blur-[80px] pointer-events-none" />
 
         {/* Modal Header */}
         <div className="flex items-center justify-between border-b border-white/5 p-6 relative z-10">

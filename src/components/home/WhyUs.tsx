@@ -48,7 +48,7 @@ export function WhyUs() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="flex gap-4"
                 >
-                  <div className="mt-1 h-10 w-10 shrink-0 rounded-full bg-accent-primary/10 border border-accent-primary/20 flex items-center justify-center">
+                  <div className="mt-1 h-10 w-10 shrink-0 rounded-full bg-accent-primary/[0.03] border border-accent-primary/20 flex items-center justify-center">
                     <reason.icon className="h-5 w-5 text-accent-primary" />
                   </div>
                   <div>
