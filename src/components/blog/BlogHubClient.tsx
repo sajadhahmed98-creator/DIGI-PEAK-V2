@@ -42,6 +42,23 @@ const CATEGORIES = [
   { slug: "web-performance", label: "Web Performance" }
 ];
 
+const getCategoryLabel = (categorySlug: string) => {
+  const mapping: Record<string, string> = {
+    "seo-services": "SEO",
+    "web-design-development": "Web Design",
+    "branding-creative": "Branding",
+    "personal-brand": "Personal Brand",
+    "marketing": "Digital Marketing",
+    "digital-marketing": "Digital Marketing",
+    "ai-solutions": "AI Solutions",
+    "automation": "AI Solutions",
+    "video-production": "Video Production",
+    "corporate-photography": "Photography",
+    "web-performance": "Web Performance"
+  };
+  return mapping[categorySlug] || categorySlug.replace("-", " ");
+};
+
 export function BlogHubClient({ initialPosts }: { initialPosts: Post[] }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -53,7 +70,18 @@ export function BlogHubClient({ initialPosts }: { initialPosts: Post[] }) {
 
   // Filter posts
   const filteredPosts = initialPosts.filter((post) => {
-    const matchesCategory = selectedCategory === "all" || post.category === selectedCategory;
+    const matchesCategory = (() => {
+      if (selectedCategory === "all") return true;
+      const categoryMapping: Record<string, string[]> = {
+        "seo": ["seo", "seo-services"],
+        "web-design": ["web-design", "web-design-development"],
+        "branding": ["branding", "branding-creative"],
+        "digital-marketing": ["digital-marketing", "marketing"],
+        "ai-solutions": ["ai-solutions", "automation"]
+      };
+      const allowedCategories = categoryMapping[selectedCategory] || [selectedCategory];
+      return allowedCategories.includes(post.category);
+    })();
     const searchString = `${post.title} ${post.description} ${(post.tags || []).join(" ")} ${(post.keywords || []).join(" ")} ${post.category}`.toLowerCase();
     const matchesSearch = searchString.includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
@@ -191,10 +219,10 @@ export function BlogHubClient({ initialPosts }: { initialPosts: Post[] }) {
                     <div className="relative min-h-[300px] bg-gradient-to-br from-[#120800] via-[#2e1800] to-[#1a0f30] flex items-center justify-center p-8 border-b lg:border-b-0 lg:border-r border-white/5">
                       <div className="absolute inset-0 bg-radial-gradient from-accent-primary/10 to-transparent pointer-events-none" />
                       <div className="font-heading text-8xl font-black italic text-transparent bg-clip-text bg-gradient-to-r from-accent-primary/15 to-accent-secondary/5 select-none uppercase">
-                        {featuredPost.category}
+                        {getCategoryLabel(featuredPost.category)}
                       </div>
                       <span className="absolute top-4 left-4 px-3.5 py-1.5 bg-accent-primary/20 border border-accent-primary/30 rounded-full text-[10px] uppercase font-bold tracking-wider text-accent-primary">
-                        {CATEGORIES.find((c) => c.slug === featuredPost.category)?.label || featuredPost.category}
+                        {getCategoryLabel(featuredPost.category)}
                       </span>
                     </div>
 
@@ -254,7 +282,7 @@ export function BlogHubClient({ initialPosts }: { initialPosts: Post[] }) {
                       <div className="p-6">
                         <div className="flex items-center justify-between mb-4">
                           <span className="text-[10px] font-bold uppercase tracking-wider text-accent-secondary">
-                            {CATEGORIES.find((c) => c.slug === post.category)?.label || post.category}
+                            {getCategoryLabel(post.category)}
                           </span>
                           <span className="text-[10px] text-muted flex items-center gap-1">
                             <Clock className="w-3 h-3" />{post.readTime}

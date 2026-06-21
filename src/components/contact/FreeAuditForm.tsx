@@ -19,6 +19,26 @@ export function FreeAuditForm() {
   const [submittedUser, setSubmittedUser] = useState({ name: "", email: "" });
   const [formStarted, setFormStarted] = useState(false);
 
+  // Progressive Profiling: Load cached data
+  useState(() => {
+    if (typeof window !== "undefined") {
+      const cachedName = localStorage.getItem("digipeak_user_name") || "";
+      const cachedCompany = localStorage.getItem("digipeak_user_company") || "";
+      const cachedEmail = localStorage.getItem("digipeak_user_email") || "";
+      const cachedWhatsapp = localStorage.getItem("digipeak_user_whatsapp") || "";
+      const cachedWebsite = localStorage.getItem("digipeak_user_website") || "";
+      
+      setFormData(prev => ({
+        ...prev,
+        name: cachedName,
+        company: cachedCompany,
+        email: cachedEmail,
+        whatsapp: cachedWhatsapp,
+        website: cachedWebsite
+      }));
+    }
+  });
+
   // Post-submission qualification wizard state
   const [qualifierStep, setQualifierStep] = useState(1);
   const [qualifierLoading, setQualifierLoading] = useState(false);
@@ -102,6 +122,15 @@ export function FreeAuditForm() {
       // Set active funnel for Calendly tracker
       sessionStorage.setItem("active_funnel", "audit");
 
+      // Progressive Profiling: Cache details
+      if (typeof window !== "undefined") {
+        localStorage.setItem("digipeak_user_name", formData.name);
+        localStorage.setItem("digipeak_user_company", formData.company || "");
+        localStorage.setItem("digipeak_user_email", formData.email);
+        localStorage.setItem("digipeak_user_whatsapp", formData.whatsapp);
+        localStorage.setItem("digipeak_user_website", formData.website);
+      }
+
       setSubmittedUser({ name: formData.name, email: formData.email });
       setLoading(false);
       setShowModal(true);
@@ -168,7 +197,7 @@ export function FreeAuditForm() {
   };
 
   return (
-    <div className="relative z-10 mx-auto max-w-3xl">
+    <div id="lead-form" className="relative z-10 mx-auto max-w-3xl scroll-mt-28">
       {/* Lead Capture Form Container */}
       <div className="glass p-6 md:p-10 rounded-3xl border border-white/10 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-accent-primary/5 rounded-full blur-3xl pointer-events-none" />

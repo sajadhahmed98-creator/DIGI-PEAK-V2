@@ -115,14 +115,12 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <div className="hidden md:block pr-1">
             <MagneticButton>
-              <a 
-                href="https://calendly.com/digipeak-agency/strategy-session" 
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link 
+                href="/proposal" 
                 className="btn-primary px-6 py-2.5 text-xs font-bold uppercase tracking-wider inline-flex items-center justify-center shadow-lg cursor-pointer"
               >
-                Book Consultation
-              </a>
+                Get Proposal
+              </Link>
             </MagneticButton>
           </div>
           {/* Mobile menu button */}
@@ -167,15 +165,13 @@ export function Navbar() {
                 </Link>
               )
             })}
-            <a 
-              href="https://calendly.com/digipeak-agency/strategy-session" 
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link 
+              href="/proposal" 
               onClick={() => setIsMobileMenuOpen(false)}
               className="btn-primary w-full py-3.5 mt-2 text-xs font-bold uppercase tracking-wider text-center cursor-pointer"
             >
-              Book Consultation
-            </a>
+              Get Proposal
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

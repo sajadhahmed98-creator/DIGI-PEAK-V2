@@ -14,7 +14,6 @@ export function ProposalForm() {
     website: "",
     service: "",
     budget: "",
-    timeline: "",
     details: "",
   });
 
@@ -22,6 +21,26 @@ export function ProposalForm() {
   const [showModal, setShowModal] = useState(false);
   const [submittedUser, setSubmittedUser] = useState({ name: "", email: "" });
   const [formStarted, setFormStarted] = useState(false);
+
+  // Progressive Profiling: Load cached data
+  useState(() => {
+    if (typeof window !== "undefined") {
+      const cachedName = localStorage.getItem("digipeak_user_name") || "";
+      const cachedCompany = localStorage.getItem("digipeak_user_company") || "";
+      const cachedEmail = localStorage.getItem("digipeak_user_email") || "";
+      const cachedWhatsapp = localStorage.getItem("digipeak_user_whatsapp") || "";
+      const cachedWebsite = localStorage.getItem("digipeak_user_website") || "";
+      
+      setFormData(prev => ({
+        ...prev,
+        name: cachedName,
+        company: cachedCompany,
+        email: cachedEmail,
+        whatsapp: cachedWhatsapp,
+        website: cachedWebsite
+      }));
+    }
+  });
 
   const serviceOptions = [
     "SEO",
@@ -39,13 +58,6 @@ export function ProposalForm() {
     "$3,000 - $5,000",
     "$5,000 - $10,000",
     "$10,000+",
-  ];
-
-  const timelineOptions = [
-    "Immediately",
-    "Within 30 Days",
-    "Within 90 Days",
-    "Researching",
   ];
 
   const handleInputChange = (
@@ -71,8 +83,7 @@ export function ProposalForm() {
       !formData.whatsapp ||
       !formData.website ||
       !formData.service ||
-      !formData.budget ||
-      !formData.timeline
+      !formData.budget
     ) {
       alert("Please fill in all required fields.");
       return;
@@ -94,9 +105,7 @@ export function ProposalForm() {
           budget: formData.budget,
           leadSource: "Proposal Request Form",
           pageUrl: typeof window !== "undefined" ? window.location.href : "",
-          details: `Target Timeline: ${formData.timeline}
-          
-Project Details/Notes:
+          details: `Project Details/Notes:
 ${formData.details || "None provided."}`,
         }),
       });
@@ -113,6 +122,15 @@ ${formData.details || "None provided."}`,
       // Set active funnel for Calendly tracker
       sessionStorage.setItem("active_funnel", "proposal");
 
+      // Progressive Profiling: Cache details
+      if (typeof window !== "undefined") {
+        localStorage.setItem("digipeak_user_name", formData.name);
+        localStorage.setItem("digipeak_user_company", formData.company);
+        localStorage.setItem("digipeak_user_email", formData.email);
+        localStorage.setItem("digipeak_user_whatsapp", formData.whatsapp);
+        localStorage.setItem("digipeak_user_website", formData.website);
+      }
+
       setSubmittedUser({ name: formData.name, email: formData.email });
       setLoading(false);
       setShowModal(true);
@@ -126,7 +144,6 @@ ${formData.details || "None provided."}`,
         website: "",
         service: "",
         budget: "",
-        timeline: "",
         details: "",
       });
       setFormStarted(false);
@@ -137,7 +154,7 @@ ${formData.details || "None provided."}`,
   };
 
   return (
-    <div className="relative z-10 mx-auto max-w-4xl">
+    <div id="lead-form" className="relative z-10 mx-auto max-w-4xl scroll-mt-28">
       {/* Lead Capture Form Container */}
       <div className="glass p-6 md:p-10 rounded-3xl border border-white/10 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-accent-primary/5 rounded-full blur-3xl pointer-events-none" />
@@ -252,45 +269,24 @@ ${formData.details || "None provided."}`,
               </div>
             </div>
 
-            {/* Row 4: Budget & Timeline */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="flex flex-col">
-                <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono flex items-center gap-1.5">
-                  <span className="text-accent-primary font-bold text-sm">$</span>
-                  Estimated Monthly Budget <span className="text-accent-primary">*</span>
-                </label>
-                <select
-                  name="budget"
-                  required
-                  value={formData.budget}
-                  onChange={handleInputChange}
-                  className="w-full bg-[#050816] border border-white/10 rounded-xl px-3 py-3.5 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
-                >
-                  <option value="" disabled className="text-slate-500">Select budget range...</option>
-                  {budgetOptions.map((b) => (
-                    <option key={b} value={b} className="bg-[#050816] text-white">{b}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div className="flex flex-col">
-                <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono flex items-center gap-1.5">
-                  <Calendar className="w-3.5 h-3.5 text-accent-primary" />
-                  Project Timeline <span className="text-accent-primary">*</span>
-                </label>
-                <select
-                  name="timeline"
-                  required
-                  value={formData.timeline}
-                  onChange={handleInputChange}
-                  className="w-full bg-[#050816] border border-white/10 rounded-xl px-3 py-3.5 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
-                >
-                  <option value="" disabled className="text-slate-500">Select timeline...</option>
-                  {timelineOptions.map((t) => (
-                    <option key={t} value={t} className="bg-[#050816] text-white">{t}</option>
-                  ))}
-                </select>
-              </div>
+            {/* Row 4: Budget */}
+            <div className="flex flex-col">
+              <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono flex items-center gap-1.5">
+                <span className="text-accent-primary font-bold text-sm">$</span>
+                Estimated Monthly Budget <span className="text-accent-primary">*</span>
+              </label>
+              <select
+                name="budget"
+                required
+                value={formData.budget}
+                onChange={handleInputChange}
+                className="w-full bg-[#050816] border border-white/10 rounded-xl px-3 py-3.5 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
+              >
+                <option value="" disabled className="text-slate-500">Select budget range...</option>
+                {budgetOptions.map((b) => (
+                  <option key={b} value={b} className="bg-[#050816] text-white">{b}</option>
+                ))}
+              </select>
             </div>
 
             {/* Row 5: Project Details */}
@@ -299,6 +295,7 @@ ${formData.details || "None provided."}`,
                 Project Details
               </label>
               <textarea
+                id="details"
                 name="details"
                 rows={4}
                 value={formData.details}
@@ -365,7 +362,7 @@ ${formData.details || "None provided."}`,
                   </span>
                   
                   <h3 className="font-heading text-2.5xl md:text-3xl font-black text-white mt-4 tracking-tight leading-tight">
-                    Proposal Scheduled!
+                    Proposal Request Received
                   </h3>
                   
                   <p className="text-slate-400 text-xs leading-relaxed mt-3">

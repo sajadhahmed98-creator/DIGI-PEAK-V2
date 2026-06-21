@@ -147,6 +147,54 @@ export async function POST(req: NextRequest) {
       .replace("Hello,", `Hello ${name || 'there'},`)
       .replace("View Our Services", "View Our Services");
 
+    // Slack/Discord Webhook Dispatcher
+    const webhookUrl = process.env.SLACK_WEBHOOK_URL || process.env.DISCORD_WEBHOOK_URL;
+    if (webhookUrl) {
+      try {
+        const isDiscord = webhookUrl.includes("discord.com");
+        let body = {};
+        if (isDiscord) {
+          body = {
+            embeds: [{
+              title: emailSubject,
+              description: details || "No project details provided.",
+              color: 0xa855f7, // purple
+              fields: [
+                { name: "Name", value: name || "N/A", inline: true },
+                { name: "Email", value: email || "N/A", inline: true },
+                { name: "WhatsApp", value: whatsapp || "N/A", inline: true },
+                { name: "Company", value: company || "N/A", inline: true },
+                { name: "Website", value: website || "N/A", inline: true },
+                { name: "Service", value: service || "N/A", inline: true },
+                { name: "Budget", value: budget || "N/A", inline: true },
+                { name: "Source", value: leadSource || "N/A", inline: true }
+              ].filter(f => f.value !== "N/A")
+            }]
+          };
+        } else {
+          body = {
+            text: `*${emailSubject}*\n` +
+              `• *Name:* ${name || "N/A"}\n` +
+              `• *Email:* ${email || "N/A"}\n` +
+              `• *WhatsApp:* ${whatsapp || "N/A"}\n` +
+              `• *Company:* ${company || "N/A"}\n` +
+              `• *Website:* ${website || "N/A"}\n` +
+              `• *Service:* ${service || "N/A"}\n` +
+              `• *Budget:* ${budget || "N/A"}\n` +
+              `• *Source:* ${leadSource || "N/A"}\n` +
+              `• *Details:* ${details || "None"}`
+          };
+        }
+        await fetch(webhookUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body)
+        });
+      } catch (webhookErr) {
+        console.error("Slack/Discord webhook dispatch failed:", webhookErr);
+      }
+    }
+
     // Only send if API key exists (otherwise just log to prevent crashing in dev)
     if (process.env.RESEND_API_KEY) {
       // Send Admin Notification

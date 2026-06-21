@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { ClientWidgets } from "@/components/layout/ClientWidgets";
 import { CalendlyTracker } from "@/components/analytics/CalendlyTracker";
+import { ExitIntentModal } from "@/components/shared/ExitIntentModal";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import MicrosoftClarity from "@/components/analytics/MicrosoftClarity";
 
@@ -63,9 +64,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '32x32' }
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' }
@@ -119,6 +119,7 @@ export default function RootLayout({
       <body className="min-h-screen flex flex-col font-sans bg-background text-foreground selection:bg-accent-violet/30 selection:text-white">
         <ScrollToTop />
         <ClientWidgets />
+        <ExitIntentModal />
         <CalendlyTracker />
         <div className="bg-noise absolute inset-0 z-[-1] pointer-events-none opacity-[0.02]"></div>
         <Navbar />

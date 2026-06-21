@@ -1,17 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { 
-  TrendingUp, DollarSign, Users, Award, Sparkles, ArrowRight, Download, Send, CheckCircle2, ChevronDown, RefreshCw, HelpCircle
+  TrendingUp, DollarSign, Users, Award, Sparkles, ArrowRight, Download, Send, CheckCircle2, ChevronDown, RefreshCw, HelpCircle, Briefcase, BarChart3
 } from "lucide-react";
 
 export function RevenueForecasterClient() {
-  // Calculator inputs
-  const [traffic, setTraffic] = useState(10000);
-  const [conversionRate, setConversionRate] = useState(1.0);
-  const [acv, setAcv] = useState(5000);
-  const [budget, setBudget] = useState(3000);
+  // 5 Sliders State
+  const [budget, setBudget] = useState(2500); // Monthly SEO Budget
+  const [leadValue, setLeadValue] = useState(250); // Average Lead Value
+  const [conversionRate, setConversionRate] = useState(1.5); // Lead Conversion Rate (%)
+  const [trafficGrowth, setTrafficGrowth] = useState(8); // Monthly Traffic Growth (%)
+  const [cltv, setCltv] = useState(5000); // Average Customer Lifetime Value (CLTV)
+
+  // Constant baseline starting traffic
+  const startingTraffic = 5000;
 
   // Lead capture state
   const [showModal, setShowModal] = useState(false);
@@ -23,93 +27,120 @@ export function RevenueForecasterClient() {
   const [isLoading, setIsLoading] = useState(false);
   const [gotcha, setGotcha] = useState("");
 
+  // Tracking flags to avoid duplicate started event pushes
+  const hasStartedTracking = useRef(false);
+
   // Accordion active FAQ state
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
 
-  // Calculation outputs
-  const [currentRevenue, setCurrentRevenue] = useState(0);
-  const [projectedRevenue, setProjectedRevenue] = useState(0);
-  const [netIncrease, setNetIncrease] = useState(0);
-  const [projectedRoi, setProjectedRoi] = useState(0);
-  const [currentLeads, setCurrentLeads] = useState(0);
-  const [projectedLeads, setProjectedLeads] = useState(0);
-  
-  // Chart coordinates
+  // Projected milestones data state
+  const [milestones, setMilestones] = useState({
+    m1: { traffic: 0, leads: 0, customers: 0, revenue: 0, roi: 0 },
+    m3: { traffic: 0, leads: 0, customers: 0, revenue: 0, roi: 0 },
+    m6: { traffic: 0, leads: 0, customers: 0, revenue: 0, roi: 0 },
+    m12: { traffic: 0, leads: 0, customers: 0, revenue: 0, roi: 0 }
+  });
+
+  // Chart coordinates path
   const [projectedPoints, setProjectedPoints] = useState("");
-  const [currentPoints, setCurrentPoints] = useState("");
+  
+  // Track start of calculation when sliders are first adjusted
+  const trackCalculationStart = () => {
+    if (!hasStartedTracking.current) {
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({ event: "roi_calculation_started" });
+      }
+      hasStartedTracking.current = true;
+    }
+  };
 
-  // Run projections math
+  // Track completion of calculation (e.g. on slider release)
+  const trackCalculationComplete = () => {
+    if (typeof window !== "undefined" && (window as any).dataLayer) {
+      (window as any).dataLayer.push({ 
+        event: "roi_calculation_completed",
+        budget,
+        lead_value: leadValue,
+        conversion_rate: conversionRate,
+        traffic_growth: trafficGrowth,
+        cltv
+      });
+    }
+  };
+
+  // Perform compounding projections math
   useEffect(() => {
-    // Current Monthly baseline
-    const currLeads = Math.round(traffic * (conversionRate / 100));
-    const currDeals = Math.round(currLeads * 0.10); // Assume default 10% close rate
-    const currRev = currDeals * acv;
+    // We calculate month by month from month 1 to 12
+    const data: Array<{
+      month: number;
+      traffic: number;
+      leads: number;
+      customers: number;
+      revenue: number;
+      cumulativeRevenue: number;
+      cumulativeCost: number;
+      roi: number;
+    }> = [];
+
+    let totalRevenue = 0;
     
-    // Digipeak Optimizations (over 12 months)
-    // 1. Traffic scales by 3.5x over 12 months
-    const targetTraffic = traffic * 3.5;
-    // 2. Conversion rate optimizes to 2.5x current rate, capped between 2.2% and 4.5%
-    let targetConv = conversionRate * 2.5;
-    if (targetConv < 2.2) targetConv = 2.2;
-    if (targetConv > 4.5) targetConv = 4.5;
-    
-    const projLeads = Math.round(targetTraffic * (targetConv / 100));
-    const projDeals = Math.round(projLeads * 0.12); // Optimized close rate 12%
-    const projRev = projDeals * acv;
+    // Close rate is mathematically bounded: Average Lead Value / CLTV
+    const closeRate = Math.min(1, leadValue / cltv);
 
-    // Monthly Increase & Annual ROI
-    const increase = projRev - currRev;
-    // ROI = (Annual Net Increase - Annual Budget Cost) / Annual Budget Cost
-    const annualBudget = budget * 12;
-    const annualNetIncrease = increase * 12;
-    const roi = annualBudget > 0 ? (annualNetIncrease - annualBudget) / annualBudget : 0;
+    for (let m = 1; m <= 12; m++) {
+      // Compounded traffic growth
+      const traffic = Math.round(startingTraffic * Math.pow(1 + trafficGrowth / 100, m));
+      const leads = Math.round(traffic * (conversionRate / 100));
+      const customers = Math.round(leads * closeRate);
+      
+      // Revenue of this month (using LTV * customers)
+      const revenue = Math.round(customers * cltv);
+      totalRevenue += revenue;
 
-    setCurrentRevenue(currRev);
-    setProjectedRevenue(projRev);
-    setNetIncrease(increase);
-    setProjectedRoi(roi);
-    setCurrentLeads(currLeads);
-    setProjectedLeads(projLeads);
+      const cumulativeCost = budget * m;
+      const roi = cumulativeCost > 0 ? Math.round(((totalRevenue - cumulativeCost) / cumulativeCost) * 100) : 0;
 
-    // Calculate month-by-month points for 12 months to draw the SVG line chart
-    // SVG viewBox is 600 width, 240 height
-    // Margin left 50, Margin right 20, Margin top 20, Margin bottom 30
+      data.push({
+        month: m,
+        traffic,
+        leads,
+        customers,
+        revenue,
+        cumulativeRevenue: totalRevenue,
+        cumulativeCost,
+        roi
+      });
+    }
+
+    // Set milestones
+    setMilestones({
+      m1: data[0],
+      m3: data[2],
+      m6: data[5],
+      m12: data[11]
+    });
+
+    // Chart path coordinates
+    // SVG viewBox: 600 width, 240 height
+    // Margin: left 50, right 20, top 20, bottom 30
     // Width = 530, Height = 190
     // X scale: Month 1 to Month 12 -> 50 to 580
     // Y scale: Revenue scale -> 210 to 20
-    const maxRev = Math.max(projRev * 1.15, 50000);
+    const maxRev = Math.max(...data.map(d => d.revenue)) * 1.15 || 10000;
     const getX = (month: number) => 50 + ((month - 1) / 11) * 530;
     const getY = (rev: number) => 210 - (rev / maxRev) * 190;
 
-    let projPath = "";
-    let currPath = "";
+    let path = "";
+    data.forEach((d, idx) => {
+      const x = getX(d.month);
+      const y = getY(d.revenue);
+      if (idx === 0) path = `M ${x} ${y}`;
+      else path += ` L ${x} ${y}`;
+    });
 
-    for (let m = 1; m <= 12; m++) {
-      // Current path is flat
-      const currY = getY(currRev);
-      const currX = getX(m);
-      if (m === 1) currPath = `M ${currX} ${currY}`;
-      else currPath += ` L ${currX} ${currY}`;
+    setProjectedPoints(path);
 
-      // Projected path scales dynamically (S-curve interpolation)
-      const factor = (m - 1) / 11; // 0 to 1
-      const smoothFactor = Math.sin((factor * Math.PI) / 2); // smooth sine curve
-      const monthTraffic = traffic + (targetTraffic - traffic) * smoothFactor;
-      const monthConv = conversionRate + (targetConv - conversionRate) * smoothFactor;
-      const monthLeads = monthTraffic * (monthConv / 100);
-      const monthDeals = monthLeads * (0.10 + 0.02 * factor); // close rate increases 10% to 12%
-      const monthRev = monthDeals * acv;
-
-      const projY = getY(monthRev);
-      const projX = getX(m);
-      if (m === 1) projPath = `M ${projX} ${projY}`;
-      else projPath += ` L ${projX} ${projY}`;
-    }
-
-    setProjectedPoints(projPath);
-    setCurrentPoints(currPath);
-
-  }, [traffic, conversionRate, acv, budget]);
+  }, [budget, leadValue, conversionRate, trafficGrowth, cltv]);
 
   const handleLeadSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -118,25 +149,47 @@ export function RevenueForecasterClient() {
     setIsLoading(true);
 
     try {
+      const detailsText = `
+B2B Compounding ROI Forecaster Report:
+- Target Website: ${websiteUrl}
+- Sliders Settings:
+  * Monthly Budget: $${budget}/mo
+  * Average Lead Value: $${leadValue}
+  * Lead Conversion Rate: ${conversionRate}%
+  * Traffic Growth: ${trafficGrowth}%/mo
+  * Customer CLTV: $${cltv}
+- Projected Milestone (Month 12):
+  * Traffic: ${milestones.m12.traffic.toLocaleString()}
+  * Leads: ${milestones.m12.leads.toLocaleString()}
+  * Customers: ${milestones.m12.customers.toLocaleString()}
+  * Monthly Revenue: $${milestones.m12.revenue.toLocaleString()}
+  * Project ROI: ${milestones.m12.roi}%
+      `.trim();
+
       await fetch("/api/send-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name,
           email,
-          phone: phone || "Not Provided",
-          service: "Revenue & ROI Forecaster",
+          whatsapp: phone || "Not Provided",
+          service: "Growth Forecast Report",
+          website: websiteUrl,
           company: `Website: ${websiteUrl}`,
-          details: `Requested B2B ROI Projections. Inputs -> Traffic: ${traffic}, Conv: ${conversionRate}%, ACV: $${acv}, Budget: $${budget}/mo. Projections -> Current Rev: $${currentRevenue}/mo, Projected Rev: $${projectedRevenue}/mo, Annual ROI: ${(projectedRoi * 100).toFixed(0)}%. Client wants B2B growth proposal.`,
+          details: detailsText,
+          leadSource: "revenue_forecaster",
           _gotcha: gotcha
         })
       });
+
+      // Track lead submitted
       if (typeof window !== "undefined" && (window as any).dataLayer) {
-        (window as any).dataLayer.push({ event: 'contact_form_submit', lead_source: 'revenue_forecaster' });
+        (window as any).dataLayer.push({ event: "roi_lead_submitted", lead_email: email });
       }
+
       setIsSubmitted(true);
     } catch (err) {
-      console.error("Failed to submit lead:", err);
+      console.error("Failed to submit ROI forecaster lead:", err);
     } finally {
       setIsLoading(false);
     }
@@ -144,70 +197,30 @@ export function RevenueForecasterClient() {
 
   const faqs = [
     {
-      q: "How does the B2B Revenue Forecaster calculate these growth projections?",
-      a: "The calculator models growth based on historical agency client campaigns. We forecast traffic scaling by an average of 3.5x over 12 months through structured technical SEO and content siloing. Simultaneously, conversion rates are optimized by an average of 2.5x (capped at 4.5% target) by repairing hydration mismatches, optimizing Largest Contentful Paint (LCP) under 1.2s, and structuring premium visual UX. Close rates are projected to increase from 10% to 12% due to data enrichment and automated CRM nurturing pipelines."
+      q: "What is the B2B Revenue Forecaster compounding formula?",
+      a: "Our forecaster projects traffic compound-growth month-over-month. For instance, an 8% compounding traffic growth rate on a 5,000 starting traffic base scales monthly traffic to over 12,500 visits by month 12. Monthly leads are calculated by applying the Lead Conversion Rate. Closed customers are modeled by applying a contract close rate derived from Average Lead Value relative to Customer Lifetime Value (CLTV)."
     },
     {
-      q: "What is a target B2B landing page conversion rate?",
-      a: "While B2B industry averages hover around 1% to 1.5%, high-performing B2B platforms engineered with premium styling, micro-interactions, and progressive forms achieve conversion rates between 2.5% and 5.5%. Digipeak optimizes web structures specifically to achieve these high-converting thresholds."
+      q: "How does the Monthly Traffic Growth rate compound?",
+      a: "Unlike linear growth, compounding growth calculates the growth rate of the previous month's total. If starting traffic is 5,000, month 1 grows to 5,400 (at 8% growth). Month 2 grows 8% of 5,400, resulting in 5,832. Over 12 months, this exponential compounding leads to massive scaling output."
     },
     {
-      q: "How does site performance directly impact B2B conversions and leads?",
-      a: "According to Google Search audits, page speeds directly correlate with user drop-offs. A 1-second load lag can drop conversions by up to 20%. Under Core Web Vitals targets, keeping LCP under 1.2s and INP under 200ms ensures frictionless page transitions, boosting form submissions."
+      q: "How should I determine my Average Lead Value?",
+      a: "Average Lead Value is calculated by dividing total closed-won revenue from digital channels by the total number of marketing-qualified leads (MQLs) generated. If 100 leads yield 10 closed-won contracts worth $50,000 total, your average lead value is $500 ($50,000 / 100)."
     },
     {
-      q: "Why is Average Contract Value (ACV) a critical parameter for B2B SEO campaigns?",
-      a: "Unlike B2C retail where traffic volume drives revenue, B2B campaigns depend on contract values. If your ACV is $10,000, acquiring just 5 additional closed deals per year through targeted search keywords generates $50,000 in net new revenue, making organic B2B SEO exceptionally high-ROI."
+      q: "Why is Customer Lifetime Value (CLTV) vital in B2B growth math?",
+      a: "CLTV represents the total revenue a business expects to earn from a single client contract over their entire relationship. Having high CLTV allows B2B companies to spend more on customer acquisition (CAC), justifying premium retainers and custom SEO campaigns."
     },
     {
-      q: "What is the standard Customer Acquisition Cost (CAC) for B2B SaaS and agency retainers?",
-      a: "B2B SaaS and enterprise agencies typically experience CACs ranging from $2,000 to $15,000 depending on search competitiveness. Outranking paid ad keywords with organic B2B search authority reduces overall paid CAC by up to 60% by establishing long-term compounding visibility."
-    },
-    {
-      q: "How does your CRM automation pipeline help sales close more marketing leads?",
-      a: "Lead routing lag kills deals. Capturing leads through active API webhooks and routing them to CRM pipelines under 5 minutes increases contact qualification rates by 8x. Automated email journeys continuously nurture prospects, increasing overall close rates."
-    },
-    {
-      q: "What is a healthy Customer Lifetime Value (LTV) to CAC ratio for B2B growth?",
-      a: "An LTV:CAC ratio of 3:1 is considered the healthy benchmark for scaling businesses. Ratios above 4:1 indicate high capital efficiency. Investing in custom organic channels and conversion optimization yields lower CAC over time, boosting the LTV:CAC ratio."
-    },
-    {
-      q: "How long does it take for custom web design and SEO campaigns to yield revenue results?",
-      a: "Initial crawl and layout optimizations resolve speed issues within weeks. Organic search authority, keyword directory scaling, and content indexing compound over 3 to 6 months. By month 12, the pipeline establishes a stable, predictable lead flow."
-    },
-    {
-      q: "Does local search engine optimization drive enterprise-level B2B inquiries?",
-      a: "Yes. Local search intent is highly transactional. Corporate decision-makers in regions like Doha, Dubai, or Auckland search for local partners (e.g., 'Creative Agency Doha' or 'Web Design Dubai'). Optimizing geographic routes captures these high-value retainers."
-    },
-    {
-      q: "Why should we avoid generic DIY website builders like WordPress or Wix for B2B growth?",
-      a: "DIY builders suffer from structural code bloat, slow mobile speeds, visual layout shifts, and weak SEO control. They frequently lack native Arabic RTL support and Qatari local payment gateway integrations, which directly damages local search ranking and user trust."
-    },
-    {
-      q: "How do you calculate return on investment (ROI) for marketing campaigns?",
-      a: "ROI is calculated as: (Net Profit from Campaign - Campaign Marketing Budget) / Campaign Marketing Budget. For this forecaster, we project annual net new revenue from optimized conversions and traffic relative to your ad/retainer budgets."
-    },
-    {
-      q: "How does bilingual Arabic and English typography design impact conversions in the GCC?",
-      a: "GCC B2B searchers toggle between languages. Mirroring layouts for Arabic RTL (Right-to-Left) and English LTR, and selecting modern font weights (like Satoshi paired with optimized Arabic typefaces), prevents UI friction and builds regional credibility."
-    },
-    {
-      q: "What is progressive profiling on B2B capture forms?",
-      a: "Progressive profiling dynamically alters form fields for returning visitors. By utilizing cached user data, forms remain short and low-friction (e.g., email only), while CRM enrichment APIs automatically resolve firmographic details in the background."
-    },
-    {
-      q: "What is an XML Sitemap and why is it vital for blog indexing?",
-      a: "An XML sitemap is a machine-readable index directory of your URLs. For sites with comprehensive blog catalogs, it lists all articles, publication dates, and hreflang translations, guaranteeing search crawlers discover and index new content instantly."
-    },
-    {
-      q: "How does Digipeak Agency ensure web apps are secure and compliant?",
-      a: "We custom-code lightweight React/Next.js frontends without bloated backend databases. We deploy secure HTTPS configurations, configure Cookie Consent banners with Google Consent Mode v2, and enforce strict GDPR and local regulatory compliance."
+      q: "What is a standard ROI ratio for professional SEO and Web optimization?",
+      a: "A healthy marketing ROI ratio is 5:1 (a 500% return). Top-tier organic search marketing combined with conversion-focused Next.js web application designs frequently exceed a 10:1 (1,000%) ROI ratio by month 12, due to compounding organic traffic."
     }
   ];
 
   return (
     <div className="relative min-h-screen bg-[#050816] text-white pt-32 pb-24 px-6 overflow-hidden">
-      {/* Dynamic background lighting */}
+      {/* Background Orbs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-[25%] left-10 w-[500px] h-[500px] bg-accent-primary/5 rounded-full blur-[140px]" />
         <div className="absolute bottom-[20%] right-10 w-[450px] h-[450px] bg-accent-secondary/5 rounded-full blur-[120px]" />
@@ -221,11 +234,11 @@ export function RevenueForecasterClient() {
             <TrendingUp className="w-3.5 h-3.5" />
             ROI &amp; Revenue Projection Engine
           </div>
-          <h1 className="font-heading text-3xl md:text-5xl lg:text-3xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
-            B2B Revenue <span className="text-gradient-primary">Forecaster</span>
+          <h1 className="font-heading text-4xl md:text-6xl font-black tracking-tight leading-tight">
+            Compounding <span className="text-gradient-primary">ROI Calculator</span>
           </h1>
           <p className="text-muted text-base md:text-lg leading-relaxed">
-            Model your sales pipeline, scale your organic search traffic, and calculate the ROI of digital conversion optimizations over the next 12 months.
+            Help your business visualize compounding search traffic growth, lead volume changes, and annual digital ROI.
           </p>
         </div>
 
@@ -236,93 +249,16 @@ export function RevenueForecasterClient() {
           <div className="lg:col-span-5 glass border border-white/5 rounded-3xl p-6 md:p-8 space-y-8">
             <div className="flex items-center gap-2 text-accent-primary border-b border-white/5 pb-4">
               <Sparkles className="w-5 h-5" />
-              <h3 className="font-heading text-base font-bold uppercase tracking-wider">Growth Parameters</h3>
+              <h3 className="font-heading text-sm font-bold uppercase tracking-wider">ROI Input Parameters</h3>
             </div>
 
             <div className="space-y-6">
-              {/* Slider 1: Traffic */}
-              <div className="space-y-3">
+              
+              {/* Slider 1: Monthly SEO Budget */}
+              <div className="space-y-2">
                 <div className="flex justify-between items-center text-xs">
                   <span className="text-muted font-medium flex items-center gap-1.5">
-                    <Users className="w-3.5 h-3.5" /> Current Monthly Traffic
-                  </span>
-                  <span className="font-bold font-mono text-white text-sm bg-white/5 px-2.5 py-1 rounded">
-                    {traffic.toLocaleString()}
-                  </span>
-                </div>
-                <input 
-                  type="range" 
-                  min="1000" 
-                  max="150000" 
-                  step="1000"
-                  value={traffic} 
-                  onChange={(e) => setTraffic(Number(e.target.value))}
-                  className="w-full accent-accent-primary cursor-pointer h-1 bg-white/10 rounded-lg appearance-none"
-                />
-                <div className="flex justify-between text-[10px] text-muted font-mono">
-                  <span>1k</span>
-                  <span>75k</span>
-                  <span>150k</span>
-                </div>
-              </div>
-
-              {/* Slider 2: Conversion Rate */}
-              <div className="space-y-3">
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-muted font-medium flex items-center gap-1.5">
-                    <TrendingUp className="w-3.5 h-3.5" /> Landing Page Conv. Rate
-                  </span>
-                  <span className="font-bold font-mono text-white text-sm bg-white/5 px-2.5 py-1 rounded">
-                    {conversionRate.toFixed(1)}%
-                  </span>
-                </div>
-                <input 
-                  type="range" 
-                  min="0.1" 
-                  max="5.0" 
-                  step="0.1"
-                  value={conversionRate} 
-                  onChange={(e) => setConversionRate(Number(e.target.value))}
-                  className="w-full accent-accent-primary cursor-pointer h-1 bg-white/10 rounded-lg appearance-none"
-                />
-                <div className="flex justify-between text-[10px] text-muted font-mono">
-                  <span>0.1%</span>
-                  <span>2.5%</span>
-                  <span>5.0%</span>
-                </div>
-              </div>
-
-              {/* Slider 3: ACV */}
-              <div className="space-y-3">
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-muted font-medium flex items-center gap-1.5">
-                    <DollarSign className="w-3.5 h-3.5" /> Average Contract Value (ACV)
-                  </span>
-                  <span className="font-bold font-mono text-white text-sm bg-white/5 px-2.5 py-1 rounded">
-                    ${acv.toLocaleString()}
-                  </span>
-                </div>
-                <input 
-                  type="range" 
-                  min="500" 
-                  max="25000" 
-                  step="500"
-                  value={acv} 
-                  onChange={(e) => setAcv(Number(e.target.value))}
-                  className="w-full accent-accent-primary cursor-pointer h-1 bg-white/10 rounded-lg appearance-none"
-                />
-                <div className="flex justify-between text-[10px] text-muted font-mono">
-                  <span>$500</span>
-                  <span>$12k</span>
-                  <span>$25k</span>
-                </div>
-              </div>
-
-              {/* Slider 4: Budget */}
-              <div className="space-y-3">
-                <div className="flex justify-between items-center text-xs">
-                  <span className="text-muted font-medium flex items-center gap-1.5">
-                    <Award className="w-3.5 h-3.5" /> Monthly Marketing Budget
+                    <Briefcase className="w-3.5 h-3.5" /> Monthly SEO Budget
                   </span>
                   <span className="font-bold font-mono text-white text-sm bg-white/5 px-2.5 py-1 rounded">
                     ${budget.toLocaleString()}
@@ -334,68 +270,180 @@ export function RevenueForecasterClient() {
                   max="15000" 
                   step="500"
                   value={budget} 
-                  onChange={(e) => setBudget(Number(e.target.value))}
-                  className="w-full accent-accent-primary cursor-pointer h-1 bg-white/10 rounded-lg appearance-none"
+                  onChange={(e) => { setBudget(Number(e.target.value)); trackCalculationStart(); }}
+                  onMouseUp={trackCalculationComplete}
+                  onTouchEnd={trackCalculationComplete}
+                  className="w-full accent-accent-primary cursor-pointer h-1.5 bg-white/10 rounded-lg appearance-none"
                 />
-                <div className="flex justify-between text-[10px] text-muted font-mono">
+                <div className="flex justify-between text-[9px] text-muted font-mono">
                   <span>$500</span>
                   <span>$7.5k</span>
                   <span>$15k</span>
                 </div>
               </div>
-            </div>
 
-            <div className="border-t border-white/5 pt-6 text-[10px] text-muted leading-relaxed">
-              *Projections model dynamic 12-month scaling campaigns: Traffic (+250%), conversion rates (+150%), and close rates (+2%) optimized via technical web design and organic authority.
+              {/* Slider 2: Average Lead Value */}
+              <div className="space-y-2">
+                <div className="flex justify-between items-center text-xs">
+                  <span className="text-muted font-medium flex items-center gap-1.5">
+                    <DollarSign className="w-3.5 h-3.5" /> Average Lead Value
+                  </span>
+                  <span className="font-bold font-mono text-white text-sm bg-white/5 px-2.5 py-1 rounded">
+                    ${leadValue.toLocaleString()}
+                  </span>
+                </div>
+                <input 
+                  type="range" 
+                  min="10" 
+                  max="5000" 
+                  step="10"
+                  value={leadValue} 
+                  onChange={(e) => { setLeadValue(Number(e.target.value)); trackCalculationStart(); }}
+                  onMouseUp={trackCalculationComplete}
+                  onTouchEnd={trackCalculationComplete}
+                  className="w-full accent-accent-primary cursor-pointer h-1.5 bg-white/10 rounded-lg appearance-none"
+                />
+                <div className="flex justify-between text-[9px] text-muted font-mono">
+                  <span>$10</span>
+                  <span>$2.5k</span>
+                  <span>$5k</span>
+                </div>
+              </div>
+
+              {/* Slider 3: Lead Conversion Rate */}
+              <div className="space-y-2">
+                <div className="flex justify-between items-center text-xs">
+                  <span className="text-muted font-medium flex items-center gap-1.5">
+                    <TrendingUp className="w-3.5 h-3.5" /> Lead Conversion Rate
+                  </span>
+                  <span className="font-bold font-mono text-white text-sm bg-white/5 px-2.5 py-1 rounded">
+                    {conversionRate.toFixed(1)}%
+                  </span>
+                </div>
+                <input 
+                  type="range" 
+                  min="0.1" 
+                  max="10.0" 
+                  step="0.1"
+                  value={conversionRate} 
+                  onChange={(e) => { setConversionRate(Number(e.target.value)); trackCalculationStart(); }}
+                  onMouseUp={trackCalculationComplete}
+                  onTouchEnd={trackCalculationComplete}
+                  className="w-full accent-accent-primary cursor-pointer h-1.5 bg-white/10 rounded-lg appearance-none"
+                />
+                <div className="flex justify-between text-[9px] text-muted font-mono">
+                  <span>0.1%</span>
+                  <span>5.0%</span>
+                  <span>10.0%</span>
+                </div>
+              </div>
+
+              {/* Slider 4: Monthly Traffic Growth */}
+              <div className="space-y-2">
+                <div className="flex justify-between items-center text-xs">
+                  <span className="text-muted font-medium flex items-center gap-1.5">
+                    <Users className="w-3.5 h-3.5" /> Monthly Traffic Growth
+                  </span>
+                  <span className="font-bold font-mono text-white text-sm bg-white/5 px-2.5 py-1 rounded">
+                    {trafficGrowth}%
+                  </span>
+                </div>
+                <input 
+                  type="range" 
+                  min="1" 
+                  max="50" 
+                  step="1"
+                  value={trafficGrowth} 
+                  onChange={(e) => { setTrafficGrowth(Number(e.target.value)); trackCalculationStart(); }}
+                  onMouseUp={trackCalculationComplete}
+                  onTouchEnd={trackCalculationComplete}
+                  className="w-full accent-accent-primary cursor-pointer h-1.5 bg-white/10 rounded-lg appearance-none"
+                />
+                <div className="flex justify-between text-[9px] text-muted font-mono">
+                  <span>1%</span>
+                  <span>25%</span>
+                  <span>50%</span>
+                </div>
+              </div>
+
+              {/* Slider 5: Average Customer Lifetime Value */}
+              <div className="space-y-2">
+                <div className="flex justify-between items-center text-xs">
+                  <span className="text-muted font-medium flex items-center gap-1.5">
+                    <Award className="w-3.5 h-3.5" /> Customer Lifetime Value (LTV)
+                  </span>
+                  <span className="font-bold font-mono text-white text-sm bg-white/5 px-2.5 py-1 rounded">
+                    ${cltv.toLocaleString()}
+                  </span>
+                </div>
+                <input 
+                  type="range" 
+                  min="500" 
+                  max="100000" 
+                  step="500"
+                  value={cltv} 
+                  onChange={(e) => { setCltv(Number(e.target.value)); trackCalculationStart(); }}
+                  onMouseUp={trackCalculationComplete}
+                  onTouchEnd={trackCalculationComplete}
+                  className="w-full accent-accent-primary cursor-pointer h-1.5 bg-white/10 rounded-lg appearance-none"
+                />
+                <div className="flex justify-between text-[9px] text-muted font-mono">
+                  <span>$500</span>
+                  <span>$50k</span>
+                  <span>$100k</span>
+                </div>
+              </div>
+
             </div>
           </div>
 
-          {/* Results and Visual Chart (7 columns) */}
+          {/* Results Display Area (7 columns) */}
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Projections Dashboard Summary */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 sm:grid-cols-4 gap-4">
-              <div className="glass border border-white/5 rounded-2xl p-4 bg-[#0a0d24]/50">
-                <span className="text-[10px] text-muted font-medium uppercase tracking-wider block">Projected ROI</span>
-                <div className="text-gradient-primary text-xl font-black mt-1 font-mono">
-                  {projectedRoi > 0 ? `+${(projectedRoi * 100).toFixed(0)}%` : "0%"}
+            {/* Compounding Month milestones comparison */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {[
+                { name: "Month 1", data: milestones.m1 },
+                { name: "Month 3", data: milestones.m3 },
+                { name: "Month 6", data: milestones.m6 },
+                { name: "Month 12", data: milestones.m12 }
+              ].map((m, idx) => (
+                <div key={idx} className="glass border border-white/5 rounded-2xl p-4 bg-[#0a0d24]/50 space-y-3">
+                  <span className="text-[10px] text-accent-secondary font-bold uppercase tracking-wider block border-b border-white/5 pb-1">
+                    {m.name}
+                  </span>
+                  <div className="space-y-1.5 text-xs">
+                    <div className="flex justify-between font-mono">
+                      <span className="text-muted text-[10px]">Traffic:</span>
+                      <span className="font-bold">{m.data.traffic.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between font-mono">
+                      <span className="text-muted text-[10px]">Leads:</span>
+                      <span className="font-bold">{m.data.leads}</span>
+                    </div>
+                    <div className="flex justify-between font-mono">
+                      <span className="text-muted text-[10px]">Customers:</span>
+                      <span className="font-bold">{m.data.customers}</span>
+                    </div>
+                    <div className="flex justify-between font-mono">
+                      <span className="text-muted text-[10px]">Rev:</span>
+                      <span className="font-bold text-white">${m.data.revenue.toLocaleString()}</span>
+                    </div>
+                    <div className="flex justify-between font-mono border-t border-white/5 pt-1 mt-1 text-[10px]">
+                      <span className="text-muted">ROI:</span>
+                      <span className={`font-bold ${m.data.roi >= 0 ? "text-emerald-400" : "text-rose-400"}`}>{m.data.roi}%</span>
+                    </div>
+                  </div>
                 </div>
-                <span className="text-[9px] text-muted font-mono block mt-0.5">Annual Multiple</span>
-              </div>
-              <div className="glass border border-white/5 rounded-2xl p-4">
-                <span className="text-[10px] text-muted font-medium uppercase tracking-wider block">Net Revenue Lift</span>
-                <div className="text-white text-xl font-black mt-1 font-mono">
-                  +${netIncrease.toLocaleString()}
-                </div>
-                <span className="text-[9px] text-muted font-mono block mt-0.5">Per Month Growth</span>
-              </div>
-              <div className="glass border border-white/5 rounded-2xl p-4">
-                <span className="text-[10px] text-muted font-medium uppercase tracking-wider block">Monthly Deals</span>
-                <div className="text-white text-xl font-bold mt-1 font-mono">
-                  {Math.round(currentLeads * 0.10)} → {Math.round(projectedLeads * 0.12)}
-                </div>
-                <span className="text-[9px] text-muted font-mono block mt-0.5">Deals Closed</span>
-              </div>
-              <div className="glass border border-white/5 rounded-2xl p-4">
-                <span className="text-[10px] text-muted font-medium uppercase tracking-wider block">Monthly Leads</span>
-                <div className="text-white text-xl font-bold mt-1 font-mono">
-                  {currentLeads} → {projectedLeads}
-                </div>
-                <span className="text-[9px] text-muted font-mono block mt-0.5">M1 vs M12 Leads</span>
-              </div>
+              ))}
             </div>
 
-            {/* Custom SVG Line Chart */}
+            {/* Growth Curve Chart */}
             <div className="glass border border-white/5 rounded-3xl p-6 bg-gradient-to-b from-[#0a0d24] to-[#050816] space-y-4">
               <div className="flex justify-between items-center text-xs">
-                <h4 className="font-heading font-bold uppercase tracking-wider text-white">12-Month Revenue Projections</h4>
-                <div className="flex items-center gap-4 text-[10px]">
-                  <span className="flex items-center gap-1.5 text-muted">
-                    <span className="w-2.5 h-0.5 bg-muted inline-block" /> Current Path
-                  </span>
-                  <span className="flex items-center gap-1.5 text-accent-primary font-bold">
-                    <span className="w-2.5 h-0.5 bg-accent-primary inline-block" /> Digipeak Path
-                  </span>
+                <h4 className="font-heading font-bold uppercase tracking-wider text-white">Monthly Compounding Revenue Growth Curve</h4>
+                <div className="flex items-center gap-1.5 text-accent-primary font-bold text-[10px]">
+                  <BarChart3 className="w-3.5 h-3.5" /> Compounding Path
                 </div>
               </div>
 
@@ -408,72 +456,61 @@ export function RevenueForecasterClient() {
                   <line x1="50" y1="146" x2="580" y2="146" stroke="rgba(255,255,255,0.03)" strokeWidth="1" />
                   <line x1="50" y1="210" x2="580" y2="210" stroke="rgba(255,255,255,0.05)" strokeWidth="1.5" />
                   
-                  {/* Vertical Month markers */}
+                  {/* Vertical markers */}
                   <line x1="50" y1="20" x2="50" y2="210" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
                   <line x1="192.5" y1="20" x2="192.5" y2="210" stroke="rgba(255,255,255,0.02)" strokeWidth="1" />
                   <line x1="335" y1="20" x2="335" y2="210" stroke="rgba(255,255,255,0.02)" strokeWidth="1" />
                   <line x1="477.5" y1="20" x2="477.5" y2="210" stroke="rgba(255,255,255,0.02)" strokeWidth="1" />
                   <line x1="580" y1="20" x2="580" y2="210" stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
 
-                  {/* Baseline path */}
-                  <path 
-                    d={currentPoints} 
-                    fill="none" 
-                    stroke="rgba(161,161,170,0.4)" 
-                    strokeWidth="2" 
-                    strokeDasharray="4 4" 
-                    className="transition-all duration-300"
-                  />
-
-                  {/* Projected growth path */}
+                  {/* Growth path */}
                   <path 
                     d={projectedPoints} 
                     fill="none" 
-                    stroke="url(#chart-gradient)" 
-                    strokeWidth="3.5" 
+                    stroke="url(#roi-gradient)" 
+                    strokeWidth="4" 
                     className="transition-all duration-300"
                   />
 
                   {/* Gradient definition */}
                   <defs>
-                    <linearGradient id="chart-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#a855f7" />
-                      <stop offset="50%" stopColor="#7c3aed" />
-                      <stop offset="100%" stopColor="#3b82f6" />
+                    <linearGradient id="roi-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#3b82f6" />
+                      <stop offset="50%" stopColor="#8b5cf6" />
+                      <stop offset="100%" stopColor="#ec4899" />
                     </linearGradient>
                   </defs>
                 </svg>
 
-                {/* SVG Y-Axis Labels */}
+                {/* Y-Axis Labels */}
                 <div className="absolute top-[20px] left-2 text-[9px] text-muted font-mono font-bold">
-                  ${Math.max(projectedRevenue * 1.15, 50000).toLocaleString(undefined, {maximumFractionDigits: 0})}
+                  ${(milestones.m12.revenue * 1.15).toLocaleString(undefined, {maximumFractionDigits: 0})}
                 </div>
                 <div className="absolute top-[115px] left-2 text-[9px] text-muted font-mono">
-                  ${(Math.max(projectedRevenue * 1.15, 50000) / 2).toLocaleString(undefined, {maximumFractionDigits: 0})}
+                  ${((milestones.m12.revenue * 1.15) / 2).toLocaleString(undefined, {maximumFractionDigits: 0})}
                 </div>
                 <div className="absolute bottom-[30px] left-2 text-[9px] text-muted font-mono">
                   $0
                 </div>
 
-                {/* SVG X-Axis Labels */}
-                <div className="absolute bottom-1 left-[50px] text-[8px] text-muted font-mono font-bold">M1</div>
-                <div className="absolute bottom-1 left-[192.5px] text-[8px] text-muted font-mono">M3</div>
-                <div className="absolute bottom-1 left-[335px] text-[8px] text-muted font-mono">M6</div>
-                <div className="absolute bottom-1 left-[477.5px] text-[8px] text-muted font-mono">M9</div>
-                <div className="absolute bottom-1 left-[570px] text-[8px] text-muted font-mono font-bold">M12</div>
+                {/* X-Axis Labels */}
+                <div className="absolute bottom-1 left-[50px] text-[8px] text-muted font-mono font-bold">Month 1</div>
+                <div className="absolute bottom-1 left-[192.5px] text-[8px] text-muted font-mono">Month 3</div>
+                <div className="absolute bottom-1 left-[335px] text-[8px] text-muted font-mono font-bold">Month 6</div>
+                <div className="absolute bottom-1 left-[565px] text-[8px] text-muted font-mono font-bold">Month 12</div>
               </div>
 
-              {/* Action Button & Lead Generation Lock */}
+              {/* Action Banner */}
               <div className="pt-4 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
                 <div className="text-xs text-muted text-center sm:text-left">
-                  Current Monthly Revenue: <strong className="text-white">${currentRevenue.toLocaleString()}</strong> | Projected Month 12: <strong className="text-accent-secondary">${projectedRevenue.toLocaleString()}</strong>
+                  Annual Compounding ROI Potential: <strong className="text-emerald-400">+{milestones.m12.roi}%</strong>
                 </div>
                 <button
                   onClick={() => setShowModal(true)}
-                  className="btn-primary px-6 py-3 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-transform cursor-pointer shadow-lg w-full sm:w-auto"
+                  className="btn-primary px-6 py-3.5 text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 transition-transform cursor-pointer shadow-lg w-full sm:w-auto"
                 >
-                  Export 12-Month Financial Model
-                  <Download className="w-4 h-4" />
+                  Get My Custom Growth Forecast
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
@@ -505,15 +542,15 @@ export function RevenueForecasterClient() {
                     <div className="w-12 h-12 rounded-2xl bg-accent-primary/20 text-accent-primary flex items-center justify-center mx-auto mb-2 shadow-[0_0_15px_rgba(168,85,247,0.2)]">
                       <TrendingUp className="w-6 h-6" />
                     </div>
-                    <h3 className="font-heading text-2xl font-black text-white">Unlock Full Financial Model</h3>
+                    <h3 className="font-heading text-2xl font-black text-white">Claim Custom Growth Plan</h3>
                     <p className="text-xs text-muted leading-relaxed">
-                      Download the detailed B2B 12-Month Projection Spreadsheet, calculate competitor traffic shares, and book a live strategy session with our growth team.
+                      Secure the compounded ROI workbook generated for your B2B model and arrange a consultation with Digipeak growth engineers.
                     </p>
                   </div>
 
                   <form onSubmit={handleLeadSubmit} className="space-y-4 pt-2">
                     <input type="text" name="_gotcha" value={gotcha} onChange={(e) => setGotcha(e.target.value)} className="hidden" tabIndex={-1} autoComplete="off" />
-                    <div className="grid grid-cols-1 sm:grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-1">
                         <label className="text-[10px] font-bold uppercase tracking-wider text-muted">Your Name</label>
                         <input 
@@ -551,9 +588,10 @@ export function RevenueForecasterClient() {
                     </div>
 
                     <div className="space-y-1">
-                      <label className="text-[10px] font-bold uppercase tracking-wider text-muted">Phone Number (Optional)</label>
+                      <label className="text-[10px] font-bold uppercase tracking-wider text-muted">Phone / WhatsApp</label>
                       <input 
                         type="tel"
+                        required
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                         placeholder="+94 77 362 4413"
@@ -569,11 +607,11 @@ export function RevenueForecasterClient() {
                       {isLoading ? (
                         <>
                           <RefreshCw className="w-4 h-4 animate-spin" />
-                          Processing Projections...
+                          Processing...
                         </>
                       ) : (
                         <>
-                          Generate &amp; Claim Excel Model
+                          Get My Custom Growth Forecast
                           <Send className="w-4 h-4" />
                         </>
                       )}
@@ -586,20 +624,10 @@ export function RevenueForecasterClient() {
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <div className="space-y-2">
-                    <h3 className="font-heading text-2xl font-black text-white">Spreadsheet Model Ready</h3>
+                    <h3 className="font-heading text-2xl font-black text-white">Forecast Proposal Queued</h3>
                     <p className="text-xs text-muted leading-relaxed">
-                      Thank you! Your custom 12-month projections have been generated. We have sent the detailed Excel sheet and competitor analysis to <strong>{email}</strong>.
+                      Thank you! Your growth projections have been submitted. Our strategy consultants will review your site <strong>{websiteUrl}</strong> and prepare a complete roadmap.
                     </p>
-                  </div>
-                  <div className="bg-white/5 border border-white/10 rounded-2xl p-4 max-w-sm mx-auto flex items-center justify-between text-xs">
-                    <span className="font-medium text-white">digipeak-b2b-growth-model.xlsx</span>
-                    <a 
-                      href="#" 
-                      onClick={(e) => { e.preventDefault(); alert("Mock download: Spreadsheet file is being prepared and emailed."); }}
-                      className="text-accent-primary font-bold flex items-center gap-1 hover:text-white"
-                    >
-                      <Download className="w-4 h-4" /> Download
-                    </a>
                   </div>
                   <div className="pt-4 flex flex-col gap-2">
                     <Link
@@ -607,13 +635,13 @@ export function RevenueForecasterClient() {
                       onClick={() => { setShowModal(false); setIsSubmitted(false); }}
                       className="btn-primary w-full py-3.5 text-xs font-bold uppercase tracking-wider block text-center text-white"
                     >
-                      Schedule Proposal Review Call
+                      Book Free Strategy Review Call
                     </Link>
                     <button
                       onClick={() => { setShowModal(false); setIsSubmitted(false); }}
                       className="glass border border-white/10 hover:border-white/20 w-full py-3 text-xs font-bold uppercase tracking-wider text-muted hover:text-white transition-all rounded-full"
                     >
-                      Return to Forecaster
+                      Close Window
                     </button>
                   </div>
                 </div>
@@ -621,62 +649,6 @@ export function RevenueForecasterClient() {
             </div>
           </div>
         )}
-
-        {/* SEO In-depth Copy (Targeting Growth Calculators and B2B ROI) */}
-        <section className="border-t border-white/5 pt-16 max-w-4xl mx-auto space-y-12">
-          
-          <div className="space-y-6">
-            <h2 className="font-heading text-3xl font-bold text-white leading-tight">
-              Scaling B2B Lead Pipelines: The Mathematics of ROI &amp; Conversion Optimization
-            </h2>
-            <p className="text-muted text-sm leading-relaxed">
-              In the B2B enterprise marketplace, organic traffic is vanity if it does not translate into pipeline value. High-performing digital agencies do not simply chase high-volume keyword search queries; they engineer conversion pathways. This <strong>B2B Revenue Growth &amp; ROI Calculator</strong> models the financial impact of deploying strategic <a href="/seo-services">SEO campaigns</a> and custom <a href="/web-design-development">web design development</a> to target decision-makers. By combining traffic scaling with user experience design, organizations reduce their Customer Acquisition Cost (CAC) and compound lifetime returns.
-            </p>
-            <p className="text-muted text-sm leading-relaxed">
-              Let us look at the conversion math: If a corporate website receives 10,000 monthly visits but converts them at a standard 1% average rate, the site produces 100 leads. Assuming a 10% sales closing rate, that website accounts for 10 deals. If your ACV is $5,000, monthly revenue stands at $50,000. By optimizing visual layouts, resolving render-blocking code loops, and constructing clean semantic schemas, Digipeak elevates conversion rates to 2.5%. Combined with traffic scaling to 35,000 visits via international search siloing, monthly leads grow to 875, deals rise to 105, and monthly revenue increases to $525,000—a massive 10x scalability curve without increasing paid ad spend.
-            </p>
-          </div>
-
-          {/* Accordion FAQs (exactly 15) */}
-          <div className="space-y-6">
-            <h3 className="font-heading text-2xl font-bold text-white flex items-center gap-2">
-              <HelpCircle className="w-6 h-6 text-accent-primary" />
-              Frequently Asked Questions
-            </h3>
-            
-            <div className="space-y-4">
-              {faqs.map((faq, idx) => (
-                <div 
-                  key={idx} 
-                  className="glass border border-white/5 rounded-2xl overflow-hidden transition-all duration-300"
-                >
-                  <button
-                    onClick={() => setActiveFaq(activeFaq === idx ? null : idx)}
-                    className="w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors focus:outline-none"
-                  >
-                    <span className="font-heading text-sm font-bold text-white pr-4">{faq.q}</span>
-                    <ChevronDown 
-                      className={`w-4 h-4 text-muted flex-shrink-0 transition-transform duration-300 ${
-                        activeFaq === idx ? "rotate-180 text-accent-primary" : ""
-                      }`} 
-                    />
-                  </button>
-                  
-                  <div 
-                    className={`transition-all duration-300 overflow-hidden ${
-                      activeFaq === idx ? "max-h-[300px] border-t border-white/5" : "max-h-0"
-                    }`}
-                  >
-                    <p className="p-6 text-xs leading-relaxed text-muted bg-[#0c0d24]/20">
-                      {faq.a}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-        </section>
 
       </div>
     </div>

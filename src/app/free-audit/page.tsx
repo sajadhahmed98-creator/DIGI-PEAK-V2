@@ -38,7 +38,6 @@ export default function FreeAuditPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Navbar />
       
       {/* Free Audit Hero Section */}
       <section className="relative min-h-[60vh] pt-36 pb-12 px-6 flex items-center justify-center overflow-hidden bg-black">
@@ -83,7 +82,6 @@ export default function FreeAuditPage() {
       <GlobalClients />
       <WhyClientsContact />
       <ContactFAQ />
-      <Footer />
     </>
   );
 }
