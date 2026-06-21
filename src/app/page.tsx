@@ -13,7 +13,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Digipeak Agency | Premium SEO, Web Design & AI Automation",
-  description: "Digipeak is an elite digital growth agency offering bespoke SEO strategies, custom web design, brand transformations, and enterprise AI automation across Qatar, UAE, Saudi Arabia, UK, Singapore, Australia, and New Zealand.",
+  description: "Digipeak is a specialist digital growth agency offering bespoke SEO strategies, custom web design, brand transformations, and enterprise AI automation across Qatar, UAE, Saudi Arabia, UK, Singapore, Australia, and New Zealand.",
   alternates: {
     canonical: "https://www.digipeak.agency",
   },
