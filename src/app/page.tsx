@@ -109,7 +109,7 @@ export default function Home() {
         "about": {
           "@id": "https://www.digipeak.agency/#organization"
         },
-        "description": "Digipeak is an elite digital growth agency offering bespoke SEO strategies, custom web design, brand transformations, and enterprise AI automation.",
+        "description": "Digipeak is a specialist digital growth agency offering bespoke SEO strategies, custom web design, brand transformations, and enterprise AI automation.",
         "relatedLink": [
           "https://www.digipeak.agency/author/sajadh-ahmed",
           "https://www.digipeak.agency/digiai"
