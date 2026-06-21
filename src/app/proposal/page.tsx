@@ -43,8 +43,8 @@ export default function ProposalPage() {
         {/* Proposal Hero Section */}
         <section className="relative min-h-[60vh] pt-36 pb-12 px-6 flex items-center justify-center overflow-hidden bg-transparent">
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent-primary/10 rounded-full blur-[140px] animate-pulse" />
-            <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent-secondary/5 rounded-full blur-[120px]" />
+            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent-primary/[0.03] rounded-full blur-[140px] animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent-secondary/[0.015] rounded-full blur-[120px]" />
           </div>
 
           <div className="relative z-10 mx-auto max-w-4xl text-center w-full">

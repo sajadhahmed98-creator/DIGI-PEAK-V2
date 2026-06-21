@@ -43,11 +43,11 @@
 }
 
 @utility bg-premium-dark-glow {
-  background-color: #040208;
+  background-color: #020203; /* Pure professional deep black-charcoal */
   background-image: 
-    radial-gradient(circle at 10% 15%, rgba(168, 85, 247, 0.15) 0%, transparent 55%),
-    radial-gradient(circle at 90% 10%, rgba(124, 58, 237, 0.1) 0%, transparent 45%),
-    radial-gradient(circle at 50% 60%, rgba(99, 102, 241, 0.05) 0%, transparent 70%);
+    radial-gradient(circle at 50% 0%, rgba(168, 85, 247, 0.03) 0%, transparent 55%),
+    radial-gradient(circle at 10% 15%, rgba(59, 130, 246, 0.015) 0%, transparent 45%),
+    radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.015) 0%, transparent 50%);
   background-attachment: scroll;
 }
 

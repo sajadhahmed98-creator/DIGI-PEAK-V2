@@ -16,10 +16,10 @@ const markets = [
 
 export function GlobalClients() {
   return (
-    <section className="py-10 md:py-16 lg:py-20 px-6 border-y border-white/5 bg-white/[0.01] relative overflow-hidden">
+    <section className="py-10 md:py-16 lg:py-20 px-6 border-y border-white/5 bg-transparent relative overflow-hidden">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-accent-secondary/5 rounded-full blur-[110px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-accent-secondary/[0.015] rounded-full blur-[110px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">

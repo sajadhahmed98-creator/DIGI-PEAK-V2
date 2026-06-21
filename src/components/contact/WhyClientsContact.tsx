@@ -47,7 +47,7 @@ export function WhyClientsContact() {
     <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-transparent relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-primary/5 rounded-full blur-[130px]" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-primary/[0.015] rounded-full blur-[130px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl">

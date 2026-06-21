@@ -259,11 +259,11 @@ ${formData.details || "None provided."}`,
                   required
                   value={formData.service}
                   onChange={handleInputChange}
-                  className="w-full bg-[#050816] border border-white/10 rounded-xl px-3 py-3.5 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
+                  className="w-full bg-[#0b0b0f] border border-white/10 rounded-xl px-3 py-3.5 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
                 >
                   <option value="" disabled className="text-slate-500">Select a service...</option>
                   {serviceOptions.map((s) => (
-                    <option key={s} value={s} className="bg-[#050816] text-white">{s}</option>
+                    <option key={s} value={s} className="bg-[#0b0b0f] text-white">{s}</option>
                   ))}
                 </select>
               </div>
@@ -280,11 +280,11 @@ ${formData.details || "None provided."}`,
                 required
                 value={formData.budget}
                 onChange={handleInputChange}
-                className="w-full bg-[#050816] border border-white/10 rounded-xl px-3 py-3.5 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
+                className="w-full bg-[#0b0b0f] border border-white/10 rounded-xl px-3 py-3.5 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
               >
                 <option value="" disabled className="text-slate-500">Select budget range...</option>
                 {budgetOptions.map((b) => (
-                  <option key={b} value={b} className="bg-[#050816] text-white">{b}</option>
+                  <option key={b} value={b} className="bg-[#0b0b0f] text-white">{b}</option>
                 ))}
               </select>
             </div>
