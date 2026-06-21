@@ -39,7 +39,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.08, ease: "easeOut" }}
-          className="font-heading mb-6 text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tight sm:text-6xl lg:text-4xl md:text-4xl md:text-5xl lg:text-7xl leading-[1.1] text-white"
+          className="font-heading mb-6 text-2xl sm:text-6xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] text-white"
         >
           Premium Digital Growth Solutions For{" "}
           <span className="text-gradient-primary">Businesses Ready To Scale.</span>

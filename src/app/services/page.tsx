@@ -12,7 +12,7 @@ import { LeadGeneration } from "@/components/home/LeadGeneration";
 
 export const metadata: Metadata = {
   title: "Digital Marketing, SEO & Web Design Services For Ambitious Brands",
-  description: "Award-winning Digital Marketing Agency offering enterprise SEO, custom Web Design, Branding, and AI Solutions in Qatar, Dubai, Singapore, and globally.",
+  description: "Results-focused Digital Marketing Agency offering enterprise SEO, custom Web Design, Branding, and AI Solutions in Qatar, Dubai, Singapore, and globally.",
   keywords: ["Digital Marketing Services Qatar", "SEO Services Qatar", "Web Design Services Qatar", "Digital Marketing Agency Dubai", "SEO Agency Dubai", "Web Design Company Dubai", "SEO Services Riyadh", "Digital Marketing Singapore", "SEO Agency Sydney", "Web Design Auckland", "Branding Agency UK", "AI Marketing Agency"],
   alternates: {
     canonical: '/services',

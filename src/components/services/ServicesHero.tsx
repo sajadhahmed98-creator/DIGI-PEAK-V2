@@ -121,7 +121,7 @@ export function ServicesHero() {
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             className="mb-10 text-lg text-muted md:text-xl leading-relaxed max-w-3xl mx-auto"
           >
-            Recognized as the <strong>Best SEO Agency in <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link> & Dubai</strong>, we deploy enterprise-grade custom web development, robust branding, and AI-powered marketing automation to help ambitious brands dominate their target markets from Singapore to the UK.
+            Digipeak is a <strong>specialist digital growth agency serving <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link> & Dubai</strong> — we deploy enterprise-grade custom web development, robust branding, and AI-powered marketing to help ambitious brands build measurable growth from Singapore to the UK.
           </motion.p>
 
           <motion.div

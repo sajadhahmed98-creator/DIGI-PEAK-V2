@@ -21,7 +21,7 @@ export function Industries() {
             Industries <span className="text-gradient-primary">We Serve.</span>
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
-            From emerging startups to global enterprises, we provide the best digital marketing agency solutions and AI-powered growth strategies across London, Dubai, Sydney, and Singapore.
+            From emerging startups to global enterprises, we provide specialist digital marketing solutions and AI-powered growth strategies across London, Dubai, Sydney, and Singapore.
           </p>
         </div>
 

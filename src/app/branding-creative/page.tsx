@@ -13,7 +13,7 @@ import { BrandingCTA } from "@/components/branding/BrandingCTA";
 
 export const metadata: Metadata = {
   title: "Premium Branding & Creative Agency",
-  description: "Digipeak is an award-winning Branding & Creative Agency helping businesses build authority, trust, and premium market positioning.",
+  description: "Digipeak is a results-focused Branding & Creative Agency helping businesses build authority, trust, and premium market positioning.",
   keywords: [
     "Branding Agency Qatar", "Creative Agency Qatar", "Brand Identity Design Qatar", 
     "Logo Design Company Qatar", "Corporate Branding Qatar", "Brand Strategy Agency Qatar", 

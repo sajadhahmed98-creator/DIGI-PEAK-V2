@@ -13,35 +13,9 @@ import { AboutFAQ } from "@/components/about/AboutFAQ";
 import { AboutCTA } from "@/components/about/AboutCTA";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Digipeak Agency | Our Story & Digital Growth Mission",
   description:
     "Learn about Digipeak Agency, a Sri Lanka-based digital growth partner helping businesses across Qatar, UAE, Saudi Arabia, Singapore, Australia, New Zealand, the UK and beyond through marketing, branding, web development, AI solutions and technology.",
-  keywords: [
-    "Digital Agency Qatar",
-    "Digital Marketing Agency Qatar",
-    "SEO Agency Qatar",
-    "Web Design Company Qatar",
-    "Branding Agency Qatar",
-    "AI Agency Qatar",
-    "Digital Agency Dubai",
-    "Marketing Agency Dubai",
-    "SEO Company UAE",
-    "Digital Agency Saudi Arabia",
-    "Marketing Agency Riyadh",
-    "Creative Agency Sri Lanka",
-    "Digital Agency Singapore",
-    "Digital Agency Sydney",
-    "Digital Agency Auckland",
-    "Digital Agency United Kingdom",
-    "Global Digital Growth Partner",
-    "International Digital Agency",
-    "Digipeak Agency",
-    "Sajadh Ahmed",
-    "Sajadh Ahmed Digital Marketing",
-    "Sajadh Ahmed Entrepreneur",
-    "Sajadh Ahmed Founder Digipeak",
-    "Sajadh Ahmed Sri Lanka",
-  ],
   alternates: {
     canonical: "https://www.digipeak.agency/about",
   },

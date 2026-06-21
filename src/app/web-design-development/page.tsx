@@ -13,7 +13,7 @@ import { LeadGeneration } from "@/components/home/LeadGeneration";
 
 export const metadata: Metadata = {
   title: "Premium Web Design & Development Agency | Digipeak",
-  description: "Award-winning web design company building high-performance, custom websites and e-commerce stores for brands in Qatar, Dubai, Riyadh, Singapore, and the UK.",
+  description: "Results-focused web design company building high-performance, custom websites and e-commerce stores for brands in Qatar, Dubai, Riyadh, Singapore, and the UK.",
   keywords: [
     "Web Design Company Qatar", "Website Development Company Qatar", "Best Web Design Agency Qatar", 
     "Website Design Doha", "Web Design Company Dubai", "Website Development Dubai", 

@@ -15,7 +15,7 @@ import { SocialCTA } from "@/components/social-media/SocialCTA";
 
 export const metadata: Metadata = {
   title: "Premium Social Media Management Agency",
-  description: "Digipeak is an award-winning Social Media Management Agency helping ambitious brands build authority, engagement, and revenue globally.",
+  description: "Digipeak is a results-focused Social Media Management Agency helping ambitious brands build authority, engagement, and revenue globally.",
   keywords: [
     "Social Media Management Qatar", "Social Media Agency Doha", "Social Media Marketing Qatar", 
     "Instagram Marketing Qatar", "Facebook Marketing Qatar", "LinkedIn Marketing Agency", 

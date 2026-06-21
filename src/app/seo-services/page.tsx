@@ -12,8 +12,8 @@ import { SEOFAQ } from "@/components/seo-services/SEOFAQ";
 import { LeadGeneration } from "@/components/home/LeadGeneration";
 
 export const metadata: Metadata = {
-  title: "Elite SEO Services & Agency | Digipeak",
-  description: "Award-winning SEO agency delivering AI-powered strategies, technical SEO, and massive organic growth for brands in Qatar, Dubai, Riyadh, Singapore, and the UK.",
+  title: "Expert SEO Services & Agency | Digipeak",
+  description: "Specialist SEO agency delivering AI-assisted strategies, technical SEO, and measurable organic growth for brands in Qatar, Dubai, Riyadh, Singapore, and the UK.",
   keywords: [
     "SEO Agency Qatar", "SEO Services Qatar", "Best SEO Company Qatar", "SEO Agency Doha",
     "SEO Agency Dubai", "SEO Services Dubai", "SEO Agency Riyadh", "SEO Company Saudi Arabia",
@@ -68,53 +68,86 @@ export default function SEOServicesPage() {
         "@type": "FAQPage",
         "mainEntity": [
           {
-            question: "What makes Digipeak the Best SEO Agency in Qatar & Dubai?",
-            answer: "We bypass standard agency practices by using proprietary AI models to process millions of data points. This allows us to architect content and technical SEO strategies that guarantee market dominance across the hyper-competitive GCC region.",
+            "@type": "Question",
+            "name": "What makes Digipeak a strong SEO partner for Qatar & Dubai businesses?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We combine technical SEO expertise with AI-assisted content strategies to build organic visibility in highly competitive GCC markets. Our approach focuses on measurable business outcomes — qualified traffic, leads, and revenue — rather than vanity metrics."
+            }
           },
           {
-            question: "How long does it take to see results from Enterprise SEO Services?",
-            answer: "While technical fixes and indexation optimization can yield ranking bumps within 4-6 weeks, generating compounding, high-intent commercial traffic typically takes 3 to 6 months depending on the keyword difficulty in markets like Sydney or the UK.",
+            "@type": "Question",
+            "name": "How long does it take to see results from Enterprise SEO Services?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "While technical fixes and indexation optimization can yield ranking improvements within 4–6 weeks, building compounding, high-intent commercial traffic typically takes 3 to 6 months depending on keyword difficulty in markets like Sydney or the UK."
+            }
           },
           {
-            question: "Do you guarantee #1 rankings on Google?",
-            answer: "No reputable agency can guarantee a #1 ranking due to Google's ever-changing algorithm. However, we guarantee the deployment of enterprise-grade technical architectures and data-driven content strategies that historically place our clients in the top 3 positions for their most profitable keywords.",
+            "@type": "Question",
+            "name": "Do you guarantee #1 rankings on Google?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No reputable agency can guarantee a #1 ranking due to Google's ever-changing algorithm. We focus on deploying enterprise-grade technical architectures and data-driven content strategies that have historically driven our clients into the top positions for their most profitable keywords."
+            }
           },
           {
-            question: "What is included in an SEO Audit?",
-            answer: "Our SEO Audits cover over 200 checkpoints including Core Web Vitals, server logs, crawl budget allocation, JavaScript rendering, backlink toxicity, topical authority gaps, and competitor reverse-engineering.",
+            "@type": "Question",
+            "name": "What is included in an SEO Audit?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our SEO Audits cover a comprehensive set of checkpoints including Core Web Vitals, server logs, crawl budget allocation, JavaScript rendering, backlink profile analysis, topical authority gaps, and competitor research."
+            }
           },
           {
-            question: "How does International SEO differ from Local SEO?",
-            answer: "Local SEO focuses on dominating the Map Pack and localized searches (e.g., 'SEO Agency Doha'). International SEO involves complex hreflang architecture, geo-targeting, and multi-lingual content to scale your brand across regions like Singapore, Auckland, and London simultaneously.",
+            "@type": "Question",
+            "name": "How does International SEO differ from Local SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Local SEO focuses on visibility in the Map Pack and localized searches (e.g., 'SEO Agency Doha'). International SEO involves hreflang architecture, geo-targeting, and multi-lingual content strategies to grow your brand across regions like Singapore, Auckland, and London simultaneously."
+            }
           },
           {
-            question: "Why do E-Commerce platforms like Shopify need specialized SEO?",
-            answer: "E-Commerce SEO requires managing thousands of dynamic URLs, preventing duplicate content from faceted navigation, optimizing crawl budgets, and implementing complex Product schemas to win rich snippets in SERPs.",
+            "@type": "Question",
+            "name": "Why do E-Commerce platforms like Shopify need specialised SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "E-Commerce SEO requires managing thousands of dynamic URLs, preventing duplicate content from faceted navigation, optimizing crawl budgets, and implementing Product schema markup to earn rich snippets in search results."
+            }
           },
           {
-            question: "Are your link-building strategies safe from Google penalties?",
-            answer: "Absolutely. We strictly adhere to white-hat link acquisition through digital PR, broken link building, and high-quality outreach. We never use PBNs (Private Blog Networks) or toxic link farms.",
+            "@type": "Question",
+            "name": "Are your link-building strategies safe from Google penalties?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We strictly use white-hat link acquisition methods — digital PR, broken link building, and high-quality editorial outreach. We never use private blog networks or toxic link schemes."
+            }
           },
           {
-            question: "Do you provide transparent SEO reporting?",
-            answer: "Yes. You receive access to a live, 24/7 custom dashboard that tracks organic traffic, keyword movement, backlink acquisition, and most importantly, the revenue generated directly from our SEO efforts.",
+            "@type": "Question",
+            "name": "Do you provide transparent SEO reporting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Clients receive access to a live, custom dashboard tracking organic traffic, keyword movement, backlink acquisition, and revenue generated directly from SEO efforts."
+            }
           },
           {
-            question: "Can SEO replace my Google Ads (PPC) spend?",
-            answer: "In the long term, yes. SEO traffic is compounding and free per click. Many of our clients drastically reduce or eliminate their paid ad spend once their organic rankings mature, resulting in a much higher overall ROI.",
+            "@type": "Question",
+            "name": "Can SEO replace my Google Ads (PPC) spend?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In the long term, yes. SEO traffic is compounding and costs nothing per click once established. Many clients reduce paid ad spend significantly once their organic rankings mature, resulting in a higher overall ROI."
+            }
           },
           {
-            question: "How does AI impact your SEO strategies?",
-            answer: "We use AI to accelerate data analysis, identify semantic content gaps, predict algorithm shifts, and automate technical auditing. However, all strategy and final content execution are managed by senior SEO engineers to ensure maximum quality.",
+            "@type": "Question",
+            "name": "How does AI impact your SEO strategies?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We use AI to accelerate data analysis, identify semantic content gaps, predict shifts in search intent, and automate technical auditing. All strategy and final content execution are reviewed by senior SEO professionals to ensure quality."
+            }
           }
-        ].map(faq => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer
-          }
-        }))
+        ]
       }
     ]
   };

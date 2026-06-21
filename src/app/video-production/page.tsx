@@ -14,7 +14,7 @@ import { VideoCTA } from "@/components/video-production/VideoCTA";
 
 export const metadata: Metadata = {
   title: "Premium Video Production Company & Corporate Media Agency",
-  description: "Digipeak is an award-winning professional video production company specializing in corporate videos, commercial advertisements, social media reels, and custom motion graphics.",
+  description: "Digipeak is a specialist professional video production company specializing in corporate videos, commercial advertisements, social media reels, and custom motion graphics.",
   keywords: [
     "Video Production Qatar", "Video Production Company Qatar", "Corporate Video Production Qatar", 
     "Commercial Video Production Qatar", "Video Marketing Agency Qatar", "Video Production Dubai", 

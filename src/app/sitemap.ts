@@ -155,6 +155,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: 'https://www.digipeak.agency/free-audit',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: 'https://www.digipeak.agency/author/sajadh-ahmed',
       lastModified: new Date(),
       changeFrequency: 'monthly',

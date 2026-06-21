@@ -15,8 +15,8 @@ const reasons = [
     icon: Zap,
   },
   {
-    title: "Award-Winning Design",
-    description: "We craft digital experiences that position your brand as the premium, undisputed leader in your market.",
+    title: "Design-Led Excellence",
+    description: "We craft digital experiences that position your brand as the premium, standout leader in your market.",
     icon: Trophy,
   },
   {
@@ -37,7 +37,7 @@ export function WhyUs() {
               <span className="text-gradient-primary">Digipeak.</span>
             </h2>
             <p className="text-muted text-lg leading-relaxed mb-8">
-              We are not just another agency. We are an elite team of technical SEO experts, enterprise architects, and award-winning designers dedicated to dominating your target market.
+              We are not just another agency. We are a specialist team of technical SEO engineers, enterprise architects, and performance-focused designers dedicated to building measurable growth for your business.
             </p>
             <ul className="space-y-6">
               {reasons.map((reason, i) => (

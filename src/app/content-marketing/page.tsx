@@ -14,7 +14,7 @@ import { ContentCTA } from "@/components/content-marketing/ContentCTA";
 
 export const metadata: Metadata = {
   title: "Premium Content Marketing Agency & SEO Copywriting Company",
-  description: "Digipeak is an award-winning premium content marketing agency specializing in authoritative blog writing services, SEO copywriting, and thought leadership campaigns.",
+  description: "Digipeak is a results-focused premium content marketing agency specializing in authoritative blog writing services, SEO copywriting, and thought leadership campaigns.",
   keywords: [
     "Content Marketing Qatar", "Content Marketing Agency Qatar", "SEO Content Writing Qatar", 
     "Blog Writing Services Qatar", "Website Content Writing Qatar", "Copywriting Services Qatar", 

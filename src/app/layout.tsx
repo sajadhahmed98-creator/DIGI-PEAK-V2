@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     default: "Digipeak Agency | Premium Digital Marketing, SEO & Web Design",
     template: "%s | Digipeak Agency"
   },
-  description: "Award-winning digital agency delivering enterprise SEO, custom web design, and AI-powered marketing solutions across Qatar, Dubai, Saudi Arabia, and globally.",
+  description: "Results-focused digital agency delivering enterprise SEO, custom web design, and AI-powered marketing solutions across Qatar, Dubai, Saudi Arabia, and globally.",
   keywords: ["Digital Marketing Agency", "SEO Company", "Web Design Company", "AI Marketing Agency", "Qatar", "Dubai", "Riyadh", "London"],
   alternates: {
     canonical: '/',
@@ -91,7 +91,17 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://cdn.fontshare.com" crossOrigin="anonymous" />
-        <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" />
+        {/* Non-blocking font load: print media trick defers render-blocking */}
+        <link
+          rel="stylesheet"
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap"
+          media="print"
+          // @ts-expect-error onload is valid here for progressive font loading
+          onLoad="this.media='all'"
+        />
+        <noscript>
+          <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap" />
+        </noscript>
         <Script
           id="gtm-consent-init"
           strategy="beforeInteractive"

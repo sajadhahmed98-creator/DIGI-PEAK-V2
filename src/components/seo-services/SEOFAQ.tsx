@@ -7,8 +7,8 @@ import Link from "next/link";
 
 export const seoFaqs = [
   {
-    question: <>What makes Digipeak the Best SEO Agency in <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link> & Dubai?</>,
-    answer: "We bypass standard agency practices by using proprietary AI models to process millions of data points. This allows us to architect content and technical SEO strategies that guarantee market dominance across the hyper-competitive GCC region.",
+    question: <>What makes Digipeak a strong SEO partner for businesses in <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link> & Dubai?</>,
+    answer: "We combine technical SEO expertise with AI-assisted content strategies to build organic visibility in highly competitive GCC markets. Our focus is on measurable business outcomes — qualified traffic, leads, and revenue — rather than vanity metrics.",
   },
   {
     question: "How long does it take to see results from Enterprise SEO Services?",

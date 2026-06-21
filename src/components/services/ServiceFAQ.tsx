@@ -7,8 +7,8 @@ import Link from "next/link";
 
 const faqs = [
   {
-    question: <>Why are you considered the Best SEO Agency in <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link> & Dubai?</>,
-    answer: <>We don't rely on outdated tactics. Our SEO company utilizes AI-powered data models and enterprise-grade technical optimizations to secure top rankings in highly competitive markets across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, the <Link href="/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, and <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>. We measure success by revenue generated, not just traffic.</>,
+    question: <>What sets Digipeak apart from other agencies in <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link> & Dubai?</>,
+    answer: <>We don't rely on outdated tactics. Our approach combines AI-assisted data models and enterprise-grade technical optimisations to build strong organic visibility in highly competitive markets across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, the <Link href="/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, and <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>. We measure success by revenue generated, not just traffic.</>,
   },
   {
     question: "Do you offer Custom Web Design Services in Sydney and Auckland?",
@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     question: "How long does it take for your SEO Services in Riyadh or Colombo to show ROI?",
-    answer: "While technical SEO improvements can be felt within weeks, dominating high-intent commercial keywords as the best SEO company in Sri Lanka or competitive regions like Riyadh typically takes 3 to 6 months. Our data-driven organic search strategies are built for sustainable, long-term market leadership.",
+    answer: "While technical SEO improvements can be felt within weeks, building high-intent commercial rankings in competitive regions like Riyadh typically takes 3 to 6 months. Our data-driven organic strategies are built for sustainable, long-term growth.",
   },
   {
     question: "Can your AI Solutions integrate with our existing CMS?",
@@ -32,7 +32,7 @@ export function ServiceFAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 border-t border-white/5 bg-white/[0.02]">
+    <section className="py-24 lg:py-32 px-6 border-t border-white/5 bg-white/[0.02]">
       <div className="mx-auto max-w-4xl">
         <div className="text-center mb-16">
           <motion.div

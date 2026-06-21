@@ -14,7 +14,7 @@ import { ReputationCTA } from "@/components/reputation-management/ReputationCTA"
 
 export const metadata: Metadata = {
   title: "Premium Online Reputation Management Agency & ORM Company",
-  description: "Digipeak is an award-winning professional reputation management agency specializing in Google Reviews generation, brand monitoring, local SEO citations, and online sentiment repair.",
+  description: "Digipeak is a results-focused professional reputation management agency specializing in Google Reviews generation, brand monitoring, local SEO citations, and online sentiment repair.",
   keywords: [
     "Reputation Management Qatar", "Online Reputation Management Qatar", "ORM Agency Qatar", 
     "Google Review Management Qatar", "Brand Reputation Management Qatar", "Reputation Management Dubai", 

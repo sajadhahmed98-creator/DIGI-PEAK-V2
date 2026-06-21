@@ -14,7 +14,7 @@ import { MobileCTA } from "@/components/mobile-apps/MobileCTA";
 
 export const metadata: Metadata = {
   title: "Premium Mobile App Development Company & Custom iOS & Android Agency",
-  description: "Digipeak is an award-winning premium mobile app development agency creating custom native iOS, Android, and cross-platform Flutter & React Native applications.",
+  description: "Digipeak is a results-focused premium mobile app development agency creating custom native iOS, Android, and cross-platform Flutter & React Native applications.",
   keywords: [
     "Mobile App Development Qatar", "Mobile App Development Company Qatar", "App Development Agency Qatar", 
     "Android App Development Qatar", "iOS App Development Qatar", "Custom Mobile App Development", 

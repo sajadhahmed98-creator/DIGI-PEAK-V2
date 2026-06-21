@@ -89,7 +89,7 @@ export function MobilePerformance() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
           {[
             { label: "Apps Delivered", value: 120, prefix: "", suffix: "+", decimals: 0 },
-            { label: "Average Rating", value: 4.9, prefix: "", suffix: "★", decimals: 1 },
+            { label: "Projects Delivered", value: 25, prefix: "", suffix: "+", decimals: 0 },
             { label: "User Growth", value: 350, prefix: "+", suffix: "%", decimals: 0 },
             { label: "Uptime Guarantee", value: 99.9, prefix: "", suffix: "%", decimals: 1 },
             { label: "User Retention", value: 85, prefix: "", suffix: "%", decimals: 0 },

@@ -182,14 +182,14 @@ export function MobileVisualSection() {
               {/* Floating Panels showing multi-device details */}
               <div className="space-y-4">
                 
-                {/* Panel 1: App Store Badge & Ratings */}
+                {/* Panel 1: App Store Performance */}
                 <div className="glass p-5 rounded-2xl border border-white/5 flex items-center gap-4 hover:border-indigo-500/20 transition-colors">
                   <div className="h-10 w-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 shadow-[0_0_10px_rgba(245,158,11,0.1)]">
                     <Star className="h-5 w-5 fill-amber-500/20" />
                   </div>
                   <div>
-                    <div className="text-[10px] font-semibold text-muted uppercase tracking-wider">App Store Performance</div>
-                    <div className="text-sm font-bold text-white mt-0.5">4.9 Average Rating (12k+ Reviews)</div>
+                    <div className="text-[10px] font-semibold text-muted uppercase tracking-wider">Multi-Platform Delivery</div>
+                    <div className="text-sm font-bold text-white mt-0.5">iOS & Android from a Single Codebase</div>
                   </div>
                 </div>
 

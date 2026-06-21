@@ -8,8 +8,8 @@ import Link from "next/link";
 
 const faqs = [
   {
-    question: <>Why are you considered the best digital marketing agency in <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link> and Dubai?</>,
-    answer: "We are an engineering-first agency. While others focus purely on aesthetics, we build enterprise-grade, headless web architectures combined with data-driven SEO strategies that guarantee measurable ROI and dominant market positioning.",
+    question: <>What makes Digipeak different from other digital agencies in <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link> and Dubai?</>,
+    answer: "We are an engineering-first agency. While others focus purely on aesthetics, we build enterprise-grade, headless web architectures combined with data-driven SEO strategies that consistently deliver measurable ROI for our clients.",
   },
   {
     question: "How long does custom website design and development take?",
@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: "Do you guarantee results for your SEO services?",
-    answer: "We guarantee the implementation of world-class, white-hat technical SEO services and content strategies that historically drive significant organic growth for our clients. Due to search engine algorithm volatility, no ethical agency can guarantee specific keyword rankings.",
+    answer: "We guarantee the implementation of world-class, white-hat technical SEO practices and content strategies that have historically driven significant organic growth for our clients. Due to search engine algorithm volatility, no ethical agency can guarantee specific keyword rankings.",
   },
   {
     question: "Do you offer web design and SEO services in London, Sydney, or Singapore?",
@@ -29,7 +29,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = React.useState<number | null>(0);
 
   return (
-    <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6">
+    <section className="py-24 lg:py-32 px-6">
       <div className="mx-auto max-w-4xl">
         <div className="text-center mb-16">
           <h2 className="font-heading text-3xl md:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">

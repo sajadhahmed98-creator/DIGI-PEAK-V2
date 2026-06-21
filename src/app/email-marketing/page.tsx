@@ -14,7 +14,7 @@ import { EmailCTA } from "@/components/email-marketing/EmailCTA";
 
 export const metadata: Metadata = {
   title: "Premium Email Marketing Agency & Automation Company",
-  description: "Digipeak is an award-winning professional email marketing agency specializing in lead nurturing flows, B2B campaigns, Klaviyo, and CRM automation setups.",
+  description: "Digipeak is a results-focused professional email marketing agency specializing in lead nurturing flows, B2B campaigns, Klaviyo, and CRM automation setups.",
   keywords: [
     "Email Marketing Qatar", "Email Marketing Agency Qatar", "Email Marketing Services Qatar", 
     "Email Campaign Management Qatar", "Email Automation Qatar", "Email Marketing Dubai", 

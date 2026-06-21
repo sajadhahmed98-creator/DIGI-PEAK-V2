@@ -21,7 +21,7 @@ export function MobileHero() {
 
   const floatingCards = [
     { icon: Smartphone, title: "Apps Launched", val: "120+", color: "text-indigo-400 border-indigo-500/20" },
-    { icon: Star, title: "App Store Ratings", val: "4.9★", color: "text-amber-400 border-amber-500/20" },
+    { icon: Star, title: "App Performance", val: "Top-Rated", color: "text-amber-400 border-amber-500/20" },
     { icon: TrendingUp, title: "Active Users Growth", val: "+350%", color: "text-cyan-400 border-cyan-500/20" },
     { icon: Cpu, title: "Performance Score", val: "99%", color: "text-purple-400 border-purple-500/20" },
     { icon: Globe, title: "Global App Reach", val: "5M+", color: "text-emerald-400 border-emerald-500/20" },
