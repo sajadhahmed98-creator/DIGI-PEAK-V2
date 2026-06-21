@@ -44,7 +44,7 @@ const items = [
 
 export function WhyClientsContact() {
   return (
-    <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-black relative overflow-hidden">
+    <section className="py-24 md:py-16 md:py-24 lg:py-32 px-6 bg-transparent relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent-primary/5 rounded-full blur-[130px]" />

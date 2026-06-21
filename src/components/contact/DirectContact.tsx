@@ -34,7 +34,7 @@ const channels = [
 
 export function DirectContact() {
   return (
-    <section className="py-10 md:py-16 lg:py-20 px-6 bg-black relative overflow-hidden">
+    <section className="py-10 md:py-16 lg:py-20 px-6 bg-transparent relative overflow-hidden">
       <div className="relative z-10 mx-auto max-w-7xl">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {channels.map((ch, index) => {

@@ -39,49 +39,51 @@ export default function ProposalPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      {/* Proposal Hero Section */}
-      <section className="relative min-h-[60vh] pt-36 pb-12 px-6 flex items-center justify-center overflow-hidden bg-black">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent-primary/10 rounded-full blur-[140px] animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent-secondary/5 rounded-full blur-[120px]" />
-        </div>
-
-        <div className="relative z-10 mx-auto max-w-4xl text-center w-full">
-          <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/5 px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6 select-none">
-            High Intent Scoping
+      <div className="bg-premium-dark-glow min-h-screen">
+        {/* Proposal Hero Section */}
+        <section className="relative min-h-[60vh] pt-36 pb-12 px-6 flex items-center justify-center overflow-hidden bg-transparent">
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-accent-primary/10 rounded-full blur-[140px] animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent-secondary/5 rounded-full blur-[120px]" />
           </div>
 
-          <h1 className="font-heading text-4xl sm:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
-            Request Your Custom <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-secondary">
-              Growth Proposal
-            </span>
-          </h1>
+          <div className="relative z-10 mx-auto max-w-4xl text-center w-full">
+            <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/5 px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6 select-none">
+              High Intent Scoping
+            </div>
 
-          <p className="text-muted text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-            Tell us about your business, goals, and project requirements. Our team will review your request and prepare a tailored proposal.
-          </p>
+            <h1 className="font-heading text-4xl sm:text-6xl font-black tracking-tight text-white mb-6 leading-tight">
+              Request Your Custom <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-secondary">
+                Growth Proposal
+              </span>
+            </h1>
 
-          <a
-            href="#lead-form"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-accent-primary to-accent-secondary text-white font-bold px-8 py-4 rounded-full shadow-[0_4px_20px_rgba(168,85,247,0.3)] hover:opacity-90 transition-all cursor-pointer group"
-          >
-            <span>Start Your Proposal Request</span>
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
+            <p className="text-muted text-base md:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+              Tell us about your business, goals, and project requirements. Our team will review your request and prepare a tailored proposal.
+            </p>
+
+            <a
+              href="#lead-form"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-accent-primary to-accent-secondary text-white font-bold px-8 py-4 rounded-full shadow-[0_4px_20px_rgba(168,85,247,0.3)] hover:opacity-90 transition-all cursor-pointer group"
+            >
+              <span>Start Your Proposal Request</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </div>
+        </section>
+
+        {/* Form Anchor */}
+        <div id="lead-form" className="scroll-mt-28 bg-transparent pb-24 px-6">
+          <ProposalForm />
         </div>
-      </section>
 
-      {/* Form Anchor */}
-      <div id="lead-form" className="scroll-mt-28 bg-black pb-24 px-6">
-        <ProposalForm />
+        <ContactTrust />
+        <DirectContact />
+        <GlobalClients />
+        <WhyClientsContact />
+        <ContactFAQ />
       </div>
-
-      <ContactTrust />
-      <DirectContact />
-      <GlobalClients />
-      <WhyClientsContact />
-      <ContactFAQ />
     </>
   );
 }
