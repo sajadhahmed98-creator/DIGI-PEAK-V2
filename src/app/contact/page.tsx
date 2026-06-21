@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { ContactHero } from "@/components/contact/ContactHero";
 import { ContactTrust } from "@/components/contact/ContactTrust";
-import { MultiStepContactForm } from "@/components/contact/MultiStepContactForm";
+import { ProposalForm } from "@/components/contact/ProposalForm";
 import { DirectContact } from "@/components/contact/DirectContact";
 import { GlobalClients } from "@/components/contact/GlobalClients";
 import { WhyClientsContact } from "@/components/contact/WhyClientsContact";
@@ -205,7 +205,7 @@ export default function ContactPage() {
       />
       <ContactHero />
       <ContactTrust />
-      <MultiStepContactForm />
+      <ProposalForm />
       <DirectContact />
       <GlobalClients />
       <WhyClientsContact />

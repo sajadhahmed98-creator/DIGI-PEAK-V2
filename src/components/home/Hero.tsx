@@ -62,11 +62,17 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-3"
         >
           <Link
-            href="/contact"
+            href="/proposal"
             className="btn-primary group flex w-full sm:w-auto items-center justify-center gap-2 px-8 py-3.5 text-sm font-semibold"
           >
             Get Proposal
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+          <Link
+            href="/free-audit"
+            className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] hover:border-accent-secondary/50 px-8 py-3.5 text-sm font-medium transition-all duration-300 text-white"
+          >
+            Free Website Audit
           </Link>
           <Link
             href="/digiai"

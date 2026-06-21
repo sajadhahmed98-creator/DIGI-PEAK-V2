@@ -45,15 +45,15 @@ export function LeadGeneration() {
               {/* Smaller, Sleeker Buttons Row */}
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
-                  href="/contact"
+                  href="/proposal"
                   className="btn-primary group flex w-full sm:w-auto items-center justify-center gap-2 px-5 py-2.5 text-xs font-semibold"
                 >
                   Get Proposal
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                 </Link>
                 <Link
-                  href="#digi-ai"
-                  className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] hover:border-accent-primary/30 px-5 py-2.5 text-xs font-medium transition-all duration-300"
+                  href="/digiai"
+                  className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.02] hover:bg-white/[0.06] hover:border-accent-primary/30 px-5 py-2.5 text-xs font-medium transition-all duration-300 text-white"
                 >
                   <Bot className="h-3.5 w-3.5 text-accent-primary" />
                   Talk to Digi AI

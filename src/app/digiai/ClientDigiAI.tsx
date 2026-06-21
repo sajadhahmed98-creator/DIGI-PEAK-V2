@@ -94,6 +94,7 @@ export default function ClientDigiAI() {
 
   useEffect(() => {
     setHasMounted(true);
+    trackClarityEvent("digiai_started");
     const checkScreenSize = () => {
       const large = window.innerWidth > 1024;
       setIsLargeScreen(large);
@@ -289,8 +290,7 @@ export default function ClientDigiAI() {
             }),
           }).then(res => {
             if (res.ok) {
-              trackClarityEvent("Contact Form Submission");
-              trackClarityEvent("Proposal Request");
+              trackClarityEvent("digiai_qualified");
             }
           }).catch(console.error);
         } catch (e) {}
@@ -551,7 +551,7 @@ export default function ClientDigiAI() {
               )}
             </div>
             <MagneticButton>
-              <Link href="/contact" className="btn-primary px-5 py-2 text-xs md:text-sm font-bold flex items-center gap-2 shrink-0">
+              <Link href="/proposal" className="btn-primary px-5 py-2 text-xs md:text-sm font-bold flex items-center gap-2 shrink-0">
                 Get Proposal
               </Link>
             </MagneticButton>
@@ -639,9 +639,15 @@ export default function ClientDigiAI() {
                         <p className="text-muted text-sm mb-5">
                           It looks like you're exploring some deep digital strategies. Our team of human experts can help you implement these precisely.
                         </p>
-                        <Link href="/contact" className="inline-flex items-center justify-center w-full py-3 bg-gradient-to-r from-accent-primary to-accent-secondary text-white font-bold rounded-xl hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all gap-2">
+                        <a 
+                          href="https://calendly.com/digipeak-agency/strategy-session" 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => sessionStorage.setItem("active_funnel", "digiai")}
+                          className="inline-flex items-center justify-center w-full py-3 bg-gradient-to-r from-accent-primary to-accent-secondary text-white font-bold rounded-xl hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all gap-2 cursor-pointer"
+                        >
                           Book a Strategy Session <ArrowRight className="w-4 h-4" />
-                        </Link>
+                        </a>
                       </div>
                     ) : msg.sender === "system" && msg.isLeadForm && msg.leadDetails ? (
                       <div className="w-full max-w-lg glass border border-emerald-500/30 rounded-2xl p-6 bg-[#050816]/80 backdrop-blur-md shadow-[0_10px_40px_rgba(16,185,129,0.1)] my-4">
@@ -663,7 +669,11 @@ export default function ClientDigiAI() {
                             <span className="text-muted">Budget</span> <span className="font-medium text-white">{msg.leadDetails.budget}</span>
                           </div>
                         </div>
-                        <Link href="/contact" className="mt-6 inline-flex items-center justify-center w-full py-3 bg-white text-[#050816] font-bold rounded-xl hover:bg-white/90 transition-all gap-2">
+                        <Link 
+                          href="/proposal" 
+                          onClick={() => sessionStorage.setItem("active_funnel", "proposal")}
+                          className="mt-6 inline-flex items-center justify-center w-full py-3 bg-white text-[#050816] font-bold rounded-xl hover:bg-white/90 transition-all gap-2"
+                        >
                           Get Custom Proposal
                         </Link>
                       </div>
