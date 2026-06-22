@@ -11,106 +11,111 @@ import { LocationHero } from "@/components/shared/LocationHero";
 import { LeadGeneration } from "@/components/home/LeadGeneration";
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Agency Australia | SEO, AI Automation, PPC & Web Design",
-  description: "Digipeak helps Australian businesses grow through SEO, AI automation, web design, PPC management, branding, ecommerce growth, and digital marketing services.",
+  title: "Digital Marketing Agency UK | SEO, AI Automation, PPC & Web Design Services",
+  description: "Digipeak helps UK businesses grow through SEO, AI automation, web design, PPC management, branding, ecommerce growth, and digital marketing strategies.",
   keywords: [
-    "Digital Marketing Agency Australia", "SEO Agency Australia", "AI Automation Agency Australia",
-    "Web Design Company Australia", "PPC Agency Australia", "AI Marketing Agency Australia",
-    "Web Development Australia", "B2B Lead Generation Australia", "Branding Agency Australia",
-    "Social Media Marketing Australia", "Ecommerce Growth Australia"
+    "Digital Marketing Agency UK", "SEO Agency UK", "AI Automation Agency UK",
+    "Web Design Company UK", "PPC Agency UK", "AI Marketing Agency UK",
+    "Web Development UK", "B2B Lead Generation UK", "Branding Agency UK",
+    "Social Media Marketing UK", "Ecommerce Growth UK"
   ],
   alternates: {
-    canonical: 'https://www.digipeak.agency/locations/australia',
+    canonical: 'https://www.digipeak.agency/locations/uk',
   },
   openGraph: {
-    title: "Digital Marketing Agency Australia | SEO, AI Automation, PPC & Web Design",
-    description: "Digipeak helps Australian businesses grow through SEO, AI automation, web design, PPC management, branding, ecommerce growth, and digital marketing services.",
-    url: "https://www.digipeak.agency/locations/australia",
-    images: ["/og-australia.jpg"],
+    title: "Digital Marketing Agency UK | SEO, AI Automation, PPC & Web Design Services",
+    description: "Digipeak helps UK businesses grow through SEO, AI automation, web design, PPC management, branding, ecommerce growth, and digital marketing strategies.",
+    url: "https://www.digipeak.agency/locations/uk",
+    images: ["/og-image.jpg"],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Digital Marketing Agency Australia | SEO, AI Automation, PPC & Web Design",
-    description: "Digipeak helps Australian businesses grow through SEO, AI automation, web design, PPC management, branding, ecommerce growth, and digital marketing services.",
+    title: "Digital Marketing Agency UK | SEO, AI Automation, PPC & Web Design Services",
+    description: "Digipeak helps UK businesses grow through SEO, AI automation, web design, PPC management, branding, ecommerce growth, and digital marketing strategies.",
   }
 };
 
 const cities = [
   {
-    name: "Sydney",
-    slug: "australia/sydney",
-    desc: "Targeting Sydney's competitive finance, professional services, technology, enterprise business, and ecommerce sectors. We deploy results-focused Web Design Sydney and SEO Agency Sydney campaigns."
+    name: "London",
+    slug: "uk/london",
+    desc: "Targeting London's competitive finance, FinTech, SaaS, ecommerce, and professional services sectors. We deploy enterprise SEO Agency London and PPC Agency London strategies in the City and Canary Wharf."
   },
   {
-    name: "Melbourne",
-    slug: "australia/melbourne",
-    desc: "Optimized for Melbourne's startup ecosystem, ecommerce growth, higher education, healthcare, and creative industries. Our SEO Company Melbourne strategies drive organic traffic and conversions."
+    name: "Manchester",
+    slug: "uk/manchester",
+    desc: "Optimized for Manchester's tech scale-ups, ecommerce brands, manufacturing, and MediaCityUK creative companies. We build results-focused SEO Company Manchester and AI automation programs."
   },
   {
-    name: "Brisbane",
-    slug: "australia/brisbane",
-    desc: "Tailored to Brisbane's active construction, real estate, tourism, and healthcare sectors. We engineer Google Ads Brisbane and search engine optimization campaigns that capture local intent."
+    name: "Birmingham",
+    slug: "uk/birmingham",
+    desc: "Tailored to West Midlands manufacturing, construction, healthcare, and Colmore Business District professional service firms. We engineer Google Ads and Web Design Birmingham platforms."
   },
   {
-    name: "Perth",
-    slug: "australia/perth",
-    desc: "Designed for Western Australia's mining, energy, industrial services, and B2B markets. We build B2B SEO Perth and industrial marketing models for institutional contract acquisition."
+    name: "Leeds",
+    slug: "uk/leeds",
+    desc: "Serving Leeds' corporate financial services, healthcare tech, legal firms, and professional consulting practices. We deploy specialized SEO Company Leeds and B2B search strategies."
   },
   {
-    name: "Adelaide",
-    slug: "australia/adelaide",
-    desc: "Focused on Adelaide's manufacturing facilities, wine exporters, healthcare institutions, and educational centers. We modernize legacy tech stacks with custom React frontends."
+    name: "Liverpool",
+    slug: "uk/liverpool",
+    desc: "Focused on Liverpool's maritime logistics, global shipping networks, Baltic Triangle tech platforms, and tourism/hospitality brands. We design fast, high-converting platforms."
   },
   {
-    name: "Gold Coast",
-    slug: "australia/gold-coast",
-    desc: "Customized for Gold Coast's tourism complexes, hospitality brands, real estate developments, and lifestyle labels. We build fast, visually striking web designs that convert."
+    name: "Bristol",
+    slug: "uk/bristol",
+    desc: "Designed for Bristol's aerospace engineering clusters, Temple Quarter tech startup incubators, and creative agencies. We deploy custom SaaS SEO Bristol and AI marketing frameworks."
   },
   {
-    name: "Canberra",
-    slug: "australia/canberra",
-    desc: "Serving Canberra's government departments, consulting practices, technology startups, and professional services. We construct secure, compliant, and accessible Next.js systems."
+    name: "Glasgow",
+    slug: "uk/glasgow",
+    desc: "Supporting Glasgow's industrial engineering legacy, renewable energy corporations, and IFSD financial service firms. We deliver technical SEO Glasgow and B2B marketing systems."
+  },
+  {
+    name: "Edinburgh",
+    slug: "uk/edinburgh",
+    desc: "Customized for Edinburgh's financial institutions, Quartermile FinTech scale-ups, and tourism operations. We deploy expert SEO Agency Edinburgh and digital marketing plans."
   }
 ];
 
 const faqItems = [
   {
-    q: "What makes Digipeak a premium Digital Marketing Agency in Australia?",
+    q: "What makes Digipeak a leading Digital Marketing Agency in the UK?",
     category: "Agency",
-    a: "Digipeak operates at the intersection of high-performance web engineering and organic search acquisition. We reject generic WordPress builders and standard marketing packages. Instead, we construct custom Next.js frontends, implement technical schema databases, run highly targeted Google Ads campaigns, and configure automated workflows that turn traffic into qualified pipeline revenue."
+    a: "Digipeak operates at the intersection of custom software engineering and organic search acquisition. We reject generic templates and standard marketing packages. Instead, we build custom Next.js frontends, implement technical schema databases, run highly targeted Google Ads campaigns, and configure automated workflows that turn traffic into qualified pipeline revenue."
   },
   {
-    q: "Why is page speed critical for search engine optimization in Australia?",
+    q: "Why is page speed critical for search engine optimization (SEO) in the UK?",
     category: "SEO",
     a: "Google uses Core Web Vitals as a direct ranking signal. Slow websites lose customers and drop in indexing positions. By building websites on headless Next.js frameworks and styling with clean Tailwind CSS, we guarantee sub-second page loads. This performance advantage directly supports our search engine optimization (SEO) campaigns, giving your site an organic ranking edge."
   },
   {
-    q: "Do you provide AI business automation services for Australian companies?",
+    q: "Do you provide AI business automation services for UK companies?",
     category: "AI",
     a: "Yes, we are a leading AI automation agency and consulting partner. We integrate large language models (LLMs), build custom client onboarding databases, configure automated lead routing webhook triggers, and deploy customer support chat interfaces to reduce operational administration costs and scale B2B capabilities."
   },
   {
     q: "How does your PPC agency manage paid acquisition campaigns?",
     category: "PPC",
-    a: "As an experienced PPC agency in Australia, we manage high-intent search campaigns across Google Ads and LinkedIn. We draft intent-focused ad copy, execute strict keyword matching, design optimized landing pages, and connect form events directly to your CRM to track CPA (cost-per-acquisition) and maximize campaign ROAS."
+    a: "As an experienced PPC agency in the UK, we manage high-intent search campaigns across Google Ads and LinkedIn. We draft intent-focused ad copy, execute strict keyword matching, design optimized landing pages, and connect form events directly to your CRM to track CPA (cost-per-acquisition) and maximize campaign ROAS."
   },
   {
-    q: "Can you build custom ecommerce storefronts for Australian brands?",
+    q: "Can you build custom ecommerce storefronts for UK brands?",
     category: "Ecommerce",
     a: "Certainly. We develop high-speed headless ecommerce setups connected to Next.js or configure standard Shopify theme setups. We focus on minimizing checkout friction, indexing product catalogs efficiently, and automating post-purchase email flows to maximize average order value (AOV) and customer lifetime value."
   }
 ];
 
-export default function AustraliaHubPage() {
+export default function UKLocationsHubPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://www.digipeak.agency/locations/australia/#webpage",
-        "url": "https://www.digipeak.agency/locations/australia",
-        "name": "Digital Marketing Agency Australia | SEO, AI Automation, PPC & Web Design",
+        "@id": "https://www.digipeak.agency/locations/uk/#webpage",
+        "url": "https://www.digipeak.agency/locations/uk",
+        "name": "Digital Marketing Agency UK | SEO, AI Automation, PPC & Web Design Services",
         "isPartOf": { "@id": "https://www.digipeak.agency/#website" },
       },
       {
@@ -118,7 +123,7 @@ export default function AustraliaHubPage() {
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "item": { "@id": "https://www.digipeak.agency/", "name": "Home" } },
           { "@type": "ListItem", "position": 2, "item": { "@id": "https://www.digipeak.agency/locations/", "name": "Locations" } },
-          { "@type": "ListItem", "position": 3, "item": { "@id": "https://www.digipeak.agency/locations/australia/", "name": "Australia Services" } }
+          { "@type": "ListItem", "position": 3, "item": { "@id": "https://www.digipeak.agency/locations/uk/", "name": "UK Services" } }
         ]
       },
       {
@@ -151,26 +156,26 @@ export default function AustraliaHubPage() {
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://www.digipeak.agency/locations/australia/#localbusiness",
-        "name": "Digipeak Agency Australia",
-        "image": "https://www.digipeak.agency/og-australia.jpg",
-        "url": "https://www.digipeak.agency/locations/australia",
-        "description": "Premium digital growth, B2B web design, and search engine optimization partner serving Australian commercial markets.",
+        "@id": "https://www.digipeak.agency/locations/uk/#localbusiness",
+        "name": "Digipeak Agency UK",
+        "image": "https://www.digipeak.agency/og-image.jpg",
+        "url": "https://www.digipeak.agency/locations/uk",
+        "description": "Premium digital growth, B2B web design, and search engine optimization partner serving UK commercial markets.",
         "address": {
           "@type": "PostalAddress",
-          "addressCountry": "AU"
+          "addressCountry": "GB"
         }
       },
       {
         "@type": "Service",
-        "@id": "https://www.digipeak.agency/locations/australia/#service",
+        "@id": "https://www.digipeak.agency/locations/uk/#service",
         "name": "B2B Digital Marketing & Web Engineering Services",
         "provider": { "@id": "https://www.digipeak.agency/#organization" },
-        "areaServed": "AU"
+        "areaServed": "GB"
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.digipeak.agency/locations/australia/#faq",
+        "@id": "https://www.digipeak.agency/locations/uk/#faq",
         "mainEntity": faqItems.map(item => ({
           "@type": "Question",
           "name": item.q,
@@ -186,7 +191,7 @@ export default function AustraliaHubPage() {
   return (
     <>
       <Script
-        id="australia-schema"
+        id="uk-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
@@ -199,12 +204,12 @@ export default function AustraliaHubPage() {
 
         {/* 1. Hero Section */}
         <LocationHero
-          badgeText="Australia Digital Hub"
+          badgeText="United Kingdom Digital Hub"
           titlePrimary="B2B Growth Engineering"
-          titleGradient="Across Australia"
-          description="Digipeak is a specialized digital marketing agency, SEO company, and web design partner serving the Australian market. We combine custom React development, technical SEO, performance paid media, and CRM automation to construct predictable, scalable acquisition pipelines."
+          titleGradient="Across the UK"
+          description="Digipeak is a specialized digital marketing agency, SEO company, and web design partner serving the UK market. We combine custom React development, technical SEO, performance paid media, and CRM automation to construct predictable, scalable acquisition pipelines."
           primaryCtaText="Get Proposal"
-          primaryCtaLink="/contact?location=australia"
+          primaryCtaLink="/contact?location=uk"
         />
 
         {/* 2. City Hub Portals Grid */}
@@ -212,7 +217,7 @@ export default function AustraliaHubPage() {
           <div className="mx-auto max-w-7xl">
             <div className="text-center mb-16 md:mb-20">
               <span className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
-                Australian Metro Hubs
+                United Kingdom Metro Hubs
               </span>
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-white">
                 Select Your Regional <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-secondary">Growth Portal.</span>
@@ -257,17 +262,17 @@ export default function AustraliaHubPage() {
               Core Philosophy
             </span>
             <h2 className="font-heading text-3xl md:text-4.5xl font-bold tracking-tight text-white mb-8 leading-tight">
-              Moving Beyond Generic Templates: The Digipeak Approach to the Australian Market
+              Moving Beyond Generic Templates: The Digipeak Approach to the United Kingdom Market
             </h2>
             <div className="space-y-6 text-slate-300 text-[15px] leading-relaxed font-light">
               <p>
-                In today&apos;s digital economy, simply building a generic website and running superficial ad campaigns is no longer sufficient to secure a market-leading position. Australian businesses operate in an exceptionally competitive space, where rising paid client acquisition costs and complex search engine algorithm updates demand a highly technical, strategic approach. At Digipeak, we operate as a specialized **Digital Marketing Agency Australia**, aligning software engineering with search marketing to deliver predictable, compounding pipeline growth.
+                In today&apos;s digital economy, simply building a generic website and running superficial ad campaigns is no longer sufficient to secure a market-leading position. UK businesses operate in an exceptionally competitive space, where rising paid client acquisition costs and complex search engine algorithm updates demand a highly technical, strategic approach. At Digipeak, we operate as a specialized **Digital Marketing Agency UK**, aligning software engineering with search marketing to deliver predictable, compounding pipeline growth.
               </p>
               <p>
-                Whether your organization is a financial enterprise located in the Sydney CBD, a high-growth startup based in Melbourne&apos;s creative hubs, or a B2B mining supplier out of Perth, your web assets must load instantly, secure your data, and convert high-value prospects. That is why we avoid template builders like WordPress or generic layouts. We design custom Next.js and Tailwind CSS platforms, build deep topical authority through advanced search engine optimization, and implement business automation to reduce admin costs and scale your operations.
+                Whether your organization is a financial enterprise located in the City of London, a high-growth tech platform based in Manchester&apos;s Spinningfields, or a B2B engineering supplier out of Glasgow, your web assets must load instantly, secure your data, and convert high-value prospects. That is why we avoid template builders like WordPress or generic layouts. We design custom Next.js and Tailwind CSS platforms, build deep topical authority through advanced search engine optimization, and implement business automation to reduce admin costs and scale your operations.
               </p>
               <p>
-                Our capability as an **AI Marketing Agency Australia** enables us to integrate machine-learning pipelines into traditional acquisition funnels. We utilize custom LLMs, configure lead scoring databases, build automated calendar booking widgets, and deploy customer support chat interfaces. This ensures your sales channels are active 24/7, capturing and qualifying prospects without manual intervention, while maintaining absolute compliance with local regulatory guidelines.
+                Our capability as an **AI Marketing Agency UK** enables us to integrate machine-learning pipelines into traditional acquisition funnels. We utilize custom LLMs, configure lead scoring databases, build automated calendar booking widgets, and deploy customer support chat interfaces. This ensures your sales channels are active 24/7, capturing and qualifying prospects without manual intervention, while maintaining absolute compliance with local regulatory guidelines.
               </p>
             </div>
           </div>
@@ -284,7 +289,7 @@ export default function AustraliaHubPage() {
                 B2B Digital Capabilities Engineered for Scale
               </h2>
               <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed font-light">
-                Explore the 13 required channels we deploy to establish authority, drive traffic, and automate operations for Australian brands.
+                Explore the 13 required channels we deploy to establish authority, drive traffic, and automate operations for UK brands.
               </p>
             </div>
 
@@ -292,17 +297,17 @@ export default function AustraliaHubPage() {
               {[
                 {
                   title: "Search Engine Optimization",
-                  keyword: "SEO Agency Australia",
+                  keyword: "SEO Agency UK",
                   desc: "We build organic authority by managing technical crawls, structuring entity schema trees, and targeting high-intent commercial keywords that place your brand at the top of Google searches."
                 },
                 {
                   title: "Pay-Per-Click Management",
-                  keyword: "PPC Agency Australia",
+                  keyword: "PPC Agency UK",
                   desc: "ROI-focused Google Search, Display, and LinkedIn campaigns structured with negative match filtering, bid optimization, and custom landing page experiences to lower cost-per-acquisition (CPA)."
                 },
                 {
                   title: "Web Design Services",
-                  keyword: "Web Design Company Australia",
+                  keyword: "Web Design Company UK",
                   desc: "Bespoke, visual layouts engineered with modern typography, dark theme aesthetics, and responsive grids that represent corporate prestige and maximize conversion rates."
                 },
                 {
@@ -312,7 +317,7 @@ export default function AustraliaHubPage() {
                 },
                 {
                   title: "AI Business Automation",
-                  keyword: "AI Automation Agency Australia",
+                  keyword: "AI Automation Agency UK",
                   desc: "Eliminate manual database updates. We connect form submissions directly to backend systems via webhooks, automated triage scripts, and custom notification systems."
                 },
                 {
@@ -322,7 +327,7 @@ export default function AustraliaHubPage() {
                 },
                 {
                   title: "Corporate Branding & Creative",
-                  keyword: "Branding Agency Australia",
+                  keyword: "Branding Agency UK",
                   desc: "Cohesive corporate identity design, brand styling, typography mapping, logo assets, and visual guidelines that communicate authority and reliability to institutional clients."
                 },
                 {
@@ -352,7 +357,7 @@ export default function AustraliaHubPage() {
                 },
                 {
                   title: "Ecommerce Growth Systems",
-                  keyword: "Ecommerce Agency Australia",
+                  keyword: "Ecommerce Agency UK",
                   desc: "Speed-optimized catalog page layouts, headless Shopify checkout integrations, shopping cart abandonment sequences, and search setups to scale digital transaction volumes."
                 }
               ].map((item, idx) => (
@@ -390,13 +395,13 @@ export default function AustraliaHubPage() {
             </h2>
             <div className="space-y-6 text-slate-300 text-[15px] leading-relaxed font-light">
               <p>
-                Organic search is the highest-yielding channel for sustainable B2B customer acquisition. When search engine bots crawl your domain, they evaluate ranking signals like site architecture, entity mappings, secure hosting parameters, and page responsiveness. As an expert **SEO Agency Australia**, we configure structural JSON-LD schemas, resolve crawl bottlenecks, and remove redirect loops. This helps search engine algorithms understand your local relevance across Sydney, Melbourne, Brisbane, and Perth.
+                Organic search is the highest-yielding channel for sustainable B2B customer acquisition. When search engine bots crawl your domain, they evaluate ranking signals like site architecture, entity mappings, secure hosting parameters, and page responsiveness. As an expert **SEO Agency UK**, we configure structural JSON-LD schemas, resolve crawl bottlenecks, and remove redirect loops. This helps search engine algorithms understand your local relevance across London, Manchester, Birmingham, Leeds, and other UK cities.
               </p>
               <p>
                 However, driving organic traffic is only half the battle. If a website loads slowly or relies on generic templates, visitors bounce. We solve this by implementing custom web design services, keeping front-end assets fast and lightweight. We remove unnecessary third-party scripts (such as legacy booking trackers) and replace them with native, timezone-detecting booking applications. This streamlines client scheduling and improves site performance.
               </p>
               <p>
-                By connecting these speed-optimized landing pages with CRM systems and AI workflows, we help your business capture leads in seconds. When a prospect submits an inquiry near Canberra, Brisbane, or Adelaide, our database webhooks instantly process the brief, score the opportunity, update your sales pipeline, and trigger an automated email sequence. This reduces response time to seconds, which significantly improves conversion rates.
+                By connecting these speed-optimized landing pages with CRM systems and AI workflows, we help your business capture leads in seconds. When a prospect submits an inquiry near London, Manchester, or Edinburgh, our database webhooks instantly process the brief, score the opportunity, update your sales pipeline, and trigger an automated email sequence. This reduces response time to seconds, which significantly improves conversion rates.
               </p>
             </div>
           </div>
@@ -408,7 +413,7 @@ export default function AustraliaHubPage() {
             <div className="text-center mb-16">
               <div className="inline-flex items-center gap-2 rounded-full border border-accent-primary/30 bg-accent-primary/[0.03] px-4 py-2 text-xs font-mono font-bold tracking-widest text-accent-primary uppercase mb-6">
                 <HelpIcon className="w-3.5 h-3.5" />
-                Australia B2B FAQ
+                United Kingdom B2B FAQ
               </div>
               <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4 text-white">
                 Frequently Asked Questions
@@ -443,14 +448,14 @@ export default function AustraliaHubPage() {
               Claim Your Free Strategy Session
             </span>
             <h2 className="font-heading text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 leading-tight">
-              Ready to Scale Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary via-purple-400 to-accent-secondary">Australian Presence?</span>
+              Ready to Scale Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary via-purple-400 to-accent-secondary">United Kingdom Presence?</span>
             </h2>
             <p className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-12 font-light">
-              Get a custom B2B marketing proposal, core web vitals diagnostic, and CRM integration map worth $1,500.
+              Get a custom B2B marketing proposal, core web vitals diagnostic, and CRM integration map worth £1,500.
             </p>
 
             <div className="flex flex-wrap gap-4.5 justify-center items-center">
-              <Link href="/contact?location=australia" className="btn-primary px-9 py-4 text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg hover:scale-[1.02] transition-transform">
+              <Link href="/contact?location=uk" className="btn-primary px-9 py-4 text-xs font-bold uppercase tracking-wider flex items-center gap-2 shadow-lg hover:scale-[1.02] transition-transform">
                 <PhoneCall className="w-3.5 h-3.5" /> Book Strategy Call
               </Link>
               <Link href="/proposal" className="btn-secondary px-9 py-4 text-xs font-bold uppercase tracking-wider flex items-center gap-2 border-white/10 hover:border-white/20 bg-white/5 hover:scale-[1.02] transition-transform">
@@ -487,8 +492,8 @@ export default function AustraliaHubPage() {
                   <Link href="/locations/uae" className="hover:text-white transition-colors">UAE Hub</Link>
                   <Link href="/locations/qatar" className="hover:text-white transition-colors">Qatar Hub</Link>
                   <Link href="/locations/saudi-arabia" className="hover:text-white transition-colors">Saudi Arabia Hub</Link>
+                  <Link href="/locations/australia" className="hover:text-white transition-colors">Australia Hub</Link>
                   <Link href="/locations/singapore" className="hover:text-white transition-colors">Singapore Services</Link>
-                  <Link href="/locations/sri-lanka" className="hover:text-white transition-colors">Sri Lanka Hub</Link>
                 </div>
               </div>
 

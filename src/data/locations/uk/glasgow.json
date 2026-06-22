@@ -1,0 +1,112 @@
+{
+  "slug": "uk/glasgow",
+  "name": "Glasgow",
+  "metaTitle": "Digital Marketing Agency Glasgow | SEO & Web Design | Digipeak",
+  "metaDescription": "Digipeak is Glasgow's expert B2B Digital Marketing Agency. We provide custom Web Design, SEO Glasgow, and AI Automation services for corporate growth.",
+  "keywords": [
+    "Digital Marketing Agency Glasgow",
+    "SEO Glasgow",
+    "B2B Marketing Glasgow",
+    "AI Automation Glasgow",
+    "Web Design Glasgow",
+    "PPC Agency Glasgow"
+  ],
+  "h1": "Digital Marketing, SEO & Web Design in Glasgow",
+  "badge": "Glasgow B2B & Energy Hub",
+  "suburbs": [
+    "Merchant City",
+    "West End",
+    "Blythswood Hill",
+    "Finnieston",
+    "IFSD",
+    "Pacific Quay"
+  ],
+  "heroText": "Build a commanding B2B digital presence in Scotland with Glasgow's specialized web design, SEO, and paid search partner.",
+  "introTitle": "Glasgow's Specialist for Custom Web Engineering & B2B SEO",
+  "introText": "Digipeak supports Glasgow's diverse business community from our Scottish hub. We design custom corporate websites, implement search engine marketing strategies, and configure CRM automation pipelines for manufacturing, energy, financial, and professional services firms in the Merchant City, Blythswood Hill, and the IFSD.\n\nGlasgow's industrial and corporate sectors require websites that are fast, secure, and professional. We write clean, server-rendered code to deliver websites that load in under a second, ensuring a premium user experience and optimal search visibility.",
+  "marketAnalysis": {
+    "title": "Why Glasgow Businesses Partner with Digipeak",
+    "challenges": "Glasgow companies face intense competition in local search and paid ads. Traditional manufacturing, energy, and retail firms struggle with slow, outdated websites that fail to convert traffic. Furthermore, running paid ads without precise keyword optimization leads to wasted budget.",
+    "competition": "Competition for commercial queries like 'SEO Glasgow' or 'Web Design Glasgow' is rising. To rank at the top of Google searches, brands must build topical authority, integrate structured schemas, and secure high-quality backlink citations from respected UK publications.",
+    "digitalOpportunities": "Firms that modernize their tech stacks experience instant improvements in digital conversions. Decoupling your frontend from database logic improves loading speeds and site security. This is particularly valuable for energy and manufacturing organizations.",
+    "seoOpportunities": "Organic search is the most sustainable channel for long-term customer acquisition in Scotland. By optimizing site code, publishing authoritative content blocks, and claiming local map placements, Glasgow firms can capture search traffic.",
+    "leadGenOpportunities": "By connecting high-performance web forms directly to HubSpot or Salesforce databases, Glasgow sales teams can follow up on leads instantly. We integrate targeted paid ads with automated email workflows to nurture prospects."
+  },
+  "serviceFocus": {
+    "title": "B2B Digital Capabilities in Glasgow",
+    "services": [
+      {
+        "title": "B2B SEO & Energy Sector Search",
+        "desc": "We build search engine visibility for Glasgow energy, manufacturing, and industrial firms. Our campaigns focus on technical site structure, keyword intent mapping, and high-quality link acquisition."
+      },
+      {
+        "title": "Custom Next.js Web Design",
+        "desc": "We build fast, secure React-based websites. We prioritize premium brand aesthetics, layout accessibility, and sub-second load speeds to represent corporate quality."
+      },
+      {
+        "title": "AI & CRM Business Automation",
+        "desc": "We connect websites directly to HubSpot or Salesforce databases. We automate lead routing, set up calendar booking pipelines, and deploy AI support bots."
+      },
+      {
+        "title": "High-ROI PPC Management",
+        "desc": "We manage targeted paid media campaigns. Our Google Ads agency in Glasgow optimizes budgets, writes ad copy, and reduces cost-per-lead metrics."
+      }
+    ]
+  },
+  "seoBlockTitle": "Glasgow SEO Agency & Premium Website Engineering",
+  "seoBlockParas": [
+    "In Glasgow's competitive landscape, your website is the foundation of your digital brand. Bloated templates or legacy platforms can slow down your site and degrade your search rankings. As a specialized web design company in Glasgow, Digipeak builds high-performance Next.js and Tailwind CSS websites. We ensure your platform loads in under a second, directly supporting your search engine visibility and user engagement.",
+    "Search engine optimization is critical for capturing commercial intent traffic. As a results-focused SEO agency in Glasgow, we perform competitor mapping and keyword research. We structure content, remove crawl errors, and build high-quality links to help you rank for target queries. This systematic approach reduces your reliance on paid media.",
+    "Generating leads requires combining search visibility with conversion-focused design. Our performance marketing and Google Ads agency in Glasgow creates custom campaigns that capture active searches. By linking these campaigns with tailored landing pages and CRM pipelines, we make sure no opportunity is missed. We provide comprehensive reports tracking leads."
+  ],
+  "faqs": [
+    {
+      "question": "How much does SEO cost in Glasgow?",
+      "answer": "SEO retainers in Glasgow typically range from £1,000 to £2,500 per month depending on sector competitiveness. We build customized, transparent proposals based on your specific keywords."
+    },
+    {
+      "question": "How much does digital marketing cost in Glasgow?",
+      "answer": "A full-service digital marketing campaign in Glasgow (covering design, SEO, and paid ads) generally costs between £2,000 and £5,000 monthly, aligned with key performance goals."
+    },
+    {
+      "question": "What is the best SEO company in Glasgow?",
+      "answer": "The best SEO company in Glasgow is one that delivers measurable lead volume and sales pipeline growth. Digipeak stands out by engineering speed-optimized websites integrated with technical SEO."
+    },
+    {
+      "question": "How can AI automation help businesses in Glasgow?",
+      "answer": "AI automation helps Glasgow teams connect websites to CRMs, automate email follow-ups, deploy customer chatbots, and eliminate repetitive admin tasks."
+    },
+    {
+      "question": "How long does SEO take in Glasgow?",
+      "answer": "While technical fixes show initial indexing shifts within 30 to 45 days, achieving stable rankings for competitive search queries in Glasgow typically takes 4 to 6 months of optimization."
+    },
+    {
+      "question": "Is local SEO worth it in Glasgow?",
+      "answer": "Yes. Local SEO places your business prominently in Glasgow map packs and localized searches, driving regional leads without direct ad spend costs."
+    },
+    {
+      "question": "What industries benefit most from SEO in Glasgow?",
+      "answer": "Manufacturing companies, energy corporations, financial services, retail brands, and professional service providers benefit most from structured search marketing."
+    }
+  ],
+  "industries": [
+    {
+      "name": "Manufacturing & Eng",
+      "iconName": "Factory"
+    },
+    {
+      "name": "Energy & Renewables",
+      "iconName": "Zap"
+    },
+    {
+      "name": "Financial Services",
+      "iconName": "Building2"
+    },
+    {
+      "name": "Professional Services",
+      "iconName": "Briefcase"
+    }
+  ],
+  "addressRegion": "Glasgow",
+  "addressCountry": "GB"
+}

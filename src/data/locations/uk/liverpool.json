@@ -1,0 +1,112 @@
+{
+  "slug": "uk/liverpool",
+  "name": "Liverpool",
+  "metaTitle": "Digital Marketing Agency Liverpool | SEO & Web Design | Digipeak",
+  "metaDescription": "Digipeak is Liverpool's specialized Digital Marketing Agency. We provide custom Web Design, SEO Liverpool, and hospitality & tourism marketing.",
+  "keywords": [
+    "Digital Marketing Agency Liverpool",
+    "SEO Liverpool",
+    "Hospitality Marketing Liverpool",
+    "Tourism Marketing Liverpool",
+    "Web Design Liverpool",
+    "PPC Management Liverpool"
+  ],
+  "h1": "Digital Marketing, SEO & Web Design in Liverpool",
+  "badge": "Liverpool Maritime & Hospitality Hub",
+  "suburbs": [
+    "Baltic Triangle",
+    "Ropewalks",
+    "Waterfront",
+    "Knowledge Quarter",
+    "Georgian Quarter",
+    "Commercial District"
+  ],
+  "heroText": "Drive local and national conversions with Liverpool's specialized web design company, SEO agency, and digital marketing partner.",
+  "introTitle": "Liverpool's Partner for Technical SEO & Creative Digital Growth",
+  "introText": "Digipeak supports Liverpool's active business sectors from our Merseyside hub. Serving logistics networks, maritime trade firms, Baltic Triangle tech platforms, and tourism/hospitality brands, we design custom corporate websites, run search marketing campaigns, and configure CRM systems that drive lead acquisition.\n\nLiverpool's fast-moving tourism and commercial sectors require digital assets that load instantly and capture attention. We build speed-optimized, modern websites to ensure your brand stands out and converts visitors into leads.",
+  "marketAnalysis": {
+    "title": "Why Liverpool Businesses Partner with Digipeak",
+    "challenges": "Liverpool brands face intense competition in local search and paid ads. Hospitality, tourism, and logistics firms struggle with slow, outdated websites that fail to convert traffic. Furthermore, running paid ads without precise keyword optimization leads to wasted budget.",
+    "competition": "Competition for key queries like 'SEO Liverpool' or 'Digital Marketing Liverpool' is rising. To rank at the top of Google searches, brands must build topical authority, integrate structured schemas, and secure high-quality backlink citations from respected UK publications.",
+    "digitalOpportunities": "Firms that modernize their tech stacks experience instant improvements in digital conversions. Decoupling your frontend from database logic improves loading speeds and site security. This is particularly valuable for tourism and retail brands.",
+    "seoOpportunities": "Organic search is the most sustainable channel for long-term customer acquisition in Merseyside. By optimizing site code, publishing authoritative content blocks, and claiming local map placements, Liverpool firms can capture search traffic.",
+    "leadGenOpportunities": "By connecting high-performance web forms directly to HubSpot or Salesforce databases, Liverpool sales teams can follow up on leads instantly. We integrate targeted paid ads with automated email workflows to nurture prospects."
+  },
+  "serviceFocus": {
+    "title": "B2B Digital Capabilities in Liverpool",
+    "services": [
+      {
+        "title": "Hospitality & Tourism Marketing",
+        "desc": "We design high-converting campaigns for Liverpool hotels, restaurants, and attractions. We utilize Google Ads, social media marketing, and local SEO to increase bookings and guest acquisition."
+      },
+      {
+        "title": "Logistics & Maritime SEO",
+        "desc": "We build search visibility for Liverpool maritime and transport firms. We optimize technical code, structure schemas, and target commercial terms to attract global shipping partners."
+      },
+      {
+        "title": "Custom Web Design & Dev",
+        "desc": "We build fast, secure Next.js websites. We prioritize premium brand aesthetics, layout accessibility, and sub-second load speeds to represent corporate quality across the Baltic Triangle."
+      },
+      {
+        "title": "CRM & Business Automation",
+        "desc": "We connect websites directly to HubSpot or Salesforce databases. We automate lead routing, set up calendar booking pipelines, and deploy AI support bots."
+      }
+    ]
+  },
+  "seoBlockTitle": "Liverpool SEO Agency & Premium Website Engineering",
+  "seoBlockParas": [
+    "In Liverpool's competitive landscape, your website is the foundation of your digital brand. Bloated templates or legacy platforms can slow down your site and degrade your search rankings. As a specialized web design company in Liverpool, Digipeak builds high-performance Next.js and Tailwind CSS websites. We ensure your platform loads in under a second, directly supporting your search engine visibility and user engagement.",
+    "Search engine optimization is critical for capturing commercial intent traffic. As a results-focused SEO agency in Liverpool, we perform competitor mapping and keyword research. We structure content, remove crawl errors, and build high-quality links to help you rank for target queries. This systematic approach reduces your reliance on paid media.",
+    "Generating leads requires combining search visibility with conversion-focused design. Our performance marketing and Google Ads agency in Liverpool creates custom campaigns that capture active searches. By linking these campaigns with tailored landing pages and CRM pipelines, we make sure no opportunity is missed. We provide comprehensive reports tracking leads."
+  ],
+  "faqs": [
+    {
+      "question": "How much does SEO cost in Liverpool?",
+      "answer": "SEO retainers in Liverpool typically range from £1,000 to £2,500 per month depending on sector competitiveness. We build customized, transparent proposals based on your specific keywords."
+    },
+    {
+      "question": "How much does digital marketing cost in Liverpool?",
+      "answer": "A full-service digital marketing campaign in Liverpool (covering design, SEO, and paid ads) generally costs between £2,000 and £5,000 monthly, aligned with key performance goals."
+    },
+    {
+      "question": "What is the best SEO company in Liverpool?",
+      "answer": "The best SEO company in Liverpool is one that delivers measurable lead volume and sales pipeline growth. Digipeak stands out by engineering speed-optimized websites integrated with technical SEO."
+    },
+    {
+      "question": "How can AI automation help businesses in Liverpool?",
+      "answer": "AI automation helps Liverpool teams connect websites to CRMs, automate email follow-ups, deploy customer chatbots, and eliminate repetitive admin tasks."
+    },
+    {
+      "question": "How long does SEO take in Liverpool?",
+      "answer": "While technical fixes show initial indexing shifts within 30 to 45 days, achieving stable rankings for competitive search queries in Liverpool typically takes 4 to 6 months of optimization."
+    },
+    {
+      "question": "Is local SEO worth it in Liverpool?",
+      "answer": "Yes. Local SEO places your business prominently in Liverpool map packs and localized searches, driving regional leads without direct ad spend costs."
+    },
+    {
+      "question": "What industries benefit most from SEO in Liverpool?",
+      "answer": "Tourism operators, maritime logisticians, creative tech agencies, hospitality businesses, and professional service providers benefit most from structured search marketing."
+    }
+  ],
+  "industries": [
+    {
+      "name": "Tourism & Hospitality",
+      "iconName": "Palmtree"
+    },
+    {
+      "name": "Logistics & Shipping",
+      "iconName": "Globe"
+    },
+    {
+      "name": "Creative & Digital",
+      "iconName": "Laptop"
+    },
+    {
+      "name": "Professional Services",
+      "iconName": "Briefcase"
+    }
+  ],
+  "addressRegion": "Merseyside",
+  "addressCountry": "GB"
+}

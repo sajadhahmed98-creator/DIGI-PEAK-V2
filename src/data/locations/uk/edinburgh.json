@@ -1,0 +1,111 @@
+{
+  "slug": "uk/edinburgh",
+  "name": "Edinburgh",
+  "metaTitle": "Digital Marketing Agency Edinburgh | SEO & Web Design | Digipeak",
+  "metaDescription": "Digipeak is Edinburgh's expert Digital Marketing Agency. We provide custom Web Design, FinTech Marketing Edinburgh, and SEO services.",
+  "keywords": [
+    "Digital Marketing Agency Edinburgh",
+    "SEO Agency Edinburgh",
+    "FinTech Marketing Edinburgh",
+    "Web Design Edinburgh",
+    "AI Consulting Edinburgh"
+  ],
+  "h1": "Digital Marketing, SEO & Web Design in Edinburgh",
+  "badge": "Edinburgh Finance & FinTech Hub",
+  "suburbs": [
+    "New Town",
+    "Old Town",
+    "Leith",
+    "West End",
+    "Quartermile",
+    "Haymarket"
+  ],
+  "heroText": "Build a commanding B2B digital presence in Scotland with Edinburgh's specialized web design, SEO, and paid search partner.",
+  "introTitle": "Edinburgh's Partner for Technical Web Engineering & FinTech SEO",
+  "introText": "Digipeak supports Edinburgh's diverse business community from our Scottish hub. We design custom corporate websites, implement search engine marketing strategies, and configure CRM automation pipelines for finance, FinTech, tourism, and technology firms in the New Town, Old Town, and Quartermile.\n\nEdinburgh's financial and tech sectors require websites that are fast, secure, and professional. We write clean, server-rendered code to deliver websites that load in under a second, ensuring a premium user experience and optimal search visibility.",
+  "marketAnalysis": {
+    "title": "Why Edinburgh Businesses Partner with Digipeak",
+    "challenges": "Edinburgh companies face intense competition in local search and paid ads. Finance, FinTech, and tourism firms struggle with slow, outdated websites that fail to convert traffic. Furthermore, running paid ads without precise keyword optimization leads to wasted budget.",
+    "competition": "Competition for commercial queries like 'SEO Agency Edinburgh' or 'Digital Marketing Edinburgh' is rising. To rank at the top of Google searches, brands must build topical authority, integrate structured schemas, and secure high-quality backlink citations from respected UK publications.",
+    "digitalOpportunities": "Firms that modernize their tech stacks experience instant improvements in digital conversions. Decoupling your frontend from database logic improves loading speeds and site security. This is particularly valuable for FinTech and financial services organizations.",
+    "seoOpportunities": "Organic search is the most sustainable channel for long-term customer acquisition in Scotland. By optimizing site code, publishing authoritative content blocks, and claiming local map placements, Edinburgh firms can capture search traffic.",
+    "leadGenOpportunities": "By connecting high-performance web forms directly to HubSpot or Salesforce databases, Edinburgh sales teams can follow up on leads instantly. We integrate targeted paid ads with automated email workflows to nurture prospects."
+  },
+  "serviceFocus": {
+    "title": "B2B Digital Capabilities in Edinburgh",
+    "services": [
+      {
+        "title": "FinTech & Financial SEO Edinburgh",
+        "desc": "We build search engine visibility for Edinburgh financial and tech firms. Our campaigns focus on technical site structure, keyword intent mapping, and high-quality link acquisition."
+      },
+      {
+        "title": "Custom Next.js Web Design",
+        "desc": "We build fast, secure React-based websites. We prioritize premium brand aesthetics, layout accessibility, and sub-second load speeds to represent corporate quality."
+      },
+      {
+        "title": "AI & CRM Business Automation",
+        "desc": "We connect websites directly to HubSpot or Salesforce databases. We automate lead routing, set up calendar booking pipelines, and deploy AI support bots."
+      },
+      {
+        "title": "High-ROI PPC Management",
+        "desc": "We manage targeted paid media campaigns. Our Google Ads agency in Edinburgh optimizes budgets, writes ad copy, and reduces cost-per-lead metrics."
+      }
+    ]
+  },
+  "seoBlockTitle": "Edinburgh SEO Agency & Premium Website Engineering",
+  "seoBlockParas": [
+    "In Edinburgh's competitive landscape, your website is the foundation of your digital brand. Bloated templates or legacy platforms can slow down your site and degrade your search rankings. As a specialized web design company in Edinburgh, Digipeak builds high-performance Next.js and Tailwind CSS websites. We ensure your platform loads in under a second, directly supporting your search engine visibility and user engagement.",
+    "Search engine optimization is critical for capturing commercial intent traffic. As a results-focused SEO agency in Edinburgh, we perform competitor mapping and keyword research. We structure content, remove crawl errors, and build high-quality links to help you rank for target queries. This systematic approach reduces your reliance on paid media.",
+    "Generating leads requires combining search visibility with conversion-focused design. Our performance marketing and Google Ads agency in Edinburgh creates custom campaigns that capture active searches. By linking these campaigns with tailored landing pages and CRM pipelines, we make sure no opportunity is missed. We provide comprehensive reports tracking leads."
+  ],
+  "faqs": [
+    {
+      "question": "How much does SEO cost in Edinburgh?",
+      "answer": "SEO retainers in Edinburgh typically range from £1,000 to £2,500 per month depending on sector competitiveness. We build customized, transparent proposals based on your specific keywords."
+    },
+    {
+      "question": "How much does digital marketing cost in Edinburgh?",
+      "answer": "A full-service digital marketing campaign in Edinburgh (covering design, SEO, and paid ads) generally costs between £2,000 and £5,000 monthly, aligned with key performance goals."
+    },
+    {
+      "question": "What is the best SEO company in Edinburgh?",
+      "answer": "The best SEO company in Edinburgh is one that delivers measurable lead volume and sales pipeline growth. Digipeak stands out by engineering speed-optimized websites integrated with technical SEO."
+    },
+    {
+      "question": "How can AI automation help businesses in Edinburgh?",
+      "answer": "AI automation helps Edinburgh teams connect websites to CRMs, automate email follow-ups, deploy customer chatbots, and eliminate repetitive admin tasks."
+    },
+    {
+      "question": "How long does SEO take in Edinburgh?",
+      "answer": "While technical fixes show initial indexing shifts within 30 to 45 days, achieving stable rankings for competitive search queries in Edinburgh typically takes 4 to 6 months of optimization."
+    },
+    {
+      "question": "Is local SEO worth it in Edinburgh?",
+      "answer": "Yes. Local SEO places your business prominently in Edinburgh map packs and localized searches, driving regional leads without direct ad spend costs."
+    },
+    {
+      "question": "What industries benefit most from SEO in Edinburgh?",
+      "answer": "Financial institutions, FinTech startups, tourism operators, technology firms, and professional service providers benefit most from structured search marketing."
+    }
+  ],
+  "industries": [
+    {
+      "name": "Financial Services",
+      "iconName": "Building2"
+    },
+    {
+      "name": "FinTech & Tech",
+      "iconName": "Cpu"
+    },
+    {
+      "name": "Tourism & Hospitality",
+      "iconName": "Palmtree"
+    },
+    {
+      "name": "Professional Services",
+      "iconName": "Briefcase"
+    }
+  ],
+  "addressRegion": "Scotland",
+  "addressCountry": "GB"
+}

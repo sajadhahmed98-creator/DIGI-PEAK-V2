@@ -1,0 +1,114 @@
+{
+  "slug": "uk/birmingham",
+  "name": "Birmingham",
+  "metaTitle": "Digital Marketing Agency Birmingham | SEO & Web Design | Digipeak",
+  "metaDescription": "Digipeak is Birmingham's expert Web Design company, SEO agency, and PPC partner. We build fast Next.js websites and drive targeted local leads.",
+  "keywords": [
+    "Digital Marketing Agency Birmingham",
+    "SEO Agency Birmingham",
+    "Web Design Birmingham",
+    "PPC Agency Birmingham",
+    "Google Ads Agency Birmingham",
+    "CRM Automation Birmingham",
+    "B2B Marketing Birmingham",
+    "Manufacturing SEO Birmingham"
+  ],
+  "h1": "Digital Marketing, SEO & Web Design in Birmingham",
+  "badge": "Birmingham Industrial & B2B Hub",
+  "suburbs": [
+    "Colmore Business District",
+    "Jewellery Quarter",
+    "Brindleyplace",
+    "Digbeth",
+    "Edgbaston",
+    "Selly Oak"
+  ],
+  "heroText": "Build a commanding digital presence in the West Midlands with Birmingham's specialized web design, SEO, and paid search partner.",
+  "introTitle": "Birmingham's Specialist for Custom Web Engineering & Local SEO",
+  "introText": "Digipeak supports Birmingham's diverse business community from our West Midlands hub. We design custom corporate websites, implement search engine marketing strategies, and configure CRM automation pipelines for manufacturing, construction, healthcare, and professional services firms in the Colmore Business District, Jewellery Quarter, and Brindleyplace.\n\nBirmingham's industrial and corporate sectors require websites that are fast, secure, and professional. We write clean, server-rendered code to deliver websites that load in under a second, ensuring a premium user experience and optimal search visibility.",
+  "marketAnalysis": {
+    "title": "Why Birmingham Businesses Partner with Digipeak",
+    "challenges": "Birmingham companies face intense competition in local search and paid ads. Traditional manufacturing, construction, and retail firms struggle with slow, outdated websites that fail to convert traffic. Furthermore, running paid ads without precise keyword optimization leads to wasted budget and high cost-per-lead metrics.",
+    "competition": "Competition for commercial queries like 'SEO Agency Birmingham' or 'Web Design Birmingham' is rising rapidly. To rank at the top of Google searches, brands must build topical authority, integrate structured schemas, and secure high-quality backlink citations from respected UK publications.",
+    "digitalOpportunities": "Firms that modernize their tech stacks experience instant improvements in digital conversions. Decoupling your frontend from database logic improves loading speeds and site security. This is particularly valuable for professional services and healthcare organizations requiring strict data protection.",
+    "seoOpportunities": "Organic search is the most sustainable channel for long-term customer acquisition in the Midlands. By optimizing site code, publishing authoritative content blocks, and claiming local map placements, Birmingham firms can capture high-intent B2B search traffic.",
+    "leadGenOpportunities": "By connecting high-performance web forms directly to HubSpot or Salesforce databases, Birmingham sales teams can follow up on leads instantly. We integrate targeted paid ads with automated email workflows to nurture prospects the moment they submit an inquiry."
+  },
+  "serviceFocus": {
+    "title": "B2B Digital Capabilities in Birmingham",
+    "services": [
+      {
+        "title": "B2B SEO & Map Pack Optimization",
+        "desc": "We increase organic visibility for Birmingham service and industrial brands. We optimize technical code, structure LocalBusiness schemas, and manage directory citations to place you at the top of local maps."
+      },
+      {
+        "title": "Custom Corporate Web Design",
+        "desc": "We build fast, secure Next.js websites tailored to Birmingham's professional sectors. We prioritize clean typography, responsive layouts, and modern design aesthetics to communicate brand quality."
+      },
+      {
+        "title": "Google Ads & PPC Management",
+        "desc": "We design high-ROI pay-per-click campaigns. Our PPC agency in Birmingham conducts keyword research, builds landing pages, and monitors bid parameters to minimize acquisition costs."
+      },
+      {
+        "title": "CRM & Business Automation",
+        "desc": "We integrate your website with automated lead routing, calendar booking tools, and customer databases. This saves your Birmingham team time and ensures prompt follow-ups."
+      }
+    ]
+  },
+  "seoBlockTitle": "Birmingham SEO Agency & Premium Website Engineering",
+  "seoBlockParas": [
+    "In Birmingham's competitive corporate landscape, your website is the foundation of your digital brand. Bloated templates or legacy platforms can slow down your site and degrade your search rankings. As a specialized web design company in Birmingham, Digipeak builds high-performance Next.js and Tailwind CSS websites. We ensure your platform loads in under a second, directly supporting your search engine visibility and user engagement.",
+    "Search engine optimization is critical for capturing commercial intent traffic. As a results-focused SEO agency in Birmingham, we perform deep competitor mapping and keyword research. We structure content, remove crawl errors, and build high-quality links to help you rank for target queries. This systematic approach reduces your reliance on paid media and builds permanent digital authority.",
+    "Generating leads requires combining search visibility with conversion-focused design. Our performance marketing and Google Ads agency in Birmingham creates custom campaigns that capture active searches. By linking these campaigns with tailored landing pages and CRM pipelines, we make sure no opportunity is missed. We provide comprehensive monthly reports tracking leads, phone calls, and revenue generated."
+  ],
+  "faqs": [
+    {
+      "question": "How much does SEO cost in Birmingham?",
+      "answer": "SEO retainers in Birmingham typically range from £1,000 to £3,000 per month depending on competition. We build custom proposals based on your specific keywords and market targets."
+    },
+    {
+      "question": "How much does digital marketing cost in Birmingham?",
+      "answer": "A full-service digital marketing campaign in Birmingham (covering design, SEO, and paid media) generally costs between £2,500 and £6,500 monthly, aligned with key performance goals."
+    },
+    {
+      "question": "What is the best SEO company in Birmingham?",
+      "answer": "The best SEO company in Birmingham is one that delivers measurable lead volume and sales pipeline growth. Digipeak stands out by engineering speed-optimized websites integrated with technical SEO."
+    },
+    {
+      "question": "How can AI automation help businesses in Birmingham?",
+      "answer": "AI automation helps Birmingham teams connect websites to CRMs, automate email follow-ups, deploy customer chatbots, and eliminate repetitive admin tasks."
+    },
+    {
+      "question": "How long does SEO take in Birmingham?",
+      "answer": "While technical fixes show initial indexing shifts within 30 to 45 days, achieving stable rankings for competitive search queries in Birmingham typically takes 4 to 6 months of optimization."
+    },
+    {
+      "question": "Is local SEO worth it in Birmingham?",
+      "answer": "Yes. Local SEO places your business prominently in Birmingham map packs and localized searches, driving high-converting regional leads without direct ad spend costs."
+    },
+    {
+      "question": "What industries benefit most from SEO in Birmingham?",
+      "answer": "Manufacturing companies, construction firms, healthcare clinics, retail brands, and professional service providers benefit most from structured SEO campaigns."
+    }
+  ],
+  "industries": [
+    {
+      "name": "Manufacturing & Logistics",
+      "iconName": "Factory"
+    },
+    {
+      "name": "Construction & Engineering",
+      "iconName": "HardHat"
+    },
+    {
+      "name": "Healthcare & Medical",
+      "iconName": "HeartPulse"
+    },
+    {
+      "name": "Professional Services",
+      "iconName": "Briefcase"
+    }
+  ],
+  "addressRegion": "West Midlands",
+  "addressCountry": "GB"
+}

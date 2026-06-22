@@ -1,0 +1,112 @@
+{
+  "slug": "uk/leeds",
+  "name": "Leeds",
+  "metaTitle": "Digital Marketing Agency Leeds | SEO & Web Design | Digipeak",
+  "metaDescription": "Digipeak is Leeds' expert Digital Marketing Agency. We provide custom Web Design, technical SEO, and AI Consulting for financial, legal & tech brands.",
+  "keywords": [
+    "Digital Marketing Agency Leeds",
+    "SEO Company Leeds",
+    "AI Consulting Leeds",
+    "Web Design Leeds",
+    "PPC Agency Leeds",
+    "B2B SEO Leeds"
+  ],
+  "h1": "Digital Marketing, SEO & Web Design in Leeds",
+  "badge": "Leeds Corporate & Financial Hub",
+  "suburbs": [
+    "Civic Quarter",
+    "Financial Quarter",
+    "Briggate",
+    "Holbeck Urban Village",
+    "Headingley",
+    "Waterfront"
+  ],
+  "heroText": "Scale your digital acquisition with Leeds' specialist digital marketing agency, search engine optimization team, and B2B web design company.",
+  "introTitle": "Leeds' Partner for Technical SEO & Enterprise Web Engineering",
+  "introText": "Digipeak serves Leeds' professional and financial sectors with high-performance web assets. Supporting brands in the Financial Quarter, Holbeck, and Civic Quarter, we build secure, speed-optimized web systems, configure automation pipelines, and run search marketing campaigns that drive corporate lead acquisition.\n\nLeeds is the second-largest financial hub in the UK. We build platforms using modern Next.js frameworks that meet strict performance, security, and accessibility standards, helping financial firms, legal practices, and tech startups present services clearly.",
+  "marketAnalysis": {
+    "title": "Why Leeds Businesses Partner with Digipeak",
+    "challenges": "Leeds professional and legal firms face intense competitor pressure. Outdated website setups and lack of technical search engine optimization make it difficult to stand out on Google. Furthermore, rising ad costs on paid channels make template marketing unsustainable.",
+    "competition": "Competition for commercial terms like 'SEO Company Leeds' or 'Digital Marketing Leeds' is exceptionally high. Brands must build deep topical authority, eliminate crawl bottlenecks, and secure high-trust backlink placements to outrank established competitors.",
+    "digitalOpportunities": "Decoupled web architectures provide a massive advantage for Leeds corporate firms. By separating the visual frontend from the database, we improve loading speed and security. This is particularly valuable for legal and financial organizations.",
+    "seoOpportunities": "Organic search is the most sustainable channel for long-term customer acquisition in Yorkshire. By publishing high-authority B2B content blocks and structuring schema integrations, Leeds firms can capture high-intent corporate inquiries.",
+    "leadGenOpportunities": "By connecting speed-optimized landing pages with CRM systems and automated follow-ups, Leeds firms can reduce lead response times to seconds, turning traffic into qualified inquiries."
+  },
+  "serviceFocus": {
+    "title": "Enterprise Digital Capabilities in Leeds",
+    "services": [
+      {
+        "title": "Financial & Legal SEO Leeds",
+        "desc": "We build search visibility for Leeds professional services. We focus on technical audits, schema integration, and high-trust editorial link acquisition to rank for commercial terms."
+      },
+      {
+        "title": "Custom Next.js Web Design",
+        "desc": "We build fast, secure React-based websites. We prioritize premium brand aesthetics, layout accessibility, and sub-second load speeds to represent corporate quality."
+      },
+      {
+        "title": "AI & CRM Business Automation",
+        "desc": "We connect websites directly to HubSpot or Salesforce databases. We automate lead routing, set up calendar booking pipelines, and deploy AI support bots."
+      },
+      {
+        "title": "High-ROI PPC Management",
+        "desc": "We manage targeted paid media campaigns. Our Google Ads agency in Leeds optimizes budgets, writes high-intent ad copy, and reduces cost-per-lead metrics."
+      }
+    ]
+  },
+  "seoBlockTitle": "Leeds SEO Agency & Professional Web Development",
+  "seoBlockParas": [
+    "In Leeds' competitive corporate market, your website is a critical tool for B2B client acquisition. Legacy website systems can slow down your site and degrade your search rankings. As a specialized web design company in Leeds, Digipeak builds high-performance Next.js and Tailwind CSS platforms. We guarantee sub-second load speeds, directly supporting your search engine visibility and user engagement.",
+    "Search engine optimization is the foundation of digital growth. As a premium SEO company in Leeds, we target keywords with commercial buyer intent. We structure content, remove crawler errors, and secure high-quality backlinks to help you rank for target queries. This systematic approach reduces your reliance on paid media and builds permanent digital authority.",
+    "Generating qualified leads requires combining search visibility with conversion-focused design. Our performance marketing and Google Ads agency in Leeds creates custom campaigns that capture active searches. By linking these campaigns with tailored landing pages and CRM pipelines, we make sure no opportunity is missed. We provide comprehensive monthly reports tracking leads, phone calls, and revenue generated."
+  ],
+  "faqs": [
+    {
+      "question": "How much does SEO cost in Leeds?",
+      "answer": "SEO retainers in Leeds typically range from £1,000 to £3,000 per month depending on sector competitiveness. We build customized, transparent proposals based on your specific keywords."
+    },
+    {
+      "question": "How much does digital marketing cost in Leeds?",
+      "answer": "A full-service digital marketing campaign in Leeds (covering design, SEO, and paid ads) generally costs between £2,500 and £6,500 monthly, aligned with key performance goals."
+    },
+    {
+      "question": "What is the best SEO company in Leeds?",
+      "answer": "The best SEO company in Leeds is one that delivers measurable lead volume and sales pipeline growth. Digipeak stands out by engineering speed-optimized websites integrated with technical SEO."
+    },
+    {
+      "question": "How can AI automation help businesses in Leeds?",
+      "answer": "AI automation helps Leeds teams connect websites to CRMs, automate email follow-ups, deploy customer chatbots, and eliminate repetitive admin tasks."
+    },
+    {
+      "question": "How long does SEO take in Leeds?",
+      "answer": "While technical fixes show initial indexing shifts within 30 to 45 days, achieving stable rankings for competitive search queries in Leeds typically takes 4 to 6 months of optimization."
+    },
+    {
+      "question": "Is local SEO worth it in Leeds?",
+      "answer": "Yes. Local SEO places your business prominently in Leeds map packs and localized searches, driving high-converting regional leads without direct ad spend costs."
+    },
+    {
+      "question": "What industries benefit most from SEO in Leeds?",
+      "answer": "Financial services, law firms, healthcare clinics, consulting practices, and technology companies benefit most from structured search marketing campaigns."
+    }
+  ],
+  "industries": [
+    {
+      "name": "Financial Services",
+      "iconName": "Building2"
+    },
+    {
+      "name": "Legal & Corporate",
+      "iconName": "Briefcase"
+    },
+    {
+      "name": "Healthcare & Tech",
+      "iconName": "Cpu"
+    },
+    {
+      "name": "Technology & SaaS",
+      "iconName": "Laptop"
+    }
+  ],
+  "addressRegion": "West Yorkshire",
+  "addressCountry": "GB"
+}

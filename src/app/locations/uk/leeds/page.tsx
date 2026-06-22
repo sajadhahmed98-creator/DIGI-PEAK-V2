@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import singaporeData from "@/data/locations/singapore.json";
+import leedsData from "@/data/locations/uk/leeds.json";
 import { LocationPageTemplate, CityData } from "@/components/locations/LocationPageTemplate";
 
-const cityData = singaporeData as CityData;
+const cityData = leedsData as CityData;
 
 export const metadata: Metadata = {
   title: cityData.metaTitle,
@@ -25,18 +25,18 @@ export const metadata: Metadata = {
   }
 };
 
-export default function SingaporePage() {
-    const allLocations = [
-    { name: "Sydney", slug: "australia/sydney" },
-    { name: "Melbourne", slug: "australia/melbourne" },
-    { name: "Brisbane", slug: "australia/brisbane" },
-    { name: "Perth", slug: "australia/perth" },
-    { name: "Adelaide", slug: "australia/adelaide" },
-    { name: "Gold Coast", slug: "australia/gold-coast" },
-    { name: "Canberra", slug: "australia/canberra" },
-    { name: "Singapore", slug: "singapore" },
-    { name: "Sri Lanka", slug: "sri-lanka" },
-    { name: "Australia Hub", slug: "australia" }
+export default function LeedsPage() {
+  const allLocations = [
+    { name: "London", slug: "uk/london" },
+    { name: "Manchester", slug: "uk/manchester" },
+    { name: "Birmingham", slug: "uk/birmingham" },
+    { name: "Leeds", slug: "uk/leeds" },
+    { name: "Liverpool", slug: "uk/liverpool" },
+    { name: "Bristol", slug: "uk/bristol" },
+    { name: "Glasgow", slug: "uk/glasgow" },
+    { name: "Edinburgh", slug: "uk/edinburgh" },
+    { name: "United Kingdom Hub", slug: "uk" }
   ];
+
   return <LocationPageTemplate city={cityData} allLocations={allLocations} />;
 }

@@ -34,6 +34,88 @@ const nextConfig: NextConfig = {
         destination: "/locations/qatar/doha",
         permanent: true,
       },
+      // Legacy Australia redirects to nested location architecture
+      {
+        source: "/locations/sydney",
+        destination: "/locations/australia/sydney",
+        permanent: true,
+      },
+      {
+        source: "/locations/melbourne",
+        destination: "/locations/australia/melbourne",
+        permanent: true,
+      },
+      {
+        source: "/locations/brisbane",
+        destination: "/locations/australia/brisbane",
+        permanent: true,
+      },
+      {
+        source: "/locations/perth",
+        destination: "/locations/australia/perth",
+        permanent: true,
+      },
+      {
+        source: "/locations/adelaide",
+        destination: "/locations/australia/adelaide",
+        permanent: true,
+      },
+      {
+        source: "/locations/gold-coast",
+        destination: "/locations/australia/gold-coast",
+        permanent: true,
+      },
+      {
+        source: "/locations/canberra",
+        destination: "/locations/australia/canberra",
+        permanent: true,
+      },
+      // Australia custom service links redirect mappings
+      {
+        source: "/local-seo-services",
+        destination: "/seo-services",
+        permanent: true,
+      },
+      {
+        source: "/ppc-management",
+        destination: "/digital-marketing",
+        permanent: true,
+      },
+      {
+        source: "/web-design",
+        destination: "/web-design-development",
+        permanent: true,
+      },
+      {
+        source: "/web-development",
+        destination: "/web-design-development",
+        permanent: true,
+      },
+      {
+        source: "/ai-automation",
+        destination: "/ai-solutions",
+        permanent: true,
+      },
+      {
+        source: "/ai-chatbot-development",
+        destination: "/ai-solutions",
+        permanent: true,
+      },
+      {
+        source: "/social-media-marketing",
+        destination: "/social-media-management",
+        permanent: true,
+      },
+      {
+        source: "/google-ads-management",
+        destination: "/digital-marketing",
+        permanent: true,
+      },
+      {
+        source: "/shopify-development",
+        destination: "/ecommerce-development",
+        permanent: true,
+      },
       // Clean up legacy .html extensions
       {
         source: "/:path*\\.html",

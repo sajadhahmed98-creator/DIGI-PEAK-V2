@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import singaporeData from "@/data/locations/singapore.json";
+import goldCoastData from "@/data/locations/australia/gold-coast.json";
 import { LocationPageTemplate, CityData } from "@/components/locations/LocationPageTemplate";
 
-const cityData = singaporeData as CityData;
+const cityData = goldCoastData as CityData;
 
 export const metadata: Metadata = {
   title: cityData.metaTitle,
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   }
 };
 
-export default function SingaporePage() {
-    const allLocations = [
+export default function GoldCoastPage() {
+      const allLocations = [
     { name: "Sydney", slug: "australia/sydney" },
     { name: "Melbourne", slug: "australia/melbourne" },
     { name: "Brisbane", slug: "australia/brisbane" },
