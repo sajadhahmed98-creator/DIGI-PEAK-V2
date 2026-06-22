@@ -23,12 +23,12 @@ export const metadata: Metadata = {
     "Best Marketing Agency Doha"
   ],
   alternates: {
-    canonical: 'https://www.digipeak.agency/doha',
+    canonical: 'https://www.digipeak.agency/locations/qatar/doha',
   },
   openGraph: {
     title: "Digital Marketing, SEO & Web Design Agency Doha | Digipeak",
     description: "Digipeak helps businesses across Doha grow through SEO, web design, branding, digital marketing, and business automation services.",
-    url: "https://www.digipeak.agency/doha",
+    url: "https://www.digipeak.agency/locations/qatar/doha",
     images: ["/og-doha.jpg"],
     type: "website",
   },
@@ -45,8 +45,8 @@ export default function DohaPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://www.digipeak.agency/doha/#webpage",
-        "url": "https://www.digipeak.agency/doha",
+        "@id": "https://www.digipeak.agency/locations/qatar/doha/#webpage",
+        "url": "https://www.digipeak.agency/locations/qatar/doha",
         "name": "Digital Marketing, SEO & Web Design Services in Doha",
         "isPartOf": { "@id": "https://www.digipeak.agency/#website" },
       },
@@ -54,7 +54,7 @@ export default function DohaPage() {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "item": { "@id": "https://www.digipeak.agency/", "name": "Home" } },
-          { "@type": "ListItem", "position": 2, "item": { "@id": "https://www.digipeak.agency/doha/", "name": "Doha Services" } }
+          { "@type": "ListItem", "position": 2, "item": { "@id": "https://www.digipeak.agency/locations/qatar/doha/", "name": "Doha Services" } }
         ]
       },
       {
@@ -90,7 +90,7 @@ export default function DohaPage() {
         "@id": "https://www.digipeak.agency/#localbusiness",
         "name": "Digipeak Agency Doha Services",
         "image": "https://www.digipeak.agency/og-image.jpg",
-        "url": "https://www.digipeak.agency/doha",
+        "url": "https://www.digipeak.agency/locations/qatar/doha",
         "description": "Premium digital growth and technology agency providing remote services to businesses in Doha.",
         "address": {
           "@type": "PostalAddress",
@@ -107,7 +107,7 @@ export default function DohaPage() {
           },
           {
             "question": "Can projects be managed remotely?",
-            "answer": "Absolutely. Digipeak operates from our global headquarters in Sri Lanka, delivering premium services entirely remotely. We coordinate projects via digital project portals (like ClickUp), active messaging channels (Slack or WhatsApp Business), and regular video calls (Google Meet or Zoom). This model eliminates high local GCC overhead costs while providing access to elite international design and development talent."
+            "answer": "Absolutely. Digipeak operates from our global headquarters in Sri Lanka, delivering premium services entirely remotely. We coordinate projects via digital project portals (like ClickUp), active messaging channels (Slack or WhatsApp Business), and regular video calls (Google Meet or Zoom). This model eliminates high local GCC overhead costs while providing access to premium international design and development talent."
           },
           {
             "question": "Do you offer SEO services in Doha?",

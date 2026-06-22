@@ -18,6 +18,22 @@ const nextConfig: NextConfig = {
         destination: "/locations/uae/dubai",
         permanent: true,
       },
+      // Legacy Qatar/Saudi/Doha redirects to locations hub
+      {
+        source: "/saudi-arabia",
+        destination: "/locations/saudi-arabia",
+        permanent: true,
+      },
+      {
+        source: "/qatar",
+        destination: "/locations/qatar",
+        permanent: true,
+      },
+      {
+        source: "/doha",
+        destination: "/locations/qatar/doha",
+        permanent: true,
+      },
       // Clean up legacy .html extensions
       {
         source: "/:path*\\.html",

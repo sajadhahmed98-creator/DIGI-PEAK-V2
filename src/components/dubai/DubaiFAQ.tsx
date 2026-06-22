@@ -14,7 +14,7 @@ export function DubaiFAQ() {
     },
     {
       question: "Can Digipeak provide services remotely?",
-      answer: "Absolutely. Digipeak operates from our global headquarters in Sri Lanka, delivering all digital marketing, SEO, web design, and automation services remotely. We manage projects using digital systems (such as ClickUp), messaging channels (Slack or WhatsApp), and video calls (Zoom or Google Meet). This remote delivery model allows us to supply elite creative and development talent without high GCC physical overhead costs."
+      answer: "Absolutely. Digipeak operates from our global headquarters in Sri Lanka, delivering all digital marketing, SEO, web design, and automation services remotely. We manage projects using digital systems (such as ClickUp), messaging channels (Slack or WhatsApp), and video calls (Zoom or Google Meet). This remote delivery model allows us to supply premium creative and development talent without high GCC physical overhead costs."
     },
     {
       question: "Do you offer SEO services in Dubai?",

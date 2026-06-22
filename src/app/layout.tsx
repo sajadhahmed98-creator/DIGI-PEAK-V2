@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Digipeak Agency | Premium Digital Marketing & SEO",
-    description: "Award-winning digital agency delivering enterprise SEO, custom web design, and AI-powered marketing solutions.",
+    description: "Results-focused digital agency delivering enterprise SEO, custom web design, and AI-powered marketing solutions.",
     url: "https://www.digipeak.agency",
     siteName: "Digipeak Agency",
     images: [

@@ -102,7 +102,7 @@ export function ServicesHero() {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 glass px-5 py-2 text-sm font-medium text-muted"
           >
-            <span className="text-accent-primary font-bold">Award-Winning AI Powered Marketing Agency</span>
+            <span className="text-accent-primary font-bold">Results-Focused AI Powered Marketing Agency</span>
           </motion.div>
 
           <motion.h1

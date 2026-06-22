@@ -83,7 +83,7 @@ export function GoogleAdsServices() {
                             Premium Services | Request a Free Proposal Today
                          </div>
                          <div className="text-sm text-gray-600 mb-3">
-                            Award-winning services engineered for enterprise growth. Contact our experts to scale your business operations seamlessly.
+                            Premium services engineered for enterprise growth. Contact our experts to scale your business operations seamlessly.
                          </div>
                          <div className="flex gap-4 text-xs font-semibold text-[#1a0dab]">
                             <span>Contact Us</span>

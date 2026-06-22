@@ -13,7 +13,7 @@ import { SaudiCTA } from "@/components/saudi/SaudiCTA";
 
 export const metadata: Metadata = {
   title: "Digital Marketing, SEO & Web Design Agency Saudi Arabia | Digipeak",
-  description: "Digipeak helps businesses across Saudi Arabia grow through elite SEO, custom web design, corporate branding, performance digital marketing, and AI automation solutions.",
+  description: "Digipeak helps businesses across Saudi Arabia grow through results-focused SEO, custom web design, corporate branding, performance digital marketing, and AI automation solutions.",
   keywords: [
     "Digital Marketing Agency Saudi Arabia", "SEO Company Saudi Arabia", "SEO Agency Saudi Arabia", 
     "Web Design Company Saudi Arabia", "Website Design Saudi Arabia", "Branding Agency Saudi Arabia", 
@@ -23,12 +23,12 @@ export const metadata: Metadata = {
     "Best Digital Agency Saudi Arabia", "Best Marketing Agency Saudi Arabia", "Web Development Saudi Arabia"
   ],
   alternates: {
-    canonical: 'https://www.digipeak.agency/saudi-arabia',
+    canonical: 'https://www.digipeak.agency/locations/saudi-arabia',
   },
   openGraph: {
     title: "Digital Marketing, SEO & Web Design Agency Saudi Arabia | Digipeak",
-    description: "Digipeak helps businesses across Saudi Arabia grow through elite SEO, custom web design, corporate branding, performance digital marketing, and AI automation solutions.",
-    url: "https://www.digipeak.agency/saudi-arabia",
+    description: "Digipeak helps businesses across Saudi Arabia grow through results-focused SEO, custom web design, corporate branding, performance digital marketing, and AI automation solutions.",
+    url: "https://www.digipeak.agency/locations/saudi-arabia",
     images: ["/og-saudi.jpg"],
     type: "website",
   },
@@ -45,8 +45,8 @@ export default function SaudiArabiaPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://www.digipeak.agency/saudi-arabia/#webpage",
-        "url": "https://www.digipeak.agency/saudi-arabia",
+        "@id": "https://www.digipeak.agency/locations/saudi-arabia/#webpage",
+        "url": "https://www.digipeak.agency/locations/saudi-arabia",
         "name": "Digital Marketing, SEO & Web Design Services in Saudi Arabia",
         "isPartOf": { "@id": "https://www.digipeak.agency/#website" },
       },
@@ -54,7 +54,7 @@ export default function SaudiArabiaPage() {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "item": { "@id": "https://www.digipeak.agency/", "name": "Home" } },
-          { "@type": "ListItem", "position": 2, "item": { "@id": "https://www.digipeak.agency/saudi-arabia/", "name": "Saudi Arabia Services" } }
+          { "@type": "ListItem", "position": 2, "item": { "@id": "https://www.digipeak.agency/locations/saudi-arabia/", "name": "Saudi Arabia Services" } }
         ]
       },
       {
@@ -90,7 +90,7 @@ export default function SaudiArabiaPage() {
         "@id": "https://www.digipeak.agency/#localbusiness",
         "name": "Digipeak Agency Saudi Arabia Services",
         "image": "https://www.digipeak.agency/og-image.jpg",
-        "url": "https://www.digipeak.agency/saudi-arabia",
+        "url": "https://www.digipeak.agency/locations/saudi-arabia",
         "description": "Premium digital growth and technology agency providing remote services to businesses across Saudi Arabia.",
         "address": {
           "@type": "PostalAddress",
@@ -107,7 +107,7 @@ export default function SaudiArabiaPage() {
           },
           {
             "question": "Can Digipeak provide services remotely?",
-            "answer": "Absolutely. Digipeak operates from our global headquarters in Sri Lanka, delivering all digital marketing, SEO, web design, and automation services remotely. We manage projects using digital systems (such as ClickUp), messaging channels (Slack or WhatsApp), and video calls (Zoom or Google Meet). This remote delivery model allows us to supply elite creative and development talent without high GCC physical overhead costs."
+            "answer": "Absolutely. Digipeak operates from our global headquarters in Sri Lanka, delivering all digital marketing, SEO, web design, and automation services remotely. We manage projects using digital systems (such as ClickUp), messaging channels (Slack or WhatsApp), and video calls (Zoom or Google Meet). This remote delivery model allows us to supply premium creative and development talent without high GCC physical overhead costs."
           },
           {
             "question": "Do you offer SEO services in KSA?",

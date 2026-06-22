@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     "Doha Digital Marketing", "Doha SEO Agency"
   ],
   alternates: {
-    canonical: 'https://www.digipeak.agency/qatar',
+    canonical: 'https://www.digipeak.agency/locations/qatar',
   },
   openGraph: {
     title: "Digital Marketing, SEO & Web Design Agency Qatar | Digipeak",
     description: "Premium digital agency helping businesses in Qatar and Doha grow online through expert SEO, web design, and branding solutions.",
-    url: "https://www.digipeak.agency/qatar",
+    url: "https://www.digipeak.agency/locations/qatar",
     images: ["/og-qatar.jpg"],
     type: "website",
   },
@@ -43,8 +43,8 @@ export default function QatarPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://www.digipeak.agency/qatar/#webpage",
-        "url": "https://www.digipeak.agency/qatar",
+        "@id": "https://www.digipeak.agency/locations/qatar/#webpage",
+        "url": "https://www.digipeak.agency/locations/qatar",
         "name": "Digital Marketing, SEO & Web Design Services in Qatar",
         "isPartOf": { "@id": "https://www.digipeak.agency/#website" },
       },
@@ -52,7 +52,7 @@ export default function QatarPage() {
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "item": { "@id": "https://www.digipeak.agency/", "name": "Home" } },
-          { "@type": "ListItem", "position": 2, "item": { "@id": "https://www.digipeak.agency/qatar/", "name": "Qatar Services" } }
+          { "@type": "ListItem", "position": 2, "item": { "@id": "https://www.digipeak.agency/locations/qatar/", "name": "Qatar Services" } }
         ]
       },
       {
@@ -88,7 +88,7 @@ export default function QatarPage() {
         "@id": "https://www.digipeak.agency/#localbusiness",
         "name": "Digipeak Agency Qatar Services",
         "image": "https://www.digipeak.agency/og-image.jpg",
-        "url": "https://www.digipeak.agency/qatar",
+        "url": "https://www.digipeak.agency/locations/qatar",
         "description": "Premium digital growth and technology agency providing remote services to businesses in Qatar and Doha.",
         "address": {
           "@type": "PostalAddress",

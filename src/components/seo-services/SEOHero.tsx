@@ -77,7 +77,7 @@ export function SEOHero() {
             className="mb-6 inline-flex items-center gap-3 rounded-full border border-white/10 glass px-5 py-2 text-sm font-medium text-muted"
           >
             <BarChart3 className="w-4 h-4 text-accent-primary" />
-            <span className="text-accent-primary font-bold">Award-Winning SEO Agency</span>
+            <span className="text-accent-primary font-bold">Results-Focused SEO Agency</span>
           </motion.div>
 
           <motion.h1
@@ -96,7 +96,7 @@ export function SEOHero() {
             transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             className="mb-10 text-lg text-muted md:text-xl leading-relaxed max-w-3xl mx-auto"
           >
-            AI-powered SEO strategies engineered to increase visibility, authority, qualified traffic, and business growth across <strong><Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Australia, Singapore, Sri Lanka, New Zealand, and the United Kingdom.</strong>
+            AI-powered SEO strategies engineered to increase visibility, authority, qualified traffic, and business growth across <strong><Link href="/locations/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/locations/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Australia, Singapore, Sri Lanka, New Zealand, and the United Kingdom.</strong>
           </motion.p>
 
           <motion.div

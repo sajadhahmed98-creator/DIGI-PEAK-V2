@@ -118,9 +118,9 @@ export function MultiStepContactForm() {
 
       // Track successful submission events in Microsoft Clarity
       trackClarityEvent("form_submitted");
-      trackClarityEvent("calendly_opened");
+      trackClarityEvent("scheduler_opened");
 
-      // Save user details for Calendly pre-filling
+      // Save user details for custom scheduler pre-filling
       setSubmittedUser({ name: formData.name, email: formData.email });
       setLoading(false);
       setShowModal(true);

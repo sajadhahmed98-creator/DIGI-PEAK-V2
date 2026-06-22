@@ -223,9 +223,9 @@ export const digipeakCompanyProfile = {
   ],
   generalInformation: "Digipeak is a premium, results-oriented digital growth agency. We specialize in delivering high-performance SEO, custom web design, e-commerce stores, social media management, brand identity design, paid advertisements (Google & Meta Ads), CRM automations, and AI integrations. We operate borderlessly, supporting clients globally. We do not work on scripted bots or generic configurations—everything we build is custom, high-speed, and engineered for high-intent conversion.",
   locations: [
-    { name: "Qatar / Doha", slug: "/qatar", desc: "We provide high-impact local and international SEO, web design, and digital marketing services to businesses across Doha and the wider Qatar region." },
+    { name: "Qatar / Doha", slug: "/locations/qatar", desc: "We provide high-impact local and international SEO, web design, and digital marketing services to businesses across Doha and the wider Qatar region." },
     { name: "UAE / Dubai", slug: "/locations/uae", desc: "We serve premium brands, e-commerce giants, and luxury startups in Dubai and all Emirates (Abu Dhabi, Sharjah, etc.) with custom web design and performance paid advertising." },
-    { name: "Saudi Arabia / Riyadh", slug: "/saudi-arabia", desc: "Supporting Saudi Vision 2030 digital goals, we deliver enterprise SEO and bilingual (Arabic/English) web architectures for firms in Riyadh and KSA." }
+    { name: "Saudi Arabia / Riyadh", slug: "/locations/saudi-arabia", desc: "Supporting Saudi Vision 2030 digital goals, we deliver enterprise SEO and bilingual (Arabic/English) web architectures for firms in Riyadh and KSA." }
   ],
   careers: {
     title: "Careers & Talent Network",

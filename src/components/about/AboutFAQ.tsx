@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     question: "Where is Digipeak located?",
-    answer: <>Digipeak Agency is headquartered in Sri Lanka. We serve clients across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Singapore, Australia, New Zealand, the United Kingdom, and other international markets. Our team works remotely, enabling us to deliver world-class digital services to businesses regardless of geography.</>,
+    answer: <>Digipeak Agency is headquartered in Sri Lanka. We serve clients across <Link href="/locations/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/locations/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Singapore, Australia, New Zealand, the United Kingdom, and other international markets. Our team works remotely, enabling us to deliver world-class digital services to businesses regardless of geography.</>,
   },
   {
     question: "When was Digipeak founded?",
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: "Do you work internationally?",
-    answer: <>Yes. While headquartered in Sri Lanka, Digipeak actively serves businesses across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Singapore, Australia, New Zealand, the United Kingdom, and other global markets. We work remotely with international clients and understand the specific digital landscape requirements of each market we serve.</>,
+    answer: <>Yes. While headquartered in Sri Lanka, Digipeak actively serves businesses across <Link href="/locations/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/locations/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Singapore, Australia, New Zealand, the United Kingdom, and other global markets. We work remotely with international clients and understand the specific digital landscape requirements of each market we serve.</>,
   },
   {
     question: "What industries do you serve?",

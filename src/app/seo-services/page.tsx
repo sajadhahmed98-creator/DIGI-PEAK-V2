@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.digipeak.agency/seo-services',
   },
   openGraph: {
-    title: "Elite SEO Services & Agency | Digipeak",
+    title: "Expert SEO Services & Agency | Digipeak",
     description: "AI-powered SEO strategies engineered to increase visibility, authority, and revenue globally.",
     url: "https://www.digipeak.agency/seo-services",
     images: ["/og-seo.jpg"],
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Elite SEO Services & Agency | Digipeak",
+    title: "Expert SEO Services & Agency | Digipeak",
     description: "AI-powered SEO strategies engineered to increase visibility, authority, and revenue globally.",
   }
 };
@@ -45,7 +45,7 @@ export default function SEOServicesPage() {
         "@type": "WebPage",
         "@id": "https://www.digipeak.agency/seo-services/#webpage",
         "url": "https://www.digipeak.agency/seo-services",
-        "name": "Elite SEO Services & Agency",
+        "name": "Expert SEO Services & Agency",
         "isPartOf": { "@id": "https://www.digipeak.agency/#website" },
       },
       {

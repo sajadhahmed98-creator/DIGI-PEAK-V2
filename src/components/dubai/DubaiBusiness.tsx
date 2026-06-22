@@ -26,7 +26,7 @@ const drivers = [
   },
   {
     title: "Luxury Brand Differentiation",
-    desc: "Capturing high-net-worth GCC customer segments requires premium aesthetic excellence, flawless UI/UX layout design, and elite branding.",
+    desc: "Capturing high-net-worth GCC customer segments requires premium aesthetic excellence, flawless UI/UX layout design, and premium branding.",
     icon: ShieldCheck,
   },
   {
@@ -81,7 +81,7 @@ export function DubaiBusiness() {
               Dubai has solidified its reputation as a global beacon of innovation, entrepreneurship, and luxury commerce. With businesses competing for visibility across highly saturated international markets, establishing digital dominance is critical to capture premium leads.
             </p>
             <p>
-              Digipeak functions as an elite strategic digital partner, working remotely from our headquarters in Sri Lanka to engineer high-converting web applications, manage complex search campaigns, and integrate business automation solutions for companies in Dubai.
+              Digipeak functions as a specialist strategic digital partner, working remotely from our headquarters in Sri Lanka to engineer high-converting web applications, manage complex search campaigns, and integrate business automation solutions for companies in Dubai.
             </p>
           </motion.div>
         </div>

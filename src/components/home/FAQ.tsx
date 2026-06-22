@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     question: "Do you offer web design and SEO services in London, Sydney, or Singapore?",
-    answer: <>Yes, we are a global agency with primary target markets in <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Australia, Singapore, and the UK. Our distributed team allows us to provide 24/7 support and localized marketing strategies for these regions.</>,
+    answer: <>Yes, we are a global agency with primary target markets in <Link href="/locations/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/locations/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Australia, Singapore, and the UK. Our distributed team allows us to provide 24/7 support and localized marketing strategies for these regions.</>,
   },
 ];
 

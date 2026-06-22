@@ -30,7 +30,7 @@ const milestones = [
     year: "Now",
     icon: Layers,
     title: "Serving Businesses Globally",
-    desc: <>Today Digipeak serves businesses across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Singapore, Australia, New Zealand, the UK, and locally in Sri Lanka — building digital ecosystems that generate measurable growth.</>,
+    desc: <>Today Digipeak serves businesses across <Link href="/locations/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/locations/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Singapore, Australia, New Zealand, the UK, and locally in Sri Lanka — building digital ecosystems that generate measurable growth.</>,
     color: "text-emerald-400 border-emerald-500/30 bg-emerald-500/10",
   },
 ];
@@ -67,7 +67,7 @@ export function OurStory() {
                 We started with a focused vision: combine marketing, design, development, and automation into one unified growth ecosystem, rather than forcing businesses to work with multiple disconnected agencies.
               </p>
               <p>
-                From Sri Lanka, we serve businesses internationally across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, the <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Singapore, Australia, New Zealand, and the United Kingdom — bringing the same commitment to quality and growth to every client we work with.
+                From Sri Lanka, we serve businesses internationally across <Link href="/locations/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, the <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/locations/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Singapore, Australia, New Zealand, and the United Kingdom — bringing the same commitment to quality and growth to every client we work with.
               </p>
               <p>
                 We are not just a vendor. We are a long-term growth partner — one that understands business goals, adapts to market changes, and builds digital systems that compound in value over time.

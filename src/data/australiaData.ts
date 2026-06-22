@@ -73,7 +73,7 @@ export const citiesData: CityData[] = [
       },
       {
         question: "What web design services do you offer for Sydney corporations?",
-        answer: "As an elite web design company in Sydney, we provide custom design, responsive frontend engineering with Next.js, content management integrations, CRM automation syncs, and comprehensive technical maintenance. We ensure every site is lightning-fast, visually premium, and highly secure."
+        answer: "As a specialist web design company in Sydney, we provide custom design, responsive frontend engineering with Next.js, content management integrations, CRM automation syncs, and comprehensive technical maintenance. We ensure every site is lightning-fast, visually premium, and highly secure."
       },
       {
         question: "Can you help automate our Sydney business processes?",
@@ -148,7 +148,7 @@ export const citiesData: CityData[] = [
     badge: "Brisbane Growth Hub",
     heroDesc: "Launch optimized Next.js websites and target high-value commercial keywords with Brisbane's expert digital agency.",
     introTitle: "Accelerating Brisbane Businesses with Custom Web Design & SEO",
-    introText: "Digipeak is Brisbane's elite partner for digital transformation. Helping companies in Fortitude Valley, Brisbane CBD, and South Brisbane, we construct high-speed corporate websites, implement CRM automation systems, and deploy search marketing plans that secure long-term digital growth.",
+    introText: "Digipeak is Brisbane's specialist partner for digital transformation. Helping companies in Fortitude Valley, Brisbane CBD, and South Brisbane, we construct high-speed corporate websites, implement CRM automation systems, and deploy search marketing plans that secure long-term digital growth.",
     localContentTitle: "Serving Brisbane's Construction, Tourism & Real Estate Industries",
     localContentText: "Brisbane's development boom demands digital assets that can communicate scale and attract regional prospects. We provide real estate, construction, and tourism businesses with visual portfolios, automated lead capturing forms, and search campaigns that target high-intent local and international buyers.",
     seoBlockTitle: "Dominate Search Results with Brisbane's Expert SEO & Creative Agency",

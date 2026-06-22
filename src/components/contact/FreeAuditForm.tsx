@@ -130,9 +130,9 @@ export function FreeAuditForm() {
 
       // Track successful submission events in Microsoft Clarity
       trackClarityEvent("audit_submitted");
-      trackClarityEvent("calendly_opened");
+      trackClarityEvent("scheduler_opened");
 
-      // Set active funnel for Calendly tracker
+      // Set active funnel for custom scheduler
       sessionStorage.setItem("active_funnel", "audit");
 
       // Progressive Profiling: Cache details

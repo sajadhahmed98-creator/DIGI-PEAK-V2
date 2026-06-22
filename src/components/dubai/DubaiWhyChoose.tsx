@@ -34,7 +34,7 @@ const pillars = [
   },
   {
     title: "Long-Term Partnerships",
-    desc: "We function as an elite extension of your brand, constantly analyzing site health, SEO updates, and CRO opportunities.",
+    desc: "We function as a dedicated extension of your brand, constantly analyzing site health, SEO updates, and CRO opportunities.",
   },
 ];
 

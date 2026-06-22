@@ -81,7 +81,7 @@ export function SaudiBusiness() {
               Saudi Arabia represents the largest market in the GCC, driven by the historic transformation guidelines of Vision 2030. As enterprises modernize, constructing a premium, speed-optimized digital footprint is essential to capture high-value target audiences.
             </p>
             <p>
-              Digipeak functions as an elite remote digital partner, constructing corporate web design applications, search engine campaign architectures, and automation networks from our global headquarters in Sri Lanka.
+              Digipeak functions as a specialist remote digital partner, constructing corporate web design applications, search engine campaign architectures, and automation networks from our global headquarters in Sri Lanka.
             </p>
           </motion.div>
         </div>

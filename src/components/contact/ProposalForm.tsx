@@ -130,9 +130,9 @@ ${formData.details || "None provided."}`,
 
       // Track successful submission events in Microsoft Clarity
       trackClarityEvent("proposal_submitted");
-      trackClarityEvent("calendly_opened");
+      trackClarityEvent("scheduler_opened");
 
-      // Set active funnel for Calendly tracker
+      // Set active funnel for custom scheduler
       sessionStorage.setItem("active_funnel", "proposal");
 
       // Progressive Profiling: Cache details

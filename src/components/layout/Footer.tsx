@@ -133,9 +133,9 @@ export function Footer() {
             <div>
               <h4 className="font-heading font-semibold text-white text-[13px] tracking-wide mb-5">Markets</h4>
               <ul className="flex flex-col gap-3 text-[13px] text-muted">
-                <li><AnimatedLink href="/qatar">Qatar</AnimatedLink></li>
+                <li><AnimatedLink href="/locations/qatar">Qatar</AnimatedLink></li>
                 <li><AnimatedLink href="/locations/uae">UAE</AnimatedLink></li>
-                <li><AnimatedLink href="/saudi-arabia">Saudi Arabia</AnimatedLink></li>
+                <li><AnimatedLink href="/locations/saudi-arabia">Saudi Arabia</AnimatedLink></li>
                 <li><AnimatedLink href="/locations/australia">Australia</AnimatedLink></li>
                 <li><AnimatedLink href="/locations/sri-lanka">Sri Lanka</AnimatedLink></li>
               </ul>

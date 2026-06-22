@@ -197,13 +197,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: 'https://www.digipeak.agency/qatar',
+      url: 'https://www.digipeak.agency/locations/qatar',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.85,
     },
     {
-      url: 'https://www.digipeak.agency/doha',
+      url: 'https://www.digipeak.agency/locations/qatar/doha',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.85,
@@ -257,7 +257,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: 'https://www.digipeak.agency/saudi-arabia',
+      url: 'https://www.digipeak.agency/locations/saudi-arabia',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.85,
