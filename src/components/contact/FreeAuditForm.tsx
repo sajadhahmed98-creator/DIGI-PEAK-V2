@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, Globe, User, Briefcase, Mail, Phone, X, Loader2, Calendar, AlertTriangle, ChevronRight } from "lucide-react";
 import { trackClarityEvent } from "@/components/analytics/MicrosoftClarity";
+import { CustomScheduler } from "./CustomScheduler";
 
 export function FreeAuditForm() {
   const [formData, setFormData] = useState({
@@ -492,21 +493,12 @@ export function FreeAuditForm() {
                 </div>
               </div>
 
-              {/* Right Panel: Calendly Embed */}
+              {/* Right Panel: Custom Scheduler */}
               <div className="md:w-[62%] bg-slate-900/40 relative min-h-[550px] md:min-h-[650px] flex flex-col">
-                <div className="absolute inset-0 z-0 flex items-center justify-center bg-slate-950/20">
-                  <div className="flex flex-col items-center gap-3">
-                    <div className="w-10 h-10 border-4 border-accent-primary border-t-transparent rounded-full animate-spin" />
-                    <p className="text-xs text-slate-400 font-mono">Loading Scheduler...</p>
-                  </div>
-                </div>
-
-                <iframe
-                  src={`https://calendly.com/digipeak-agency/strategy-session?background_color=0f172a&text_color=ffffff&primary_color=7c5cff&name=${encodeURIComponent(submittedUser.name)}&email=${encodeURIComponent(submittedUser.email)}`}
-                  width="100%"
-                  height="100%"
-                  className="relative z-10 border-0 w-full flex-grow min-h-[550px] md:min-h-[650px]"
-                  title="Schedule a Diagnostic Call with Digipeak"
+                <CustomScheduler
+                  userName={submittedUser.name}
+                  userEmail={submittedUser.email}
+                  funnelName="audit"
                 />
               </div>
             </motion.div>

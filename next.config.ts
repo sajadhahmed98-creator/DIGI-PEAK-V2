@@ -66,7 +66,7 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Content-Security-Policy",
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.clarity.ms https://assets.calendly.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.fontshare.com https://assets.calendly.com; font-src 'self' https://fonts.gstatic.com https://cdn.fontshare.com; img-src 'self' data: blob: https://images.unsplash.com https://www.googletagmanager.com https://*.clarity.ms https://*.calendly.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.clarity.ms https://api.calendly.com https://www.googleapis.com https://pagespeedonline.googleapis.com; frame-src 'self' https://calendly.com https://*.calendly.com; object-src 'none'; upgrade-insecure-requests;",
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://api.fontshare.com; font-src 'self' https://fonts.gstatic.com https://cdn.fontshare.com; img-src 'self' data: blob: https://images.unsplash.com https://www.googletagmanager.com https://*.clarity.ms; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://*.clarity.ms https://www.googleapis.com https://pagespeedonline.googleapis.com; frame-src 'self'; object-src 'none'; upgrade-insecure-requests;",
           },
           {
             key: "Strict-Transport-Security",

@@ -5,7 +5,6 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { ClientWidgets } from "@/components/layout/ClientWidgets";
-import { CalendlyTracker } from "@/components/analytics/CalendlyTracker";
 import { ExitIntentModal } from "@/components/shared/ExitIntentModal";
 import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 import MicrosoftClarity from "@/components/analytics/MicrosoftClarity";
@@ -130,7 +129,6 @@ export default function RootLayout({
         <ScrollToTop />
         <ClientWidgets />
         <ExitIntentModal />
-        <CalendlyTracker />
         <div className="bg-noise absolute inset-0 z-[-1] pointer-events-none opacity-[0.02]"></div>
         <Navbar />
         <main className="flex-1 flex flex-col pt-24">

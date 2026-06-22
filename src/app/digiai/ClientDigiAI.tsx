@@ -640,10 +640,7 @@ export default function ClientDigiAI() {
                           It looks like you're exploring some deep digital strategies. Our team of human experts can help you implement these precisely.
                         </p>
                         <a 
-                          href="https://calendly.com/digipeak-agency/strategy-session" 
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() => sessionStorage.setItem("active_funnel", "digiai")}
+                          href="/proposal" 
                           className="inline-flex items-center justify-center w-full py-3 bg-gradient-to-r from-accent-primary to-accent-secondary text-white font-bold rounded-xl hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all gap-2 cursor-pointer"
                         >
                           Book a Strategy Session <ArrowRight className="w-4 h-4" />
