@@ -187,6 +187,7 @@ export async function POST(req: NextRequest) {
         to: [email],
         subject: emailSubjectUser,
         html: userEmailHtml,
+        replyTo: ADMIN_EMAIL,
       });
     } else {
       console.log("\n--- SIMULATED SMTP BOOKING DISPATCH (No API Key) ---");

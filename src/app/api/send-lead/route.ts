@@ -134,12 +134,14 @@ export async function POST(req: NextRequest) {
       adminEmailHtml = leadNotificationHtml
         .replace("Alexander Mercer", name)
         .replace("Mercer Creative Group", company || "Not provided")
+        .replace("alex@mercercreative.com?subject=Re%3A%20Your%20Digipeak%20Inquiry", `${email}?subject=Re%3A%20Your%20Digipeak%20Inquiry`)
         .replace("alex@mercercreative.com", email)
         .replace("+1 (555) 019-2834", whatsapp || "Not provided")
         .replace("Technical SEO &amp; Speed Optimization", service || "General Client Inquiry")
         .replace("$10,000 - $15,000 / mo", budget || "Not specified")
         .replace("We are relaunching our Next.js corporate platform and need expert B2B SEO schema setups, RTL localization, and PageSpeed optimizations to secure GCC organic search visibility.", `Country: ${country || "Not specified"}. Project details: ${details || "No details provided."}`)
-        .replace("High Priority &bull; Lead Score: 92/100", `Score: ${leadScore || "Warm"}`);
+        .replace("High Priority &bull; Lead Score: 92/100", `Score: ${leadScore || "Warm"}`)
+        .replace("Not provided", pageUrl || "Not provided");
     }
 
     // Create User Confirmation HTML
@@ -212,6 +214,7 @@ export async function POST(req: NextRequest) {
         to: [email],
         subject: "📥 We Received Your Request — Digipeak Agency",
         html: userEmailHtml,
+        replyTo: ADMIN_EMAIL,
       });
     } else {
       console.log("\n--- SIMULATED SMTP DISPATCH (No API Key) ---");

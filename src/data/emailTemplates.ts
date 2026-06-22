@@ -10,6 +10,8 @@ export const leadNotificationHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>New Lead Notification | Digipeak Agency</title>
+  <!-- Preheader: hidden preview text shown in inbox -->
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">🔥 Action required — a new qualified lead just submitted a request. Review and respond within 1 hour for best conversion rates.&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
   <style type="text/css">
     /* Resets & Base Styles */
     body {
@@ -180,18 +182,25 @@ export const leadNotificationHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.
                     </div>
                   </td>
                 </tr>
-                <!-- CTA Button -->
+                <!-- CTA Button: mailto uses lead email (replaced dynamically in route.ts) -->
                 <tr>
                   <td align="center">
                     <table border="0" cellpadding="0" cellspacing="0" style="margin: 8px 0;">
                       <tr>
                         <td class="btn-gradient" align="center" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);">
-                          <a href="mailto:alex@mercercreative.com?subject=Re:%20Digipeak%20Agency%20Inquiry" target="_blank" style="display: inline-block; font-size: 15px; font-weight: 700; color: #FFFFFF; text-decoration: none; padding: 14px 32px; text-align: center;">
-                            Reply to Lead
+                          <a href="mailto:alex@mercercreative.com?subject=Re%3A%20Your%20Digipeak%20Inquiry" target="_blank" style="display: inline-block; font-size: 15px; font-weight: 700; color: #FFFFFF; text-decoration: none; padding: 14px 32px; text-align: center;">
+                            ✉️ Reply to Lead
                           </a>
                         </td>
                       </tr>
                     </table>
+                  </td>
+                </tr>
+                <!-- Page URL source row -->
+                <tr>
+                  <td style="padding-top: 16px; padding-bottom: 8px;">
+                    <div style="font-size: 11px; font-weight: 600; text-transform: uppercase; color: #94A3B8; letter-spacing: 0.05em; margin-bottom: 4px;">Source Page URL</div>
+                    <div style="font-size: 13px; color: #6366F1; font-family: monospace;">Not provided</div>
                   </td>
                 </tr>
               </table>
@@ -227,6 +236,8 @@ export const clientAutoReplyHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>We've Received Your Inquiry | Digipeak Agency</title>
+  <!-- Preheader: hidden preview text shown in inbox -->
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">We've received your inquiry and our team is already reviewing your project. Expect a response within 12–24 hours.&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
   <style type="text/css">
     /* Resets & Base Styles */
     body {
@@ -376,6 +387,9 @@ export const clientAutoReplyHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
                 You received this email because you submitted an inquiry on the Digipeak Agency website.<br />
                 If this wasn't you, please disregard this email.
               </p>
+              <p style="font-size: 12px; color: #64748B; margin: 0 0 8px 0;">
+                Digipeak Agency &bull; hello@digipeak.agency
+              </p>
               <p style="font-size: 12px; color: #64748B; margin: 0;">
                 &copy; 2026 Digipeak Agency. All rights reserved.
               </p>
@@ -397,6 +411,8 @@ export const newsletterAlertHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>New Newsletter Subscriber | Digipeak Agency</title>
+  <!-- Preheader: hidden preview text -->
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">🎉 New subscriber added to the Digipeak Growth Insights list. Review and tag in CRM.&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
   <style type="text/css">
     /* Resets & Base Styles */
     body {
@@ -543,8 +559,8 @@ export const newsletterAlertHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0
                     <table border="0" cellpadding="0" cellspacing="0" style="margin: 8px 0;">
                       <tr>
                         <td class="btn-gradient" align="center" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);">
-                          <a href="https://digipeak.agency/admin/subscribers" target="_blank" style="display: inline-block; font-size: 15px; font-weight: 700; color: #FFFFFF; text-decoration: none; padding: 14px 32px; text-align: center;">
-                            View Subscriber List
+                          <a href="https://resend.com/audiences" target="_blank" style="display: inline-block; font-size: 15px; font-weight: 700; color: #FFFFFF; text-decoration: none; padding: 14px 32px; text-align: center;">
+                            View in Resend Audiences
                           </a>
                         </td>
                       </tr>
@@ -584,6 +600,8 @@ export const newsletterWelcomeHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Welcome to the Digipeak Growth Engine</title>
+  <!-- Preheader: hidden preview text shown in inbox -->
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">Welcome to Digipeak Growth Insights — technical SEO guides, AI automation case studies, and digital growth playbooks.&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
   <style type="text/css">
     /* Resets & Base Styles */
     body {
@@ -677,7 +695,7 @@ export const newsletterWelcomeHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1
                       Hello,
                     </p>
                     <p style="font-size: 15px; color: #CBD5E1; line-height: 1.6; margin: 0 0 20px 0;">
-                      Thank you for joining our growth community. At Digipeak, we do not send generic marketing fluff. Instead, we compile highly technical optimization guides, site speed blueprints, custom search schemas, and case studies detailing how we scale enterprise organic channels across the Gulf region.
+                      Thank you for joining our growth community. At Digipeak, we do not send generic marketing fluff. Instead, we compile highly technical optimization guides, site speed blueprints, AI automation frameworks, and case studies detailing how we scale enterprise organic channels across the GCC, UK, Canada, Germany, USA, and Australia.
                     </p>
                   </td>
                 </tr>
@@ -772,11 +790,13 @@ export const newsletterWelcomeHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1
           <tr>
             <td align="center" style="padding: 40px 20px 20px 20px;">
               <p style="font-size: 12px; color: #94A3B8; margin: 0 0 12px 0; line-height: 1.5;">
-                You are receiving this email because you subscribed to Digipeak updates.<br />
-                If you no longer want to receive technical insights, you can <a href="https://digipeak.agency/unsubscribe" style="color: #6366F1; text-decoration: none;">unsubscribe here</a>.
+                You are receiving this email because you subscribed to Digipeak Growth Insights.<br />
+                No longer interested? <a href="https://digipeak.agency/unsubscribe" style="color: #6366F1; text-decoration: none;">Unsubscribe here</a> — we respect your inbox.
+              </p>
+              <p style="font-size: 12px; color: #64748B; margin: 0 0 4px 0;">
+                Digipeak Agency &bull; hello@digipeak.agency
               </p>
               <p style="font-size: 12px; color: #64748B; margin: 0;">
-                Digipeak Agency &bull; App Data Dir: /Users/sajathahamed/.gemini/antigravity<br />
                 &copy; 2026 Digipeak Agency. All rights reserved.
               </p>
             </td>
@@ -797,6 +817,8 @@ export const proposalSentHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Tr
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Proposal is Ready | Digipeak Agency</title>
+  <!-- Preheader: hidden preview text shown in inbox -->
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">Your custom growth proposal is ready — review your tailored strategy, deliverables, and investment options inside.&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
   <style type="text/css">
     /* Resets & Base Styles */
     body {
@@ -978,7 +1000,10 @@ export const proposalSentHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Tr
             <td align="center" style="padding: 40px 20px 20px 20px;">
               <p style="font-size: 12px; color: #94A3B8; margin: 0 0 12px 0; line-height: 1.5;">
                 This email contains confidential commercial information intended solely for the recipient.<br />
-                Digipeak Agency &bull; Dubai Silicon Oasis, Dubai, UAE
+                Questions? Reply to this email or contact <a href="mailto:hello@digipeak.agency" style="color: #6366F1; text-decoration: none;">hello@digipeak.agency</a>
+              </p>
+              <p style="font-size: 12px; color: #64748B; margin: 0 0 4px 0;">
+                Digipeak Agency &bull; hello@digipeak.agency
               </p>
               <p style="font-size: 12px; color: #64748B; margin: 0;">
                 &copy; 2026 Digipeak Agency. All rights reserved.
@@ -1001,6 +1026,8 @@ export const meetingConfirmationHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meeting Confirmed | Digipeak Agency</title>
+  <!-- Preheader: hidden preview text shown in inbox -->
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">📅 Your strategy session is confirmed — here are your meeting details and join link. We look forward to speaking with you.&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
   <style type="text/css">
     /* Resets & Base Styles */
     body {
@@ -1215,6 +1242,8 @@ export const contactFormNotificationHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD X
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Form Submission | Digipeak Agency</title>
+  <!-- Preheader: hidden preview text -->
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">📥 New contact form submission received. Review sender details and respond promptly.&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;‌&nbsp;</div>
   <style type="text/css">
     /* Resets & Base Styles */
     body {
