@@ -51,7 +51,7 @@ export function PersonalIntro() {
                 With over 6 years of hands-on experience across the entire creative lifecycle, Sajadh specializes in graphic design, branding, logo design, social media design, website design, digital marketing, photography, videography, and personal branding. Rather than relying on generic corporate templates, he builds tailored visual identity systems and custom web experiences from the ground up.
               </p>
               <p>
-                Based in Colombo, Sri Lanka, he collaborates directly with businesses and creators across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, the <Link href="/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, New Zealand, and globally, turning brand objectives into high-performing digital platforms, cohesive visual campaigns, and authentic search engine authority.
+                Based in Colombo, Sri Lanka, he collaborates directly with businesses and creators across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, the <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, New Zealand, and globally, turning brand objectives into high-performing digital platforms, cohesive visual campaigns, and authentic search engine authority.
               </p>
             </motion.div>
           </div>

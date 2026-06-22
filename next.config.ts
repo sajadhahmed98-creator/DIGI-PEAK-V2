@@ -7,6 +7,17 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Legacy UAE/Dubai redirects to locations hub
+      {
+        source: "/uae",
+        destination: "/locations/uae",
+        permanent: true,
+      },
+      {
+        source: "/dubai",
+        destination: "/locations/uae/dubai",
+        permanent: true,
+      },
       // Clean up legacy .html extensions
       {
         source: "/:path*\\.html",

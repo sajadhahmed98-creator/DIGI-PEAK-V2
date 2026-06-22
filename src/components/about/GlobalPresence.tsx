@@ -78,7 +78,7 @@ export function GlobalPresence() {
               </span>
             </h2>
             <p className="text-muted text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
-              Headquartered in Sri Lanka, Digipeak works with businesses across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Singapore, Australia, New Zealand, and the United Kingdom, helping brands grow through digital marketing, web development, branding, AI solutions, and business automation.
+              Headquartered in Sri Lanka, Digipeak works with businesses across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Singapore, Australia, New Zealand, and the United Kingdom, helping brands grow through digital marketing, web development, branding, AI solutions, and business automation.
             </p>
           </motion.div>
         </div>
@@ -89,7 +89,7 @@ export function GlobalPresence() {
             const isHQ = country.type === "hq";
             const getLink = (name: string) => {
               if (name === "Qatar") return "/qatar";
-              if (name === "UAE") return "/uae";
+              if (name === "UAE") return "/locations/uae";
               if (name === "Saudi Arabia") return "/saudi-arabia";
               return null;
             };

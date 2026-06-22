@@ -8,7 +8,7 @@ import Link from "next/link";
 const faqs = [
   {
     question: <>What sets Digipeak apart from other agencies in <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link> & Dubai?</>,
-    answer: <>We don't rely on outdated tactics. Our approach combines AI-assisted data models and enterprise-grade technical optimisations to build strong organic visibility in highly competitive markets across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, the <Link href="/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, and <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>. We measure success by revenue generated, not just traffic.</>,
+    answer: <>We don't rely on outdated tactics. Our approach combines AI-assisted data models and enterprise-grade technical optimisations to build strong organic visibility in highly competitive markets across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, the <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, and <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>. We measure success by revenue generated, not just traffic.</>,
   },
   {
     question: "Do you offer Custom Web Design Services in Sydney and Auckland?",

@@ -19,7 +19,7 @@ const regions = [
   },
   {
     country: "United Arab Emirates",
-    href: "/uae",
+    href: "/locations/uae",
     description: "Strategic creative and branding solutions for key corporate regions.",
     hubs: [
       "Graphic Designer Dubai",

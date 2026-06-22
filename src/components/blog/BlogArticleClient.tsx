@@ -419,7 +419,7 @@ export function BlogArticleClient({ post, relatedPosts }: { post: Post; relatedP
                      <Link href="/qatar" className="text-xs text-muted hover:text-accent-primary transition-colors flex items-center gap-2">
                        <span className="w-1 h-1 rounded-full bg-accent-primary" /> Qatar (Doha)
                      </Link>
-                     <Link href="/uae" className="text-xs text-muted hover:text-accent-primary transition-colors flex items-center gap-2">
+                     <Link href="/locations/uae" className="text-xs text-muted hover:text-accent-primary transition-colors flex items-center gap-2">
                        <span className="w-1 h-1 rounded-full bg-accent-primary" /> UAE (Dubai)
                      </Link>
                    </div>

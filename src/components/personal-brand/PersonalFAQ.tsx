@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     question: "Can businesses work remotely with Sajadh Ahmed?",
-    answer: <>Absolutely. 100% of international projects are delivered remotely. Sajadh collaborates with businesses across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Singapore, Australia, New Zealand, and the United Kingdom using modern collaborative workflows (Slack, WhatsApp, Zoom, email, Figma, and Google Workspace) to ensure seamless delivery.</>,
+    answer: <>Absolutely. 100% of international projects are delivered remotely. Sajadh collaborates with businesses across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, Singapore, Australia, New Zealand, and the United Kingdom using modern collaborative workflows (Slack, WhatsApp, Zoom, email, Figma, and Google Workspace) to ensure seamless delivery.</>,
   },
   {
     question: "What industries does Sajadh Ahmed work with?",

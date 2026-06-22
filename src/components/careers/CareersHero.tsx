@@ -54,7 +54,7 @@ export function CareersHero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed mb-12"
         >
-          Join a network of talented marketers, designers, developers and innovators helping businesses grow across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, United Kingdom, Sri Lanka, Singapore, Australia and New Zealand.
+          Join a network of talented marketers, designers, developers and innovators helping businesses grow across <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>, <Link href="/locations/uae" className="underline hover:text-accent-primary transition-colors">UAE</Link>, <Link href="/saudi-arabia" className="underline hover:text-accent-primary transition-colors">Saudi Arabia</Link>, United Kingdom, Sri Lanka, Singapore, Australia and New Zealand.
         </motion.p>
 
         <motion.div

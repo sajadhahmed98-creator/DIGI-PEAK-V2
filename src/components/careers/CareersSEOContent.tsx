@@ -37,7 +37,7 @@ export function CareersSEOContent() {
                 <TrendingUp className="h-5 w-5 text-accent-primary" /> GCC Digital Careers & Market Trends
               </h3>
               <p className="text-sm">
-                The Middle East is experiencing an unprecedented surge in digital growth. Our teams in <Link href="/doha" className="underline hover:text-accent-primary transition-colors">Doha</Link> and <Link href="/dubai" className="underline hover:text-accent-primary transition-colors">Dubai</Link> manage enterprise SEO strategies and custom application development for major real estate groups and medical facilities.
+                The Middle East is experiencing an unprecedented surge in digital growth. Our teams in <Link href="/doha" className="underline hover:text-accent-primary transition-colors">Doha</Link> and <Link href="/locations/uae/dubai" className="underline hover:text-accent-primary transition-colors">Dubai</Link> manage enterprise SEO strategies and custom application development for major real estate groups and medical facilities.
               </p>
               <ul className="text-xs space-y-2.5 text-muted pl-4 list-disc">
                 <li><strong>Marketing Careers <Link href="/qatar" className="underline hover:text-accent-primary transition-colors">Qatar</Link>:</strong> Demand for Digital Marketing Executives and SEO Specialists in <Link href="/doha" className="underline hover:text-accent-primary transition-colors">Doha</Link> is at an all-time high as firms transition from traditional advertising.</li>
