@@ -152,8 +152,25 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
 
   const isAustralia = city.slug.startsWith("australia/");
   const isUK = city.slug.startsWith("uk/");
+  const isCanada = city.slug.startsWith("canada/");
 
-  const serviceLinks = isUK ? [
+  const serviceLinks = isCanada ? [
+    { title: "SEO Services", link: "/seo-services", desc: "Rank for commercial search terms and attract organic traffic." },
+    { title: "Local SEO Services", link: "/local-seo-services", desc: "Target localized search queries and dominate map pack rankings." },
+    { title: "PPC Management", link: "/ppc-management", desc: "ROI-driven pay-per-click campaigns targeting buyer intent keywords." },
+    { title: "Google Ads Management", link: "/google-ads-management", desc: "Expert Google Ads strategy designed for B2B pipeline growth." },
+    { title: "Web Design", link: "/web-design", desc: "Custom designed React and Next.js websites built for B2B brands." },
+    { title: "Web Development", link: "/web-development", desc: "High-performance headless web development with optimized Core Web Vitals." },
+    { title: "Shopify Development", link: "/shopify-development", desc: "High-converting Shopify architectures optimized for fast checkout." },
+    { title: "Ecommerce Development", link: "/ecommerce-development", desc: "Enterprise scale digital retail architectures engineered for conversion." },
+    { title: "AI Automation", link: "/ai-automation", desc: "Automate manual business tasks and scale operational workflows." },
+    { title: "AI Chatbot Development", link: "/ai-chatbot-development", desc: "Deploy intelligent customer support agents and lead triaging bots." },
+    { title: "CRM Automation", link: "/crm-automation", desc: "Integrate website lead channels with HubSpot, Salesforce, or Zoho." },
+    { title: "Social Media Marketing", link: "/social-media-marketing", desc: "Targeted organic and paid media campaigns to build brand visibility." },
+    { title: "Content Marketing", link: "/content-marketing", desc: "Authoritative semantic content clusters that secure long-term traffic." },
+    { title: "Email Marketing", link: "/email-marketing", desc: "Nurturing sequences and automated newsletters built for retention." },
+    { title: "Contact Us", link: "/contact", desc: "Coordinate a free B2B digital growth consultation with our strategy team." }
+  ] : isUK ? [
     { title: "SEO Services", link: "/seo-services", desc: "Rank for commercial search terms and attract organic traffic." },
     { title: "Local SEO Services", link: "/local-seo-services", desc: "Target localized search queries and dominate map pack rankings." },
     { title: "PPC Management", link: "/ppc-management", desc: "ROI-driven pay-per-click campaigns targeting buyer intent keywords." },
@@ -773,8 +790,8 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
                     </Link>
                   )}
                   {crossLinks.map(c => (
-                    <Link key={c.slug} href={c.slug === "australia" ? "/locations/australia" : (c.slug === "usa" ? "/locations/usa" : (c.slug === "uk" ? "/locations/uk" : `/locations/${c.slug}`))} className="text-slate-400 hover:text-white transition-colors">
-                      {c.name}{c.name.endsWith("Hub") || c.name.endsWith("Services") ? "" : (c.slug === "australia" || c.slug === "sri-lanka" || c.slug === "usa" || c.slug === "uk" ? " Hub" : " Services")}
+                    <Link key={c.slug} href={c.slug === "australia" ? "/locations/australia" : (c.slug === "usa" ? "/locations/usa" : (c.slug === "uk" ? "/locations/uk" : (c.slug === "canada" ? "/locations/canada" : `/locations/${c.slug}`)))} className="text-slate-400 hover:text-white transition-colors">
+                      {c.name}{c.name.endsWith("Hub") || c.name.endsWith("Services") ? "" : (c.slug === "australia" || c.slug === "sri-lanka" || c.slug === "usa" || c.slug === "uk" || c.slug === "canada" ? " Hub" : " Services")}
                     </Link>
                   ))}
                 </div>

@@ -1,0 +1,114 @@
+{
+  "slug": "canada/vancouver",
+  "name": "Vancouver",
+  "metaTitle": "Digital Marketing Agency Vancouver | SEO & Web Design | Digipeak",
+  "metaDescription": "Digipeak is a specialized Web Design & SEO company in Vancouver. We build fast Next.js websites, run targeted PPC, and configure AI business automation.",
+  "keywords": [
+    "Digital Marketing Agency Vancouver",
+    "SEO Company Vancouver",
+    "Web Design Vancouver",
+    "Startup Marketing Vancouver",
+    "AI Automation Vancouver",
+    "PPC Agency Vancouver",
+    "Shopify Development Vancouver",
+    "SaaS SEO Vancouver"
+  ],
+  "h1": "Digital Marketing, SEO & Web Design in Vancouver",
+  "badge": "Vancouver Startup & Tech Hub",
+  "suburbs": [
+    "Downtown Vancouver",
+    "Burnaby",
+    "Richmond",
+    "Surrey",
+    "Coquitlam",
+    "North Vancouver"
+  ],
+  "heroText": "Scale your digital acquisition with Vancouver's technical web design company, search optimization specialists, and startup marketing partner.",
+  "introTitle": "Vancouver's Partner for Technical Web Development & Search Dominance",
+  "introText": "Digipeak delivers high-performance digital marketing solutions from our Vancouver hub. Supporting technology startups, real estate developments, and tourism operators across Burnaby, Richmond, Surrey, and Coquitlam, we build server-rendered React frontends, execute data-driven SEO, and construct automated lead pipelines.\n\nVancouver's competitive tech landscape demands digital platforms that load instantly. We build fast websites using Next.js and Tailwind CSS, ensuring you pass Google&apos;s Core Web Vitals checks and convert high-intent organic visitors.",
+  "marketAnalysis": {
+    "title": "Why Vancouver Businesses Partner with Digipeak",
+    "challenges": "Vancouver tech startups, real estate projects, and professional firms operate in a crowded local market. Outdated content platforms slow down load times, increasing bounce rates and hurting organic visibility. Rising CPC rates on paid channels make generic ad setups expensive and unsustainable without structured bid management.",
+    "competition": "Competition for commercial search terms like 'SEO Company Vancouver' or 'Digital Marketing Agency Vancouver' is very high. Brands must build strong technical authority and local structured schemas to secure positions in local map packs and generative search outputs.",
+    "digitalOpportunities": "Headless web engineering gives Vancouver startups a distinct edge. Decoupling visual layouts from backend databases improves page-load speeds, protects client data, and enhances mobile conversions.",
+    "seoOpportunities": "Organic search is the most cost-effective customer acquisition channel in British Columbia. By structuring local intent landing pages, optimizing code, and earning high-trust editorial links, Vancouver firms can secure page-one rankings.",
+    "leadGenOpportunities": "By connecting conversion-focused forms with automated follow-up sequences, Vancouver B2B firms can qualify leads automatically and reduce administrative delays, allowing sales teams to close prospects faster."
+  },
+  "serviceFocus": {
+    "title": "Technical Digital Capabilities in Vancouver",
+    "services": [
+      {
+        "title": "Startup & B2B SEO",
+        "desc": "We build search visibility for Vancouver technology platforms and B2B service providers. Our campaigns focus on technical site architecture, keyword intent mapping, and authoritative link acquisition."
+      },
+      {
+        "title": "Custom Next.js Web Design",
+        "desc": "Our Vancouver web design team builds fast, custom-coded web architectures that deliver premium brand aesthetics, accessibility compliance, and optimized conversions."
+      },
+      {
+        "title": "AI & CRM Workflow Automation",
+        "desc": "We configure CRM platforms like HubSpot and build automated lead qualifiers to eliminate manual data entry, optimize routing, and scale administrative processes."
+      },
+      {
+        "title": "Paid Ads & PPC Management",
+        "desc": "Our paid media team structures targeted Google and social ad campaigns, utilizing custom landing pages, structured copy, and precise audience mapping to optimize ROAS."
+      }
+    ]
+  },
+  "seoBlockTitle": "Vancouver SEO Company & Headless Website Engineering",
+  "seoBlockParas": [
+    "Vancouver is a major hub for technology, startups, and creative services in Canada. Premium brands require digital assets that load instantly. At Digipeak, we engineer custom website design services in Vancouver using Next.js and React. We ensure every page loads fast on all mobile networks, supporting your organic visibility and decreasing bounce rates.",
+    "Search engine optimization is critical for long-term growth. As a dedicated SEO company in Vancouver, we perform deep keyword research to target queries with commercial buyer intent. We implement local schema, structure clear content blocks, and acquire authoritative backlinks from trusted Canadian domains to outperform competitors.",
+    "Our paid search campaigns capture active user searches. By linking paid ads to custom landing pages and automated CRM pipelines, we make sure no lead is lost. We provide comprehensive monthly reports tracking direct conversions, pipeline value, and return on investment."
+  ],
+  "faqs": [
+    {
+      "question": "How much does SEO cost in Vancouver?",
+      "answer": "SEO retainers in Vancouver typically range from $1,200 to $3,500 per month depending on sector competitiveness and keyword scope. We build transparent, custom-scoped proposals based on your business targets."
+    },
+    {
+      "question": "How much does digital marketing cost in Vancouver?",
+      "answer": "A full-service digital marketing campaign in Vancouver (covering web design, SEO, and paid ads) usually ranges between $2,500 and $7,500+ monthly. We structure pricing to align with measurable pipeline value."
+    },
+    {
+      "question": "How much does web design cost in Vancouver?",
+      "answer": "Custom web design and Next.js headless development in Vancouver ranges from $7,000 to $20,000+ depending on layout complexity, CRM integration requirements, page scale, and backend complexity."
+    },
+    {
+      "question": "How can AI automation help businesses in Vancouver?",
+      "answer": "AI automation helps Vancouver businesses streamline customer inquiries, qualify inbound B2B leads automatically, sync web data to CRMs, and eliminate manual administration overhead."
+    },
+    {
+      "question": "What is the best SEO agency in Vancouver?",
+      "answer": "The best SEO agency in Vancouver is one that focuses on pipeline revenue rather than vanity metrics. Digipeak combines advanced technical SEO with server-rendered Next.js development to build long-term, organic search authority."
+    },
+    {
+      "question": "How long does SEO take in Vancouver?",
+      "answer": "While technical fixes show indexing shifts within 30 to 45 days, achieving stable rankings for competitive commercial terms in Vancouver typically takes 4 to 6 months of continuous optimization, content expansion, and authority building."
+    },
+    {
+      "question": "Is local SEO worth it in Vancouver?",
+      "answer": "Yes. Local SEO places your business in local map packs and regional searches, connecting your brand with British Columbia business clients at the exact moment they search for your professional B2B services."
+    }
+  ],
+  "industries": [
+    {
+      "name": "Tech & Startups",
+      "iconName": "Cpu"
+    },
+    {
+      "name": "Real Estate Development",
+      "iconName": "Home"
+    },
+    {
+      "name": "Tourism & Hospitality",
+      "iconName": "Palmtree"
+    },
+    {
+      "name": "Professional Services",
+      "iconName": "Briefcase"
+    }
+  ],
+  "addressRegion": "British Columbia",
+  "addressCountry": "CA"
+}
