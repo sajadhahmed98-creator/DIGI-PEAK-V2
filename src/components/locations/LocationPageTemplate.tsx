@@ -51,6 +51,8 @@ export interface CityData {
   seoBlockParas: string[];
   faqs: { question: string; answer: string }[];
   industries: { name: string; iconName: string }[];
+  addressRegion?: string;
+  addressCountry?: string;
 }
 
 interface LocationPageTemplateProps {
@@ -120,8 +122,8 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
         "address": {
           "@type": "PostalAddress",
           "addressLocality": city.name,
-          "addressRegion": city.name === "Singapore" ? "Singapore" : "Australia",
-          "addressCountry": city.name === "Singapore" ? "SG" : "AU"
+          "addressRegion": city.addressRegion || (city.name === "Singapore" ? "Singapore" : "Australia"),
+          "addressCountry": city.addressCountry || (city.name === "Singapore" ? "SG" : "AU")
         }
       },
       {
@@ -742,8 +744,8 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
                     </Link>
                   )}
                   {crossLinks.map(c => (
-                    <Link key={c.slug} href={c.slug === "australia" ? "/locations/australia" : `/locations/${c.slug}`} className="text-slate-400 hover:text-white transition-colors">
-                      {c.name} {c.slug === "australia" || c.slug === "sri-lanka" ? "Hub" : "Services"}
+                    <Link key={c.slug} href={c.slug === "australia" ? "/locations/australia" : (c.slug === "usa" ? "/locations/usa" : `/locations/${c.slug}`)} className="text-slate-400 hover:text-white transition-colors">
+                      {c.name} {c.slug === "australia" || c.slug === "sri-lanka" || c.slug === "usa" ? "Hub" : "Services"}
                     </Link>
                   ))}
                 </div>
