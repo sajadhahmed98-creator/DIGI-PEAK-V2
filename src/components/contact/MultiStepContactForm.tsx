@@ -188,7 +188,8 @@ export function MultiStepContactForm() {
   };
 
   return (
-    <section id="lead-form" className="py-24 md:py-16 lg:py-24 px-6 bg-black relative overflow-hidden scroll-mt-24">
+    <>
+      <section id="lead-form" className="py-24 md:py-16 lg:py-24 px-6 bg-black relative overflow-hidden scroll-mt-24">
       {/* Background glow */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-accent-secondary/[0.015] rounded-full blur-[140px]" />
@@ -327,16 +328,17 @@ export function MultiStepContactForm() {
           </form>
         </div>
       </div>
+    </section>
 
-      {/* Success Modal */}
+      {/* Success Modal - Placed outside parent stacking context with z-[9999] */}
       <AnimatePresence>
         {showModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 bg-black/90 backdrop-blur-md overflow-y-auto">
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-6 bg-black/95 backdrop-blur-md overflow-y-auto">
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className="glass rounded-3xl border border-white/10 max-w-4xl w-full text-left relative overflow-hidden shadow-[0_0_50px_rgba(124,92,255,0.25)] flex flex-col md:flex-row my-8"
+              className="glass rounded-3xl border border-white/10 max-w-4xl w-full text-left relative overflow-hidden shadow-[0_0_50px_rgba(124,92,255,0.25)] flex flex-col md:flex-row my-8 z-[10000]"
             >
               {/* Close Button */}
               <button
@@ -515,6 +517,6 @@ export function MultiStepContactForm() {
           </div>
         )}
       </AnimatePresence>
-    </section>
+    </>
   );
 }

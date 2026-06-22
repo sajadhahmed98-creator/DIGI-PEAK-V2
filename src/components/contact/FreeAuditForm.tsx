@@ -20,6 +20,18 @@ export function FreeAuditForm() {
   const [submittedUser, setSubmittedUser] = useState({ name: "", email: "" });
   const [formStarted, setFormStarted] = useState(false);
 
+  // Lock background scroll when modal is active
+  useEffect(() => {
+    if (showModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showModal]);
+
   // Progressive Profiling: Load cached data
   useState(() => {
     if (typeof window !== "undefined") {
@@ -198,7 +210,8 @@ export function FreeAuditForm() {
   };
 
   return (
-    <div id="lead-form" className="relative z-10 mx-auto max-w-3xl scroll-mt-28">
+    <>
+      <div id="lead-form" className="relative z-10 mx-auto max-w-3xl scroll-mt-28">
       {/* Lead Capture Form Container */}
       <div className="glass p-6 md:p-10 rounded-3xl border border-white/10 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-accent-primary/[0.015] rounded-full blur-3xl pointer-events-none" />
@@ -317,16 +330,17 @@ export function FreeAuditForm() {
           </div>
         </form>
       </div>
+    </div>
 
-      {/* Success Modal */}
+      {/* Success Modal - Placed outside parent stacking context with z-[9999] */}
       <AnimatePresence>
         {showModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 md:p-6 bg-black/90 backdrop-blur-md overflow-y-auto">
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-6 bg-black/95 backdrop-blur-md overflow-y-auto">
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.95, opacity: 0 }}
-              className="glass rounded-3xl border border-white/10 max-w-4xl w-full text-left relative overflow-hidden shadow-[0_0_50px_rgba(124,92,255,0.25)] flex flex-col md:flex-row my-8"
+              className="glass rounded-3xl border border-white/10 max-w-4xl w-full text-left relative overflow-hidden shadow-[0_0_50px_rgba(124,92,255,0.25)] flex flex-col md:flex-row my-8 z-[10000]"
             >
               {/* Close Button */}
               <button
@@ -505,6 +519,6 @@ export function FreeAuditForm() {
           </div>
         )}
       </AnimatePresence>
-    </div>
+    </>
   );
 }
