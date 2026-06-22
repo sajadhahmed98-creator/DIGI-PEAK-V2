@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: true, message: "Subscribed successfully." });
     }
 
-    const emailSubject = `[NEWSLETTER SUBSCRIBE] New Growth Insights Subscriber`;
+    const emailSubject = `🎉 New Newsletter Subscriber | Digipeak Growth Insights`;
     const adminEmailHtml = newsletterAlertHtml
       .replace("subscriber@company.com", email)
       .replace("June 18, 2026", new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }))
@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
     if (process.env.RESEND_API_KEY) {
       // Send Admin Notification
       await resend.emails.send({
-        from: process.env.FROM_EMAIL || 'Digipeak Leads <leads@digipeak.agency>',
+        from: process.env.FROM_EMAIL || 'Digipeak Agency <hello@digipeak.agency>',
         to: [ADMIN_EMAIL],
         subject: emailSubject,
         html: adminEmailHtml,
@@ -74,7 +74,7 @@ export async function POST(req: NextRequest) {
       await resend.emails.send({
         from: process.env.FROM_EMAIL || 'Digipeak Agency <hello@digipeak.agency>',
         to: [email],
-        subject: "Welcome to Growth Insights - Digipeak Agency",
+        subject: "🎉 Welcome to Digipeak Growth Insights",
         html: userEmailHtml,
       });
     } else {

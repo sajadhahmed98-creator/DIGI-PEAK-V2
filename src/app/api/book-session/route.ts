@@ -30,8 +30,8 @@ export async function POST(req: NextRequest) {
     // Generate simulated Google Meet link
     const meetingLink = `https://meet.google.com/dgp-peak-${Math.random().toString(36).substring(2, 5)}-${Math.random().toString(36).substring(2, 6)}`;
     
-    const emailSubjectAdmin = `🎉 [MEETING BOOKED] Strategy Session Scheduled - ${name}`;
-    const emailSubjectUser = `Meeting Confirmed: Digipeak Strategy Session`;
+    const emailSubjectAdmin = `📅 Strategy Session Booked | ${name}`;
+    const emailSubjectUser = `📅 Your Strategy Call Is Confirmed — Digipeak Agency`;
 
     // 1. Dispatch Admin Notification Email
     const adminEmailHtml = `
@@ -174,7 +174,7 @@ export async function POST(req: NextRequest) {
     if (process.env.RESEND_API_KEY) {
       // Send Admin Notification
       await resend.emails.send({
-        from: process.env.FROM_EMAIL || 'Digipeak Leads <leads@digipeak.agency>',
+        from: process.env.FROM_EMAIL || 'Digipeak Agency <hello@digipeak.agency>',
         to: [ADMIN_EMAIL],
         subject: emailSubjectAdmin,
         html: adminEmailHtml,

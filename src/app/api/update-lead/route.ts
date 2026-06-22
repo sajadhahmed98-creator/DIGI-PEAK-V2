@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
 
     const { name, email, service, budget, timeline } = parseResult.data;
 
-    const emailSubject = `[LEAD QUALIFIED] Extra Info: ${name} (${email})`;
+    const emailSubject = `🔥 Lead Update | Qualification Details — ${name}`;
     const adminEmailHtml = `
       <div style="font-family: sans-serif; padding: 20px; color: #1e293b; background-color: #f8fafc;">
         <div style="max-w: 600px; margin: 0 auto; background-color: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
@@ -57,7 +57,7 @@ export async function POST(req: NextRequest) {
 
     if (process.env.RESEND_API_KEY) {
       await resend.emails.send({
-        from: process.env.FROM_EMAIL || 'Digipeak Leads <leads@digipeak.agency>',
+        from: process.env.FROM_EMAIL || 'Digipeak Agency <hello@digipeak.agency>',
         to: [ADMIN_EMAIL],
         subject: emailSubject,
         html: adminEmailHtml,

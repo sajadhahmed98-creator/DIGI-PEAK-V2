@@ -97,7 +97,7 @@ export async function POST(req: NextRequest) {
       destinationEmail = "careers@digipeak.agency";
     }
 
-    let emailSubject = `[NEW LEAD QUALIFIED] ${service || "General Inquiry"} - ${name}`;
+    let emailSubject = `🔥 New Lead Qualified | ${service || "General Inquiry"} — ${name}`;
     let adminEmailHtml = "";
 
     const metadataBlockHtml = `
@@ -109,7 +109,7 @@ export async function POST(req: NextRequest) {
     `;
 
     if (service === "Resource Download") {
-      emailSubject = `[NEW LEAD QUALIFIED] Resource Download - ${resourceName} [Score: ${leadScore || "Warm"}]: ${name}`;
+      emailSubject = `🔥 New Lead Qualified | Resource Download: ${resourceName} — ${name}`;
       adminEmailHtml = leadNotificationHtml
         .replace("New Website Lead Received", `New Lead: Resource Download`)
         .replace("High Priority &bull; Lead Score: 92/100", `Score: ${leadScore || "Warm"}`)
@@ -121,7 +121,7 @@ export async function POST(req: NextRequest) {
         .replace("$10,000 - $15,000 / mo", `Category: ${resourceCategory || "General"}`)
         .replace("We are relaunching our Next.js corporate platform and need expert B2B SEO schema setups, RTL localization, and PageSpeed optimizations to secure GCC organic search visibility.", `Downloaded resource: ${resourceName}. Industry: ${industry || "Not specified"}. IP Address: ${ip}. Source: ${leadSource || "Direct"}`);
     } else if (isPartnerLead) {
-      emailSubject = `[NEW B2B PARTNER LEAD] ${service} - ${name} [${company || "No Company"}]`;
+      emailSubject = `🤝 New Partner Lead | ${service} — ${name} (${company || "No Company"})`;
       adminEmailHtml = contactFormNotificationHtml
         .replace("Contact Form Submission", "New Partner Application")
         .replace("General Inquiry &bull; Status: Open", `Source: ${leadSource || "Partnership Page"}`)
@@ -199,7 +199,7 @@ export async function POST(req: NextRequest) {
     if (process.env.RESEND_API_KEY) {
       // Send Admin Notification
       await resend.emails.send({
-        from: process.env.FROM_EMAIL || 'Digipeak Leads <leads@digipeak.agency>',
+        from: process.env.FROM_EMAIL || 'Digipeak Agency <hello@digipeak.agency>',
         to: [destinationEmail],
         subject: emailSubject,
         html: adminEmailHtml,
@@ -210,7 +210,7 @@ export async function POST(req: NextRequest) {
       await resend.emails.send({
         from: process.env.FROM_EMAIL || 'Digipeak Agency <hello@digipeak.agency>',
         to: [email],
-        subject: "We Received Your Request - Digipeak Agency",
+        subject: "📥 We Received Your Request — Digipeak Agency",
         html: userEmailHtml,
       });
     } else {
