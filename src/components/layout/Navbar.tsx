@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
@@ -74,7 +75,7 @@ export function Navbar() {
         className="mx-auto flex max-w-7xl items-center justify-between rounded-full py-2.5 border transition-colors duration-500 relative z-40"
       >
         <Link href="/" className="flex items-center gap-2.5 font-heading text-lg font-bold tracking-tight text-foreground transition-opacity hover:opacity-90 pl-2">
-          <img src="/logo.png" alt="Digipeak Logo" className="w-6 h-6 object-contain" />
+          <Image src="/logo.png" alt="Digipeak Logo" width={24} height={24} className="object-contain" />
           <span>Digipeak <span className="text-gradient-primary">Agency</span></span>
         </Link>
         

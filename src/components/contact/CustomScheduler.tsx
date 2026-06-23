@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, Clock, Globe, CheckCircle2, ChevronRight, AlertCircle, ArrowRight } from "lucide-react";
+import { Turnstile } from "@/components/shared/Turnstile";
 
 interface CustomSchedulerProps {
   userName: string;
@@ -23,6 +24,7 @@ export function CustomScheduler({ userName, userEmail, funnelName, onSuccess }: 
   const [timezone, setTimezone] = useState<string>("Asia/Dubai");
   const [bookingState, setBookingState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState<string>("");
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   // Define standard slots
   const timeSlots: TimeSlot[] = [
@@ -104,7 +106,8 @@ export function CustomScheduler({ userName, userEmail, funnelName, onSuccess }: 
           date: displayDate,
           time: selectedTime,
           timezone,
-          funnel: funnelName
+          funnel: funnelName,
+          turnstileToken
         }),
       });
 
@@ -114,6 +117,24 @@ export function CustomScheduler({ userName, userEmail, funnelName, onSuccess }: 
       }
 
       setBookingState('success');
+      
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        let eventName = "booking_confirmed";
+        const fn = String(funnelName).toLowerCase();
+        if (fn.includes("proposal")) {
+          eventName = "proposal_booked";
+        } else if (fn.includes("audit")) {
+          eventName = "audit_booked";
+        } else if (fn.includes("digiai") || fn.includes("digi_ai") || fn.includes("chat") || fn.includes("widget")) {
+          eventName = "digiai_booked";
+        }
+        (window as any).dataLayer.push({
+          event: eventName,
+          funnel: funnelName,
+          lead_email: userEmail
+        });
+      }
+
       if (onSuccess) onSuccess();
     } catch (err: any) {
       console.error("Booking error:", err);
@@ -283,12 +304,17 @@ export function CustomScheduler({ userName, userEmail, funnelName, onSuccess }: 
               </div>
             )}
 
+            {/* Turnstile Spam Protection */}
+            <div className="py-2">
+              <Turnstile onVerify={setTurnstileToken} />
+            </div>
+
             {/* Actions */}
             <div className="pt-4 border-t border-white/5">
               <button
                 type="button"
                 onClick={handleBooking}
-                disabled={!selectedDate || !selectedTime || bookingState === 'submitting'}
+                disabled={!selectedDate || !selectedTime || !turnstileToken || bookingState === 'submitting'}
                 className="w-full flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl font-heading text-sm font-bold transition-all relative overflow-hidden group bg-gradient-to-r from-accent-primary to-accent-secondary text-white shadow-[0_4px_20px_rgba(124,92,255,0.3)] hover:brightness-110 disabled:opacity-40 disabled:pointer-events-none disabled:shadow-none"
               >
                 {bookingState === 'submitting' ? (

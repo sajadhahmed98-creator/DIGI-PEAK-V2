@@ -153,8 +153,9 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
   const isAustralia = city.slug.startsWith("australia/");
   const isUK = city.slug.startsWith("uk/");
   const isCanada = city.slug.startsWith("canada/");
+  const isGermany = city.slug.startsWith("germany/");
 
-  const serviceLinks = isCanada ? [
+  const serviceLinks = (isCanada || isGermany) ? [
     { title: "SEO Services", link: "/seo-services", desc: "Rank for commercial search terms and attract organic traffic." },
     { title: "Local SEO Services", link: "/local-seo-services", desc: "Target localized search queries and dominate map pack rankings." },
     { title: "PPC Management", link: "/ppc-management", desc: "ROI-driven pay-per-click campaigns targeting buyer intent keywords." },
@@ -337,7 +338,7 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
               className="mt-16 pt-8 border-t border-white/5 max-w-3.5xl mx-auto"
             >
               <div className="flex flex-wrap justify-center items-center gap-2.5">
-                <span className="text-[10px] font-mono text-slate-500 uppercase tracking-widest mr-2.5 flex items-center gap-1">
+                <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest mr-2.5 flex items-center gap-1">
                   <MapPin className="w-3 h-3 text-accent-primary" /> Districts:
                 </span>
                 {city.suburbs.map(sub => (
@@ -356,23 +357,23 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
             <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
               <div>
                 <span className="block text-3xl md:text-4.5xl font-bold tracking-tight text-white mb-1.5 font-heading">14+</span>
-                <span className="block text-[10px] font-mono uppercase tracking-widest text-slate-500">B2B Capabilities</span>
+                <span className="block text-[10px] font-mono uppercase tracking-widest text-slate-400">B2B Capabilities</span>
               </div>
               <div className="border-l border-white/5 pl-4 md:pl-0 md:border-l-0">
                 <span className="block text-3xl md:text-4.5xl font-bold tracking-tight text-white mb-1.5 font-heading">8+</span>
-                <span className="block text-[10px] font-mono uppercase tracking-widest text-slate-500">Global Hubs</span>
+                <span className="block text-[10px] font-mono uppercase tracking-widest text-slate-400">Global Hubs</span>
               </div>
               <div className="border-t border-white/5 pt-4 md:pt-0 md:border-t-0 md:border-l md:border-white/5">
                 <span className="block text-3xl md:text-4.5xl font-bold tracking-tight text-white mb-1.5 font-heading">99.9%</span>
-                <span className="block text-[10px] font-mono uppercase tracking-widest text-slate-500">Uptime SLA</span>
+                <span className="block text-[10px] font-mono uppercase tracking-widest text-slate-400">Uptime SLA</span>
               </div>
               <div className="border-l border-white/5 pl-4 pt-4 md:pt-0 md:border-l-0 md:border-r md:border-white/5">
                 <span className="block text-3xl md:text-4.5xl font-bold tracking-tight text-white mb-1.5 font-heading">AI-Core</span>
-                <span className="block text-[10px] font-mono uppercase tracking-widest text-slate-500">Custom LLM Flows</span>
+                <span className="block text-[10px] font-mono uppercase tracking-widest text-slate-400">Custom LLM Flows</span>
               </div>
               <div className="col-span-2 md:col-span-1 border-t border-white/5 pt-4 md:pt-0 md:border-t-0">
                 <span className="block text-3xl md:text-4.5xl font-bold tracking-tight text-white mb-1.5 font-heading">B2B Core</span>
-                <span className="block text-[10px] font-mono uppercase tracking-widest text-slate-500">Enterprise Focus</span>
+                <span className="block text-[10px] font-mono uppercase tracking-widest text-slate-400">Enterprise Focus</span>
               </div>
             </div>
           </div>
@@ -423,7 +424,7 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
                             <span className="font-bold text-sm text-white transition-colors">{ind.name}</span>
                           </div>
                         </div>
-                        <ArrowUpRight className="w-3.5 h-3.5 text-slate-500 group-hover:text-accent-primary transition-colors" />
+                        <ArrowUpRight className="w-3.5 h-3.5 text-slate-400 group-hover:text-accent-primary transition-colors" />
                       </div>
                     );
                   })}
@@ -555,7 +556,7 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
 
             {/* Quick Links Matrix */}
             <div className="pt-12 border-t border-white/5">
-              <h3 className="font-mono text-[10px] text-slate-500 uppercase tracking-widest text-center mb-8">Quick Service Portals</h3>
+              <h3 className="font-mono text-[10px] text-slate-400 uppercase tracking-widest text-center mb-8">Quick Service Portals</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {serviceLinks.map((svc) => (
                   <Link 
@@ -759,7 +760,7 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
             </div>
             
             {/* CTA Trust badging */}
-            <div className="mt-12 pt-8 border-t border-white/5 flex justify-center items-center gap-8 text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+            <div className="mt-12 pt-8 border-t border-white/5 flex justify-center items-center gap-8 text-[10px] font-mono text-slate-400 uppercase tracking-widest">
               <span>SLA Secure Data</span>
               <span className="w-1.5 h-1.5 bg-white/10 rounded-full" />
               <span>NDAs Enforced</span>
@@ -772,7 +773,7 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
         {/* Cross-linking other location hubs */}
         <section className="py-16 md:py-12 md:py-20 lg:py-24 px-6 bg-white/[0.002]">
           <div className="mx-auto max-w-7xl">
-            <h3 className="font-mono text-[10px] text-slate-500 uppercase tracking-widest mb-8 text-center">
+            <h3 className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-8 text-center">
               Regional Authority Hub Network
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -790,8 +791,8 @@ export function LocationPageTemplate({ city, allLocations, isCountryHub = false 
                     </Link>
                   )}
                   {crossLinks.map(c => (
-                    <Link key={c.slug} href={c.slug === "australia" ? "/locations/australia" : (c.slug === "usa" ? "/locations/usa" : (c.slug === "uk" ? "/locations/uk" : (c.slug === "canada" ? "/locations/canada" : `/locations/${c.slug}`)))} className="text-slate-400 hover:text-white transition-colors">
-                      {c.name}{c.name.endsWith("Hub") || c.name.endsWith("Services") ? "" : (c.slug === "australia" || c.slug === "sri-lanka" || c.slug === "usa" || c.slug === "uk" || c.slug === "canada" ? " Hub" : " Services")}
+                    <Link key={c.slug} href={c.slug === "australia" ? "/locations/australia" : (c.slug === "usa" ? "/locations/usa" : (c.slug === "uk" ? "/locations/uk" : (c.slug === "canada" ? "/locations/canada" : (c.slug === "germany" ? "/locations/germany" : `/locations/${c.slug}`))))} className="text-slate-400 hover:text-white transition-colors">
+                      {c.name}{c.name.endsWith("Hub") || c.name.endsWith("Services") ? "" : (c.slug === "australia" || c.slug === "sri-lanka" || c.slug === "usa" || c.slug === "uk" || c.slug === "canada" || c.slug === "germany" ? " Hub" : " Services")}
                     </Link>
                   ))}
                 </div>

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, Globe, User, Briefcase, Mail, Phone, X, Loader2, Calendar, AlertTriangle, ChevronRight } from "lucide-react";
 import { trackClarityEvent } from "@/components/analytics/MicrosoftClarity";
 import { CustomScheduler } from "./CustomScheduler";
+import { Turnstile } from "@/components/shared/Turnstile";
 
 export function FreeAuditForm() {
   const [formData, setFormData] = useState({
@@ -19,6 +20,7 @@ export function FreeAuditForm() {
   const [showModal, setShowModal] = useState(false);
   const [submittedUser, setSubmittedUser] = useState({ name: "", email: "" });
   const [formStarted, setFormStarted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   // Lock background scroll when modal is active
   useEffect(() => {
@@ -95,6 +97,9 @@ export function FreeAuditForm() {
     if (!formStarted) {
       setFormStarted(true);
       trackClarityEvent("audit_started");
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({ event: "audit_started" });
+      }
     }
   };
 
@@ -120,6 +125,7 @@ export function FreeAuditForm() {
           leadSource: "Free Website Audit Form",
           pageUrl: typeof window !== "undefined" ? window.location.href : "",
           details: `Requested a Free Growth Audit for domain: ${formData.website}`,
+          turnstileToken,
         }),
       });
 
@@ -131,6 +137,10 @@ export function FreeAuditForm() {
       // Track successful submission events in Microsoft Clarity
       trackClarityEvent("audit_submitted");
       trackClarityEvent("scheduler_opened");
+
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({ event: "audit_submitted", lead_email: formData.email });
+      }
 
       // Set active funnel for custom scheduler
       sessionStorage.setItem("active_funnel", "audit");
@@ -291,7 +301,7 @@ export function FreeAuditForm() {
               <div className="flex flex-col">
                 <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono flex items-center gap-1.5">
                   <Briefcase className="w-3.5 h-3.5 text-accent-primary" />
-                  Business Name <span className="text-slate-500 font-normal lowercase">(optional)</span>
+                  Business Name <span className="text-slate-400 font-normal lowercase">(optional)</span>
                 </label>
                 <input
                   type="text"
@@ -307,10 +317,13 @@ export function FreeAuditForm() {
 
           {/* Submit Button */}
           <div className="pt-4">
+            {/* Turnstile Spam Protection */}
+            <Turnstile onVerify={setTurnstileToken} />
+
             <button
               type="submit"
-              disabled={loading}
-              className="w-full btn-primary py-4 flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-wider cursor-pointer"
+              disabled={loading || !turnstileToken}
+              className="w-full btn-primary py-4 flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-wider cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>
@@ -324,7 +337,7 @@ export function FreeAuditForm() {
                 </>
               )}
             </button>
-            <div className="text-center mt-3 text-[10px] text-slate-500 tracking-wide uppercase font-mono">
+            <div className="text-center mt-3 text-[10px] text-slate-400 tracking-wide uppercase font-mono">
               ✓ Includes Free Strategy Review Session
             </div>
           </div>
@@ -429,7 +442,7 @@ export function FreeAuditForm() {
                                     <span className="font-bold text-white group-hover:text-accent-primary transition-colors block">
                                       {opt.label}
                                     </span>
-                                    <span className="text-[10px] text-slate-500 block mt-0.5">{opt.desc}</span>
+                                    <span className="text-[10px] text-slate-400 block mt-0.5">{opt.desc}</span>
                                   </button>
                                 ))}
                               </div>
@@ -501,7 +514,7 @@ export function FreeAuditForm() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-white/5">
-                  <p className="text-[10px] text-slate-500 italic">
+                  <p className="text-[10px] text-slate-400 italic">
                     Prefer email? We'll deliver the standard blueprint to your inbox within 12–24 hours.
                   </p>
                 </div>

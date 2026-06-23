@@ -92,7 +92,7 @@ export function PortfolioPlaceholder() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.25 }}
-            className="mb-12 text-base text-muted/70 max-w-xl mx-auto italic"
+            className="mb-12 text-base text-slate-200 max-w-xl mx-auto italic"
           >
             No placeholder work. No fictional projects. Only verified client success.
           </motion.p>

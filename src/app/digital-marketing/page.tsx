@@ -164,7 +164,7 @@ export default function DigitalMarketingPage() {
       <GlobalLocations 
         title="Global" 
         subtitle="Marketing Reach." 
-        description="We engineer high-performance customer acquisition engines tailored to dominate enterprise sectors across the Middle East, APAC, and Europe."
+        description="We engineer high-performance customer acquisition engines tailored to scale customer acquisition across the Middle East, APAC, and Europe."
       />
       <MarketingFAQ />
       

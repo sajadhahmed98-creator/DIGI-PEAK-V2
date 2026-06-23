@@ -121,7 +121,7 @@ export default function QatarPage() {
           },
           {
             "question": "How does your SEO strategy target the local Qatar market?",
-            "answer": "We build localized keyword maps targeting high-intent search volumes in Doha and across Qatar. Our SEO work includes writing custom schema structures, managing Google Business Profiles, optimizing localized content, and running local citation campaigns to ensure your company dominates search engine result pages (SERPs)."
+            "answer": "We build localized keyword maps targeting high-intent search volumes in Doha and across Qatar. Our SEO work includes writing custom schema structures, managing Google Business Profiles, optimizing localized content, and running local citation campaigns to ensure your company secures high rankings on search engine result pages (SERPs)."
           },
           {
             "question": "How do we get started with a custom proposal?",

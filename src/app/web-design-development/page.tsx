@@ -133,8 +133,8 @@ export default function WebDesignPage() {
       <WebPortfolio />
       <GlobalLocations 
         title="Global" 
-        subtitle="Web Dominance." 
-        description="We engineer high-performance web platforms tailored to dominate enterprise sectors across the Middle East, APAC, and Europe."
+        subtitle="Web Authority." 
+        description="We engineer high-performance web platforms tailored to scale enterprise platforms across the Middle East, APAC, and Europe."
       />
       <WebFAQ />
       

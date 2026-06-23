@@ -1,6 +1,8 @@
 import { MetadataRoute } from 'next'
 import postsData from '@/data/blog_posts.json'
 import resourcesData from '@/data/resources.json'
+import caseStudiesData from '@/data/case_studies.json'
+
 
 const servicePages = [
   'seo-services',
@@ -42,6 +44,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
+  const caseStudiesRoutes: MetadataRoute.Sitemap = caseStudiesData.map((cs) => ({
+    url: `https://www.digipeak.agency/case-studies/${cs.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.85,
+  }))
+
   return [
     {
       url: 'https://www.digipeak.agency',
@@ -78,8 +87,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://www.digipeak.agency/case-studies',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.85,
     },
+    ...caseStudiesRoutes,
     {
       url: 'https://www.digipeak.agency/partners',
       lastModified: new Date(),
@@ -159,6 +169,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
+    },
+    {
+      url: 'https://www.digipeak.agency/proposal',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: 'https://www.digipeak.agency/digiai',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.85,
     },
     {
       url: 'https://www.digipeak.agency/author/sajadh-ahmed',

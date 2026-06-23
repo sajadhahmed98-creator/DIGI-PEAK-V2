@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, Globe, User, Briefcase, Mail, Phone, X, Loader2, Calendar, ChevronRight, FileText } from "lucide-react";
 import { trackClarityEvent } from "@/components/analytics/MicrosoftClarity";
 import { CustomScheduler } from "./CustomScheduler";
+import { Turnstile } from "@/components/shared/Turnstile";
 
 export function ProposalForm() {
   const [formData, setFormData] = useState({
@@ -22,6 +23,7 @@ export function ProposalForm() {
   const [showModal, setShowModal] = useState(false);
   const [submittedUser, setSubmittedUser] = useState({ name: "", email: "" });
   const [formStarted, setFormStarted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   // Lock background scroll when modal is active
   useEffect(() => {
@@ -84,6 +86,9 @@ export function ProposalForm() {
     if (!formStarted) {
       setFormStarted(true);
       trackClarityEvent("proposal_started");
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({ event: "proposal_started" });
+      }
     }
   };
 
@@ -120,6 +125,7 @@ export function ProposalForm() {
           pageUrl: typeof window !== "undefined" ? window.location.href : "",
           details: `Project Details/Notes:
 ${formData.details || "None provided."}`,
+          turnstileToken,
         }),
       });
 
@@ -131,6 +137,10 @@ ${formData.details || "None provided."}`,
       // Track successful submission events in Microsoft Clarity
       trackClarityEvent("proposal_submitted");
       trackClarityEvent("scheduler_opened");
+
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({ event: "proposal_submitted", lead_email: formData.email });
+      }
 
       // Set active funnel for custom scheduler
       sessionStorage.setItem("active_funnel", "proposal");
@@ -275,7 +285,7 @@ ${formData.details || "None provided."}`,
                   onChange={handleInputChange}
                   className="w-full bg-[#0b0b0f] border border-white/10 rounded-xl px-3 py-3.5 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
                 >
-                  <option value="" disabled className="text-slate-500">Select a service...</option>
+                  <option value="" disabled className="text-slate-400">Select a service...</option>
                   {serviceOptions.map((s) => (
                     <option key={s} value={s} className="bg-[#0b0b0f] text-white">{s}</option>
                   ))}
@@ -296,7 +306,7 @@ ${formData.details || "None provided."}`,
                 onChange={handleInputChange}
                 className="w-full bg-[#0b0b0f] border border-white/10 rounded-xl px-3 py-3.5 text-white focus:outline-none focus:border-accent-primary/50 focus:bg-white/[0.05] transition-all text-sm cursor-pointer"
               >
-                <option value="" disabled className="text-slate-500">Select budget range...</option>
+                <option value="" disabled className="text-slate-400">Select budget range...</option>
                 {budgetOptions.map((b) => (
                   <option key={b} value={b} className="bg-[#0b0b0f] text-white">{b}</option>
                 ))}
@@ -320,12 +330,15 @@ ${formData.details || "None provided."}`,
             </div>
           </div>
 
+          {/* Turnstile Spam Protection */}
+          <Turnstile onVerify={setTurnstileToken} />
+
           {/* Submit Button */}
           <div className="pt-4">
             <button
               type="submit"
-              disabled={loading}
-              className="w-full btn-primary py-4 flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-wider cursor-pointer"
+              disabled={loading || !turnstileToken}
+              className="w-full btn-primary py-4 flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-wider cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>
@@ -409,7 +422,7 @@ ${formData.details || "None provided."}`,
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-white/5">
-                  <p className="text-[10px] text-slate-500 italic">
+                  <p className="text-[10px] text-slate-400 italic">
                     Prefer email? We'll deliver the first draft proposal to your inbox within 24–48 hours.
                   </p>
                 </div>

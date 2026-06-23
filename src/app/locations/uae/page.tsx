@@ -460,7 +460,7 @@ export default function UaeHubPage() {
                 >
                   <div>
                     <div className="h-12 w-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-6 group-hover:bg-accent-primary/[0.03] group-hover:border-accent-primary/25 transition-colors">
-                      <MapPin className="w-5 h-5 text-slate-500 group-hover:text-accent-primary transition-colors" />
+                      <MapPin className="w-5 h-5 text-slate-400 group-hover:text-accent-primary transition-colors" />
                     </div>
                     <h3 className="font-heading text-2xl font-bold text-white mb-3 tracking-tight">
                       {city.name} Services
@@ -500,7 +500,7 @@ export default function UaeHubPage() {
               <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div>
                   <span className="text-xs text-white font-bold block font-heading">Author Byline</span>
-                  <span className="text-xs text-slate-500 font-mono">Sajadh Ahmed — Digital Marketing Strategist & Graphic Designer</span>
+                  <span className="text-xs text-slate-400 font-mono">Sajadh Ahmed — Digital Marketing Strategist & Graphic Designer</span>
                 </div>
                 <div className="flex items-center gap-1.5 text-xs text-accent-primary font-mono">
                   <Star className="w-4 h-4 fill-accent-primary" />

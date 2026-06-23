@@ -367,7 +367,7 @@ export default function UKLocationsHubPage() {
                       <span className="font-mono text-xs font-bold text-accent-primary uppercase tracking-widest bg-accent-primary/5 border border-accent-primary/20 px-3 py-1 rounded-full">
                         {item.keyword}
                       </span>
-                      <span className="font-mono text-xs text-slate-500 font-bold group-hover:text-accent-secondary transition-colors">
+                      <span className="font-mono text-xs text-slate-400 font-bold group-hover:text-accent-secondary transition-colors">
                         0{idx + 1}
                       </span>
                     </div>
@@ -463,7 +463,7 @@ export default function UKLocationsHubPage() {
               </Link>
             </div>
             
-            <div className="mt-12 pt-8 border-t border-white/5 flex justify-center items-center gap-8 text-[10px] font-mono text-slate-500 uppercase tracking-widest">
+            <div className="mt-12 pt-8 border-t border-white/5 flex justify-center items-center gap-8 text-[10px] font-mono text-slate-400 uppercase tracking-widest">
               <span>SLA Secure Data</span>
               <span className="w-1.5 h-1.5 bg-white/10 rounded-full" />
               <span>NDAs Enforced</span>
@@ -476,7 +476,7 @@ export default function UKLocationsHubPage() {
         {/* 8. Cross-Linking Regional Hub Network */}
         <section className="py-16 md:py-24 px-6 bg-transparent relative z-10">
           <div className="mx-auto max-w-7xl">
-            <h3 className="font-mono text-[10px] text-slate-500 uppercase tracking-widest mb-8 text-center">
+            <h3 className="font-mono text-[10px] text-slate-400 uppercase tracking-widest mb-8 text-center">
               Regional Authority Hub Network
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">

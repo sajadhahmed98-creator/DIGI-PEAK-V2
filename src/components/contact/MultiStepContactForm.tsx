@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Send, CheckCircle2, Globe, User, Briefcase, Mail, Phone, X, Loader2, Calendar, AlertTriangle, ChevronRight } from "lucide-react";
 import { trackClarityEvent } from "@/components/analytics/MicrosoftClarity";
 import { CustomScheduler } from "./CustomScheduler";
+import { Turnstile } from "@/components/shared/Turnstile";
 
 export function MultiStepContactForm() {
   const [formData, setFormData] = useState({
@@ -20,6 +21,7 @@ export function MultiStepContactForm() {
   const [showModal, setShowModal] = useState(false);
   const [submittedUser, setSubmittedUser] = useState({ name: "", email: "" });
   const [formStarted, setFormStarted] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState("");
 
   // Post-submission qualification wizard state
   const [qualifierStep, setQualifierStep] = useState(1);
@@ -52,6 +54,9 @@ export function MultiStepContactForm() {
     if (!formStarted) {
       setFormStarted(true);
       trackClarityEvent("form_started");
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({ event: "audit_started" });
+      }
     }
   };
 
@@ -108,6 +113,7 @@ export function MultiStepContactForm() {
           leadSource: "B2B Growth Audit Form",
           pageUrl: typeof window !== "undefined" ? window.location.href : "",
           details: `Requested a Free Growth Audit for domain: ${formData.website}`,
+          turnstileToken,
         }),
       });
 
@@ -119,6 +125,10 @@ export function MultiStepContactForm() {
       // Track successful submission events in Microsoft Clarity
       trackClarityEvent("form_submitted");
       trackClarityEvent("scheduler_opened");
+
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({ event: "audit_submitted", lead_email: formData.email });
+      }
 
       // Save user details for custom scheduler pre-filling
       setSubmittedUser({ name: formData.name, email: formData.email });
@@ -288,7 +298,7 @@ export function MultiStepContactForm() {
                 <div className="flex flex-col">
                   <label className="text-xs font-bold text-white uppercase tracking-wider mb-2 font-mono flex items-center gap-1.5">
                     <Briefcase className="w-3.5 h-3.5 text-accent-primary" />
-                    Business Name <span className="text-slate-500 font-normal lowercase">(optional)</span>
+                    Business Name <span className="text-slate-400 font-normal lowercase">(optional)</span>
                   </label>
                   <input
                     type="text"
@@ -304,10 +314,13 @@ export function MultiStepContactForm() {
 
             {/* Submit Button */}
             <div className="pt-4">
+              {/* Turnstile Spam Protection */}
+              <Turnstile onVerify={setTurnstileToken} />
+
               <button
                 type="submit"
-                disabled={loading}
-                className="w-full btn-primary py-4 flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-wider cursor-pointer"
+                disabled={loading || !turnstileToken}
+                className="w-full btn-primary py-4 flex items-center justify-center gap-2 font-bold text-xs uppercase tracking-wider cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? (
                   <>
@@ -321,7 +334,7 @@ export function MultiStepContactForm() {
                   </>
                 )}
               </button>
-              <div className="text-center mt-3 text-[10px] text-slate-500 tracking-wide uppercase font-mono">
+              <div className="text-center mt-3 text-[10px] text-slate-400 tracking-wide uppercase font-mono">
                 ✓ Includes Free Strategy Review Session
               </div>
             </div>
@@ -427,7 +440,7 @@ export function MultiStepContactForm() {
                                     <span className="font-bold text-white group-hover:text-accent-primary transition-colors block">
                                       {opt.label}
                                     </span>
-                                    <span className="text-[10px] text-slate-500 block mt-0.5">{opt.desc}</span>
+                                    <span className="text-[10px] text-slate-400 block mt-0.5">{opt.desc}</span>
                                   </button>
                                 ))}
                               </div>
@@ -499,7 +512,7 @@ export function MultiStepContactForm() {
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-white/5">
-                  <p className="text-[10px] text-slate-500 italic">
+                  <p className="text-[10px] text-slate-400 italic">
                     Prefer email? We'll deliver the standard blueprint to your inbox within 12–24 hours.
                   </p>
                 </div>

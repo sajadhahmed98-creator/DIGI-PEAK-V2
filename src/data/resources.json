@@ -3,21 +3,28 @@
     "id": "gcc-local-seo-checklist",
     "slug": "gcc-local-seo-checklist",
     "category": "seo",
-    "title": "GCC B2B Local SEO Checklist",
-    "description": "The ultimate technical checklist to optimize your business profiles, map localized keyword silos, and dominate organic search visibility in Dubai, Doha, and Riyadh.",
+    "title": "GCC Local SEO Checklist",
+    "description": "The ultimate search optimization checklist engineered to scale visibility across Gulf markets, including Google Business Profile optimization, localized citation structures, and RTL site speed.",
     "downloadType": "PDF",
-    "downloadUrl": "/files/gcc-local-seo-checklist.pdf",
-    "seoTitle": "GCC B2B Local SEO Checklist & Audit Template | Digipeak",
-    "seoDescription": "Download our free GCC B2B Local SEO audit checklist. Optimize your search architecture, local citations, and RTL schemas to rank in Dubai, Doha, and Riyadh.",
-    "highIntent": false,
+    "downloadUrl": "/api/resources/gcc-local-seo-checklist/download",
+    "seoTitle": "GCC Local SEO Checklist: Google Maps & Local Search Guide | Digipeak",
+    "seoDescription": "Download the free GCC B2B Local SEO Checklist. Rank higher on Google Maps and organic search in Qatar, Dubai, UAE, Saudi Arabia, and Gulf markets.",
+    "highIntent": true,
+    "readTime": 7,
+    "downloadCount": 1480,
+    "categoryTags": ["SEO", "GCC Marketing", "Google Maps"],
+    "isFeatured": true,
+    "isPopular": true,
+    "targetKeywords": ["local seo services qatar", "local seo agency qatar", "local seo checklist", "google business profile optimization", "local seo strategy", "local seo for small business", "local seo services dubai", "local seo agency uae", "local seo saudi arabia", "local search ranking factors"],
+    "longTails": ["how to rank on google maps in qatar", "local seo checklist for businesses in dubai", "google business profile optimization checklist", "how to improve local search visibility", "local seo audit checklist"],
     "faqs": [
       {
-        "question": "What search parameters are covered in the GCC Local SEO Checklist?",
-        "answer": "It covers Arabic schema structures, RTL layout crawl settings, local citation listings for UAE/Qatar/KSA, and regional domain hierarchy recommendations."
+        "question": "How do I rank on Google Maps in Qatar or Dubai?",
+        "answer": "To rank on Google Maps in the GCC, optimize your Google Business Profile (GBP) with matching local NAP (Name, Address, Phone) details, localize category tags, generate regional client reviews, and embed localized Schema markup on your location landing pages."
       },
       {
-        "question": "Does this checklist support multi-lingual sites?",
-        "answer": "Yes, it includes explicit guidelines for implementing hreflang attributes and setting up dual-language SEO maps."
+        "question": "What is unique about GCC Local SEO compared to Western markets?",
+        "answer": "GCC local search requires dual-language optimization (English and Arabic), right-to-left (RTL) layout crawl validation, and specific citation platforms popular in the Middle East."
       }
     ]
   },
@@ -26,16 +33,264 @@
     "slug": "website-launch-checklist",
     "category": "web-design",
     "title": "Ultimate B2B Website Launch Checklist",
-    "description": "Avoid broken redirect loops, missing schemas, or layout shifts. Ensure a zero-error website deployment with this performance-oriented launch checker.",
-    "downloadType": "Google Sheets",
-    "downloadUrl": "https://docs.google.com/spreadsheets/d/mock-launch-checklist",
-    "seoTitle": "B2B Website Launch Checklist: Complete Pre-Launch Audit | Digipeak",
-    "seoDescription": "Download our comprehensive pre-launch checklist to ensure zero-error migrations, optimal page load speed, canonical parameters setup, and mobile responsiveness.",
+    "description": "Ensure a zero-error website migration and deployment. This technical guide covers launch QA, performance checks, security protocols, analytics setups, and pre-launch SEO.",
+    "downloadType": "PDF",
+    "downloadUrl": "/api/resources/website-launch-checklist/download",
+    "seoTitle": "Ultimate B2B Website Launch Checklist: SEO & QA Blueprint | Digipeak",
+    "seoDescription": "Download the ultimate B2B website launch checklist. Protect your search rankings with pre-launch technical SEO checklists, QA tests, and security benchmarks.",
     "highIntent": true,
+    "readTime": 10,
+    "downloadCount": 1250,
+    "categoryTags": ["Web Development", "SEO", "QA Checklist"],
+    "isFeatured": true,
+    "isPopular": false,
+    "targetKeywords": ["website launch checklist", "seo checklist before website launch", "website migration checklist", "website qa checklist", "website launch strategy", "website launch seo checklist"],
+    "longTails": ["ultimate website launch checklist", "website launch checklist for businesses", "seo requirements before launching a website", "website go live checklist"],
     "faqs": [
       {
-        "question": "What checks are critical before pushing a site live?",
-        "answer": "Key items include checking image dimensions to prevent Cumulative Layout Shifts, validating robots.txt files, testing contact form endpoints, and checking analytics tags."
+        "question": "What is the most critical SEO check before launching a website?",
+        "answer": "The most critical checks are ensuring that indexability is enabled (removing 'noindex' tags), setting up accurate canonical URLs, configuring redirection maps (301 redirects) for migrations, and verifying robots.txt syntax."
+      },
+      {
+        "question": "How do I verify conversion tracking is functional post-launch?",
+        "answer": "Submit test entries across all lead forms, check Google Analytics 4 debugView to confirm dataLayer events (like proposal_submitted) trigger, and verify database logging."
+      }
+    ]
+  },
+  {
+    "id": "seo-audit-template",
+    "slug": "seo-audit-template",
+    "category": "seo",
+    "title": "Professional SEO Audit Template",
+    "description": "Auditing a site is the first step to search domination. Access our agency-grade checklist covering indexability, site speed, internal linking clusters, content quality, and backlinks.",
+    "downloadType": "PDF",
+    "downloadUrl": "/api/resources/seo-audit-template/download",
+    "seoTitle": "Professional SEO Audit Template: Technical Site Checklist | Digipeak",
+    "seoDescription": "Download our professional B2B SEO audit template. Walk through technical crawl analysis, content gaps, internal linking audits, and Core Web Vitals checks.",
+    "highIntent": true,
+    "readTime": 8,
+    "downloadCount": 2310,
+    "categoryTags": ["SEO", "Audit Template", "Technical SEO"],
+    "isFeatured": false,
+    "isPopular": true,
+    "targetKeywords": ["seo audit template", "technical seo checklist", "seo audit checklist", "website seo audit", "professional seo audit template"],
+    "longTails": ["downloadable seo audit template", "technical seo audit pdf", "website audit template for agencies", "seo audit report example"],
+    "faqs": [
+      {
+        "question": "How long does a professional technical SEO audit take?",
+        "answer": "A comprehensive technical SEO audit takes between 10 to 30 hours depending on the size and complexity of the site, covering crawl depth, security, redirects, and index states."
+      },
+      {
+        "question": "What tools do I need to use with this SEO audit template?",
+        "answer": "We recommend using Screaming Frog, Google Search Console, Google Lighthouse, Ahrefs or Semrush, and PageSpeed Insights to gather the necessary performance data."
+      }
+    ]
+  },
+  {
+    "id": "google-business-profile-checklist",
+    "slug": "google-business-profile-checklist",
+    "category": "seo",
+    "title": "Google Business Profile Optimization Checklist",
+    "description": "Step-by-step optimization manual to claim, structure, and optimize your Google Business Profile for maximum local search and Google Maps visibility.",
+    "downloadType": "PDF",
+    "downloadUrl": "/api/resources/google-business-profile-checklist/download",
+    "seoTitle": "Google Business Profile Optimization Checklist: Claim & Optimize | Digipeak",
+    "seoDescription": "Optimize your local search presence with our free Google Business Profile optimization checklist. Step-by-step guidelines to rank higher on Google Maps.",
+    "highIntent": false,
+    "readTime": 6,
+    "downloadCount": 940,
+    "categoryTags": ["Google Maps", "Local SEO", "GBP Optimization"],
+    "isFeatured": false,
+    "isPopular": false,
+    "targetKeywords": ["google business profile optimization", "google business profile checklist", "google business profile seo", "google maps ranking", "local business optimization"],
+    "longTails": ["how to rank higher on google maps", "google business profile setup checklist", "optimize google business profile for local seo"],
+    "faqs": [
+      {
+        "question": "Why is Google Business Profile optimization important for local businesses?",
+        "answer": "GBP optimization directly affects local map pack rankings. Profiles with complete business descriptions, correct category tags, reviews, and high-quality photos get up to 5x more clicks."
+      },
+      {
+        "question": "How often should I post updates on Google Business Profile?",
+        "answer": "We recommend publishing updates, promotions, or events at least once a week to show Google that your profile is active, which aids maps discoverability."
+      }
+    ]
+  },
+  {
+    "id": "b2b-lead-generation-playbook",
+    "slug": "b2b-lead-generation-playbook",
+    "category": "marketing",
+    "title": "Lead Generation Playbook",
+    "description": "Our proprietary playbook for B2B client acquisition. Design qualification funnels, execute multi-channel paid ads, build high-converting landing pages, and automate CRM pipelines.",
+    "downloadType": "PDF",
+    "downloadUrl": "/api/resources/b2b-lead-generation-playbook/download",
+    "seoTitle": "B2B Lead Generation Playbook: Performance Marketing Strategy | Digipeak",
+    "seoDescription": "Download our free B2B Lead Generation Playbook. Map high-converting landing pages, CRM automation systems, and paid advertising pipelines to scale acquisitions.",
+    "highIntent": true,
+    "readTime": 12,
+    "downloadCount": 1980,
+    "categoryTags": ["Lead Gen", "B2B Marketing", "CRM Automation"],
+    "isFeatured": true,
+    "isPopular": true,
+    "targetKeywords": ["b2b lead generation", "lead generation strategy", "b2b marketing strategy", "lead generation playbook", "b2b growth strategy"],
+    "longTails": ["how to generate b2b leads", "lead generation for service businesses", "b2b lead generation framework", "lead generation strategy for agencies"],
+    "faqs": [
+      {
+        "question": "What is the core pillar of an effective B2B lead generation playbook?",
+        "answer": "The core pillar is exchange of value (like gated resources, diagnostic templates, or free audits) in combination with qualified landing pages, corporate email validation, and prompt CRM nurturing."
+      },
+      {
+        "question": "How can I improve my website's conversion rate for lead generation?",
+        "answer": "Reduce form fields, write high-contrast call-to-actions, incorporate trust badges (client logos, reviews), and implement auto-reply emails containing immediate deliverables."
+      }
+    ]
+  },
+  {
+    "id": "saas-pricing-strategy-template",
+    "slug": "saas-pricing-strategy-template",
+    "category": "marketing",
+    "title": "SaaS Pricing Strategy Template",
+    "description": "Optimize your SaaS monetization model. Compare usage-based billing, per-user pricing, flat rates, and freemium retention strategies.",
+    "downloadType": "PDF",
+    "downloadUrl": "/api/resources/saas-pricing-strategy-template/download",
+    "seoTitle": "SaaS Pricing Strategy Template & Monetization Guide | Digipeak",
+    "seoDescription": "Download our SaaS pricing strategy template. Model usage-based tiers, per-user expansion, and free-to-paid conversion funnels.",
+    "highIntent": true,
+    "readTime": 8,
+    "downloadCount": 890,
+    "categoryTags": ["SaaS", "Pricing Model", "Monetization"],
+    "isFeatured": false,
+    "isPopular": false,
+    "targetKeywords": ["saas pricing strategy", "saas pricing template", "usage based billing model"],
+    "longTails": ["how to structure saas pricing tiers", "freemium conversion rate template"],
+    "faqs": [
+      {
+        "question": "What is the best pricing model for early stage SaaS?",
+        "answer": "Per-user pricing or flat-rate tier systems are easiest to start with. As product value becomes apparent, hybrid models combining user seats with usage-based variables optimize monetization."
+      }
+    ]
+  },
+  {
+    "id": "e-commerce-conversion-audit-sheet",
+    "slug": "e-commerce-conversion-audit-sheet",
+    "category": "marketing",
+    "title": "E-Commerce Conversion Audit Sheet",
+    "description": "Audit cart abandonment bottlenecks, check checkout micro-interactions, optimize product pages, and evaluate user trust signals to boost sales.",
+    "downloadType": "PDF",
+    "downloadUrl": "/api/resources/e-commerce-conversion-audit-sheet/download",
+    "seoTitle": "E-Commerce Conversion Rate Optimization Audit Checklist | Digipeak",
+    "seoDescription": "Download our E-commerce Conversion Audit Sheet. Eliminate checkout friction, cart abandonment, and product page speed delays.",
+    "highIntent": true,
+    "readTime": 10,
+    "downloadCount": 1140,
+    "categoryTags": ["E-Commerce", "CRO Checklist", "Checkout Optimization"],
+    "isFeatured": false,
+    "isPopular": false,
+    "targetKeywords": ["ecommerce conversion audit", "checkout optimization checklist", "cart abandonment solutions"],
+    "longTails": ["how to optimize ecommerce product pages", "cro checklist for shopify stores"],
+    "faqs": [
+      {
+        "question": "What is the primary cause of checkout cart abandonment?",
+        "answer": "Unexpected costs (shipping/taxes) and mandatory account creation are the top friction points. Offering guest checkout and transparent pricing early reduces abandonment by up to 35%."
+      }
+    ]
+  },
+  {
+    "id": "cro-playbook",
+    "slug": "cro-playbook",
+    "category": "marketing",
+    "title": "B2B Conversion Rate Optimization Playbook",
+    "description": "Convert cold traffic into qualified pipeline revenue. Features frameworks for high-impact landing page grids, form field parameters, and trust factors.",
+    "downloadType": "PDF",
+    "downloadUrl": "/api/resources/cro-playbook/download",
+    "seoTitle": "B2B Conversion Rate Optimization (CRO) Playbook | Digipeak",
+    "seoDescription": "Download our free B2B CRO Playbook. Increase lead capture form submissions, landing page engagement, and qualified pipeline conversion rates.",
+    "highIntent": true,
+    "readTime": 11,
+    "downloadCount": 1420,
+    "categoryTags": ["CRO Playbook", "Lead Optimization", "Lander Grids"],
+    "isFeatured": false,
+    "isPopular": true,
+    "targetKeywords": ["b2b conversion rate optimization", "cro playbook", "landing page optimization framework"],
+    "longTails": ["how to increase b2b form conversions", "cro audit checklist for service sites"],
+    "faqs": [
+      {
+        "question": "How do you define a good B2B form conversion rate?",
+        "answer": "B2B form conversion rates vary between 2% to 5% for general in-context landing pages, and can exceed 10% to 15% for high-value gated resources."
+      }
+    ]
+  },
+  {
+    "id": "seo-content-outline-template",
+    "slug": "seo-content-outline-template",
+    "category": "content-planning",
+    "title": "B2B SEO Content Outline Template",
+    "description": "Brief writers with high-impact outlines mapping search intent, heading architectures, primary/secondary keywords, internal links, and CTA scopes.",
+    "downloadType": "PDF",
+    "downloadUrl": "/api/resources/seo-content-outline-template/download",
+    "seoTitle": "B2B SEO Content Brief Outline Template | Digipeak",
+    "seoDescription": "Download our free B2B SEO content outline template. Instruct copywriters with structured keyword requirements, entity lists, and link mapping.",
+    "highIntent": false,
+    "readTime": 6,
+    "downloadCount": 710,
+    "categoryTags": ["Content Briefs", "SEO Writing", "Outlines Template"],
+    "isFeatured": false,
+    "isPopular": false,
+    "targetKeywords": ["seo content outline template", "seo content brief", "content writing requirements"],
+    "longTails": ["how to write a content brief for seo writers", "b2b content outline guide"],
+    "faqs": [
+      {
+        "question": "Why is a structured SEO brief necessary for copywriters?",
+        "answer": "It aligns the content with Google search intent, maps heading clusters, ensures entity coverage, and prevents writer drift into low-volume topics."
+      }
+    ]
+  },
+  {
+    "id": "whatsapp-automation-blueprint",
+    "slug": "whatsapp-automation-blueprint",
+    "category": "crm-templates",
+    "title": "WhatsApp Marketing & CRM Automation Blueprint",
+    "description": "Set up WhatsApp API workflows to nurture leads. Map automated response schedules, CRM stage synchronization, and customer opt-in setups.",
+    "downloadType": "PDF",
+    "downloadUrl": "/api/resources/whatsapp-automation-blueprint/download",
+    "seoTitle": "WhatsApp Marketing API & CRM Automation Blueprint | Digipeak",
+    "seoDescription": "Download our free WhatsApp CRM automation blueprint. Sync WhatsApp message workflows with Salesforce, HubSpot, or custom CRM pipelines.",
+    "highIntent": true,
+    "readTime": 9,
+    "downloadCount": 1670,
+    "categoryTags": ["WhatsApp API", "CRM Sync", "Lead Nurturing"],
+    "isFeatured": false,
+    "isPopular": true,
+    "targetKeywords": ["whatsapp marketing automation", "whatsapp crm integration", "opt in message blueprint"],
+    "longTails": ["how to automate whatsapp client messaging", "hubspot whatsapp trigger conditions"],
+    "faqs": [
+      {
+        "question": "Are WhatsApp template messages subject to approval?",
+        "answer": "Yes, WhatsApp Business API requires template messages containing variable fields (like names or order IDs) to be approved by Meta to prevent spam."
+      }
+    ]
+  },
+  {
+    "id": "linkedin-lead-generation-templates",
+    "slug": "linkedin-lead-generation-templates",
+    "category": "marketing",
+    "title": "LinkedIn Lead Generation Ad Templates",
+    "description": "The exact sponsored content card formats, copy blueprints, and direct form parameters Digipeak uses to capture enterprise marketing leads.",
+    "downloadType": "PDF",
+    "downloadUrl": "/api/resources/linkedin-lead-generation-templates/download",
+    "seoTitle": "LinkedIn Lead Generation Ads Templates & Copy Guide | Digipeak",
+    "seoDescription": "Download our free LinkedIn sponsored content ad templates. Proven copy hooks, image layout guides, and native form setups.",
+    "highIntent": true,
+    "readTime": 7,
+    "downloadCount": 1320,
+    "categoryTags": ["LinkedIn Ads", "Ad Templates", "Lead Forms"],
+    "isFeatured": false,
+    "isPopular": false,
+    "targetKeywords": ["linkedin lead generation templates", "linkedin sponsored content ads", "b2b ad copy templates"],
+    "longTails": ["how to write high performing linkedin ads", "native lead forms setup guidelines"],
+    "faqs": [
+      {
+        "question": "What is a good CTR benchmark for LinkedIn B2B ads?",
+        "answer": "A click-through rate (CTR) between 0.4% to 0.6% is standard for LinkedIn Sponsored Content. Form completion rates on native lead forms should target 10% to 15%."
       }
     ]
   },
@@ -46,10 +301,17 @@
     "title": "Corporate Brand Identity Guidelines Template",
     "description": "Establish a consistent, premium corporate presence. A customizable playbook mapping typography grids, HSL palettes, logo layouts, and visual rules.",
     "downloadType": "Figma",
-    "downloadUrl": "https://figma.com/file/mock-brand-guidelines",
+    "downloadUrl": "/api/resources/brand-identity-guidelines-template/download",
     "seoTitle": "Corporate Brand Identity Guidelines Template (Figma) | Digipeak",
     "seoDescription": "Get our free corporate brand guidelines template in Figma. Establish rules for typography hierarchies, corporate color palettes, and digital layout assets.",
     "highIntent": false,
+    "readTime": 5,
+    "downloadCount": 820,
+    "categoryTags": ["Branding", "Figma", "Design Rules"],
+    "isFeatured": false,
+    "isPopular": false,
+    "targetKeywords": ["brand guidelines template", "corporate brand template", "figma brand guidelines"],
+    "longTails": ["how to make brand guidelines", "figma template for corporate identity"],
     "faqs": [
       {
         "question": "How do I customize the brand guidelines template?",
@@ -64,10 +326,17 @@
     "title": "B2B Performance Marketing Strategy Planner",
     "description": "Plan budgets, forecast cost-per-lead (CPL) benchmarks, and coordinate multi-channel PPC campaigns across LinkedIn, Google Ads, and Meta.",
     "downloadType": "Excel",
-    "downloadUrl": "/files/b2b-marketing-strategy-planner.xlsx",
+    "downloadUrl": "/api/resources/b2b-marketing-strategy-planner/download",
     "seoTitle": "B2B Performance Marketing Strategy & Budget Planner | Digipeak",
     "seoDescription": "Download our B2B performance marketing strategy planner to model customer acquisition costs, allocate budgets, and forecast paid ads ROI.",
     "highIntent": true,
+    "readTime": 8,
+    "downloadCount": 1120,
+    "categoryTags": ["Marketing", "Excel Planner", "Paid Ads"],
+    "isFeatured": false,
+    "isPopular": false,
+    "targetKeywords": ["b2b marketing strategy planner", "ppc budget planner", "linkedin ads forecasting"],
+    "longTails": ["b2b paid search budget calculator", "excel forecast for cost per lead"],
     "faqs": [
       {
         "question": "Does this planner help calculate Customer Acquisition Cost?",
@@ -82,10 +351,17 @@
     "title": "B2B SEO Content Editorial Calendar",
     "description": "Coordinate your search engine content machine. Track SEO keywords, cluster topics, outline headings structures, and manage author queues in one place.",
     "downloadType": "Notion",
-    "downloadUrl": "https://notion.so/mock-content-calendar",
+    "downloadUrl": "/api/resources/b2b-content-editorial-calendar/download",
     "seoTitle": "B2B SEO Content Editorial Calendar Notion Template | Digipeak",
     "seoDescription": "Streamline your SEO content engine. Download our free Notion editorial calendar template to organize topic clusters and track content pipelines.",
     "highIntent": false,
+    "readTime": 6,
+    "downloadCount": 670,
+    "categoryTags": ["Content Marketing", "Notion Template", "SEO Editorial"],
+    "isFeatured": false,
+    "isPopular": false,
+    "targetKeywords": ["seo content calendar", "notion editorial calendar", "content pipeline planner"],
+    "longTails": ["notion content layout for marketing teams", "b2b topic cluster roadmap template"],
     "faqs": [
       {
         "question": "How does the editorial calendar optimize for search visibility?",
@@ -100,10 +376,17 @@
     "title": "Social Media Content Branding Kit",
     "description": "Premium layout templates for LinkedIn carousels, Instagram infographics, and corporate slides to elevate your social media engagement.",
     "downloadType": "Canva",
-    "downloadUrl": "https://canva.com/design/mock-social-kit",
+    "downloadUrl": "/api/resources/social-media-content-branding-kit/download",
     "seoTitle": "Social Media Content Branding Kit: Free Templates | Digipeak",
     "seoDescription": "Elevate your corporate brand on social. Download free Canva templates for LinkedIn slides, Instagram graphics, and B2B graphics.",
     "highIntent": false,
+    "readTime": 4,
+    "downloadCount": 1540,
+    "categoryTags": ["Social Media", "Canva Templates", "LinkedIn Branding"],
+    "isFeatured": false,
+    "isPopular": false,
+    "targetKeywords": ["linkedin branding kit", "canva marketing templates", "corporate social templates"],
+    "longTails": ["free templates for linkedin slide decks", "instagram templates for business profiles"],
     "faqs": [
       {
         "question": "What platforms are supported in the social branding kit?",
@@ -118,10 +401,17 @@
     "title": "ChatGPT B2B Marketing Prompt Library",
     "description": "Stop receiving generic AI responses. Optimize your copywriting, customer avatars, and ad headlines using engineered system prompts.",
     "downloadType": "PDF",
-    "downloadUrl": "/files/chatgpt-b2b-marketing-prompts.pdf",
+    "downloadUrl": "/api/resources/chatgpt-b2b-marketing-prompt-library/download",
     "seoTitle": "ChatGPT B2B Marketing Prompt Library & System Guides | Digipeak",
     "seoDescription": "Download our free ChatGPT prompt library designed for B2B marketers. Access system templates for cold emails, ad copy, and SEO outlines.",
     "highIntent": false,
+    "readTime": 5,
+    "downloadCount": 1820,
+    "categoryTags": ["AI Prompts", "Copywriting", "ChatGPT Library"],
+    "isFeatured": false,
+    "isPopular": true,
+    "targetKeywords": ["chatgpt prompt library", "copywriting system prompts", "b2b marketing ai prompts"],
+    "longTails": ["system instructions for cold email copywriting", "chatgpt templates for seo marketing"],
     "faqs": [
       {
         "question": "Are these prompts optimized for specific AI tools?",
@@ -136,10 +426,17 @@
     "title": "High-Converting B2B Sales Proposal Template",
     "description": "The exact proposal structure Digipeak uses to close five-figure retainers. Features service definitions, pricing cards, and legal terms.",
     "downloadType": "PowerPoint",
-    "downloadUrl": "/files/b2b-sales-proposal-template.pptx",
+    "downloadUrl": "/api/resources/b2b-sales-proposal-template/download",
     "seoTitle": "High-Converting B2B Sales Proposal Presentation Deck | Digipeak",
     "seoDescription": "Download our free B2B sales proposal presentation template (PowerPoint). Adapt our proven service scope cards, pricing tables, and legal contracts.",
     "highIntent": true,
+    "readTime": 8,
+    "downloadCount": 1150,
+    "categoryTags": ["Sales Proposals", "PowerPoint Deck", "Legal Templates"],
+    "isFeatured": false,
+    "isPopular": false,
+    "targetKeywords": ["sales proposal template", "b2b pricing proposal", "powerpoint contract slides"],
+    "longTails": ["agency template for custom pricing models", "b2b sales deck proposal slides"],
     "faqs": [
       {
         "question": "What slides are included in the proposal template?",
@@ -154,10 +451,17 @@
     "title": "GCC B2B Market Entry & Growth Guide",
     "description": "Unlock scaling opportunities across Dubai, Doha, and Riyadh. Essential business guide analyzing localization criteria and marketing channels.",
     "downloadType": "PDF",
-    "downloadUrl": "/files/gcc-market-entry-growth-guide.pdf",
+    "downloadUrl": "/api/resources/gcc-market-entry-growth-guide/download",
     "seoTitle": "GCC B2B Market Entry, Scaling & Local Growth Guide | Digipeak",
     "seoDescription": "Download our comprehensive business entry guide analyzing digital growth tactics, Arabic search silos, and PPC lead gen in the GCC.",
     "highIntent": true,
+    "readTime": 15,
+    "downloadCount": 780,
+    "categoryTags": ["Market Entry", "GCC Scaling", "Arabic Marketing"],
+    "isFeatured": false,
+    "isPopular": false,
+    "targetKeywords": ["gcc entry growth guide", "dubai riyadh scaling guide", "arabic business strategy"],
+    "longTails": ["middle east scaling blueprint for tech services", "gcc localized client acquisition strategy"],
     "faqs": [
       {
         "question": "What geographic markets does the entry guide analyze?",
@@ -172,10 +476,17 @@
     "title": "Sales Pipeline CRM Automation Blueprint",
     "description": "A step-by-step mapping of sales qualification stages, automated trigger conditions, and email/WhatsApp sync parameters.",
     "downloadType": "Notion",
-    "downloadUrl": "https://notion.so/mock-crm-blueprint",
+    "downloadUrl": "/api/resources/sales-pipeline-automation-crm-blueprint/download",
     "seoTitle": "Sales Pipeline & CRM Automation Pipeline Blueprint | Digipeak",
     "seoDescription": "Download our free Notion CRM pipeline blueprint. Map lead statuses, configure automated notification workflows, and sync WhatsApp endpoints.",
     "highIntent": true,
+    "readTime": 9,
+    "downloadCount": 1130,
+    "categoryTags": ["CRM Blueprint", "Sales Automation", "Notion Planner"],
+    "isFeatured": false,
+    "isPopular": false,
+    "targetKeywords": ["sales automation blueprint", "crm pipelines mapping", "notion lead tracking"],
+    "longTails": ["whatsapp notification workflow mapping template", "sales qualification crm parameters mapping"],
     "faqs": [
       {
         "question": "What CRM systems are compatible with this blueprint?",
@@ -190,10 +501,17 @@
     "title": "B2B Cold Email Outreach Sequences",
     "description": "Increase your booking conversion rates. 10 copy-paste email templates engineered to secure discovery calls with busy B2B managers.",
     "downloadType": "Word",
-    "downloadUrl": "/files/cold-email-outreach-sequences.docx",
+    "downloadUrl": "/api/resources/cold-email-outreach-sequences/download",
     "seoTitle": "B2B Cold Email Outreach Scripts & Sequence Templates | Digipeak",
     "seoDescription": "Download our free B2B cold email outreach sequences in Word. Elevate response rates with copy-paste outreach templates and follow-up sequences.",
     "highIntent": true,
+    "readTime": 6,
+    "downloadCount": 1390,
+    "categoryTags": ["Email Outreach", "Outreach Sequences", "Word Templates"],
+    "isFeatured": false,
+    "isPopular": false,
+    "targetKeywords": ["cold email sequences", "b2b outreach templates", "sales discovery scripts"],
+    "longTails": ["copy paste email scripts for agency lead gen", "sales development templates for tech service firms"],
     "faqs": [
       {
         "question": "Do these outreach templates include customization guidelines?",

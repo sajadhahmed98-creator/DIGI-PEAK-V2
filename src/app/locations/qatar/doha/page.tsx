@@ -103,7 +103,7 @@ export default function DohaPage() {
         "mainEntity": [
           {
             "question": "Do you work with businesses in Doha?",
-            "answer": "Yes, we actively partner with corporate clients, SMEs, and startups across Doha and the wider GCC region. We serve industries including real estate, luxury hospitality, retail, and professional services, helping them build visual authority and dominate local search rankings."
+            "answer": "Yes, we actively partner with corporate clients, SMEs, and startups across Doha and the wider GCC region. We serve industries including real estate, luxury hospitality, retail, and professional services, helping them build visual authority and secure high visibility in local search rankings."
           },
           {
             "question": "Can projects be managed remotely?",

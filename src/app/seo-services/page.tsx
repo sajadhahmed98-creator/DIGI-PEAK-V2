@@ -168,8 +168,8 @@ export default function SEOServicesPage() {
       <SEOCaseStudies />
       <GlobalLocations 
         title="Global" 
-        subtitle="SEO Dominance." 
-        description="We execute high-impact technical SEO and content strategies tailored to dominate local search ecosystems across the Middle East, APAC, and Europe."
+        subtitle="SEO Authority." 
+        description="We execute high-impact technical SEO and content strategies tailored to secure high visibility in local search ecosystems across the Middle East, APAC, and Europe."
       />
       <SEOFAQ />
       

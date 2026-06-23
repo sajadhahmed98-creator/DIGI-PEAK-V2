@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import {
@@ -142,7 +143,15 @@ export default function ClientDigiAI() {
     setMessages((prev) => [...prev, userMsg]);
     setInputVal("");
     setIsTyping(true);
-    setUserMessageCount(prev => prev + 1);
+    setUserMessageCount(prev => {
+      const next = prev + 1;
+      if (next === 1) {
+        if (typeof window !== "undefined" && (window as any).dataLayer) {
+          (window as any).dataLayer.push({ event: "digiai_started" });
+        }
+      }
+      return next;
+    });
     
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
@@ -291,6 +300,9 @@ export default function ClientDigiAI() {
           }).then(res => {
             if (res.ok) {
               trackClarityEvent("digiai_qualified");
+              if (typeof window !== "undefined" && (window as any).dataLayer) {
+                (window as any).dataLayer.push({ event: "digiai_qualified", lead_email: leadJsonParsed.email });
+              }
             }
           }).catch(console.error);
         } catch (e) {}
@@ -430,7 +442,7 @@ export default function ClientDigiAI() {
             <div className="p-4 flex items-center justify-between border-b border-white/5">
               <Link href="/" className="flex items-center gap-3 group">
                 <div className="w-8 h-8 rounded-xl bg-accent-primary/[0.03] flex items-center justify-center border border-accent-primary/20 relative">
-                  <img src="/logo.png" alt="Digipeak" className="w-4 h-4 object-contain" />
+                  <Image src="/logo.png" alt="Digipeak" width={16} height={16} className="object-contain" />
                   <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-[#08080c]" />
                 </div>
                 <span className="font-heading font-bold text-lg group-hover:text-accent-primary transition-colors">DigiAI</span>
@@ -501,7 +513,7 @@ export default function ClientDigiAI() {
                         </div>
                       ))
                     ) : (
-                      <p className="text-xs text-muted/50 px-3 italic">No recent chats.</p>
+                      <p className="text-xs text-slate-400 px-3 italic">No recent chats.</p>
                     )}
                   </div>
                 </div>
@@ -539,7 +551,7 @@ export default function ClientDigiAI() {
           </div>
           
           <div className="flex items-center gap-4">
-            <div className="hidden md:flex items-center gap-3 text-[10px] text-muted/80 bg-white/[0.02] border border-white/5 px-3 py-1.5 rounded-full">
+            <div className="hidden md:flex items-center gap-3 text-[10px] text-slate-200 bg-white/[0.02] border border-white/5 px-3 py-1.5 rounded-full">
               <div className="flex items-center gap-1.5"><span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span> Online</div>
               <div className="w-px h-3 bg-white/10"></div>
               <div>Powered by Gemini 2.5 Flash</div>
@@ -569,7 +581,7 @@ export default function ClientDigiAI() {
                   <div className="absolute inset-0 bg-accent-primary/20 rounded-full animate-ping opacity-20"></div>
                   <div className="absolute inset-0 bg-gradient-to-tr from-accent-primary to-accent-secondary rounded-full opacity-10 blur-xl"></div>
                   <div className="relative w-full h-full rounded-full bg-[#08080c] border border-white/10 flex items-center justify-center shadow-[0_0_50px_rgba(168,85,247,0.15)] overflow-hidden">
-                    <img src="/logo.png" alt="DigiAI" className="w-10 h-10 object-contain z-10" />
+                    <Image src="/logo.png" alt="DigiAI" width={40} height={40} className="object-contain z-10" />
                   </div>
                 </div>
 
@@ -621,7 +633,7 @@ export default function ClientDigiAI() {
                         </div>
                       ) : (
                         <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#08080c] border border-white/10 flex items-center justify-center relative shadow-[0_0_15px_rgba(168,85,247,0.15)]">
-                          <img src="/logo.png" alt="DigiAI" className="w-4 h-4 md:w-5 md:h-5 object-contain" />
+                          <Image src="/logo.png" alt="DigiAI" width={20} height={20} className="object-contain w-4 h-4 md:w-5 md:h-5" />
                         </div>
                       )}
                     </div>
@@ -742,7 +754,7 @@ export default function ClientDigiAI() {
                 className="flex gap-4 md:gap-6"
               >
                 <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-[#08080c] border border-white/10 flex items-center justify-center flex-shrink-0 mt-1 shadow-[0_0_15px_rgba(168,85,247,0.15)]">
-                  <img src="/logo.png" alt="DigiAI" className="w-4 h-4 md:w-5 md:h-5 object-contain" />
+                  <Image src="/logo.png" alt="DigiAI" width={20} height={20} className="object-contain w-4 h-4 md:w-5 md:h-5" />
                 </div>
                 <div className="flex items-center gap-1.5 bg-[#0a0d1e]/80 backdrop-blur-md border border-white/5 rounded-2xl rounded-tl-sm px-5 py-4 h-[44px]">
                   <span className="text-xs text-muted mr-2 font-medium">DigiAI is thinking</span>
@@ -787,7 +799,7 @@ export default function ClientDigiAI() {
               </button>
             </div>
             <div className="text-center mt-2.5">
-              <p className="text-[10px] text-muted/60">DigiAI can make mistakes. Consider verifying important pricing or timelines with our team.</p>
+              <p className="text-[10px] text-slate-300">DigiAI can make mistakes. Consider verifying important pricing or timelines with our team.</p>
             </div>
           </div>
         </div>

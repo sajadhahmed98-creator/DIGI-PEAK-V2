@@ -9,14 +9,33 @@ const bookingSchema = z.object({
   time: z.string().min(1, "Time slot is required").max(50),
   timezone: z.string().min(1, "Timezone is required").max(100),
   funnel: z.string().max(100).optional().nullable(),
+  turnstileToken: z.string().max(2000, "Turnstile token is too long").optional().nullable(),
 });
 
 const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key');
 const ADMIN_EMAIL = process.env.CONTACT_EMAIL || process.env.COMPANY_EMAIL || 'hello@digipeak.agency';
 const SENDER = `Digipeak Agency <${process.env.SENDER_EMAIL || 'hello@digipeak.agency'}>`;
 
+// Basic in-memory rate limiting map (IP -> timestamp array)
+const rateLimitMap = new Map<string, number[]>();
+
 export async function POST(req: NextRequest) {
   try {
+    // 1. Rate Limiting Check
+    const ip = req.headers.get("x-forwarded-for") || "unknown";
+    const now = Date.now();
+    const windowMs = 60 * 1000; // 1 minute
+    const maxRequests = 5;
+
+    let timestamps = rateLimitMap.get(ip) || [];
+    timestamps = timestamps.filter(time => now - time < windowMs);
+    
+    if (timestamps.length >= maxRequests) {
+      return NextResponse.json({ error: "Too many requests. Please try again later." }, { status: 429 });
+    }
+    timestamps.push(now);
+    rateLimitMap.set(ip, timestamps);
+
     const rawPayload = await req.json();
     const parseResult = bookingSchema.safeParse(rawPayload);
     if (!parseResult.success) {
@@ -26,7 +45,33 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const { name, email, date, time, timezone, funnel } = parseResult.data;
+    const { name, email, date, time, timezone, funnel, turnstileToken } = parseResult.data;
+
+    // 2. Cloudflare Turnstile Verification
+    const secretKey = process.env.TURNSTILE_SECRET_KEY || '1x00000000000000000000000000000000A';
+    if (turnstileToken) {
+      try {
+        const verifyRes = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams({
+            secret: secretKey,
+            response: turnstileToken,
+            remoteip: ip,
+          }),
+        });
+        const verifyData = await verifyRes.json();
+        if (!verifyData.success) {
+          console.warn(`[SPAM BLOCKED] Turnstile token verification failed for IP: ${ip}`);
+          return NextResponse.json({ error: "Spam check failed. Please try again." }, { status: 400 });
+        }
+      } catch (e) {
+        console.error("Turnstile verification error:", e);
+      }
+    } else {
+      console.warn(`[SPAM BLOCKED] Turnstile token missing for IP: ${ip}`);
+      return NextResponse.json({ error: "Spam check token missing. Please try again." }, { status: 400 });
+    }
     
     // Generate simulated Google Meet link
     const meetingLink = `https://meet.google.com/dgp-peak-${Math.random().toString(36).substring(2, 5)}-${Math.random().toString(36).substring(2, 6)}`;

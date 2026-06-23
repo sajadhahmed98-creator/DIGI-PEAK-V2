@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: "https://www.digipeak.agency/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Digipeak Agency - Elite Digital Growth Agency",
+        alt: "Digipeak Agency - Premium Digital Growth Agency",
       },
     ],
   },

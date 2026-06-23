@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import {
   X,
   MessageSquare,
@@ -321,6 +322,7 @@ export function DigiAiWidget() {
         console.log("Lead qualified and autosubmitted securely!");
         if (typeof window !== "undefined" && (window as any).dataLayer) {
           (window as any).dataLayer.push({ event: 'audit_completed', lead_source: 'digi_ai_conversational' });
+          (window as any).dataLayer.push({ event: "digiai_qualified", lead_email: leadJson.email });
         }
       }
     } catch (e) {
@@ -347,6 +349,13 @@ export function DigiAiWidget() {
       content: text,
       timestamp: new Date(),
     };
+
+    const isFirstUserMessage = messages.filter((m) => m.sender === "user").length === 0;
+    if (isFirstUserMessage) {
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({ event: "digiai_started" });
+      }
+    }
 
     const updatedMessages = [...messages, userMsg];
     setMessages(updatedMessages);
@@ -735,7 +744,7 @@ Our strategy team will analyze your requirements and get back to you with a cust
             <div className="px-5 py-3.5 border-b border-white/10 bg-white/[0.02] flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-2xl bg-[#08080c] border border-white/10 flex items-center justify-center shadow-lg overflow-hidden">
-                  <img src="/logo.png" alt="Digi AI Logo" className="w-6 h-6 object-contain" />
+                  <Image src="/logo.png" alt="Digi AI Logo" width={24} height={24} className="object-contain" />
                 </div>
                 <div>
                   <h3 className="text-white text-sm font-bold font-heading flex items-center gap-1.5">
@@ -895,7 +904,7 @@ Our strategy team will analyze your requirements and get back to you with a cust
                       </div>
                     ))
                   ) : (
-                    <p className="text-xs text-muted/50 px-3 py-6 italic text-center">
+                    <p className="text-xs text-slate-400 px-3 py-6 italic text-center">
                       {activeLanguage === "ar" ? "لا توجد محادثات سابقة." : "No recent chats."}
                     </p>
                   )}
@@ -1203,7 +1212,7 @@ Our strategy team will analyze your requirements and get back to you with a cust
                   >
                     {!isUser && (
                       <div className="w-7 h-7 rounded-lg bg-[#08080c] border border-white/10 flex items-center justify-center flex-shrink-0 text-white shadow-sm mt-0.5 overflow-hidden">
-                        <img src="/logo.png" alt="Digi AI Logo" className="w-4.5 h-4.5 object-contain" />
+                        <Image src="/logo.png" alt="Digi AI Logo" width={18} height={18} className="object-contain" />
                       </div>
                     )}
                     <div
@@ -1223,7 +1232,7 @@ Our strategy team will analyze your requirements and get back to you with a cust
               {isTyping && (
                 <div className="flex items-start gap-2.5">
                   <div className="w-7 h-7 rounded-lg bg-[#08080c] border border-white/10 flex items-center justify-center flex-shrink-0 text-white shadow-sm overflow-hidden">
-                    <img src="/logo.png" alt="Digi AI Logo" className="w-4.5 h-4.5 object-contain" />
+                    <Image src="/logo.png" alt="Digi AI Logo" width={18} height={18} className="object-contain" />
                   </div>
                   <div className="glass border border-white/10 text-white rounded-2xl rounded-tl-none px-4 py-3 flex items-center gap-1">
                     <span className="w-1.5 h-1.5 bg-white/60 rounded-full animate-bounce" style={{ animationDelay: "0ms" }} />
@@ -1294,7 +1303,7 @@ Our strategy team will analyze your requirements and get back to you with a cust
             </button>
 
             <div className="w-8 h-8 rounded-full bg-[#08080c] border border-white/10 flex items-center justify-center flex-shrink-0 mt-0.5 overflow-hidden">
-              <img src="/logo.png" alt="Digi AI Logo" className="w-5 h-5 object-contain" />
+              <Image src="/logo.png" alt="Digi AI Logo" width={20} height={20} className="object-contain" />
             </div>
             <div>
               <p className="text-white text-xs font-semibold leading-tight mb-0.5">
@@ -1336,7 +1345,7 @@ Our strategy team will analyze your requirements and get back to you with a cust
         {isOpen ? (
           <ChevronDown className="relative z-10 w-7 h-7 text-white" />
         ) : (
-          <img src="/logo.png" alt="Digi AI Logo" className="relative z-10 w-7.5 h-7.5 object-contain animate-pulse" />
+          <Image src="/logo.png" alt="Digi AI Logo" width={30} height={30} className="relative z-10 object-contain animate-pulse" />
         )}
       </motion.button>
     </div>

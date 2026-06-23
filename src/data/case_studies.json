@@ -1,0 +1,290 @@
+[
+  {
+    "slug": "elevate-marketing-group",
+    "title": "Elevate Marketing Group",
+    "metaTitle": "Elevate Marketing Group | Enterprise Transformation Case Study | Digipeak",
+    "metaDescription": "Discover how Digipeak transformed Elevate Marketing Group with a complete enterprise digital strategy, AI automation, and scalable growth systems.",
+    "category": "Enterprise Digital Transformation",
+    "industry": "Digital Marketing",
+    "location": "Dubai, UAE",
+    "duration": "6 Months",
+    "summary": [
+      "Elevate Marketing Group approached Digipeak with a clear challenge: Despite offering high-quality marketing services, the agency lacked a premium market presence capable of attracting enterprise-level clients.",
+      "The company needed a complete digital transformation to reposition itself as one of the leading marketing agencies in Dubai and the GCC region. Digipeak was selected to lead the project from strategy to execution.",
+      "The objective was to create a scalable growth ecosystem capable of generating predictable leads while building long-term authority."
+    ],
+    "challenges": [
+      "Weak brand positioning in a highly competitive Dubai market.",
+      "Low organic search visibility.",
+      "Poor website conversion rates.",
+      "Manual lead qualification process.",
+      "Lack of authority-building content strategy.",
+      "No automation workflows.",
+      "Inconsistent visual identity across digital channels."
+    ],
+    "goals": [
+      { "title": "Revenue Growth", "value": "Increase annual revenue by 250%+" },
+      { "title": "Lead Generation", "value": "Generate 150+ qualified leads monthly" },
+      { "title": "Organic Growth", "value": "Increase website traffic by 450%" },
+      { "title": "Conversion Optimization", "value": "Improve lead conversion rate by 180%" },
+      { "title": "Brand Authority", "value": "Position Elevate among top digital agencies in Dubai" },
+      { "title": "Automation", "value": "Reduce manual administrative tasks by 70%" }
+    ],
+    "strategyText": "We conducted a full digital audit, reviewing leading agencies in Dubai, analyzing search demand, buyer behavior, and mapping out core customer personas.",
+    "brandPositioning": "Helping ambitious businesses accelerate growth through data-driven marketing, AI automation, and scalable digital systems.",
+    "brandTraits": ["Premium", "Professional", "Strategic", "Innovative", "Trustworthy", "Modern"],
+    "visualIdentity": {
+      "desc": "A modern geometric \"E\" symbol representing Growth, Performance, Innovation, and Digital Transformation.",
+      "image": "/images/case-studies/elevate/brand.png"
+    },
+    "webExperience": {
+      "desc": "We developed a high-performing Next.js platform integrated with a Headless CMS, targeting a 95+ Google Lighthouse Score.",
+      "items": [
+        "Brand authority homepage",
+        "Interactive portfolio showcase",
+        "SEO-focused Blog Hub",
+        "Lead qualification contact system"
+      ],
+      "image": "/images/case-studies/elevate/website.png"
+    },
+    "automation": {
+      "desc": "To scale operations, we integrated a proprietary AI Assistant System and CRM dashboard.",
+      "items": [
+        "AI Lead Qualification Bot",
+        "Automated Proposal Generator",
+        "HubSpot CRM Integration"
+      ],
+      "image": "/images/case-studies/elevate/app.png"
+    },
+    "contentStrategy": {
+      "desc": "An omnipresent social framework focusing on authority building, educational reels, and high-impact LinkedIn thought leadership.",
+      "image": "/images/case-studies/elevate/social.png"
+    },
+    "results": [
+      { "label": "Organic Traffic", "value": 487, "suffix": "%", "color": "text-emerald-400" },
+      { "label": "Qualified Leads", "value": 312, "suffix": "%", "color": "text-accent-primary" },
+      { "label": "Revenue Growth", "value": 275, "suffix": "%", "color": "text-accent-secondary" },
+      { "label": "Client Retention", "value": 96, "suffix": "%", "color": "text-white" }
+    ],
+    "deliverables": [
+      "Brand Strategy Document", "Visual Identity System", "Logo Suite", "Brand Guidelines", 
+      "Website UX/UI", "Full Website Development", "SEO Framework", "Content Strategy", 
+      "Social Media Playbook", "Paid Ads Strategy", "AI Assistant", "CRM Integration", 
+      "Analytics Dashboard", "Conversion Funnel System"
+    ],
+    "testimonial": {
+      "quote": "Digipeak transformed our agency from a service provider into a premium digital brand. The combination of branding, SEO, automation, and lead generation created measurable business growth and significantly improved our market position across the GCC.",
+      "author": "CEO, Elevate Marketing Group"
+    }
+  },
+  {
+    "slug": "apex-saas-billing",
+    "title": "APEX SaaS Billing",
+    "metaTitle": "APEX SaaS Billing Platform Case Study | Digipeak",
+    "metaDescription": "Read how Digipeak scaled lead acquisition and CRM automation workflows for APEX SaaS Billing, driving a 340% increase in inbound demos.",
+    "category": "B2B SaaS PPC & CRM Setup",
+    "industry": "Financial Technology",
+    "location": "London, UK",
+    "duration": "4 Months",
+    "summary": [
+      "APEX SaaS Billing, an enterprise billing platform based in London, faced low trial-to-demo conversion rates and manual pipeline blockages.",
+      "Digipeak designed a comprehensive growth framework, including high-converting gated resource landers, Salesforce CRM synchronization, and automated WhatsApp nurturing flows.",
+      "The result was a scalable lead engine that accelerated sales velocity and significantly reduced client acquisition costs."
+    ],
+    "challenges": [
+      "Low demo-to-trial conversion rates.",
+      "Manual data entry bottlenecking the sales team.",
+      "High paid acquisition cost (CPL).",
+      "No post-download nurturing workflows."
+    ],
+    "goals": [
+      { "title": "Pipeline Velocity", "value": "Increase trial-to-demo rates by 120%" },
+      { "title": "Lead Generation", "value": "Boost inbound demos by 340%" },
+      { "title": "CAC Reduction", "value": "Decrease cost-per-lead by 40%" },
+      { "title": "Automation Sync", "value": "Automate 95% of lead qualification" }
+    ],
+    "strategyText": "We audited the client's sales pipeline and designed a performance funnel that replaced loose contact pages with gated toolkits, automated HubSpot triggers, and scheduled mobile nurture scripts.",
+    "brandPositioning": "Automate enterprise SaaS subscription billing with zero developer overhead.",
+    "brandTraits": ["Enterprise", "Automated", "Secure", "Reliable", "Scalable"],
+    "visualIdentity": {
+      "desc": "Sleek geometric logo representing data pipes and secure transaction circles.",
+      "image": "/images/case-studies/apex/brand.png"
+    },
+    "webExperience": {
+      "desc": "High-converting B2B landing pages featuring real-time billing calculator tools and interactive form schemas.",
+      "items": [
+        "Dynamic pricing calculator page",
+        "Gated resources lander cards",
+        "Lead scoring contact interfaces"
+      ],
+      "image": "/images/case-studies/apex/website.png"
+    },
+    "automation": {
+      "desc": "Synchronized webhook endpoints connecting forms with Salesforce CRMs and Slack alerts.",
+      "items": [
+        "Zapier webhook lead triggers",
+        "Salesforce qualification mapping",
+        "WhatsApp automated nurture scripts"
+      ],
+      "image": "/images/case-studies/apex/app.png"
+    },
+    "contentStrategy": {
+      "desc": "LinkedIn ad graphics and corporate whitepaper distributions targeting SaaS financial directors.",
+      "image": "/images/case-studies/apex/social.png"
+    },
+    "results": [
+      { "label": "Demo Bookings", "value": 340, "suffix": "%", "color": "text-emerald-400" },
+      { "label": "CPL Reduction", "value": 40, "suffix": "%", "color": "text-accent-primary" },
+      { "label": "Sales Velocity", "value": 210, "suffix": "%", "color": "text-accent-secondary" },
+      { "label": "CRM Auto Rate", "value": 95, "suffix": "%", "color": "text-white" }
+    ],
+    "deliverables": [
+      "Pipeline Audit Report", "CRO Landing Pages", "Lead Scoring Logic", "HubSpot Sync Workflows", 
+      "WhatsApp API Integrations", "LinkedIn Sponsored Ads", "Nurturing Email Copy"
+    ],
+    "testimonial": {
+      "quote": "Digipeak's marketing and automation setups completely transformed our pipeline. We went from chasing cold contacts manually to booking qualified enterprise demos on autopilot. Our client acquisition cost dropped by 40% in just four months.",
+      "author": "VP Marketing, APEX Billing"
+    }
+  },
+  {
+    "slug": "vertex-real-estate",
+    "title": "Vertex Luxury Real Estate",
+    "metaTitle": "Vertex Real Estate | High-Intent Local SEO Case Study | Digipeak",
+    "metaDescription": "Read how Digipeak dominated local Google Maps packing and organic search visibility for Vertex Luxury Real Estate in Dubai and Doha.",
+    "category": "High-Intent Local SEO & Maps Pack",
+    "industry": "Real Estate",
+    "location": "Dubai, UAE & Doha, Qatar",
+    "duration": "5 Months",
+    "summary": [
+      "Vertex Luxury Real Estate wanted to capture high-net-worth (HNW) investors searching for premium properties in Dubai and Lusail.",
+      "Digipeak deployed a localized citation framework, dual-language Google Business Profile optimization, location-specific pages, and structured FAQ schemas.",
+      "The strategy secured top positions in local map packs, driving a 520% increase in maps phone calls and organic investor inquiries."
+    ],
+    "challenges": [
+      "Zero map pack rankings in key investment zones.",
+      "No localized Arabic search optimization.",
+      "High competitive search keywords cost in AdWords.",
+      "Slow location landing page load times."
+    ],
+    "goals": [
+      { "title": "Maps Visibility", "value": "Secure rank #1-3 in Dubai Marina packs" },
+      { "title": "Organic Calls", "value": "Increase direct phone calls by 520%" },
+      { "title": "HNW Inquiries", "value": "Generate 80+ monthly investor leads" },
+      { "title": "Page Speed", "value": "Pass Mobile Core Web Vitals (95+)" }
+    ],
+    "strategyText": "We executed local search schema injections, built GCC business citation hubs, and launched mobile-optimized property landing pages containing fast image overlays.",
+    "brandPositioning": "Luxury real estate brokerage connecting global investors with premium Middle East listings.",
+    "brandTraits": ["Luxury", "Premium", "Exclusive", "Expert", "Localized"],
+    "visualIdentity": {
+      "desc": "Minimalist premium serif branding reflecting luxury architectural structures.",
+      "image": "/images/case-studies/vertex/brand.png"
+    },
+    "webExperience": {
+      "desc": "Immersive luxury real estate landing pages with dynamic listing filters and fast mobile walkthrough sliders.",
+      "items": [
+        "Investment area landing pages",
+        "Geotagged image map modules",
+        "RTL Arabic layout templates"
+      ],
+      "image": "/images/case-studies/vertex/website.png"
+    },
+    "automation": {
+      "desc": "Instant SMS call handoffs and automated maps review invitation systems.",
+      "items": [
+        "Maps review request pipelines",
+        "Lead SMS routing alerts",
+        "Property matches WhatsApp updates"
+      ],
+      "image": "/images/case-studies/vertex/app.png"
+    },
+    "contentStrategy": {
+      "desc": "Geographically targeted local search optimization and area guides indexing in UAE/Qatar.",
+      "image": "/images/case-studies/vertex/social.png"
+    },
+    "results": [
+      { "label": "Maps Phone Calls", "value": 520, "suffix": "%", "color": "text-emerald-400" },
+      { "label": "HNW Leads", "value": 190, "suffix": "%", "color": "text-accent-primary" },
+      { "label": "Organic Rankings", "value": 310, "suffix": "%", "color": "text-accent-secondary" },
+      { "label": "PageSpeed Score", "value": 98, "suffix": "/100", "color": "text-white" }
+    ],
+    "deliverables": [
+      "GCC Citation Audits", "Location Page UX/UI", "Local Business Schemas", "Arabic Hreflang Tags", 
+      "Maps Pack Tracking", "Google Review Campaigns", "Property Tour Landing Pages"
+    ],
+    "testimonial": {
+      "quote": "Ranking on Google Maps is critical for real estate in the GCC. Digipeak took our profiles from invisibility to dominating search results in Dubai and Doha. Our inbound investor phone calls increased by over 500% in five months.",
+      "author": "Sales Director, Vertex Real Estate"
+    }
+  },
+  {
+    "slug": "nova-premium-healthcare",
+    "title": "Nova Premium Healthcare",
+    "metaTitle": "Nova Premium Healthcare | B2B SEO & Patient Nurture Case Study | Digipeak",
+    "metaDescription": "Read how Digipeak built an organic patient acquisition system and automated booking nurture flow for Nova Healthcare in Sydney, Australia.",
+    "category": "SEO Content & Patient Nurture",
+    "industry": "Healthcare & Medical Services",
+    "location": "Sydney, Australia",
+    "duration": "6 Months",
+    "summary": [
+      "Nova Premium Healthcare Network, operating multiple clinics in Sydney, wanted to reduce reliance on paid healthcare directories.",
+      "Digipeak launched a localized medical SEO content hub targeting high-intent patient queries and integrated automated patient booking reminders and nurture campaigns.",
+      "The organic strategy delivered a 280% increase in patient bookings while reducing paid acquisition spend."
+    ],
+    "challenges": [
+      "High cost-per-acquisition on Google Ads.",
+      "Weak organic rankings for localized clinical terms.",
+      "High patient booking cancellation rates.",
+      "Underutilized customer databases."
+    ],
+    "goals": [
+      { "title": "Online Bookings", "value": "Increase direct bookings by 280%" },
+      { "title": "SEO Traffic", "value": "Boost clinical search queries by 160%" },
+      { "title": "Booking Retention", "value": "Increase patient follow-up rate by 45%" },
+      { "title": "Ad Spend Reduction", "value": "Cut paid acquisition dependency by 60%" }
+    ],
+    "strategyText": "We built a clinical SEO directory, wrote high-authority medical content pages, and mapped patient reminder and CRM auto-replies workflows.",
+    "brandPositioning": "Premium, accessible specialist medical networks providing evidence-based healthcare.",
+    "brandTraits": ["Caring", "Scientific", "Professional", "Trustworthy", "Accessible"],
+    "visualIdentity": {
+      "desc": "Modern clinical cross icon merged with organic leaf lines representing health and growth.",
+      "image": "/images/case-studies/nova/brand.png"
+    },
+    "webExperience": {
+      "desc": "Clean, medical-compliant booking interfaces with easy specialist selectors and clear symptom landing pages.",
+      "items": [
+        "Specialist doctor profiles",
+        "Clinical symptom directories",
+        "Compliance-audited booking forms"
+      ],
+      "image": "/images/case-studies/nova/website.png"
+    },
+    "automation": {
+      "desc": "HIPAA-compliant SMS/Email appointment confirmations, patient history intake forms, and automated survey dispatches.",
+      "items": [
+        "Patient intake auto-triggers",
+        "Booking calendar sync scripts",
+        "Nurturing treatment schedules"
+      ],
+      "image": "/images/case-studies/nova/app.png"
+    },
+    "contentStrategy": {
+      "desc": "Evidence-based specialist medical guides and localized clinical search optimization in Sydney.",
+      "image": "/images/case-studies/nova/social.png"
+    },
+    "results": [
+      { "label": "Online Bookings", "value": 280, "suffix": "%", "color": "text-emerald-400" },
+      { "label": "Organic Traffic", "value": 160, "suffix": "%", "color": "text-accent-primary" },
+      { "label": "Booking Retention", "value": 45, "suffix": "%", "color": "text-accent-secondary" },
+      { "label": "Paid CAC Cut", "value": 60, "suffix": "%", "color": "text-white" }
+    ],
+    "deliverables": [
+      "Clinical SEO Strategy", "Compliance Intakes UI", "Symptom Content Map", "Outreach Email Sequences", 
+      "SMS Reminders Setup", "AdWords Optimization", "CRM Intakes Integration"
+    ],
+    "testimonial": {
+      "quote": "Digipeak built a complete patient acquisition system for us. Our direct online bookings increased by 280% within six months, and the automated reminder flows dramatically cut down clinic cancellations.",
+      "author": "Operations Manager, Nova Healthcare"
+    }
+  }
+]

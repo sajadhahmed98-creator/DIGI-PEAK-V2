@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export function Footer() {
@@ -18,10 +19,10 @@ export function Footer() {
           {/* Logo & Brand Column */}
           <div className="flex flex-col lg:col-span-4 lg:pr-8">
             <Link href="/" className="flex items-center gap-2 font-heading text-lg font-bold tracking-tight text-foreground mb-4 transition-opacity hover:opacity-90">
-              <img src="/logo.png" alt="Digipeak Logo" className="w-5 h-5 object-contain" />
+              <Image src="/logo.png" alt="Digipeak Logo" width={20} height={20} className="object-contain" />
               <span>Digipeak <span className="text-gradient-primary">Agency</span></span>
             </Link>
-            <p className="text-muted/80 text-[13px] leading-relaxed mb-6 max-w-sm">
+            <p className="text-slate-200 text-[13px] leading-relaxed mb-6 max-w-sm">
               Digipeak helps businesses grow through SEO, web design, branding, AI automation, and lead generation systems across Qatar, UAE, Australia, and global markets.
             </p>
             <div className="text-[13px] text-muted mb-8 flex flex-col gap-2.5">
@@ -162,7 +163,7 @@ export function Footer() {
         </div>
         
         {/* Bottom Legal Row */}
-        <div className="mx-auto max-w-[1400px] mt-10 md:mt-16 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-muted/60 gap-4">
+        <div className="mx-auto max-w-[1400px] mt-10 md:mt-16 pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-slate-300 gap-4">
           <p>© {new Date().getFullYear()} Digipeak Agency.</p>
           <nav className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2" aria-label="Legal Navigation">
             <AnimatedLink href="/privacy-policy">Privacy Policy</AnimatedLink>

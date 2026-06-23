@@ -75,7 +75,7 @@ export function GoogleAdsServices() {
                          <div className="text-xs font-bold text-gray-800 mb-1 flex items-center gap-2">
                             <span className="font-bold">Sponsored</span>
                          </div>
-                         <div className="text-sm text-gray-500 mb-1 flex items-center gap-1">
+                         <div className="text-sm text-slate-300 mb-1 flex items-center gap-1">
                             <div className="w-4 h-4 rounded-full bg-blue-100 flex items-center justify-center text-[#4285F4] text-[8px]">Ad</div>
                             yourdomain.com
                          </div>
@@ -94,7 +94,7 @@ export function GoogleAdsServices() {
                       
                       {/* Organic Result skeleton */}
                       <div className="bg-white p-4 rounded-xl border border-gray-100 opacity-50">
-                         <div className="text-sm text-gray-500 mb-1">competitor.com</div>
+                         <div className="text-sm text-slate-300 mb-1">competitor.com</div>
                          <div className="text-lg font-bold text-[#1a0dab] mb-1">Standard Services</div>
                          <div className="text-sm text-gray-600">Basic service offering for general needs.</div>
                       </div>

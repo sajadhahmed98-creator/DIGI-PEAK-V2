@@ -1436,3 +1436,396 @@ export const contactFormNotificationHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD X
 </html>
 `;
 
+export const resourceDeliveryHtml = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Resource Is Ready | Digipeak Agency</title>
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">Your requested Digipeak B2B toolkit is ready for download inside.</div>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      min-width: 100%;
+      background-color: #020203;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+    td {
+      padding: 0;
+    }
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+    }
+    .btn-gradient {
+      background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+    }
+    @media screen and (max-width: 600px) {
+      .container {
+        width: 100% !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+      }
+      .card {
+        padding: 24px !important;
+      }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #020203; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <table width="100%" bgcolor="#020203" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center" style="padding: 40px 0;">
+        <table class="container" width="600" border="0" cellpadding="0" cellspacing="0" style="width: 600px; max-width: 600px; margin: 0 auto;">
+          <tr>
+            <td align="center" style="padding-bottom: 24px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #0b0b0f; border-radius: 16px; border: 1px solid rgba(168, 85, 247, 0.15); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); overflow: hidden; width: 100%;">
+                <tr>
+                  <td align="center" style="padding: 32px 20px; background: radial-gradient(circle at top left, rgba(168, 85, 247, 0.08) 0%, transparent 60%);">
+                    <a href="https://digipeak.agency" target="_blank" style="text-decoration: none; display: inline-block;">
+                      <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto; outline: none; border: none;" />
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="card" bgcolor="#0b0b0f" style="padding: 40px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>
+                    <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #a855f7;">B2B Growth Toolkit</span>
+                    <h1 style="font-size: 24px; font-weight: 800; color: #FFFFFF; margin: 8px 0 16px 0; letter-spacing: -0.02em; line-height: 1.2;">Your Resource is Ready</h1>
+                    <p style="font-size: 15px; color: #CBD5E1; line-height: 1.6; margin: 0 0 20px 0;">
+                      Hello {{NAME}},
+                    </p>
+                    <p style="font-size: 15px; color: #CBD5E1; line-height: 1.6; margin: 0 0 20px 0;">
+                      Thank you for your interest! Your B2B checklist toolkit <strong>{{RESOURCE_NAME}}</strong> is ready. Click the button below to download the PDF document directly:
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 32px;">
+                <tr>
+                  <td align="center">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td class="btn-gradient" align="center" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);">
+                          <a href="{{DOWNLOAD_LINK}}" target="_blank" style="display: inline-block; font-size: 15px; font-weight: 700; color: #FFFFFF; text-decoration: none; padding: 14px 32px; text-align: center;">
+                            Download PDF Resource
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 32px;">
+                <tr>
+                  <td style="background-color: #020203; border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 12px; padding: 24px; text-align: center;">
+                    <h3 style="font-size: 14px; font-weight: 700; color: #a855f7; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 0.05em;">Translate Checklist into Revenue</h3>
+                    <p style="font-size: 13px; color: #94A3B8; line-height: 1.5; margin: 0 0 16px 0;">
+                      Want to audit your site architecture or lead pipeline with our consultants? Book a free organic growth strategy session (1-on-1 discovery call).
+                    </p>
+                    <table border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;">
+                      <tr>
+                        <td align="center" style="border-radius: 8px; border: 1px solid rgba(168, 85, 247, 0.4); background-color: rgba(168, 85, 247, 0.05);">
+                          <a href="https://www.digipeak.agency/book-session?source=email_resource" target="_blank" style="display: inline-block; font-size: 13px; font-weight: 700; color: #a855f7; text-decoration: none; padding: 10px 20px;">
+                            Book 1-on-1 Strategy Call
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+                <tr>
+                  <td>
+                    <h3 style="font-size: 12px; font-weight: 700; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.05em; margin: 0 0 12px 0;">What is inside this B2B toolkit</h3>
+                    <p style="font-size: 13px; color: #94A3B8; line-height: 1.6; margin: 0;">
+                      &bull; <strong>Structured Checkpoints</strong>: Step-by-step developer guidelines.<br />
+                      &bull; <strong>GCC Localization</strong>: Optimized frameworks for Middle East and Global scaling.<br />
+                      &bull; <strong>Zero Placeholders</strong>: Practical guidelines directly actionable for teams.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding: 40px 20px 20px 20px;">
+              <p style="font-size: 12px; color: #475569; margin: 0 0 12px 0; line-height: 1.5;">
+                This email was sent by the Digipeak Lead Delivery System.<br />
+                To contact our team directly, reply to this email or visit <a href="https://digipeak.agency" style="color: #a855f7; text-decoration: none;">our website</a>.
+              </p>
+              <p style="font-size: 11px; color: #475569; margin: 0;">
+                &copy; 2026 Digipeak Agency. All rights reserved.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+`;
+
+export const nurtureDay1Html = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick question about your B2B checklist | Digipeak Agency</title>
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">Following up on the B2B growth checklist you requested.</div>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      min-width: 100%;
+      background-color: #020203;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+    td {
+      padding: 0;
+    }
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+    }
+    .btn-gradient {
+      background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+    }
+    @media screen and (max-width: 600px) {
+      .container {
+        width: 100% !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+      }
+      .card {
+        padding: 24px !important;
+      }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #020203; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <table width="100%" bgcolor="#020203" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center" style="padding: 40px 0;">
+        <table class="container" width="600" border="0" cellpadding="0" cellspacing="0" style="width: 600px; max-width: 600px; margin: 0 auto;">
+          <tr>
+            <td align="center" style="padding-bottom: 24px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #0b0b0f; border-radius: 16px; border: 1px solid rgba(168, 85, 247, 0.15); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); overflow: hidden; width: 100%;">
+                <tr>
+                  <td align="center" style="padding: 32px 20px; background: radial-gradient(circle at top left, rgba(168, 85, 247, 0.08) 0%, transparent 60%);">
+                    <a href="https://digipeak.agency" target="_blank" style="text-decoration: none; display: inline-block;">
+                      <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto; outline: none; border: none;" />
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="card" bgcolor="#0b0b0f" style="padding: 40px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>
+                    <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #a855f7;">Nurture Phase I</span>
+                    <h1 style="font-size: 24px; font-weight: 800; color: #FFFFFF; margin: 8px 0 16px 0; letter-spacing: -0.02em; line-height: 1.2;">How is the Checklist working?</h1>
+                    <p style="font-size: 15px; color: #CBD5E1; line-height: 1.6; margin: 0 0 20px 0;">
+                      Hello {{NAME}},
+                    </p>
+                    <p style="font-size: 15px; color: #CBD5E1; line-height: 1.6; margin: 0 0 20px 0;">
+                      I wanted to follow up and see if you had a chance to download and review the B2B checklist <strong>{{RESOURCE_NAME}}</strong>. Many digital managers use it to benchmark search visibility and resolve development errors.
+                    </p>
+                    <p style="font-size: 15px; color: #CBD5E1; line-height: 1.6; margin: 0 0 24px 0;">
+                      For example, we recently deployed these exact local optimization frameworks for our client, <strong>Elevate Marketing Group</strong>. By auditing their local citation maps and rebuilding their Next.js search architectures, we helped them achieve a **312% increase** in qualified monthly leads.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 32px;">
+                <tr>
+                  <td align="center">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td class="btn-gradient" align="center" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);">
+                          <a href="https://www.digipeak.agency/case-studies/elevate-marketing-group" target="_blank" style="display: inline-block; font-size: 15px; font-weight: 700; color: #FFFFFF; text-decoration: none; padding: 14px 32px; text-align: center;">
+                            Read Elevate Case Study
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+                <tr>
+                  <td>
+                    <p style="font-size: 13px; color: #94A3B8; line-height: 1.6; margin: 0;">
+                      If you're currently auditing your site migration or maps settings and want a professional review, feel free to reply directly to this email.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding: 40px 20px 20px 20px;">
+              <p style="font-size: 12px; color: #475569; margin: 0 0 12px 0; line-height: 1.5;">
+                This email was sent by the Digipeak Lead Delivery System.<br />
+                To unsubscribe from B2B marketing nurture sequences, reply with "Unsubscribe".
+              </p>
+              <p style="font-size: 11px; color: #475569; margin: 0;">
+                &copy; 2026 Digipeak Agency. All rights reserved.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+`;
+
+export const nurtureDay3Html = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Digipeak automates B2B pipeline growth | Digipeak Agency</title>
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">Automate qualified lead captures and CRM pipeline handoffs.</div>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      min-width: 100%;
+      background-color: #020203;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+    td {
+      padding: 0;
+    }
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+    }
+    .btn-gradient {
+      background: linear-gradient(135deg, #a855f7 0%, #6366f1 100%);
+    }
+    @media screen and (max-width: 600px) {
+      .container {
+        width: 100% !important;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+      }
+      .card {
+        padding: 24px !important;
+      }
+    }
+  </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #020203; color: #FFFFFF; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <table width="100%" bgcolor="#020203" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td align="center" style="padding: 40px 0;">
+        <table class="container" width="600" border="0" cellpadding="0" cellspacing="0" style="width: 600px; max-width: 600px; margin: 0 auto;">
+          <tr>
+            <td align="center" style="padding-bottom: 24px;">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-color: #0b0b0f; border-radius: 16px; border: 1px solid rgba(168, 85, 247, 0.15); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); overflow: hidden; width: 100%;">
+                <tr>
+                  <td align="center" style="padding: 32px 20px; background: radial-gradient(circle at top left, rgba(168, 85, 247, 0.08) 0%, transparent 60%);">
+                    <a href="https://digipeak.agency" target="_blank" style="text-decoration: none; display: inline-block;">
+                      <img src="https://www.digipeak.agency/logo.png" alt="Digipeak Agency" width="160" style="display: block; width: 160px; height: auto; outline: none; border: none;" />
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td class="card" bgcolor="#0b0b0f" style="padding: 40px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);">
+              <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td>
+                    <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #a855f7;">Nurture Phase II</span>
+                    <h1 style="font-size: 24px; font-weight: 800; color: #FFFFFF; margin: 8px 0 16px 0; letter-spacing: -0.02em; line-height: 1.2;">From Checklists to Pipelines</h1>
+                    <p style="font-size: 15px; color: #CBD5E1; line-height: 1.6; margin: 0 0 20px 0;">
+                      Hello {{NAME}},
+                    </p>
+                    <p style="font-size: 15px; color: #CBD5E1; line-height: 1.6; margin: 0 0 20px 0;">
+                      Checklists are a great B2B foundation, but long-term growth requires systemization. Manual qualifiers and messy spreadsheets slow down your acquisition pipeline.
+                    </p>
+                    <p style="font-size: 15px; color: #CBD5E1; line-height: 1.6; margin: 0 0 24px 0;">
+                      At Digipeak, we integrate custom **AI Lead Qualifiers**, sync workflows with CRM platforms (Salesforce/HubSpot), and automate messaging gateways (like WhatsApp and automated email triggers).
+                    </p>
+                    <p style="font-size: 15px; color: #CBD5E1; line-height: 1.6; margin: 0 0 24px 0;">
+                      Let's hop on a 15-minute 1-on-1 strategy call to review your organic traffic potential and map your custom B2B automation blueprint.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+              <table width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom: 32px;">
+                <tr>
+                  <td align="center">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td class="btn-gradient" align="center" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);">
+                          <a href="https://www.digipeak.agency/book-session?source=email_nurture" target="_blank" style="display: inline-block; font-size: 15px; font-weight: 700; color: #FFFFFF; text-decoration: none; padding: 14px 32px; text-align: center;">
+                            Book Free Strategy Session
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding: 40px 20px 20px 20px;">
+              <p style="font-size: 12px; color: #475569; margin: 0 0 12px 0; line-height: 1.5;">
+                This email was sent by the Digipeak Lead Delivery System.<br />
+                To unsubscribe from B2B marketing nurture sequences, reply with "Unsubscribe".
+              </p>
+              <p style="font-size: 11px; color: #475569; margin: 0;">
+                &copy; 2026 Digipeak Agency. All rights reserved.
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+`;
+
+
+

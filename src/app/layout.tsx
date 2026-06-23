@@ -137,6 +137,10 @@ export default function RootLayout({
         <Footer />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || "G-V9H8BCW23Y"} />
         <MicrosoftClarity clarityId={process.env.NEXT_PUBLIC_CLARITY_ID || ""} />
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

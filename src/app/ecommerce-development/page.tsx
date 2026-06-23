@@ -144,7 +144,7 @@ export default function EcommercePage() {
       <GlobalLocations 
         title="Global" 
         subtitle="E-Commerce Reach." 
-        description="We engineer high-performance stores tailored to dominate enterprise retail sectors across the Middle East, APAC, and Europe."
+        description="We engineer high-performance stores tailored to scale enterprise retail operations across the Middle East, APAC, and Europe."
       />
       <EcommerceFAQ />
       
