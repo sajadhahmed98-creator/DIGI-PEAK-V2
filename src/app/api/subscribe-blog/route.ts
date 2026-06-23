@@ -11,6 +11,7 @@ const subscribeSchema = z.object({
 
 const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key');
 const ADMIN_EMAIL = process.env.CONTACT_EMAIL || process.env.COMPANY_EMAIL || 'hello@digipeak.agency';
+const SENDER = `Digipeak Agency <${process.env.SENDER_EMAIL || 'hello@digipeak.agency'}>`;
 
 // Basic in-memory rate limiting map (IP -> timestamp array)
 const rateLimitMap = new Map<string, number[]>();
@@ -64,7 +65,7 @@ export async function POST(req: NextRequest) {
     if (process.env.RESEND_API_KEY) {
       // Send Admin Notification
       await resend.emails.send({
-        from: process.env.FROM_EMAIL || 'Digipeak Agency <hello@digipeak.agency>',
+        from: SENDER,
         to: [ADMIN_EMAIL],
         subject: emailSubject,
         html: adminEmailHtml,
@@ -72,7 +73,7 @@ export async function POST(req: NextRequest) {
 
       // Send User Confirmation
       await resend.emails.send({
-        from: process.env.FROM_EMAIL || 'Digipeak Agency <hello@digipeak.agency>',
+        from: SENDER,
         to: [email],
         subject: "🎉 Welcome to Digipeak Growth Insights",
         html: userEmailHtml,
