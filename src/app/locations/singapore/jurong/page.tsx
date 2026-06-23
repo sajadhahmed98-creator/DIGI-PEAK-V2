@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import singaporeData from "@/data/locations/singapore.json";
+import jurongData from "@/data/locations/singapore/jurong.json";
 import { LocationPageTemplate, CityData } from "@/components/locations/LocationPageTemplate";
 
-const cityData = singaporeData as CityData;
+const cityData = jurongData as CityData;
 
 export const metadata: Metadata = {
   title: cityData.metaTitle,
@@ -22,21 +22,17 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: cityData.metaTitle,
     description: cityData.metaDescription,
-  }
+  },
 };
 
-export default function SingaporePage() {
+export default function JurongPage() {
   const allLocations = [
     { name: "Singapore Hub", slug: "singapore" },
     { name: "Orchard Road", slug: "singapore/orchard" },
-    { name: "CBD (Raffles Place)", slug: "singapore/cbd" },
+    { name: "CBD", slug: "singapore/cbd" },
     { name: "Jurong", slug: "singapore/jurong" },
     { name: "Tampines", slug: "singapore/tampines" },
     { name: "Changi", slug: "singapore/changi" },
-    { name: "Sydney", slug: "australia/sydney" },
-    { name: "Melbourne", slug: "australia/melbourne" },
-    { name: "Brisbane", slug: "australia/brisbane" },
-    { name: "Australia Hub", slug: "australia" },
   ];
   return <LocationPageTemplate city={cityData} allLocations={allLocations} />;
 }
