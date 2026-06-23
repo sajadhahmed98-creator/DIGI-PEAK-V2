@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     version="1.2"
+     baseProfile="tiny-ps"
+     width="240" height="240"
+     viewBox="0 0 240 240">
+  <title>Digipeak Agency</title>
+  <desc>Digipeak Agency — Digital Growth Partner</desc>
+
+  <!-- Solid background required by BIMI spec (no transparency allowed) -->
+  <rect width="240" height="240" fill="#050D1F" rx="0" ry="0"/>
+
+  <!--
+    Digipeak DP Logomark — reproduced as SVG Tiny PS path data.
+    The mark is: outer D arc + inner P shape, all as single continuous
+    stroke-only outlines rendered white on dark.
+    Outer D: large rectangle with rounded right side
+    Inner P: smaller rounded rectangle inside the D, open at bottom
+  -->
+
+  <!-- Outer D shape (left vertical bar + large D curve) -->
+  <path
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="11"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M 52 44 L 52 196 M 52 44 L 80 44 C 142 44 166 72 166 120 C 166 168 142 196 80 196 L 52 196"
+  />
+
+  <!-- Middle vertical bar (shared stem of D and P) -->
+  <path
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="11"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M 80 44 L 80 196"
+  />
+
+  <!-- Inner P cap curve (top half arc connecting mid bar to right) -->
+  <path
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="11"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M 80 86 C 80 86 148 86 148 118 C 148 150 80 150 80 150"
+  />
+
+  <!-- Inner P bottom open leg -->
+  <path
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="11"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    d="M 108 150 L 108 196"
+  />
+</svg>
