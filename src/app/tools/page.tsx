@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Code2, Zap, ArrowRight, Sparkles } from "lucide-react";
+import { Code2, Zap, ArrowRight, Sparkles, QrCode } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "B2B Lead Generation & SEO Growth Tools | Digipeak Agency",
@@ -14,13 +14,22 @@ export const metadata: Metadata = {
 export default function ToolsHubPage() {
   const tools = [
     {
+      title: "Enterprise AI QR Code Generator",
+      description:
+        "Generate custom high-resolution branded QR codes in real-time. Customize colors, rounded dots, custom eyes, upload your logo, and export print-ready vector formats.",
+      href: "/tools/qr-code-generator",
+      icon: QrCode,
+      tag: "Lead Generation",
+      color: "from-accent-primary to-accent-glow",
+    },
+    {
       title: "B2B Schema Markup Generator",
       description:
         "Generate valid JSON-LD schema markup code for Organizations, Persons, FAQs, and Breadcrumbs to command rich search snippets.",
       href: "/tools/schema-generator",
       icon: Code2,
       tag: "SEO Authority",
-      color: "from-accent-primary to-accent-glow",
+      color: "from-accent-secondary to-accent-glow",
     },
     {
       title: "LCP & Page Speed Auditor",
@@ -29,7 +38,7 @@ export default function ToolsHubPage() {
       href: "/tools/page-speed-auditor",
       icon: Zap,
       tag: "Web Performance",
-      color: "from-accent-secondary to-accent-glow",
+      color: "from-accent-primary to-accent-glow",
     },
     {
       title: "B2B Revenue & ROI Forecaster",
@@ -38,7 +47,7 @@ export default function ToolsHubPage() {
       href: "/tools/revenue-forecaster",
       icon: Sparkles,
       tag: "Growth Modeling",
-      color: "from-accent-primary to-accent-glow",
+      color: "from-accent-secondary to-accent-glow",
     },
   ];
 
